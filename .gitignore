@@ -22,7 +22,6 @@ __pycache__/
 downloads/
 received*/
 
-# Restore the pinned Node executable with scripts/Restore-VoiceRuntime.ps1.
-# Release archives include the runtime; keep large downloads out of Git history.
+# Keep any local archives from the retired 1.2.1 codec runtime out of Git.
 runtime/voice/node.exe
 research/runtime-dependencies/node-v24.19.0-win-x64.zip

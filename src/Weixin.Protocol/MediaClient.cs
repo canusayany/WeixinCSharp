@@ -29,8 +29,11 @@ public sealed class MediaLimits
 public sealed record UploadedMedia(MediaKind Kind, string DownloadParameter, string AesKeyHex,
     long PlaintextBytes, long CiphertextBytes, string FileName)
 {
-    public MessageItem ToMessageItem(int? voiceMilliseconds = null, int voiceEncoding = 7, int? sampleRate = null)
+    public MessageItem ToMessageItem(int? voiceMilliseconds = null, int voiceEncoding = 7, int? sampleRate = null,
+        int? bitsPerSample = null)
     {
+        if (sampleRate is <= 0 || bitsPerSample is <= 0)
+            throw new ArgumentException("语音采样率和位深须为正数；未获知时请省略。");
         var media = new CdnMedia { EncryptQueryParam = DownloadParameter,
             AesKey = Convert.ToBase64String(Encoding.ASCII.GetBytes(AesKeyHex)), EncryptType = 1 };
         return Kind switch
@@ -41,7 +44,7 @@ public sealed record UploadedMedia(MediaKind Kind, string DownloadParameter, str
                 Length = PlaintextBytes.ToString(CultureInfo.InvariantCulture) } },
             MediaKind.Voice when voiceMilliseconds is > 0 && voiceEncoding is >= 1 and <= 8 =>
                 new() { Type = 3, VoiceItem = new() { Media = media, EncodeType = voiceEncoding,
-                    Playtime = voiceMilliseconds, SampleRate = sampleRate } },
+                    Playtime = voiceMilliseconds, SampleRate = sampleRate, BitsPerSample = bitsPerSample } },
             _ => throw new ArgumentException("原生语音须给出正数毫秒时长和有效编码类型。")
         };
     }

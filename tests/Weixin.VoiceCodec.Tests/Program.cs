@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using Weixin.Protocol;
+using Weixin.Silk;
 
 return await CodecTests.RunAsync(args);
 
@@ -11,7 +12,7 @@ internal static class CodecTests
 {
     private sealed record Result(string Name, bool Passed, long DurationMilliseconds, string? Error);
     private static readonly List<Result> Results = [];
-    private static string runtime = "", output = "";
+    private static string output = "";
     private static byte[] pcm = [], silk = [], wave = [];
     private static readonly JsonSerializerOptions Json = new() { WriteIndented = true };
 
@@ -20,10 +21,9 @@ internal static class CodecTests
         try
         {
             for (var i = 0; i < args.Length; i++)
-                if (args[i] == "--runtime" && i + 1 < args.Length) runtime = Path.GetFullPath(args[++i]);
-                else if (args[i] == "--output" && i + 1 < args.Length) output = Path.GetFullPath(args[++i]);
-                else throw new ArgumentException("Use --runtime <directory> --output <new directory>.");
-            if (runtime.Length == 0 || output.Length == 0 || Directory.Exists(output)) throw new ArgumentException("Runtime and a fresh output directory are required.");
+                if (args[i] == "--output" && i + 1 < args.Length) output = Path.GetFullPath(args[++i]);
+                else throw new ArgumentException("Use --output <new directory>.");
+            if (output.Length == 0 || Directory.Exists(output)) throw new ArgumentException("A fresh output directory is required.");
             Directory.CreateDirectory(output);
             pcm = Sine(2000); await File.WriteAllBytesAsync(Path.Combine(output, "synthetic.pcm"), pcm);
             await Case("pcm_encode_tencent_header_actual_duration_preserves_input", async () =>
@@ -41,22 +41,22 @@ internal static class CodecTests
                 Assert(SHA256.HashData(silk).AsSpan().SequenceEqual(before), "Caller SILK was modified.");
                 wave = decoded.Data; await File.WriteAllBytesAsync(Path.Combine(output, "synthetic.wav"), wave);
             });
-            await Case("independent_official_sdk_encode_and_decode_interoperability", async () =>
+            await Case("independent_legacy_silk_golden_vectors_decode_at_all_rates", async () =>
             {
-                var p = NewNode(Path.Combine(AppContext.BaseDirectory, "official-interop.mjs"));
-                p.StartInfo.ArgumentList.Add(Path.Combine(runtime, "silk-wasm", "lib", "index.mjs"));
-                p.StartInfo.ArgumentList.Add(Path.Combine(output, "synthetic.pcm"));
-                p.StartInfo.ArgumentList.Add(Path.Combine(output, "synthetic.silk"));
-                p.StartInfo.ArgumentList.Add(Path.Combine(output, "synthetic.wav"));
-                using (p)
+                var goldenRoot = Path.Combine(AppContext.BaseDirectory, "Golden");
+                using var manifest = JsonDocument.Parse(await File.ReadAllTextAsync(Path.Combine(goldenRoot, "manifest.json")));
+                foreach (var vector in manifest.RootElement.GetProperty("files").EnumerateArray())
                 {
-                    Assert(p.Start(), "Official test process did not start.");
-                    var stdout = p.StandardOutput.ReadToEndAsync(); var stderr = p.StandardError.ReadToEndAsync();
-                    await p.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(30));
-                    Assert(p.ExitCode == 0 && (await stderr).Length == 0, "Official interoperability process failed.");
-                    using var json = JsonDocument.Parse(await stdout);
-                    Assert(json.RootElement.GetProperty("equalEncode").GetBoolean() && json.RootElement.GetProperty("equalDecode").GetBoolean(), "Official bytes differ.");
-                    await File.WriteAllTextAsync(Path.Combine(output, "official-interop.json"), json.RootElement.GetRawText());
+                    var data = await File.ReadAllBytesAsync(Path.Combine(goldenRoot, vector.GetProperty("path").GetString()!));
+                    Assert(Convert.ToHexString(SHA256.HashData(data)).Equals(vector.GetProperty("sha256").GetString(), StringComparison.OrdinalIgnoreCase), "Golden bytes differ.");
+                    var rate = vector.GetProperty("apiSampleRate").GetInt32();
+                    var decoded = await Codec().DecodeSilkToWaveAsync(data, rate);
+                    var duration = vector.GetProperty("durationMilliseconds").GetInt32();
+                    Assert(decoded.DurationMilliseconds == duration && decoded.Data.Length == 44 + (long)rate * 2 * duration / 1000, "Golden sample duration differs.");
+                    Assert(decoded.Data.AsSpan(44).ContainsAnyExcept((byte)0), "Golden sample audio is silent.");
+                    if (vector.TryGetProperty("referencePcmSha256", out var reference))
+                        Assert(Convert.ToHexString(SHA256.HashData(decoded.Data.AsSpan(44))).Equals(reference.GetString(), StringComparison.OrdinalIgnoreCase), "PCM differs from independent Skype SDK reference.");
+                    CryptographicOperations.ZeroMemory(decoded.Data);
                 }
             });
             await Case("wave_input_encodes_identically_to_same_pcm", async () =>
@@ -65,7 +65,29 @@ internal static class CodecTests
                 try { Assert(encoded.DurationMilliseconds == 2000 && encoded.Data.AsSpan().SequenceEqual(silk), "Equivalent WAV/PCM produced different bytes."); }
                 finally { CryptographicOperations.ZeroMemory(encoded.Data); }
             });
-            await Case("partial_packet_and_short_audio_pad_to_decoder_lookahead", async () =>
+            await Case("complete_managed_encoder_all_api_rates_and_frame_cancellation", async () =>
+            {
+                foreach (var rate in new[] { 8000, 12000, 16000, 24000, 32000, 44100, 48000 })
+                {
+                    var sample = new byte[rate * 2 * 2];
+                    for (var n = 0; n < sample.Length / 2; n++)
+                        BinaryPrimitives.WriteInt16LittleEndian(sample.AsSpan(n * 2), (short)(9000 * Math.Sin(n * Math.PI * 880 / rate)));
+                    var encoded = await Codec().EncodePcmToSilkAsync(sample, rate);
+                    var decoded = await Codec().DecodeSilkToWaveAsync(encoded.Data, rate);
+                    Assert(encoded.DurationMilliseconds == 2000 && decoded.DurationMilliseconds == 2000 && decoded.Data.Length == sample.Length + 44 && decoded.Data.AsSpan(44).ContainsAnyExcept((byte)0), "Complete encoder rate interoperability differs.");
+                    CryptographicOperations.ZeroMemory(sample); CryptographicOperations.ZeroMemory(encoded.Data); CryptographicOperations.ZeroMemory(decoded.Data);
+                }
+                using var cancel = new CancellationTokenSource();
+                var checkpoints = 0;
+                await Reject<OperationCanceledException>(() => Task.Run(() => ManagedSilkEncoder.Encode(pcm, 24000, 16 * 1024 * 1024, () =>
+                {
+                    // Entry, first frame start/end: at least one frame has really run.
+                    if (++checkpoints == 4) cancel.Cancel();
+                    cancel.Token.ThrowIfCancellationRequested();
+                })));
+                Assert(checkpoints == 4, "Cancellation was not observed at an in-flight frame checkpoint.");
+            });
+            await Case("partial_packet_and_short_audio_pad_to_legacy_compatible_40ms", async () =>
             {
                 foreach (var count in new[] { 2, 962 })
                 {
@@ -93,8 +115,8 @@ internal static class CodecTests
                 await Reject<ArgumentException>(() => Codec().EncodePcmToSilkAsync(new byte[3]));
                 await Reject<ArgumentException>(() => Codec().EncodePcmToSilkAsync(pcm, 22050));
                 await Reject<ArgumentException>(() => Codec().EncodePcmToSilkAsync(Wave(pcm)));
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxDurationMilliseconds = 1000 }.EncodePcmToSilkAsync(pcm));
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxInputBytes = 100 }.EncodePcmToSilkAsync(pcm));
+                await Reject<ArgumentException>(() => new VoiceCodec() { MaxDurationMilliseconds = 1000 }.EncodePcmToSilkAsync(pcm));
+                await Reject<ArgumentException>(() => new VoiceCodec() { MaxInputBytes = 100 }.EncodePcmToSilkAsync(pcm));
             });
             await Case("wave_stereo_compression_rate_and_structure_guards", async () =>
             {
@@ -110,7 +132,7 @@ internal static class CodecTests
                 var huge = Wave(pcm); BinaryPrimitives.WriteUInt32LittleEndian(huge.AsSpan(40), uint.MaxValue);
                 await Reject<ArgumentException>(() => Codec().EncodeWaveToSilkAsync(huge));
             });
-            await Case("silk_headers_truncation_zero_oversize_and_lookahead_guards", async () =>
+            await Case("silk_headers_truncation_zero_oversize_and_minimum_packet_guards", async () =>
             {
                 foreach (var invalid in new[] { Encoding.ASCII.GetBytes("#!SILK_V3"), silk[1..], silk[..11], Framed([[]]), Framed([new byte[1251], new byte[1]]), Framed([new byte[1]]) })
                     await Reject<InvalidDataException>(() => Codec().DecodeSilkToWaveAsync(invalid));
@@ -118,55 +140,78 @@ internal static class CodecTests
             });
             await Case("silk_duration_and_worst_case_output_guard_precede_decoder", async () =>
             {
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxDurationMilliseconds = 1000 }.DecodeSilkToWaveAsync(silk));
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxOutputBytes = pcm.Length + 44 }.DecodeSilkToWaveAsync(silk));
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxOutputBytes = 64 }.DecodeSilkToWaveAsync(silk));
+                await Reject<ArgumentException>(() => new VoiceCodec() { MaxDurationMilliseconds = 1000 }.DecodeSilkToWaveAsync(silk));
+                await Reject<ArgumentException>(() => new VoiceCodec() { MaxOutputBytes = pcm.Length + 44 }.DecodeSilkToWaveAsync(silk));
+                await Reject<ArgumentException>(() => new VoiceCodec() { MaxOutputBytes = 64 }.DecodeSilkToWaveAsync(silk));
             });
-            await Case("pre_cancelled_calls_return_cancellation_without_process", async () =>
+            await Case("pre_cancelled_calls_return_cancellation", async () =>
             {
                 using var cancel = new CancellationTokenSource(); cancel.Cancel();
                 await Reject<OperationCanceledException>(() => Codec().EncodePcmToSilkAsync(pcm, cancel.Token));
                 await Reject<OperationCanceledException>(() => Codec().DecodeSilkToWaveAsync(silk, cancel.Token));
             });
-            await Case("live_owned_codec_process_cancel_kills_only_its_process", async () =>
+            await Case("active_managed_encoding_cooperates_with_cancellation", async () =>
             {
-                var existing = NodePids(); using var cancel = new CancellationTokenSource();
-                var longPcm = Sine(60000); var task = Codec().EncodePcmToSilkAsync(longPcm, cancel.Token); var pid = 0;
-                var timer = Stopwatch.StartNew();
-                while (timer.Elapsed < TimeSpan.FromSeconds(10) && !task.IsCompleted)
+                var longPcm = Sine(60000);
+                using var cancel = new CancellationTokenSource();
+                var task = Codec().EncodePcmToSilkAsync(longPcm, cancel.Token);
+                await Task.Delay(10); cancel.Cancel();
+                await Reject<OperationCanceledException>(async () => await task);
+                Assert(task.IsCompleted, "Cancelled operation was abandoned in the background.");
+                CryptographicOperations.ZeroMemory(longPcm);
+            });
+            await Case("operation_timeout_is_generic_and_operation_is_joined", async () =>
+            {
+                var codec = new VoiceCodec { OperationTimeout = TimeSpan.FromTicks(1) };
+                var task = codec.EncodePcmToSilkAsync(pcm);
+                var error = await Reject<InvalidDataException>(async () => await task);
+                Assert(task.IsCompleted && !error.Message.Contains("SilkCodec.NET", StringComparison.Ordinal), "Timeout exposed implementation diagnostics or left work running.");
+            });
+            await Case("hard_configuration_guards", async () =>
+            {
+                await Reject<ArgumentException>(() => new VoiceCodec { MaxInputBytes = 100 * 1024 * 1024 + 1 }.EncodePcmToSilkAsync(pcm));
+                await Reject<ArgumentException>(() => new VoiceCodec { MaxDurationMilliseconds = 0 }.EncodePcmToSilkAsync(pcm));
+                await Reject<ArgumentException>(() => new VoiceCodec { MaxOutputBytes = 0 }.EncodePcmToSilkAsync(pcm));
+            });
+            await Case("managed_output_limit_and_corrupt_payload_fail_without_audio", async () =>
+            {
+                await Reject<InvalidDataException>(() => new VoiceCodec { MaxOutputBytes = 64 }.EncodePcmToSilkAsync(pcm));
+                // 0xffffffff lies outside the initial range-coder interval.
+                // Zero payloads are not assumed corrupt: SILK has no general CRC.
+                var outOfRange = Enumerable.Repeat((byte)255, 4).ToArray();
+                await Reject<InvalidDataException>(() => Codec().DecodeSilkToWaveAsync(Framed([outOfRange, outOfRange])));
+                foreach (var length in new[] { 1025, 1250 })
                 {
-                    pid = NodePids().FirstOrDefault(id => !existing.Contains(id)); if (pid != 0) break;
-                    await Task.Delay(10);
+                    var oversizedRangePayload = Enumerable.Repeat((byte)255, length).ToArray();
+                    await Reject<InvalidDataException>(() => Codec().DecodeSilkToWaveAsync(Framed([oversizedRangePayload, oversizedRangePayload])));
                 }
-                cancel.Cancel(); await Reject<OperationCanceledException>(async () => await task);
-                Assert(pid != 0, "No actual owned Node process was observed before cancellation.");
-                await WaitGone(pid); CryptographicOperations.ZeroMemory(longPcm);
-                await File.WriteAllTextAsync(Path.Combine(output, "cancel-process.json"), JsonSerializer.Serialize(new { ownedNodePid = pid, exited = true, unrelatedProcessesKilled = false }, Json));
             });
-            await Case("operation_timeout_is_generic_and_does_not_leak_process", async () =>
+            await Case("concurrent_operations_own_independent_codec_state", async () =>
             {
-                var existing = NodePids(); var codec = new VoiceCodec(runtime) { OperationTimeout = TimeSpan.FromTicks(1) };
-                var error = await Reject<InvalidDataException>(() => codec.EncodePcmToSilkAsync(pcm));
-                Assert(!error.Message.Contains(runtime, StringComparison.Ordinal) && !error.Message.Contains("WASM", StringComparison.Ordinal), "Timeout exposed raw runtime diagnostics.");
-                foreach (var pid in NodePids().Where(id => !existing.Contains(id))) await WaitGone(pid);
+                var codec = Codec();
+                var results = await Task.WhenAll(Enumerable.Range(0, 8).Select(_ => codec.EncodePcmToSilkAsync(pcm)));
+                foreach (var result in results)
+                {
+                    Assert(result.Data.AsSpan().SequenceEqual(silk), "Independent codec state changed concurrent output.");
+                    CryptographicOperations.ZeroMemory(result.Data);
+                }
             });
-            await Case("runtime_missing_and_hard_configuration_guards", async () =>
+            await Case("packet_continuation_over_five_frames_or_missing_frame_is_rejected", async () =>
             {
-                await Reject<InvalidOperationException>(() => new VoiceCodec(Path.Combine(output, "missing-runtime")).EncodePcmToSilkAsync(pcm));
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxInputBytes = 100 * 1024 * 1024 + 1 }.EncodePcmToSilkAsync(pcm));
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxDurationMilliseconds = 0 }.EncodePcmToSilkAsync(pcm));
-                await Reject<ArgumentException>(() => new VoiceCodec(runtime) { MaxOutputBytes = 0 }.EncodePcmToSilkAsync(pcm));
+                var goldenRoot = Path.Combine(AppContext.BaseDirectory, "Golden");
+                using var manifest = JsonDocument.Parse(await File.ReadAllTextAsync(Path.Combine(goldenRoot, "manifest.json")));
+                foreach (var vector in manifest.RootElement.GetProperty("invalidFiles").EnumerateArray())
+                {
+                    var bytes = await File.ReadAllBytesAsync(Path.Combine(goldenRoot, vector.GetProperty("path").GetString()!));
+                    Assert(Convert.ToHexString(SHA256.HashData(bytes)).Equals(vector.GetProperty("sha256").GetString(), StringComparison.OrdinalIgnoreCase), "Malformed synthetic vector bytes differ.");
+                    await Reject<InvalidDataException>(() => Codec().DecodeSilkToWaveAsync(bytes));
+                }
             });
-            await Case("binary_bridge_invalid_request_and_output_limits_fail_safely", async () =>
-            {
-                await BridgeReject(new byte[28]);
-                await BridgeReject(Request(2, silk, 1000, 16 * 1024 * 1024));
-                await BridgeReject(Request(2, silk, 60000, 64));
-                await BridgeReject(Request(2, Framed([new byte[1251], new byte[1]]), 60000, 16 * 1024 * 1024));
-            });
-            var summary = new { schemaVersion = 1, scope = "local-pinned-codec-interoperability", realWeChatDeliveryVerified = false,
-                completedUtc = DateTimeOffset.UtcNow, runtime, nodeSha256 = Hash(Path.Combine(runtime, "node.exe")),
-                bridgeSha256 = Hash(Path.Combine(runtime, "codec-bridge.mjs")), sourceSha256 = Hash(Path.GetFullPath(Path.Combine(runtime, "..", "..", "src", "Weixin.Protocol", "VoiceCodec.cs"))),
+            var summary = new { schemaVersion = 2, scope = "pure-csharp-codec-and-independent-legacy-golden-vectors", realWeChatDeliveryVerified = false,
+                completedUtc = DateTimeOffset.UtcNow, externalProcessesStarted = 0,
+                codecAssemblySha256 = Hash(typeof(VoiceCodec).Assembly.Location),
+                silkAssemblySha256 = Hash(typeof(SilkCodec.NET.SilkEncoder).Assembly.Location),
+                goldenManifestSha256 = Hash(Path.Combine(AppContext.BaseDirectory, "Golden", "manifest.json")),
                 total = Results.Count, passed = Results.Count(x => x.Passed), failed = Results.Count(x => !x.Passed), cases = Results,
                 isolation = new { syntheticAudioOnly = true, accountStateAccess = false, networkRequests = 0 } };
             await File.WriteAllTextAsync(Path.Combine(output, "tests-summary.json"), JsonSerializer.Serialize(summary, Json));
@@ -177,7 +222,7 @@ internal static class CodecTests
         finally { CryptographicOperations.ZeroMemory(pcm); CryptographicOperations.ZeroMemory(silk); CryptographicOperations.ZeroMemory(wave); }
     }
 
-    private static VoiceCodec Codec() => new(runtime);
+    private static VoiceCodec Codec() => new();
     private static async Task Case(string name, Func<Task> action)
     {
         var timer = Stopwatch.StartNew();
@@ -210,42 +255,5 @@ internal static class CodecTests
         foreach (var packet in packets) { var size = new byte[2]; BinaryPrimitives.WriteUInt16LittleEndian(size, (ushort)packet.Length); stream.Write(size); stream.Write(packet); }
         return stream.ToArray();
     }
-    private static Process NewNode(string script)
-    {
-        var start = new ProcessStartInfo(Path.Combine(runtime, "node.exe")) { UseShellExecute = false, CreateNoWindow = true,
-            RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true };
-        start.Environment.Remove("NODE_OPTIONS"); start.Environment.Remove("NODE_PATH"); start.ArgumentList.Add(script);
-        return new Process { StartInfo = start };
-    }
-    private static HashSet<int> NodePids()
-    {
-        var ids = new HashSet<int>();
-        foreach (var p in Process.GetProcessesByName("node")) using (p)
-            try { if (string.Equals(p.MainModule?.FileName, Path.Combine(runtime, "node.exe"), StringComparison.OrdinalIgnoreCase)) ids.Add(p.Id); }
-            catch (Exception ex) when (ex is System.ComponentModel.Win32Exception or InvalidOperationException) { }
-        return ids;
-    }
-    private static async Task WaitGone(int pid)
-    {
-        try { using var p = Process.GetProcessById(pid); await p.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(5)); }
-        catch (ArgumentException) { }
-    }
-    private static byte[] Request(int mode, byte[] data, int maxDuration, int maxOutput)
-    {
-        var request = new byte[data.Length + 28]; "WXC1"u8.CopyTo(request);
-        BinaryPrimitives.WriteUInt32LittleEndian(request.AsSpan(4), 1); BinaryPrimitives.WriteUInt32LittleEndian(request.AsSpan(8), (uint)mode);
-        BinaryPrimitives.WriteUInt32LittleEndian(request.AsSpan(12), 24000); BinaryPrimitives.WriteUInt32LittleEndian(request.AsSpan(16), (uint)data.Length);
-        BinaryPrimitives.WriteUInt32LittleEndian(request.AsSpan(20), (uint)maxDuration); BinaryPrimitives.WriteUInt32LittleEndian(request.AsSpan(24), (uint)maxOutput);
-        data.CopyTo(request, 28); return request;
-    }
-    private static async Task BridgeReject(byte[] request)
-    {
-        using var p = NewNode(Path.Combine(runtime, "codec-bridge.mjs")); Assert(p.Start(), "Bridge process did not start.");
-        var stdout = p.StandardOutput.BaseStream.CopyToAsync(Stream.Null); var stderr = p.StandardError.ReadToEndAsync();
-        await p.StandardInput.BaseStream.WriteAsync(request); p.StandardInput.Close();
-        await p.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(10)); await stdout;
-        Assert(p.ExitCode == 1 && (await stderr) == "Voice codec operation failed.\n", "Bridge did not fail with its safe generic error.");
-        CryptographicOperations.ZeroMemory(request);
-    }
-    private static string? Hash(string path) => File.Exists(path) ? Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))) : null;
+    private static string Hash(string path) => Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path)));
 }

@@ -497,22 +497,29 @@ internal static partial class CliSuite
             "src/Weixin.Protocol/TypingLifecycle.cs", "src/Weixin.Protocol/VoiceCodec.cs",
             "tests/Weixin.Cli.E2ETests/Weixin.Cli.E2ETests.csproj", "tests/Weixin.Cli.E2ETests/Program.cs", "tests/Weixin.Cli.E2ETests/MediaE2E.cs",
             "tests/Weixin.Cli.E2ETests/TypingVoiceE2E.cs", "tests/Weixin.Cli.E2ETests/TypingLifecycleE2E.cs",
-            "runtime/voice/codec-bridge.mjs", "runtime/voice/provenance.json" };
+            "src/Weixin.Silk/Weixin.Silk.csproj", "research/managed-silk-provenance.json", "docs/SilkCodec.NET-LICENSE.txt",
+            "research/greepar-silk-provenance.json", "docs/Greepar-SilkCodec-LICENSE.txt", "docs/Greepar-SilkCodec-THIRD-PARTY-NOTICES.txt" };
         var files = new List<object>();
+        sourcePaths = sourcePaths.Concat(Directory.GetFiles(Path.Combine(repo, "src", "Weixin.Silk"), "*.cs", SearchOption.AllDirectories)
+            .Where(path => !path.Contains(Path.DirectorySeparatorChar + "obj" + Path.DirectorySeparatorChar) &&
+                !path.Contains(Path.DirectorySeparatorChar + "bin" + Path.DirectorySeparatorChar))
+            .Select(path => Path.GetRelativePath(repo, path).Replace('\\', '/'))).Order(StringComparer.Ordinal).ToArray();
         foreach (var relative in sourcePaths)
         {
             var path = Path.Combine(repo, relative);
             files.Add(new { path = relative, sha256 = await HashAsync(path), sizeBytes = new FileInfo(path).Length });
         }
         var published = new List<object>();
-        foreach (var path in Directory.GetFiles(Path.GetDirectoryName(exe)!).Where(p => Path.GetFileName(p) is "weixin.exe" or "weixin.dll" or "Weixin.Protocol.dll" or "weixin.deps.json" or "weixin.runtimeconfig.json"))
+        foreach (var path in Directory.GetFiles(Path.GetDirectoryName(exe)!).Where(p => Path.GetFileName(p) is "weixin.exe" or "weixin.dll" or "Weixin.Protocol.dll" or "Weixin.Silk.dll" or "weixin.deps.json" or "weixin.runtimeconfig.json"))
             published.Add(new { path, sha256 = await HashAsync(path), sizeBytes = new FileInfo(path).Length });
-        var publishedVoice = Path.Combine(Path.GetDirectoryName(exe)!, "runtime", "voice");
-        if (Directory.Exists(publishedVoice))
-            foreach (var path in Directory.GetFiles(publishedVoice, "*", SearchOption.AllDirectories))
-                published.Add(new { path, sha256 = await HashAsync(path), sizeBytes = new FileInfo(path).Length });
+        var publishedRoot = Path.GetDirectoryName(exe)!;
+        if (Directory.Exists(Path.Combine(publishedRoot, "runtime")) ||
+            Directory.GetFiles(publishedRoot, "*", SearchOption.AllDirectories).Any(path =>
+                Path.GetExtension(path) is ".mjs" or ".cjs" or ".js" or ".wasm" ||
+                Path.GetFileName(path).Equals("node.exe", StringComparison.OrdinalIgnoreCase)))
+            throw new Exception("Pure C# publish contains a legacy codec runtime.");
         return new { sourceRoot = repo, sourceFiles = files, publishedFiles = published,
-            executableSha256 = await HashAsync(exe), note = "Hashes identify the exact source snapshot and launched published files; build provenance is recorded separately by the release script." };
+            executableSha256 = await HashAsync(exe), note = "Hashes identify the exact source snapshot and launched published files; build provenance is recorded separately by the C# project tool." };
     }
     private static string FindRepository()
     {

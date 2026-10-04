@@ -1,0 +1,188 @@
+/*
+ * Copyright @ 2015 Atlassian Pty Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except input compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to input writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+using System;
+using System.Diagnostics;
+
+namespace SilkCodec.NET.Managed;
+/**
+ * Insertion sort (fast for already almost sorted arrays):
+ *    Best case:  O(n)   for an already sorted array
+ *    Worst case: O(n^2) for an inversely sorted array
+ *
+ * To be implemented:
+ * Shell short: http://en.wikipedia.org/wiki/Shell_sort
+ *
+ * @author Jing Dai
+ * @author Dingxin Xu
+ */
+internal static class SortFLP
+{
+    /**
+     *
+     * @param a Unsorted / Sorted vector
+     * @param a_offset
+     * @param index Index vector for the sorted elements
+     * @param L Vector length
+     * @param K Number of correctly sorted positions
+     */
+    internal static void SKP_Silk_insertion_sort_increasing_FLP
+    (
+            float[] a,          /* I/O:  Unsorted / Sorted vector                */
+            int a_offset,
+            int[] index,      /* O:    Index vector for the sorted elements    */
+            int        L,           /* I:    Vector length                           */
+            int        K            /* I:    Number of correctly sorted positions    */
+    )
+    {
+        float value;
+        int i, j;
+
+        /* Safety checks */
+        Debug.Assert(K > 0);
+        Debug.Assert(L > 0);
+        Debug.Assert(L >= K);
+
+        /* Write start indices input index vector */
+        for (i = 0; i < K; i++)
+        {
+            index[i] = i;
+        }
+
+        /* Sort vector elements by value, increasing order */
+        for (i = 1; i < K; i++)
+        {
+            value = a[a_offset + i];
+            for (j = i - 1; (j >= 0) && (value < a[a_offset + j]); j--)
+            {
+                a[a_offset + j + 1] = a[a_offset + j]; /* Shift value */
+                index[j + 1] = index[j]; /* Shift index */
+            }
+            a[a_offset + j + 1] = value; /* Write value */
+            index[j + 1] = i; /* Write index */
+        }
+
+        /* If less than L values are asked check the remaining values, */
+        /* but only spend CPU to ensure that the K first values are correct */
+        for (i = K; i < L; i++)
+        {
+            value = a[a_offset + i];
+            if (value < a[a_offset + K - 1])
+            {
+                for (j = K - 2; (j >= 0) && (value < a[a_offset + j]); j--)
+                {
+                    a[a_offset + j + 1] = a[a_offset + j]; /* Shift value */
+                    index[j + 1] = index[j]; /* Shift index */
+                }
+                a[a_offset + j + 1] = value; /* Write value */
+                index[j + 1] = i; /* Write index */
+            }
+        }
+    }
+
+    /**
+     *
+     * @param a Unsorted / Sorted vector.
+     * @param a_offset offset of valid data.
+     * @param index Index vector for the sorted elements.
+     * @param L Vector length.
+     * @param K Number of correctly sorted positions.
+     */
+    internal static void SKP_Silk_insertion_sort_decreasing_FLP
+    (
+        float[] a,          /* I/O:  Unsorted / Sorted vector                */
+        int a_offset,
+        int[] index,      /* O:    Index vector for the sorted elements    */
+        int        L,           /* I:    Vector length                           */
+        int        K            /* I:    Number of correctly sorted positions    */
+    )
+    {
+        float value;
+        int i, j;
+
+        /* Safety checks */
+        Debug.Assert(K > 0);
+        Debug.Assert(L > 0);
+        Debug.Assert(L >= K);
+
+        /* Write start indices input index vector */
+        for (i = 0; i < K; i++)
+        {
+            index[i] = i;
+        }
+
+        /* Sort vector elements by value, decreasing order */
+        for (i = 1; i < K; i++)
+        {
+            value = a[a_offset + i];
+            for (j = i - 1; (j >= 0) && (value > a[a_offset + j]); j--)
+            {
+                a[a_offset + j + 1] = a[a_offset + j]; /* Shift value */
+                index[j + 1] = index[j]; /* Shift index */
+            }
+            a[a_offset + j + 1] = value; /* Write value */
+            index[j + 1] = i; /* Write index */
+        }
+
+        /* If less than L values are asked check the remaining values, */
+        /* but only spend CPU to ensure that the K first values are correct */
+        for (i = K; i < L; i++)
+        {
+            value = a[a_offset + i];
+            if (value > a[a_offset + K - 1])
+            {
+                for (j = K - 2; (j >= 0) && (value > a[a_offset + j]); j--)
+                {
+                    a[a_offset + j + 1] = a[a_offset + j]; /* Shift value */
+                    index[j + 1] = index[j]; /* Shift index */
+                }
+                a[a_offset + j + 1] = value; /* Write value */
+                index[j + 1] = i; /* Write index */
+            }
+        }
+    }
+
+    /**
+     *
+     * @param a Unsorted / Sorted vector
+     * @param a_offset offset of valid data.
+     * @param L Vector length
+     */
+    internal static void SKP_Silk_insertion_sort_increasing_all_values_FLP
+    (
+        float[] a,          /* I/O:  Unsorted / Sorted vector                */
+        int a_offset,
+        int        L            /* I:    Vector length                           */
+    )
+    {
+        float value;
+        int i, j;
+
+        /* Safety checks */
+        Debug.Assert(L > 0);
+
+        /* Sort vector elements by value, increasing order */
+        for (i = 1; i < L; i++)
+        {
+            value = a[a_offset + i];
+            for (j = i - 1; (j >= 0) && (value < a[a_offset + j]); j--)
+            {
+                a[a_offset + j + 1] = a[a_offset + j]; /* Shift value */
+            }
+            a[a_offset + j + 1] = value; /* Write value */
+        }
+    }
+}

@@ -1,5 +1,6 @@
 using System.Buffers.Binary;
 using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using Weixin.Protocol;
 
@@ -23,6 +24,9 @@ internal static partial class CliSuite
         await Case("cli_voice_silk_encode_type_four_decodes_actual_payload", () => VoiceIncomingForEncodingAsync(4));
         await Case("cli_voice_silk_missing_encode_type_decodes_actual_payload", () => VoiceIncomingForEncodingAsync(null));
         await Case("cli_voice_non_silk_preserves_raw_without_creating_wave", VoiceIncomingNonSilkAsync);
+        await Case("cli_native_voice_explicit_sample_rate_bits_are_wire_fields", VoiceExplicitMetadataAsync);
+        await Case("cli_native_voice_metadata_invalid_combinations_stop_before_http", VoiceMetadataGuardsAsync);
+        await Case("cli_native_voice_metadata_business_key_compatibility_and_no_resend", VoiceMetadataReplayAsync);
     }
     private static Step TypingConfigStep(object? response = null) => new()
     {
@@ -247,6 +251,126 @@ internal static partial class CliSuite
         Assert(!result.Stdout.Contains("语音已解码", StringComparison.Ordinal) && result.Stderr.Contains("语音解码未完成", StringComparison.Ordinal), "Non-SILK decode failure was not reported honestly.");
         Assert((await t.LoadAsync()).Inbox.Count == 0 && !Directory.GetFiles(downloads, "*.tmp").Any(), "Preserved raw voice was not acknowledged or left temporary files.");
         t.AssertRequests("notifystart", "getupdates", "download", "getupdates", "notifystop");
+    }
+    private static Step ExplicitVoiceSendStep(int? sampleRate, int? bitsPerSample)
+    {
+        var step = MediaSendStep(MediaKind.Voice, SilkFixture.Length, "fixture-metadata.silk", "silk");
+        var voice = new Dictionary<string, object> { ["encode_type"] = 6, ["playtime"] = 1234 };
+        if (sampleRate is { } rate) voice["sample_rate"] = rate;
+        if (bitsPerSample is { } bits) voice["bits_per_sample"] = bits;
+        step.BodySubset = new
+        {
+            msg = new
+            {
+                from_user_id = "", to_user_id = User, message_type = 2, message_state = 2, context_token = Context,
+                item_list = new[] { new { type = 3, voice_item = voice } }
+            }
+        };
+        return step;
+    }
+    private static async Task VoiceExplicitMetadataAsync()
+    {
+        // These are local accepted metadata guards, not a claim that Tencent accepts
+        // every rate for native sending. Mock fixture acceptance is not real delivery.
+        foreach (int rate in new[] { 8000, 12000, 16000, 24000, 32000, 44100, 48000 })
+        {
+            var t = await TestDirectory.CreateAsync([UploadUrlStep(SilkFixture, MediaKind.Voice), UploadStep(SilkFixture), ExplicitVoiceSendStep(rate, 16)]);
+            await t.SaveAsync(State());
+            var file = Path.Combine(t.Directory, "fixture-metadata.silk"); await File.WriteAllBytesAsync(file, SilkFixture);
+            await RunAsync(t, "send-media", ["--file", file, "--kind", "voice", "--duration-ms", "1234", "--voice-encoding", "silk",
+                "--voice-sample-rate", rate.ToString(System.Globalization.CultureInfo.InvariantCulture), "--voice-bits-per-sample", "16"], 0);
+            var voice = SentVoice(t);
+            Assert(voice.GetProperty("encode_type").GetInt32() == 6 && voice.GetProperty("sample_rate").GetInt32() == rate &&
+                voice.GetProperty("bits_per_sample").GetInt32() == 16, "Explicit metadata wire values differ.");
+            AssertActualVoiceMetadata(t, rate, 16);
+            Assert((await t.LoadAsync()).Outbox.Single().Status == "Sent", "Explicit metadata did not record one accepted intent.");
+            t.AssertRequests("getuploadurl", "upload", "sendmessage");
+        }
+        // Each optional field is independent; absent information must stay absent.
+        foreach (var metadata in new (int? Rate, int? Bits)[] { (24000, null), (null, 16), (null, null) })
+        {
+            var t = await TestDirectory.CreateAsync([UploadUrlStep(SilkFixture, MediaKind.Voice), UploadStep(SilkFixture), ExplicitVoiceSendStep(metadata.Rate, metadata.Bits)]);
+            await t.SaveAsync(State()); var file = Path.Combine(t.Directory, "fixture-metadata.silk"); await File.WriteAllBytesAsync(file, SilkFixture);
+            var arguments = new List<string> { "--file", file, "--kind", "voice", "--duration-ms", "1234", "--voice-encoding", "silk" };
+            if (metadata.Rate is { } rate) arguments.AddRange(["--voice-sample-rate", rate.ToString(System.Globalization.CultureInfo.InvariantCulture)]);
+            if (metadata.Bits is { } bits) arguments.AddRange(["--voice-bits-per-sample", bits.ToString(System.Globalization.CultureInfo.InvariantCulture)]);
+            await RunAsync(t, "send-media", arguments.ToArray(), 0);
+            var voice = SentVoice(t);
+            Assert(voice.TryGetProperty("sample_rate", out var actualRate) == metadata.Rate.HasValue &&
+                (!metadata.Rate.HasValue || actualRate.GetInt32() == metadata.Rate.Value), "Omitted sample rate was invented or explicit rate was lost.");
+            Assert(voice.TryGetProperty("bits_per_sample", out var actualBits) == metadata.Bits.HasValue &&
+                (!metadata.Bits.HasValue || actualBits.GetInt32() == metadata.Bits.Value), "Omitted bit depth was invented or explicit depth was lost.");
+            AssertActualVoiceMetadata(t, metadata.Rate, metadata.Bits);
+            t.AssertRequests("getuploadurl", "upload", "sendmessage");
+        }
+    }
+    private static JsonElement SentVoice(TestDirectory t) => t.Requests().Single(x => Endpoint(x) == "sendmessage")
+        .GetProperty("body").GetProperty("msg").GetProperty("item_list")[0].GetProperty("voice_item");
+    private static void AssertActualVoiceMetadata(TestDirectory t, int? sampleRate, int? bitsPerSample)
+    {
+        // BodySubset request traces only show declared expected fields. This separate
+        // assertion was captured directly from the actual sent descriptor before scrubbing.
+        var actual = t.Trace().Single(x => x.GetProperty("phase").GetString() == "fixture-assertion" &&
+            x.TryGetProperty("media", out var media) && media.ValueKind == JsonValueKind.Object).GetProperty("media");
+        Assert(actual.GetProperty("voiceEncoding").GetInt32() == 6 &&
+            actual.GetProperty("voiceSampleRatePresent").GetBoolean() == sampleRate.HasValue &&
+            actual.GetProperty("voiceBitsPerSamplePresent").GetBoolean() == bitsPerSample.HasValue, "Actual voice descriptor encoding or field presence differs.");
+        var observedRate = actual.GetProperty("voiceSampleRate"); var observedBits = actual.GetProperty("voiceBitsPerSample");
+        Assert(sampleRate.HasValue ? observedRate.GetInt32() == sampleRate.Value : observedRate.ValueKind == JsonValueKind.Null,
+            "Actual voice sample rate was invented or changed.");
+        Assert(bitsPerSample.HasValue ? observedBits.GetInt32() == bitsPerSample.Value : observedBits.ValueKind == JsonValueKind.Null,
+            "Actual voice bit depth was invented or changed.");
+    }
+    private static async Task VoiceMetadataGuardsAsync()
+    {
+        var t = await TestDirectory.CreateAsync([]); await t.SaveAsync(State()); var before = await HashAsync(t.State);
+        var file = Path.Combine(t.Directory, "fixture-metadata.silk"); await File.WriteAllBytesAsync(file, SilkFixture);
+        string[] valid = ["--file", file, "--kind", "voice", "--duration-ms", "1234", "--voice-encoding", "silk"];
+        foreach (string rate in new[] { "0", "-1", "11025", "48001", "24000.0", "24k" })
+            await RunAsync(t, "send-media", [.. valid, "--voice-sample-rate", rate], 1);
+        foreach (string bits in new[] { "0", "-1", "8", "24", "32", "16.0" })
+            await RunAsync(t, "send-media", [.. valid, "--voice-bits-per-sample", bits], 1);
+        foreach (string kind in new[] { "file", "audio", "image", "video" })
+        {
+            await RunAsync(t, "send-media", ["--file", file, "--kind", kind, "--voice-sample-rate", "24000"], 1);
+            await RunAsync(t, "send-media", ["--file", file, "--kind", kind, "--voice-bits-per-sample", "16"], 1);
+        }
+        await RunAsync(t, "status", ["--voice-sample-rate", "24000"], 1);
+        await RunAsync(t, "status", ["--voice-bits-per-sample", "16"], 1);
+        await RunAsync(t, "send-media", [.. valid, "--voice-sample-rate", "24000", "--voice-sample-rate", "48000"], 1);
+        await RunAsync(t, "send-media", [.. valid, "--voice-bits-per-sample", "16", "--voice-bits-per-sample", "16"], 1);
+        await RunAsync(t, "send-media", [.. valid, "--voice-sample-rate"], 1);
+        await RunAsync(t, "send-media", [.. valid, "--voice-bits-per-sample"], 1);
+        Assert(t.Requests().Count == 0 && await HashAsync(t.State) == before, "Invalid metadata accessed HTTP or changed account state.");
+    }
+    private static async Task VoiceMetadataReplayAsync()
+    {
+        const string sourceKey = "B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3";
+        foreach (bool explicitMetadata in new[] { false, true })
+        {
+            var t = await TestDirectory.CreateAsync([UploadUrlStep(SilkFixture, MediaKind.Voice), UploadStep(SilkFixture),
+                ExplicitVoiceSendStep(explicitMetadata ? 24000 : null, explicitMetadata ? 16 : null)]);
+            await t.SaveAsync(State()); var file = Path.Combine(t.Directory, "fixture-metadata.silk"); await File.WriteAllBytesAsync(file, SilkFixture);
+            string[] basic = ["--file", file, "--kind", "voice", "--duration-ms", "1234", "--voice-encoding", "silk", "--source-key", sourceKey];
+            string[] arguments = explicitMetadata ? [.. basic, "--voice-sample-rate", "24000", "--voice-bits-per-sample", "16"] : basic;
+            await RunAsync(t, "send-media", arguments, 0);
+            AssertActualVoiceMetadata(t, explicitMetadata ? 24000 : null, explicitMetadata ? 16 : null);
+            var first = (await t.LoadAsync()).Outbox.Single(); var before = await HashAsync(t.State);
+            string originalFingerprint = $"{Convert.ToHexString(SHA256.HashData(SilkFixture))}\n{(int)MediaKind.Voice}\n1234\nsilk\nfixture-metadata.silk";
+            string declaredFingerprint = originalFingerprint + "\nvoice_sample_rate:24000\nvoice_bits_per_sample:16";
+            string expected = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(explicitMetadata ? declaredFingerprint : originalFingerprint)));
+            Assert(first.PayloadSha256 == expected, "Optional metadata changed the legacy fingerprint or was not included in the new fingerprint.");
+            await RunAsync(t, "send-media", arguments, 0);
+            await RunAsync(t, "send-media", [.. basic, "--voice-sample-rate", "48000", "--voice-bits-per-sample", "16"], 1);
+            await RunAsync(t, "send-media", [.. basic, "--voice-sample-rate", "24000"], 1);
+            await RunAsync(t, "send-media", explicitMetadata ? basic : [.. basic, "--voice-sample-rate", "24000", "--voice-bits-per-sample", "16"], 1);
+            Assert(t.Requests().Count == 3 && await HashAsync(t.State) == before && (await t.LoadAsync()).Outbox.Single().ClientId == first.ClientId,
+                "A replay or changed metadata uploaded, resent or changed the durable accepted record.");
+            var unknown = await t.LoadAsync(); unknown.Outbox.Single().Status = "Unknown"; await t.SaveAsync(unknown); var unknownBefore = await HashAsync(t.State);
+            await RunAsync(t, "send-media", arguments, 1);
+            Assert(t.Requests().Count == 3 && await HashAsync(t.State) == unknownBefore, "Unknown voice intent was repeated or altered.");
+            t.AssertRequests("getuploadurl", "upload", "sendmessage");
+        }
     }
     private static byte[] SyntheticVoicePcm()
     {

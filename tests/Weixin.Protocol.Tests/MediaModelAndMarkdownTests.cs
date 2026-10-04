@@ -12,7 +12,7 @@ public static class MediaModelAndMarkdownTests
     {
         var tests = new Func<Task>[]
         {
-            TypedMediaRoundTripsAsync, VoiceTranscriptRemainsSeparateAsync, Utf16ChunksPreserveUnicodeAsync,
+            TypedMediaRoundTripsAsync, UploadedVoiceMetadataRemainsExplicitAsync, VoiceTranscriptRemainsSeparateAsync, Utf16ChunksPreserveUnicodeAsync,
             OfficialMarkdownVectorsAsync, MarkdownStreamingBoundariesAsync,
             MediaIntentPrecedesNetworkAsync, MediaSourceDedupeChecksContentAsync,
             UnknownMediaIsNotRetransmittedAsync, InvalidMediaFailsBeforeIntentAsync,
@@ -52,6 +52,21 @@ public static class MediaModelAndMarkdownTests
             !imageWire.GetProperty("image_item").TryGetProperty("url", out _), "Unset optional descriptors must be omitted from outgoing JSON.");
         var roundTrip = JsonSerializer.Deserialize<InboundMessage>(serialized, ILinkClient.Json)!;
         Assert(roundTrip.Items![0].ImageItem!.Media!.OtherFields!["future_cdn"].GetRawText() == "18446744073709551615" && roundTrip.OtherFields!["future_message"].GetString() == "retained", "Typed round trips must keep unknown descriptors.");
+        return Task.CompletedTask;
+    }
+
+    private static Task UploadedVoiceMetadataRemainsExplicitAsync()
+    {
+        var uploaded = new UploadedMedia(MediaKind.Voice, "fixture-query", new string('a', 32), 123, 128, "tone.silk");
+        var unspecified = JsonSerializer.Serialize(uploaded.ToMessageItem(2000, 6), ILinkClient.Json);
+        Assert(!unspecified.Contains("sample_rate", StringComparison.Ordinal) && !unspecified.Contains("bits_per_sample", StringComparison.Ordinal), "Unknown source metadata must remain omitted.");
+        var item = uploaded.ToMessageItem(2000, 6, 24000, 16);
+        Assert(item.Type == 3 && item.VoiceItem is { EncodeType: 6, Playtime: 2000, SampleRate: 24000, BitsPerSample: 16 }, "Explicit PCM source metadata must be retained with SILK type 6.");
+        using var wire = JsonDocument.Parse(JsonSerializer.Serialize(item, ILinkClient.Json));
+        var voice = wire.RootElement.GetProperty("voice_item");
+        Assert(voice.GetProperty("sample_rate").GetInt32() == 24000 && voice.GetProperty("bits_per_sample").GetInt32() == 16, "Official field names differ.");
+        Throws<ArgumentException>(() => uploaded.ToMessageItem(2000, 6, 0, 16));
+        Throws<ArgumentException>(() => uploaded.ToMessageItem(2000, 6, 24000, -1));
         return Task.CompletedTask;
     }
 

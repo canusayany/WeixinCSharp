@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Weixin.Protocol" />
+    <InternalsVisibleTo Include="Weixin.VoiceCodec.Tests" />
+  </ItemGroup>
+</Project>

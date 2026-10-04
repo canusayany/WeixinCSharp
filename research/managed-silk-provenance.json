@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/DrAbcOfficial/SilkCodec.NET",
+  "commit": "51205c364d685c78e64a0702474718358099caa3",
+  "license": "MIT",
+  "licensePath": "docs/SilkCodec.NET-LICENSE.txt",
+  "importedFileCount": 24,
+  "modifications": [
+    "Strict Tencent SILK framing and fail-closed decode; cooperative checkpoints and output bounds; explicit CDF bounds, range coder buffer/carry guards; NLSF and pulse codec array/overflow guards; production encoding uses the complete Greepar encoder rather than this simplified encoder",
+    "DecoderEngine rejects >1024 arithmetic payload instead of implicit PLC and rejects a fifth frame declaring continuation or missing continuation bytes.",
+    "Parameter pitch and inverse NSQ preflight validate every history, prediction, re-whitening, frame and output region before unsafe DSP."
+  ],
+  "files": [
+    {
+      "path": "src/Weixin.Silk/Upstream/SilkCodecException.cs",
+      "sourcePath": "src/SilkCodec.NET/SilkCodecException.cs",
+      "sourceBytes": 308,
+      "sourceSha256": "a87711c50a2d22640858c140207201b06a40ebe907f423aaa060d29d3dd21eb4",
+      "bytes": 308,
+      "sha256": "a87711c50a2d22640858c140207201b06a40ebe907f423aaa060d29d3dd21eb4",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/SilkDecoder.cs",
+      "sourcePath": "src/SilkCodec.NET/SilkDecoder.cs",
+      "sourceBytes": 3614,
+      "sourceSha256": "74cf59db5cfa41e58939dd7ff9f77dc3b00ee48140373a2e7410fbd77c1f863b",
+      "bytes": 4932,
+      "sha256": "3afe1dc8dc3d099929c723197ddf3ec3c57b64579791c29e55bab7b503625147",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/SilkEncoder.cs",
+      "sourcePath": "src/SilkCodec.NET/SilkEncoder.cs",
+      "sourceBytes": 2796,
+      "sourceSha256": "e00a911d6dab927009106ccde81f720c7530221580cbde9876cded4abc22883a",
+      "bytes": 3651,
+      "sha256": "17e7c3821574cd888cbb811b3594ce1e3b59af2d4340219b697d465a9a3cfd65",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/SilkOptions.cs",
+      "sourcePath": "src/SilkCodec.NET/SilkOptions.cs",
+      "sourceBytes": 2113,
+      "sourceSha256": "1a2b9351045862227e7e470de84f0a2056ed2d55b51914cbe7ef73ed8f93f2c8",
+      "bytes": 2113,
+      "sha256": "1a2b9351045862227e7e470de84f0a2056ed2d55b51914cbe7ef73ed8f93f2c8",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Concealment.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Concealment.cs",
+      "sourceBytes": 14571,
+      "sourceSha256": "70a93ecf45aff0c1ed61a5a0b24843a3686d17f955d981ebc4e8a4e42ad5300a",
+      "bytes": 14571,
+      "sha256": "70a93ecf45aff0c1ed61a5a0b24843a3686d17f955d981ebc4e8a4e42ad5300a",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/DecoderEngine.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/DecoderEngine.cs",
+      "sourceBytes": 9218,
+      "sourceSha256": "273c554df57a520a25f3f92beb910b46af7ed53a56661278718a67f89387434f",
+      "bytes": 9545,
+      "sha256": "9b637e2fb4521e222de51745ff6c13c7dd1fa468072371c95baeab29cf88bb96",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/DecoderEngine.Nsq.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/DecoderEngine.Nsq.cs",
+      "sourceBytes": 5993,
+      "sourceSha256": "d478a381513e9d891de1f9bce68254a2289258fde959934526d13356666eaa22",
+      "bytes": 10301,
+      "sha256": "d3e0d6c922c788e0e24a2317f2490115a38ae87b416b152dd0eb80820235455a",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/DecoderEngine.Parameters.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/DecoderEngine.Parameters.cs",
+      "sourceBytes": 5647,
+      "sourceSha256": "e040a0beec8c43c687e0b76acdfa388374067671af85d945baeb01828195d569",
+      "bytes": 7466,
+      "sha256": "d56f42fe0eadde14a983ef07585eadbc8b57381c9aa114d8c3e63f531124cad8",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Fx.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Fx.cs",
+      "sourceBytes": 7306,
+      "sourceSha256": "f0258368840b47ab79a8fa8e7f252bcf06b7b07d910d0763eb3b3c26e2ba1ea8",
+      "bytes": 7306,
+      "sha256": "f0258368840b47ab79a8fa8e7f252bcf06b7b07d910d0763eb3b3c26e2ba1ea8",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Gains.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Gains.cs",
+      "sourceBytes": 1870,
+      "sourceSha256": "9f829ed47274069c5bebb3c4b588fe54d92bbc9f407e0a3e590ca153213c4fad",
+      "bytes": 1870,
+      "sha256": "9f829ed47274069c5bebb3c4b588fe54d92bbc9f407e0a3e590ca153213c4fad",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Lpc.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Lpc.cs",
+      "sourceBytes": 16809,
+      "sourceSha256": "d58076695b92add60f8211b1305531dca94ed340ab2aabfba1d23d593839b3dc",
+      "bytes": 16809,
+      "sha256": "d58076695b92add60f8211b1305531dca94ed340ab2aabfba1d23d593839b3dc",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Nlsf.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Nlsf.cs",
+      "sourceBytes": 6220,
+      "sourceSha256": "0a41d8b369f95ffd64f866125d86f522462e4f12294a63c0ffa3d54a27b4f240",
+      "bytes": 8722,
+      "sha256": "f1c8fe94c8a8d46a919b5f326e503cc283b089ff678d2fab92148e04cd9cc4cb",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/PulseCodec.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/PulseCodec.cs",
+      "sourceBytes": 11827,
+      "sourceSha256": "c6d0a9c13267dc45f9dc7514ff0a105e51de6ae01bbcb3178089535a3371072a",
+      "bytes": 14886,
+      "sha256": "2131d1c379de7b16e9cf6cef8a2de4bf902c00e72dc8825464c6e195eee7af49",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/RangeCoder.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/RangeCoder.cs",
+      "sourceBytes": 7485,
+      "sourceSha256": "498a3c0575bb098c2f766cad3041a5eaeac7ad964d8a783bd6db91baf89dc91a",
+      "bytes": 11461,
+      "sha256": "6807a8bef8dd574f15871589a07424fe5eabd8aa993cb9faa6a64e9da63c0414",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/SilkContainer.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/SilkContainer.cs",
+      "sourceBytes": 3193,
+      "sourceSha256": "66684f8856d1a1f370fc278443178b60b0604c59dcb63c84be730308dd4b34b3",
+      "bytes": 3405,
+      "sha256": "6a31f03715228a8b640994575b9dc0c2e2f138bf2d753929185aa76e8c88ddfc",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/SilkLimits.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/SilkLimits.cs",
+      "sourceBytes": 3418,
+      "sourceSha256": "e462a892c99880fc62efb242d73c111f5f538619f80cdcfbba51b1a3c09eda84",
+      "bytes": 3418,
+      "sha256": "e462a892c99880fc62efb242d73c111f5f538619f80cdcfbba51b1a3c09eda84",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/SilkUnsafe.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/SilkUnsafe.cs",
+      "sourceBytes": 2936,
+      "sourceSha256": "a70b013fd696bf83d2f83bac3a2aa751799e973b3de02f9ce99def618946bde2",
+      "bytes": 2936,
+      "sha256": "a70b013fd696bf83d2f83bac3a2aa751799e973b3de02f9ce99def618946bde2",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Encoder/EncoderEngine.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Encoder/EncoderEngine.cs",
+      "sourceBytes": 10983,
+      "sourceSha256": "d98d265de2069d738ce7d458b558a6f6f4c2e5477aad14f39aee8d3ed17312c4",
+      "bytes": 11007,
+      "sha256": "c91976965eb710688122fd73c7261c7609a7669415538f976fd40fece92d0c10",
+      "localModification": true
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Resample/SilkResampler.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Resample/SilkResampler.cs",
+      "sourceBytes": 3669,
+      "sourceSha256": "5780fa1624fd265251add3e65bf1e026a24faffd9ba9710c104e247787dec233",
+      "bytes": 3669,
+      "sha256": "5780fa1624fd265251add3e65bf1e026a24faffd9ba9710c104e247787dec233",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Tables/EntropyTables.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Tables/EntropyTables.cs",
+      "sourceBytes": 18291,
+      "sourceSha256": "79445a603a12950c1242117601e8ec7790c1be4cf37e463611b9cc551dff0963",
+      "bytes": 18291,
+      "sha256": "79445a603a12950c1242117601e8ec7790c1be4cf37e463611b9cc551dff0963",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Tables/NlsfTables.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Tables/NlsfTables.cs",
+      "sourceBytes": 56450,
+      "sourceSha256": "7e7eff0acdba2367a55f8e992ae76e2b7d785d2ac5a27e33369fbdb049032d55",
+      "bytes": 56450,
+      "sha256": "7e7eff0acdba2367a55f8e992ae76e2b7d785d2ac5a27e33369fbdb049032d55",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Tables/OtherTables.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Tables/OtherTables.cs",
+      "sourceBytes": 4926,
+      "sourceSha256": "d7221c96236ada844fd224a5770e048e0dc8de50e4ec426525cf8103ee1e19d7",
+      "bytes": 4926,
+      "sha256": "d7221c96236ada844fd224a5770e048e0dc8de50e4ec426525cf8103ee1e19d7",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Tables/PitchTables.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Tables/PitchTables.cs",
+      "sourceBytes": 10689,
+      "sourceSha256": "49a6dfc06b2e5f146b5426c60caa206ee545e32a51136d1b0037d6608efdc688",
+      "bytes": 10689,
+      "sha256": "49a6dfc06b2e5f146b5426c60caa206ee545e32a51136d1b0037d6608efdc688",
+      "localModification": false
+    },
+    {
+      "path": "src/Weixin.Silk/Upstream/Internal/Tables/ResamplerTables.cs",
+      "sourcePath": "src/SilkCodec.NET/Internal/Tables/ResamplerTables.cs",
+      "sourceBytes": 11674,
+      "sourceSha256": "4eb76f0735c6a663f2a4760b13e16ec821b7cea314ba349b9c194a2b4856bbd2",
+      "bytes": 11674,
+      "sha256": "4eb76f0735c6a663f2a4760b13e16ec821b7cea314ba349b9c194a2b4856bbd2",
+      "localModification": false
+    }
+  ],
+  "productionExternalCodecProcesses": 0,
+  "accountOrRealVoiceDataIncluded": false
+}

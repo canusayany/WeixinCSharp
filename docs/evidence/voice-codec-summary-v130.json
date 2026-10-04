@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 2,
+  "scope": "pure-csharp-codec-and-independent-legacy-golden-vectors",
+  "realWeChatDeliveryVerified": false,
+  "completedUtc": "2026-10-04T03:24:22.1338729+00:00",
+  "externalProcessesStarted": 0,
+  "codecAssemblySha256": "0014737D811F75457675FE0F83AE44E3ABAB5AFBDAEBDD6B4A52157906DA1C49",
+  "silkAssemblySha256": "0D0733D0F0015A16712028573816F63B10AA75CAA6C691FDB581C59EDE1B1468",
+  "goldenManifestSha256": "ABFE68EC7F4BD10F48AF7D5E0FB709B9B0ADE8F529EB5B7CC59ED9FA930B7DE1",
+  "total": 18,
+  "passed": 18,
+  "failed": 0,
+  "cases": [
+    {
+      "Name": "pcm_encode_tencent_header_actual_duration_preserves_input",
+      "Passed": true,
+      "DurationMilliseconds": 121,
+      "Error": null
+    },
+    {
+      "Name": "silk_decode_pcm16_mono_wave_actual_bytes",
+      "Passed": true,
+      "DurationMilliseconds": 29,
+      "Error": null
+    },
+    {
+      "Name": "independent_legacy_silk_golden_vectors_decode_at_all_rates",
+      "Passed": true,
+      "DurationMilliseconds": 113,
+      "Error": null
+    },
+    {
+      "Name": "wave_input_encodes_identically_to_same_pcm",
+      "Passed": true,
+      "DurationMilliseconds": 61,
+      "Error": null
+    },
+    {
+      "Name": "complete_managed_encoder_all_api_rates_and_frame_cancellation",
+      "Passed": true,
+      "DurationMilliseconds": 401,
+      "Error": null
+    },
+    {
+      "Name": "partial_packet_and_short_audio_pad_to_legacy_compatible_40ms",
+      "Passed": true,
+      "DurationMilliseconds": 2,
+      "Error": null
+    },
+    {
+      "Name": "explicit_terminal_packet_decodes_identically",
+      "Passed": true,
+      "DurationMilliseconds": 4,
+      "Error": null
+    },
+    {
+      "Name": "pcm_empty_odd_rate_and_duration_guards",
+      "Passed": true,
+      "DurationMilliseconds": 0,
+      "Error": null
+    },
+    {
+      "Name": "wave_stereo_compression_rate_and_structure_guards",
+      "Passed": true,
+      "DurationMilliseconds": 2,
+      "Error": null
+    },
+    {
+      "Name": "silk_headers_truncation_zero_oversize_and_minimum_packet_guards",
+      "Passed": true,
+      "DurationMilliseconds": 1,
+      "Error": null
+    },
+    {
+      "Name": "silk_duration_and_worst_case_output_guard_precede_decoder",
+      "Passed": true,
+      "DurationMilliseconds": 0,
+      "Error": null
+    },
+    {
+      "Name": "pre_cancelled_calls_return_cancellation",
+      "Passed": true,
+      "DurationMilliseconds": 0,
+      "Error": null
+    },
+    {
+      "Name": "active_managed_encoding_cooperates_with_cancellation",
+      "Passed": true,
+      "DurationMilliseconds": 29,
+      "Error": null
+    },
+    {
+      "Name": "operation_timeout_is_generic_and_operation_is_joined",
+      "Passed": true,
+      "DurationMilliseconds": 0,
+      "Error": null
+    },
+    {
+      "Name": "hard_configuration_guards",
+      "Passed": true,
+      "DurationMilliseconds": 0,
+      "Error": null
+    },
+    {
+      "Name": "managed_output_limit_and_corrupt_payload_fail_without_audio",
+      "Passed": true,
+      "DurationMilliseconds": 1,
+      "Error": null
+    },
+    {
+      "Name": "concurrent_operations_own_independent_codec_state",
+      "Passed": true,
+      "DurationMilliseconds": 99,
+      "Error": null
+    },
+    {
+      "Name": "packet_continuation_over_five_frames_or_missing_frame_is_rejected",
+      "Passed": true,
+      "DurationMilliseconds": 2,
+      "Error": null
+    }
+  ],
+  "isolation": {
+    "syntheticAudioOnly": true,
+    "accountStateAccess": false,
+    "networkRequests": 0
+  }
+}

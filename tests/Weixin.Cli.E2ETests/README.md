@@ -30,7 +30,7 @@ followed by an intact emoji, and verify completed/unknown chunk replay behavior.
 Typing cases launch the executable for start/stop, empty or non-JSON HTTP success,
 explicit config acknowledgement, cached config, authentication rejection, and
 cancellation while the start request is actually pending. Codec command cases run
-the bundled runtime from the published directory for synthetic PCM/WAV/SILK
+the managed codec from the published directory for synthetic PCM/WAV/SILK
 conversion without state/fixture arguments; an inbound SILK download also verifies
 automatic WAV conversion while preserving the original. These are simulated/local
 checks, independently of real-phone typing or native-voice delivery.

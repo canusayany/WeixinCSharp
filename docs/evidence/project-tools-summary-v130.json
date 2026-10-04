@@ -1,0 +1,82 @@
+{
+  "formatVersion": 1,
+  "scope": "offline-csharp-project-tools",
+  "startedUtc": "2026-10-04T03:28:34.5062584+00:00",
+  "completedUtc": "2026-10-04T03:28:34.6387918+00:00",
+  "realWeChatAccountUsed": false,
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "headings_h1_through_h6_and_navigation",
+      "passed": true,
+      "durationMilliseconds": 10
+    },
+    {
+      "name": "malformed_heading_lines_always_advance",
+      "passed": true,
+      "durationMilliseconds": 5
+    },
+    {
+      "name": "raw_html_and_attribute_content_are_encoded",
+      "passed": true,
+      "durationMilliseconds": 0
+    },
+    {
+      "name": "unsafe_url_schemes_are_removed",
+      "passed": true,
+      "durationMilliseconds": 4
+    },
+    {
+      "name": "table_lists_code_bold_and_internal_marker",
+      "passed": true,
+      "durationMilliseconds": 1
+    },
+    {
+      "name": "document_version_date_and_offline_security_policy",
+      "passed": true,
+      "durationMilliseconds": 0
+    },
+    {
+      "name": "package_allowlist_excludes_private_build_and_old_runtime",
+      "passed": true,
+      "durationMilliseconds": 41
+    },
+    {
+      "name": "package_rejects_stale_node_without_replacing_archive",
+      "passed": true,
+      "durationMilliseconds": 4
+    },
+    {
+      "name": "private_path_filter_catches_traversal_environment_and_qr",
+      "passed": true,
+      "durationMilliseconds": 0
+    },
+    {
+      "name": "package_rejects_non_csharp_application_source",
+      "passed": true,
+      "durationMilliseconds": 13
+    },
+    {
+      "name": "audit_clean_packages_metadata_only",
+      "passed": true,
+      "durationMilliseconds": 7
+    },
+    {
+      "name": "audit_detects_unicode_escaped_secret_without_echoing_value",
+      "passed": true,
+      "durationMilliseconds": 7
+    },
+    {
+      "name": "audit_detects_matching_private_media_bytes",
+      "passed": true,
+      "durationMilliseconds": 7
+    },
+    {
+      "name": "audit_rejects_private_and_duplicate_zip_entries",
+      "passed": true,
+      "durationMilliseconds": 10
+    }
+  ]
+}

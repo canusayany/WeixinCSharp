@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "scope": "offline-dotnet-pipeline",
+  "version": "1.3.0",
+  "startedUtc": "2026-10-04T03:24:13.206873+00:00",
+  "completedUtc": "2026-10-04T03:26:05.8302228+00:00",
+  "realWeChatAccountUsed": false,
+  "passed": true,
+  "stages": [
+    {
+      "name": "locked-restore",
+      "exitCode": 0,
+      "durationMilliseconds": 958
+    },
+    {
+      "name": "release-build",
+      "exitCode": 0,
+      "durationMilliseconds": 933
+    },
+    {
+      "name": "unit",
+      "exitCode": 0,
+      "durationMilliseconds": 5637
+    },
+    {
+      "name": "managed-codec",
+      "exitCode": 0,
+      "durationMilliseconds": 1462
+    },
+    {
+      "name": "project-tools",
+      "exitCode": 0,
+      "durationMilliseconds": 649
+    },
+    {
+      "name": "publish",
+      "exitCode": 0,
+      "durationMilliseconds": 1537
+    },
+    {
+      "name": "published-cli-offline-e2e",
+      "exitCode": 0,
+      "durationMilliseconds": 100660
+    },
+    {
+      "name": "post-publish-locked-restore",
+      "exitCode": 0,
+      "durationMilliseconds": 780
+    }
+  ]
+}

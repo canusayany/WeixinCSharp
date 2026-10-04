@@ -13,14 +13,16 @@
 | 文件 | 上传后发送普通文件，已在手机收到并打开 |
 | 图片、视频、音频附件 | 提供接口；短视频已在微信电脑版播放，音频按文件附件发送 |
 | 正在输入 | 支持开始、定时刷新和停止，已在微信电脑版看到提示 |
-| 原生语音气泡 | **尚未通过**。实验请求被 API 接受，但微信没有显示语音气泡 |
+| 原生语音气泡 | **尚未通过**。本轮 API 接受，电脑版未观察到新气泡，手机未确认 |
 | 媒体接收、SILK 编解码 | 提供下载、解密和本地转换；详细验证范围见记录 |
+
+表中的文字、Markdown、视频、打字状态和文件实机记录来自 1.2.1。1.3.0 已重新完成离线检查，新增实机观察仅确认配套文字可见；原生语音尚未通过。
 
 `Sent` 只表示 API 确认，不代表对方已经看到或播放。具体样本和限制放在 [验证记录](docs/VALIDATION.md)，协议来源、长度限制和封号风险见 [研究报告](docs/REPORT.md)。
 
 ## 先跑起来
 
-从 [Releases](https://github.com/canusayany/WeixinCSharp/releases) 下载 Windows x64 成品。成品包含 .NET 和语音转换运行时，无需另装 Node.js；解压后请保留整个目录。
+从 [Releases](https://github.com/canusayany/WeixinCSharp/releases) 下载 Windows x64 成品。1.3.0 起协议、SILK 编解码和项目工具均用 C#，成品只带 .NET 运行时；解压后请保留整个目录。
 
 在程序目录打开 PowerShell：
 
@@ -139,14 +141,30 @@ dotnet run --project SendFile -- .\document.pdf
 
 请求字段和默认行为按公开源码实现，不添加本项目的标识，也不做隐藏客户端或绕过风控的处理。公开源码兼容不等于腾讯授权，无法保证零封号或接口永久稳定；出现会话或权限异常时程序会停止请求，原因仍需核实。
 
+## 本地语音转换
+
+`VoiceCodec` 用完整的托管 SILK 编码器生成腾讯格式的 `0x02 + #!SILK_V3`，不启动外部编解码程序。WAV 入口接受 24 kHz、单声道、16 位 PCM；PCM 入口另支持 8/12/16/32/44.1/48 kHz。短输入至少补到 40 ms，尾帧补零，返回的时长包含补齐部分。
+
+```csharp
+var codec = new VoiceCodec();
+var encoded = await codec.EncodeWaveToSilkAsync(
+    await File.ReadAllBytesAsync("voice.wav"));
+await File.WriteAllBytesAsync("voice.silk", encoded.Data);
+var decoded = await codec.DecodeSilkToWaveAsync(encoded.Data);
+await File.WriteAllBytesAsync("voice-decoded.wav", decoded.Data);
+```
+
+实验发送使用 `MediaKind.Voice`，将 `encoded.DurationMilliseconds` 传给上传和 `ToMessageItem(duration, 6, 24000, 16)`，再交给 `SendBoundItemAsync`。`6` 是官方定义的 SILK 类型，后两项是该 WAV 源的采样率与位深；输入来源不明时不要猜测这两个字段。**编码正确和 API 接受仍不等于微信显示原生语音气泡**，当前实机结果见验证记录。
+
+1.3.0 删除了旧 `VoiceCodec` 的 Node 路径构造参数及运行时路径选项，原异步编解码方法继续保留。调用方需要重新编译。
+
 ## 从源码构建
 
-需要 Windows 和 .NET 10 SDK。Git 仓库不存放 Node.js 二进制；首次克隆后，先运行恢复脚本，下载固定的 Node.js 24.19.0 并核对 SHA-256。Release 成品已带运行时，不需要这一步。
+需要 Windows 和 .NET 10 SDK。
 
 在仓库根目录运行：
 
 ```powershell
-.\scripts\Restore-VoiceRuntime.ps1
 dotnet restore WeixinAssistant.slnx --locked-mode
 dotnet build WeixinAssistant.slnx -c Release --no-restore
 dotnet run --project tests/Weixin.Protocol.Tests -c Release --no-build
@@ -156,17 +174,20 @@ dotnet run --project src/Weixin.Cli -c Release -- login --open
 测试项目是 Console 程序，使用 `dotnet run` 执行；`dotnet test` 不会运行这些检查。单元测试和离线进程测试不连接真实微信账号。完整检查包含本地 codec 和发布后的 EXE 测试：
 
 ```powershell
-.\scripts\Test-All.ps1 -OutputDirectory artifacts/tests/my-run
+dotnet run --project src/Weixin.Tools -- test-all --output artifacts/tests/my-run
 ```
 
 每次检查使用新的输出目录。构建 Windows x64 成品：
 
 ```powershell
-dotnet publish src/Weixin.Cli -c Release -r win-x64 --self-contained true -o artifacts/win-x64
+dotnet run --project src/Weixin.Tools -- render-report
+dotnet run --project src/Weixin.Tools -- package --skip-build
 ```
 
-协议库没有第三方 NuGet 依赖。CLI 使用 QRCoder 生成二维码；SILK 编解码通过 `runtime/voice` 下的固定 Node.js 和 silk-wasm 运行，移动成品时不要漏掉这个目录。
+完整检查会发布到新的 `artifacts/win-x64-1.3.0`，再实际启动该 EXE 做离线进程测试。已有发布目录会被拒绝复用，重新检查前请将它移到另一处保留。打包命令使用已检查的成品；工具说明见 [Weixin.Tools](src/Weixin.Tools/README.md)。
+
+协议库没有第三方 NuGet 依赖。CLI 使用 QRCoder 生成二维码；`Weixin.Silk` 随源码带有两个托管组件及原始许可。编码采用完整的 Jitsi/Skype 移植，解码使用经过边界检查修补的 DrAbc 实现。官方 TypeScript/C 研究快照仅供对照，不参与构建或运行。
 
 ## 许可
 
-项目源码采用 [MIT](LICENSE)。腾讯参考源码、QRCoder、.NET、Node.js 和语音组件的原始许可保留在仓库中，详见 [第三方来源与许可](THIRD-PARTY-NOTICES.md)。
+项目自有源码采用 [MIT](LICENSE)。腾讯参考源码、QRCoder、.NET 和语音组件保留各自许可，包括 SILK 编码器的 Apache-2.0 与 Skype BSD-3-Clause-Clear。详见 [第三方来源与许可](THIRD-PARTY-NOTICES.md)。

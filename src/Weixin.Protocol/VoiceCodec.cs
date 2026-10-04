@@ -1,37 +1,32 @@
 using System.Buffers.Binary;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using SilkCodec.NET;
+using Weixin.Silk;
 
 namespace Weixin.Protocol;
 
 public sealed record VoiceCodecResult(byte[] Data, int DurationMilliseconds);
 
 /// <summary>
-/// Local Tencent-format SILK encoding and PCM16 mono WAV decoding using pinned silk-wasm 3.7.1.
-/// Deployment paths are trusted configuration; media bytes cannot select code or arguments.
-/// Caller owns input/result arrays. Private intermediate buffers are cleared after use.
+/// Local Tencent-format SILK encoding and PCM16 mono WAV decoding in C#.
+/// Each operation owns its codec state and checks cancellation between 20ms frames.
+/// Caller owns input/result arrays. Entry copies and codec staging buffers are cleared after use;
+/// DSP engine state is reclaimed by the managed runtime and is not guaranteed to be zeroed.
 /// Limits are local resource guards, not published WeChat account/service quotas.
 /// </summary>
 public sealed class VoiceCodec
 {
     public const int DefaultSampleRate = 24000;
     private const int HardByteLimit = 100 * 1024 * 1024;
-    // Pinned common.h: 250 bytes/frame * 5 internal frames/packet. The decoder
-    // prefetches two packets; guard its unchecked C input reads before starting it.
+    // Tencent legacy SILK: up to 250 bytes/frame, five internal frames/packet.
     private const int MaxSilkPacketBytes = 1250;
-    public string RuntimeDirectory { get; }
-    public string NodeExecutablePath { get; }
     public int MaxDurationMilliseconds { get; init; } = 60_000;
     public int MaxInputBytes { get; init; } = 16 * 1024 * 1024;
     public int MaxOutputBytes { get; init; } = 16 * 1024 * 1024;
     public TimeSpan OperationTimeout { get; init; } = TimeSpan.FromSeconds(30);
 
-    public VoiceCodec(string? runtimeDirectory = null, string? nodeExecutablePath = null)
-    {
-        RuntimeDirectory = Path.GetFullPath(runtimeDirectory ?? Path.Combine(AppContext.BaseDirectory, "runtime", "voice"));
-        NodeExecutablePath = Path.GetFullPath(nodeExecutablePath ?? Path.Combine(RuntimeDirectory, OperatingSystem.IsWindows() ? "node.exe" : "node"));
-    }
+    public VoiceCodec() { }
 
     public async Task<VoiceCodecResult> EncodePcmToSilkAsync(byte[] monoS16le, int sampleRate = DefaultSampleRate,
         CancellationToken ct = default)
@@ -45,7 +40,7 @@ public sealed class VoiceCodec
         if (paddedLength > MaxInputBytes || (long)paddedLength * 1000 > (long)MaxDurationMilliseconds * sampleRate * 2)
             throw new ArgumentException("语音时长或 PCM 大小超过本地保护上限。");
         // SILK uses 20ms packets. Pad the tail, and provide the two packets required
-        // by the pinned decoder's lookahead. Returned duration includes that silence.
+        // for interoperability with older decoders. Returned duration includes that silence.
         var padded = new byte[paddedLength]; monoS16le.CopyTo(padded, 0);
         try
         {
@@ -80,7 +75,7 @@ public sealed class VoiceCodec
         ValidateConfiguration(); ValidateRate(sampleRate); ValidateInput(silk); ct.ThrowIfCancellationRequested();
         var minimumDuration = ParsedSilkPacketMinimumDuration(silk);
         // A crafted packet can carry up to five internal frames. Reserve that
-        // conservative bound before invoking WASM, then verify actual duration.
+        // conservative bound before managed decoding, then verify actual duration.
         if ((long)minimumDuration * sampleRate * 2 / 1000 * 5 + 44 > MaxOutputBytes)
             throw new ArgumentException("解码语音大小超过本地保护上限。");
         var decoded = await InvokeAsync(2, silk, sampleRate, MaxOutputBytes - 44, ct).ConfigureAwait(false);
@@ -107,99 +102,58 @@ public sealed class VoiceCodec
 
     private async Task<VoiceCodecResult> InvokeAsync(int mode, byte[] input, int sampleRate, int outputLimit, CancellationToken ct)
     {
-        var bridge = Path.Combine(RuntimeDirectory, "codec-bridge.mjs");
-        if (!File.Exists(NodeExecutablePath) || !File.Exists(bridge) ||
-            !File.Exists(Path.Combine(RuntimeDirectory, "silk-wasm", "lib", "index.mjs")) ||
-            !File.Exists(Path.Combine(RuntimeDirectory, "silk-wasm", "lib", "silk.wasm")))
-            throw new InvalidOperationException("程序缺少随包提供的 runtime/voice 编解码运行时。");
-        var start = new ProcessStartInfo(NodeExecutablePath)
+        var privateInput = input.ToArray();
+        var started = Stopwatch.GetTimestamp();
+        void Checkpoint()
         {
-            UseShellExecute = false, CreateNoWindow = true, WorkingDirectory = RuntimeDirectory,
-            RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true
-        };
-        start.Environment.Remove("NODE_OPTIONS"); start.Environment.Remove("NODE_PATH");
-        start.ArgumentList.Add("--permission"); start.ArgumentList.Add("--allow-fs-read=" + RuntimeDirectory);
-        start.ArgumentList.Add("--no-addons"); start.ArgumentList.Add("--no-warnings"); start.ArgumentList.Add(bridge);
-        using var process = new Process { StartInfo = start };
-        try { if (!process.Start()) throw new InvalidOperationException("语音编解码进程未能启动。"); }
-        catch (Exception ex) when (ex is Win32Exception or IOException)
-        { throw new InvalidOperationException("语音编解码运行时未能启动，请核对随包运行时。"); }
-        using var deadline = CancellationTokenSource.CreateLinkedTokenSource(ct);
-        deadline.CancelAfter(OperationTimeout);
-        using var stop = deadline.Token.Register(() => KillOwnedProcess(process));
-        var token = deadline.Token;
-        async Task<T> Guard<T>(Func<Task<T>> action)
-        { try { return await action().ConfigureAwait(false); } catch { deadline.Cancel(); throw; } }
-        var write = Guard(async () =>
-        {
-            var header = new byte[28];
-            try
-            {
-                "WXC1"u8.CopyTo(header); BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(4), 1);
-                BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(8), (uint)mode); BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(12), (uint)sampleRate);
-                BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(16), (uint)input.Length);
-                BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(20), (uint)MaxDurationMilliseconds);
-                BinaryPrimitives.WriteUInt32LittleEndian(header.AsSpan(24), (uint)outputLimit);
-                await process.StandardInput.BaseStream.WriteAsync(header, token).ConfigureAwait(false);
-                await process.StandardInput.BaseStream.WriteAsync(input, token).ConfigureAwait(false);
-                await process.StandardInput.BaseStream.FlushAsync(token).ConfigureAwait(false);
-                process.StandardInput.Close(); return true;
-            }
-            finally { CryptographicOperations.ZeroMemory(header); }
-        });
-        var read = Guard(() => ReadResponseAsync(process.StandardOutput.BaseStream, outputLimit, token));
-        var error = Guard(async () =>
-        {
-            var buffer = new byte[1024]; var count = 0;
-            try
-            {
-                int got; while ((got = await process.StandardError.BaseStream.ReadAsync(buffer, token).ConfigureAwait(false)) != 0)
-                { count += got; if (count > 65536) throw new InvalidDataException("语音编解码诊断输出超过本地上限。"); CryptographicOperations.ZeroMemory(buffer); }
-                return count;
-            }
-            finally { CryptographicOperations.ZeroMemory(buffer); }
-        });
-        var exit = Guard(async () => { await process.WaitForExitAsync(token).ConfigureAwait(false); return process.ExitCode; });
+            ct.ThrowIfCancellationRequested();
+            if (Stopwatch.GetElapsedTime(started) >= OperationTimeout)
+                throw new TimeoutException("语音转换超过本地时间保护上限。");
+        }
         try
         {
-            await Task.WhenAll(write, read, error, exit).ConfigureAwait(false);
-            if (exit.Result != 0 || error.Result != 0 || read.Result.DurationMilliseconds is <= 0 ||
-                read.Result.DurationMilliseconds > MaxDurationMilliseconds)
-                throw new InvalidDataException("语音编解码结果无效。");
-            return read.Result;
+            // The task is joined: cancellation never abandons a codec in the background.
+            return await Task.Run(() =>
+            {
+                Checkpoint();
+                byte[]? result = null;
+                try
+                {
+                    if (mode == 1)
+                    {
+                        result = ManagedSilkEncoder.Encode(privateInput, sampleRate, outputLimit, Checkpoint);
+                    }
+                    else
+                    {
+                        var decoder = new SilkDecoder(new SilkDecoderOptions { SampleRate = sampleRate })
+                        { Checkpoint = Checkpoint, MaximumOutputBytes = outputLimit };
+                        result = decoder.Decode(privateInput);
+                    }
+                    Checkpoint();
+                    if (result.Length == 0 || result.Length > outputLimit)
+                        throw new InvalidDataException("语音转换输出为空或超过保护上限。");
+                    var duration = mode == 1 ? ParsedSilkPacketMinimumDuration(result) :
+                        checked((int)((long)result.Length * 1000 / (sampleRate * 2)));
+                    if (duration <= 0 || duration > MaxDurationMilliseconds ||
+                        mode == 2 && result.Length != (long)duration * sampleRate * 2 / 1000)
+                        throw new InvalidDataException("语音转换时长或采样字节数异常。");
+                    var completed = new VoiceCodecResult(result, duration);
+                    result = null;
+                    return completed;
+                }
+                finally { if (result is not null) CryptographicOperations.ZeroMemory(result); }
+            }, ct).ConfigureAwait(false);
         }
-        catch
-        {
-            deadline.Cancel(); KillOwnedProcess(process);
-            try { await process.WaitForExitAsync(CancellationToken.None).WaitAsync(TimeSpan.FromSeconds(5)).ConfigureAwait(false); }
-            catch (Exception ex) when (ex is InvalidOperationException or TimeoutException) { }
-            if (read.IsCompletedSuccessfully) CryptographicOperations.ZeroMemory(read.Result.Data);
-            if (ct.IsCancellationRequested) throw new OperationCanceledException(ct);
-            throw new InvalidDataException("语音编解码未能完成，请核对输入和随包运行时；未输出原始诊断或音频数据。");
-        }
-    }
-
-    private static async Task<VoiceCodecResult> ReadResponseAsync(Stream stream, int outputLimit, CancellationToken ct)
-    {
-        var header = new byte[16]; byte[]? data = null;
-        try
-        {
-            await stream.ReadExactlyAsync(header, ct).ConfigureAwait(false);
-            if (!header.AsSpan(0, 4).SequenceEqual("WXR1"u8) || BinaryPrimitives.ReadUInt32LittleEndian(header.AsSpan(4)) != 1)
-                throw new InvalidDataException("语音编解码响应格式异常。");
-            var duration = BinaryPrimitives.ReadUInt32LittleEndian(header.AsSpan(8));
-            var length = BinaryPrimitives.ReadUInt32LittleEndian(header.AsSpan(12));
-            if (length is 0 || length > outputLimit || duration > int.MaxValue) throw new InvalidDataException("语音编解码响应超过上限。");
-            data = new byte[(int)length]; await stream.ReadExactlyAsync(data, ct).ConfigureAwait(false);
-            if (await stream.ReadAsync(header.AsMemory(0, 1), ct).ConfigureAwait(false) != 0)
-                throw new InvalidDataException("语音编解码响应有多余内容。");
-            var result = new VoiceCodecResult(data, (int)duration); data = null; return result;
-        }
-        finally { CryptographicOperations.ZeroMemory(header); if (data is not null) CryptographicOperations.ZeroMemory(data); }
+        catch (OperationCanceledException) when (ct.IsCancellationRequested)
+        { throw new OperationCanceledException(ct); }
+        catch (Exception ex) when (ex is SilkCodecException or TimeoutException or IndexOutOfRangeException or
+            OverflowException or ArgumentOutOfRangeException)
+        { throw new InvalidDataException("语音转换未能完成，请核对输入；没有调用外部编解码程序。"); }
+        finally { CryptographicOperations.ZeroMemory(privateInput); }
     }
 
     // Packet count is a minimum duration: SILK packets may contain 1..5 frames.
-    // Actual decoded duration is derived from PCM bytes by the bridge, not getDuration.
+    // Actual decoded duration is derived from PCM bytes, rather than packet count.
     private int ParsedSilkPacketMinimumDuration(byte[] data)
     {
         var offset = 0;
@@ -263,6 +217,4 @@ public sealed class VoiceCodec
             MaxDurationMilliseconds is < 20 or > 3_600_000 || OperationTimeout <= TimeSpan.Zero || OperationTimeout > TimeSpan.FromMinutes(5))
             throw new ArgumentException("语音编解码本地保护配置无效。");
     }
-    private static void KillOwnedProcess(Process process)
-    { try { if (!process.HasExited) process.Kill(entireProcessTree: true); } catch (Exception ex) when (ex is InvalidOperationException or Win32Exception) { } }
 }

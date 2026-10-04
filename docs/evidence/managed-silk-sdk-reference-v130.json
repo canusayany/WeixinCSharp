@@ -1,0 +1,17 @@
+{
+  "Input": "artifacts/tests/managed-codec-full-encoder-first/synthetic.silk",
+  "InputBytes": 4756,
+  "InputSha256": "A25B71DA7A6AE1B00EFD556600A9A7543EDA7FE88188A96AF9974184000AFAD2",
+  "ProductionWavBytes": 96044,
+  "ProductionWavSha256": "E14586CB18D6513C27523C4184494A16E47ED529B084DC78EBBA3C5A395AC3BC",
+  "WavPcmOffset": 44,
+  "ReferenceExit": 0,
+  "ReferencePcmSha256": "4AACEA6C88B3E5473802B6E395F60A813D008233A77F7223E67A5CBBC9C79DA4",
+  "ProductionPcmSha256": "4AACEA6C88B3E5473802B6E395F60A813D008233A77F7223E67A5CBBC9C79DA4",
+  "Comparison": {
+    "Bytes": 96000,
+    "DifferentSamples": 0,
+    "Samples": 48000,
+    "BitExact": true
+  }
+}

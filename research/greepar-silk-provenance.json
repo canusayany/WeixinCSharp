@@ -1,0 +1,1317 @@
+{
+  "Repository": "https://github.com/greepar/SilkCodec.NET",
+  "Commit": "01e40689c61e399e193524ea83a4f89e27604201",
+  "LicenseExpression": "Apache-2.0 AND BSD-3-Clause-Clear",
+  "ArchiveSha256": "0A78052E64BEDC5D47123C050109CC337AD6C025AB6B0B59CF9A25188E9FEF95",
+  "IncludedUpstreamCsFiles": 126,
+  "UnmodifiedUpstreamCsFiles": 118,
+  "ModifiedUpstreamCsFiles": 8,
+  "Excluded": [
+    "SilkCodec.NET/SilkEncoder.cs",
+    "SilkCodec.NET/SilkEncoderOptions.cs",
+    "SilkCodec.NET/JitsiSilkEncoder.cs",
+    "SilkCodec.NET/AudioPreprocessor.cs",
+    "SilkCodec.NET/SilkMp3AudioProfile.cs",
+    "MP3 entry points",
+    "NLayer NuGet dependency",
+    "Demo and upstream test executables"
+  ],
+  "Files": [
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/A2NLSF.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/A2NLSF.cs",
+      "OriginalBytes": 12401,
+      "OriginalSha256": "192DA59A83079E178BAD94A53E9F34371A5C37A094B708EA91AC04F1A3B32BED",
+      "CurrentBytes": 12503,
+      "CurrentSha256": "E5D2D8BCA50DF3A7920B0809C5A034474E11692FD6C0D184C167D3FA969902FD",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/AllpassIntFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/AllpassIntFLP.cs",
+      "OriginalBytes": 2041,
+      "OriginalSha256": "7751A8AE0DA953F63BC65ACAEBF8DE8D735D673762D0510FCB38E88E53C47D53",
+      "CurrentBytes": 2041,
+      "CurrentSha256": "7751A8AE0DA953F63BC65ACAEBF8DE8D735D673762D0510FCB38E88E53C47D53",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/AnaFiltBank1.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/AnaFiltBank1.cs",
+      "OriginalBytes": 3480,
+      "OriginalSha256": "ECBC3C2F2164C2CEB6B7277184997FF714E56F9EAB8C34B1D24FFC988083472B",
+      "CurrentBytes": 3480,
+      "CurrentSha256": "ECBC3C2F2164C2CEB6B7277184997FF714E56F9EAB8C34B1D24FFC988083472B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ApplySineWindowFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ApplySineWindowFLP.cs",
+      "OriginalBytes": 3141,
+      "OriginalSha256": "80D7E9CDEA1CB24650AF8D729B8D41DB3CE23D7DC6AAA0FFC05A19A5195F51A4",
+      "CurrentBytes": 3141,
+      "CurrentSha256": "80D7E9CDEA1CB24650AF8D729B8D41DB3CE23D7DC6AAA0FFC05A19A5195F51A4",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/AutocorrelationFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/AutocorrelationFLP.cs",
+      "OriginalBytes": 2081,
+      "OriginalSha256": "92DE8DB452F7883199A53072ABED813620D62D4639230EF5A9CBA6D446EBFC66",
+      "CurrentBytes": 2081,
+      "CurrentSha256": "92DE8DB452F7883199A53072ABED813620D62D4639230EF5A9CBA6D446EBFC66",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Biquad.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Biquad.cs",
+      "OriginalBytes": 2588,
+      "OriginalSha256": "7FE3C850F6CCDC69D64585B6B888AA863BB497C1D16D885EED8FDBD29E9F277B",
+      "CurrentBytes": 2588,
+      "CurrentSha256": "7FE3C850F6CCDC69D64585B6B888AA863BB497C1D16D885EED8FDBD29E9F277B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/BiquadAlt.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/BiquadAlt.cs",
+      "OriginalBytes": 3063,
+      "OriginalSha256": "3EE5D9701742F59C2187B036A07EA8706762340F72A8BB933A640206A4EB07E1",
+      "CurrentBytes": 3063,
+      "CurrentSha256": "3EE5D9701742F59C2187B036A07EA8706762340F72A8BB933A640206A4EB07E1",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/BurgModifiedFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/BurgModifiedFLP.cs",
+      "OriginalBytes": 6994,
+      "OriginalSha256": "41E57329ACB4F2AED38CAEF0B48C9D06E2BE3F7993CC967FCF1B21C2DB977CB3",
+      "CurrentBytes": 6994,
+      "CurrentSha256": "41E57329ACB4F2AED38CAEF0B48C9D06E2BE3F7993CC967FCF1B21C2DB977CB3",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Bwexpander.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Bwexpander.cs",
+      "OriginalBytes": 2025,
+      "OriginalSha256": "7AC33533F4372D8FACC5744F0FD7B8BE9F14E8320EF12DAEB3B76F6974947D5C",
+      "CurrentBytes": 2025,
+      "CurrentSha256": "7AC33533F4372D8FACC5744F0FD7B8BE9F14E8320EF12DAEB3B76F6974947D5C",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Bwexpander32.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Bwexpander32.cs",
+      "OriginalBytes": 1697,
+      "OriginalSha256": "23C6ED0B235EE9766F55CE7CD45791A59E6AF08636D4123A93E010AEB3EDBB97",
+      "CurrentBytes": 1697,
+      "CurrentSha256": "23C6ED0B235EE9766F55CE7CD45791A59E6AF08636D4123A93E010AEB3EDBB97",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/BwexpanderFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/BwexpanderFLP.cs",
+      "OriginalBytes": 1611,
+      "OriginalSha256": "357387B81736D288888ED2005CB9BF8185C4701D3FEC55DF9F18A4AA4A3EA994",
+      "CurrentBytes": 1611,
+      "CurrentSha256": "357387B81736D288888ED2005CB9BF8185C4701D3FEC55DF9F18A4AA4A3EA994",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/CodeSigns.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/CodeSigns.cs",
+      "OriginalBytes": 4555,
+      "OriginalSha256": "A56D3BE04BC597C5537B4238CB94E41AB9BBC683AA2EEB59F8628FF0B16C8995",
+      "CurrentBytes": 4555,
+      "CurrentSha256": "A56D3BE04BC597C5537B4238CB94E41AB9BBC683AA2EEB59F8628FF0B16C8995",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/CommonPitchEstDefines.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/CommonPitchEstDefines.cs",
+      "OriginalBytes": 2598,
+      "OriginalSha256": "E26898F152797C293A00606F029F2B1D7E3DBE5FC0588D5CBE1A54E1455B5854",
+      "CurrentBytes": 2598,
+      "CurrentSha256": "E26898F152797C293A00606F029F2B1D7E3DBE5FC0588D5CBE1A54E1455B5854",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Control.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Control.cs",
+      "OriginalBytes": 2752,
+      "OriginalSha256": "1CABA35216368248FBAF570FF027CA8EC849D5262D2D6389054ED78FE92CB4D3",
+      "CurrentBytes": 2752,
+      "CurrentSha256": "1CABA35216368248FBAF570FF027CA8EC849D5262D2D6389054ED78FE92CB4D3",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ControlCodecFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ControlCodecFLP.cs",
+      "OriginalBytes": 31120,
+      "OriginalSha256": "45469271AFBF08BCC4B6496CC892CE0C03672C23D782CB051787D6839E52EADD",
+      "CurrentBytes": 31222,
+      "CurrentSha256": "F1848CFA2D2BA188E04362D582DA117FB8133625DB1E7773C8A424BC0DAFB59E",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/CorrMatrixFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/CorrMatrixFLP.cs",
+      "OriginalBytes": 4954,
+      "OriginalSha256": "FC3B17699F27C3FA04A434EEF6E0D9739691ACAFB23E27EF398F850BAA8A1913",
+      "CurrentBytes": 4954,
+      "CurrentSha256": "FC3B17699F27C3FA04A434EEF6E0D9739691ACAFB23E27EF398F850BAA8A1913",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Decimate2CoarseFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Decimate2CoarseFLP.cs",
+      "OriginalBytes": 3125,
+      "OriginalSha256": "25594195C362F91EA62DF1A30FE2F77F3976DD33167C5D8A2C1AA84E0D9B6226",
+      "CurrentBytes": 3125,
+      "CurrentSha256": "25594195C362F91EA62DF1A30FE2F77F3976DD33167C5D8A2C1AA84E0D9B6226",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Decimate2CoarsestFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Decimate2CoarsestFLP.cs",
+      "OriginalBytes": 2909,
+      "OriginalSha256": "D659A858E1C2B1B1B1E57196C7028FA34977C42B78709556D6B2CC6C43F8536F",
+      "CurrentBytes": 2909,
+      "CurrentSha256": "D659A858E1C2B1B1B1E57196C7028FA34977C42B78709556D6B2CC6C43F8536F",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Define.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Define.cs",
+      "OriginalBytes": 16059,
+      "OriginalSha256": "002F512F536EC7A761AC0D75EDA55E60FAAD9AB146B42EA5E003F128FDF98498",
+      "CurrentBytes": 16161,
+      "CurrentSha256": "158FECCA48F1CBE3DAA795CDB6E8505E59BC11516495400C9EB333AD41331A06",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/DefineFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/DefineFLP.cs",
+      "OriginalBytes": 4393,
+      "OriginalSha256": "7145FDBCB181D81DDB9AE4186A539C5A9127908394A08D99C44384397109334F",
+      "CurrentBytes": 4393,
+      "CurrentSha256": "7145FDBCB181D81DDB9AE4186A539C5A9127908394A08D99C44384397109334F",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/DetectSWBInput.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/DetectSWBInput.cs",
+      "OriginalBytes": 3766,
+      "OriginalSha256": "242E9E739292131C0AB27F76D43BEF3BBD67133767BE5D2A7E41E4761FC5D71B",
+      "CurrentBytes": 3766,
+      "CurrentSha256": "242E9E739292131C0AB27F76D43BEF3BBD67133767BE5D2A7E41E4761FC5D71B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/EncAPI.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/EncAPI.cs",
+      "OriginalBytes": 13407,
+      "OriginalSha256": "56AC1495AD71D427BCC3D388C4D917F37A4F84BEAC412DB0D227DD6CD2B4ED70",
+      "CurrentBytes": 13407,
+      "CurrentSha256": "56AC1495AD71D427BCC3D388C4D917F37A4F84BEAC412DB0D227DD6CD2B4ED70",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/EncodeFrameFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/EncodeFrameFLP.cs",
+      "OriginalBytes": 30931,
+      "OriginalSha256": "9B8D5500C5121A4277EB006175E6AB7A1F649C8701D92167EDEFE3CEFC202B83",
+      "CurrentBytes": 31033,
+      "CurrentSha256": "A476372FC316FBA41E031EDE7CA8A3ECF39EFF123C918F3258A698204CD97FA3",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/EncodeParameters.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/EncodeParameters.cs",
+      "OriginalBytes": 7258,
+      "OriginalSha256": "7679BDEF80DA0632C69F9F8350B4BC418C7481B38C26CE84E26DFB55DF02A0C6",
+      "CurrentBytes": 7258,
+      "CurrentSha256": "7679BDEF80DA0632C69F9F8350B4BC418C7481B38C26CE84E26DFB55DF02A0C6",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/EncodePulses.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/EncodePulses.cs",
+      "OriginalBytes": 8669,
+      "OriginalSha256": "27153BCE0CA7B901D3A1F6B4E353C9B973DF0DA476CC70DBDE1248166CBAA214",
+      "CurrentBytes": 8669,
+      "CurrentSha256": "27153BCE0CA7B901D3A1F6B4E353C9B973DF0DA476CC70DBDE1248166CBAA214",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/EncoderCompat.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/EncoderCompat.cs",
+      "OriginalBytes": 1011,
+      "OriginalSha256": "A1E642B5C53D885B734963EA28494FB834AE43AA85E4FDBB69D358C3781EE6AB",
+      "CurrentBytes": 1011,
+      "CurrentSha256": "A1E642B5C53D885B734963EA28494FB834AE43AA85E4FDBB69D358C3781EE6AB",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/EnergyFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/EnergyFLP.cs",
+      "OriginalBytes": 1863,
+      "OriginalSha256": "902048A431C6FCDB0ADD4D47E5FB52088CCF9558D2ABDFF165954ACBD604C1F2",
+      "CurrentBytes": 1863,
+      "CurrentSha256": "902048A431C6FCDB0ADD4D47E5FB52088CCF9558D2ABDFF165954ACBD604C1F2",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Errors.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Errors.cs",
+      "OriginalBytes": 2581,
+      "OriginalSha256": "2CFF8B8E3034032887CC58A71347F047DA9279166C3F2BAF8459276E92D7DFC8",
+      "CurrentBytes": 2581,
+      "CurrentSha256": "2CFF8B8E3034032887CC58A71347F047DA9279166C3F2BAF8459276E92D7DFC8",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/FindLPCFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/FindLPCFLP.cs",
+      "OriginalBytes": 4877,
+      "OriginalSha256": "A3C459803F8E0AB0D8016230E0163D6ED3E61B065A3050007B73874F31D9729B",
+      "CurrentBytes": 4877,
+      "CurrentSha256": "A3C459803F8E0AB0D8016230E0163D6ED3E61B065A3050007B73874F31D9729B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/FindLTPFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/FindLTPFLP.cs",
+      "OriginalBytes": 6252,
+      "OriginalSha256": "F6DC1BD95B48547E79C48361F5670029D7AB1E9A6AAD5AF8FF0E610820A5DFE3",
+      "CurrentBytes": 6252,
+      "CurrentSha256": "F6DC1BD95B48547E79C48361F5670029D7AB1E9A6AAD5AF8FF0E610820A5DFE3",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/FindPitchLagsFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/FindPitchLagsFLP.cs",
+      "OriginalBytes": 7476,
+      "OriginalSha256": "4CC69A1A2059AAB9DCE420140664186B3F11FC34EE1390843921B1427C6C1CB1",
+      "CurrentBytes": 7476,
+      "CurrentSha256": "4CC69A1A2059AAB9DCE420140664186B3F11FC34EE1390843921B1427C6C1CB1",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/FindPredCoefsFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/FindPredCoefsFLP.cs",
+      "OriginalBytes": 7821,
+      "OriginalSha256": "59E139F623438E0E92670BD2CDABA992EEC207293DE0CF5E6DD44AC849B5EA66",
+      "CurrentBytes": 7821,
+      "CurrentSha256": "59E139F623438E0E92670BD2CDABA992EEC207293DE0CF5E6DD44AC849B5EA66",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/GainQuant.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/GainQuant.cs",
+      "OriginalBytes": 4491,
+      "OriginalSha256": "0FE367EF6890EF23077728BF544C23409ABF2D710CFE7AD62419BFF85197DEA4",
+      "CurrentBytes": 4491,
+      "CurrentSha256": "0FE367EF6890EF23077728BF544C23409ABF2D710CFE7AD62419BFF85197DEA4",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/HPVariableCutoffFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/HPVariableCutoffFLP.cs",
+      "OriginalBytes": 12222,
+      "OriginalSha256": "2750057C33B5092F47084EA1B104F2298EFAB2DF11195B44E38CCDCF6BA4FBFF",
+      "CurrentBytes": 12222,
+      "CurrentSha256": "2750057C33B5092F47084EA1B104F2298EFAB2DF11195B44E38CCDCF6BA4FBFF",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/InitEncoderFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/InitEncoderFLP.cs",
+      "OriginalBytes": 2278,
+      "OriginalSha256": "EB362915F35EB2912D8247841EA2ED207041AFDBCBE2B81BB14097E55A669429",
+      "CurrentBytes": 2278,
+      "CurrentSha256": "EB362915F35EB2912D8247841EA2ED207041AFDBCBE2B81BB14097E55A669429",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Inlines.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Inlines.cs",
+      "OriginalBytes": 10935,
+      "OriginalSha256": "7E5D4D45875AC949847D4010338F718E52D3F096F010B20CD3B7A7B34110C7F8",
+      "CurrentBytes": 10935,
+      "CurrentSha256": "7E5D4D45875AC949847D4010338F718E52D3F096F010B20CD3B7A7B34110C7F8",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/InnerProductFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/InnerProductFLP.cs",
+      "OriginalBytes": 2246,
+      "OriginalSha256": "2F56A533D301A795F3D1561B243E01009549E23C52443EDFB215D7DCF7EA7911",
+      "CurrentBytes": 2246,
+      "CurrentSha256": "2F56A533D301A795F3D1561B243E01009549E23C52443EDFB215D7DCF7EA7911",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Interpolate.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Interpolate.cs",
+      "OriginalBytes": 1908,
+      "OriginalSha256": "0A4C2F77C9D2B039E7F9C8D05A22BD2652E8629D594CF51CCE2306E63199DFB4",
+      "CurrentBytes": 1908,
+      "CurrentSha256": "0A4C2F77C9D2B039E7F9C8D05A22BD2652E8629D594CF51CCE2306E63199DFB4",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/K2aFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/K2aFLP.cs",
+      "OriginalBytes": 1786,
+      "OriginalSha256": "ABC631D7AAEC26064A02DC33B32A4C4677D3CB6DBD95A0E78AC24B80D55B8E67",
+      "CurrentBytes": 1786,
+      "CurrentSha256": "ABC631D7AAEC26064A02DC33B32A4C4677D3CB6DBD95A0E78AC24B80D55B8E67",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LBRRReset.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LBRRReset.cs",
+      "OriginalBytes": 1287,
+      "OriginalSha256": "93460EF8BF6E9C2DE36B480FAE61F1C84BF382C3DD9125B3041446B00AAB372B",
+      "CurrentBytes": 1287,
+      "CurrentSha256": "93460EF8BF6E9C2DE36B480FAE61F1C84BF382C3DD9125B3041446B00AAB372B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LevinsondurbinFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LevinsondurbinFLP.cs",
+      "OriginalBytes": 2735,
+      "OriginalSha256": "9769A19AF5A733F8D22BAD551AD9443471B1C199E2BB727B8ECECC1F12664277",
+      "CurrentBytes": 2735,
+      "CurrentSha256": "9769A19AF5A733F8D22BAD551AD9443471B1C199E2BB727B8ECECC1F12664277",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Lin2log.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Lin2log.cs",
+      "OriginalBytes": 1557,
+      "OriginalSha256": "D5DB782A5FB0223968365814BC42AA15A15CD4FE65EE1CAF9BF820A80E9CEFC6",
+      "CurrentBytes": 1557,
+      "CurrentSha256": "D5DB782A5FB0223968365814BC42AA15A15CD4FE65EE1CAF9BF820A80E9CEFC6",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Log2lin.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Log2lin.cs",
+      "OriginalBytes": 1848,
+      "OriginalSha256": "EEFFB8019F4C99E4CA4FDB8F43A991E5AAFAB75E640553244CB00152734BD2BF",
+      "CurrentBytes": 1848,
+      "CurrentSha256": "EEFFB8019F4C99E4CA4FDB8F43A991E5AAFAB75E640553244CB00152734BD2BF",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LPCAnalysisFilterFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LPCAnalysisFilterFLP.cs",
+      "OriginalBytes": 11113,
+      "OriginalSha256": "9BAA1FD5D4B1B2F084A5A24B8E514F3888BB9789FBAB4B6B6A9E71EBD95848C7",
+      "CurrentBytes": 11113,
+      "CurrentSha256": "9BAA1FD5D4B1B2F084A5A24B8E514F3888BB9789FBAB4B6B6A9E71EBD95848C7",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LPCInvPredGain.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LPCInvPredGain.cs",
+      "OriginalBytes": 7987,
+      "OriginalSha256": "C9CA353A1547732415A2C2B2751D993DA61E545CCB598CFA4D98BF5332C956C5",
+      "CurrentBytes": 7987,
+      "CurrentSha256": "C9CA353A1547732415A2C2B2751D993DA61E545CCB598CFA4D98BF5332C956C5",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LPCInvPredGainFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LPCInvPredGainFLP.cs",
+      "OriginalBytes": 2916,
+      "OriginalSha256": "CB0081DA34AE9CD6AF4F6B06917342BBFD70CCA6CC5E76D2CE864F82A423BD0A",
+      "CurrentBytes": 2916,
+      "CurrentSha256": "CB0081DA34AE9CD6AF4F6B06917342BBFD70CCA6CC5E76D2CE864F82A423BD0A",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LPVariableCutoff.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LPVariableCutoff.cs",
+      "OriginalBytes": 10162,
+      "OriginalSha256": "B59F236F2E90BEBF2546A4D7F42CEE90620C777E3B1BEC890C06CB83BEABBC21",
+      "CurrentBytes": 10264,
+      "CurrentSha256": "1DCBB50206FD4290D39F02F58FD8CE7866526AAF533E3787CEADEC95FFEF252A",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LSFCosTable.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LSFCosTable.cs",
+      "OriginalBytes": 3316,
+      "OriginalSha256": "A4607975D10CAEA423ACAF98D25980936EA6C4A03FFF74CE702FAD78FABD0AF4",
+      "CurrentBytes": 3316,
+      "CurrentSha256": "A4607975D10CAEA423ACAF98D25980936EA6C4A03FFF74CE702FAD78FABD0AF4",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LTPAnalysisFilterFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LTPAnalysisFilterFLP.cs",
+      "OriginalBytes": 3361,
+      "OriginalSha256": "41208D47E6A5CDB59781FA7ED7384EF8BA722FFAE243F42A3EABA0E4F7E7D12E",
+      "CurrentBytes": 3361,
+      "CurrentSha256": "41208D47E6A5CDB59781FA7ED7384EF8BA722FFAE243F42A3EABA0E4F7E7D12E",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/LTPScaleCtrlFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/LTPScaleCtrlFLP.cs",
+      "OriginalBytes": 3477,
+      "OriginalSha256": "D42551B1681F271F15DCB85C32D2B5814DDC505B3D30279D342DC3B8E21A361D",
+      "CurrentBytes": 3477,
+      "CurrentSha256": "D42551B1681F271F15DCB85C32D2B5814DDC505B3D30279D342DC3B8E21A361D",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/MA.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/MA.cs",
+      "OriginalBytes": 8240,
+      "OriginalSha256": "3DD08265BAE5CD8EC945B91B9CFF35FFF798034792FD6DF21B8C4B89A0D12B86",
+      "CurrentBytes": 8240,
+      "CurrentSha256": "3DD08265BAE5CD8EC945B91B9CFF35FFF798034792FD6DF21B8C4B89A0D12B86",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Macros.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Macros.cs",
+      "OriginalBytes": 4518,
+      "OriginalSha256": "F35EA6463A1CF9D59872256A5E896C8EAFB131E446F46EF4F5DF81B0E356D9F8",
+      "CurrentBytes": 4518,
+      "CurrentSha256": "F35EA6463A1CF9D59872256A5E896C8EAFB131E446F46EF4F5DF81B0E356D9F8",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/MainFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/MainFLP.cs",
+      "OriginalBytes": 1097,
+      "OriginalSha256": "064FFBE575DDC0356CF791FD45A92586404C96C67D49E3B9C639545562DEB0E9",
+      "CurrentBytes": 1097,
+      "CurrentSha256": "064FFBE575DDC0356CF791FD45A92586404C96C67D49E3B9C639545562DEB0E9",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSF2A.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSF2A.cs",
+      "OriginalBytes": 6555,
+      "OriginalSha256": "7267E799C9DB911540D5AF437C32A7010379D68D2765B26A986EB60C1336A2F7",
+      "CurrentBytes": 6555,
+      "CurrentSha256": "7267E799C9DB911540D5AF437C32A7010379D68D2765B26A986EB60C1336A2F7",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSF2AStable.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSF2AStable.cs",
+      "OriginalBytes": 2393,
+      "OriginalSha256": "500213C6DD6FA734435B5DCC7A08BABC3E3196547A047E32B71E29177598A41A",
+      "CurrentBytes": 2393,
+      "CurrentSha256": "500213C6DD6FA734435B5DCC7A08BABC3E3196547A047E32B71E29177598A41A",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSFMSVQDecodeFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSFMSVQDecodeFLP.cs",
+      "OriginalBytes": 4560,
+      "OriginalSha256": "29DC6B29470D0537444A4306204FF8A45E3B68F7CD01CAED984BAEEBAE3E46AF",
+      "CurrentBytes": 4560,
+      "CurrentSha256": "29DC6B29470D0537444A4306204FF8A45E3B68F7CD01CAED984BAEEBAE3E46AF",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSFMSVQEncodeFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSFMSVQEncodeFLP.cs",
+      "OriginalBytes": 10940,
+      "OriginalSha256": "3D4E601A0560A33984121151A80692E0DF322797D5FDDEB856D04FD23801C814",
+      "CurrentBytes": 11042,
+      "CurrentSha256": "0D648C57662C7BB7DC8AFC52FD2339C220D1D04CC3B0D7E1D0D9B2324B3D0F13",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSFStabilize.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSFStabilize.cs",
+      "OriginalBytes": 7564,
+      "OriginalSha256": "CB86DD37E2910F430B105784BAF9B8AFFB7F1ED25C0FFD03E2A9C8AF85429AD7",
+      "CurrentBytes": 7564,
+      "CurrentSha256": "CB86DD37E2910F430B105784BAF9B8AFFB7F1ED25C0FFD03E2A9C8AF85429AD7",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSFVQRateDistortionFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSFVQRateDistortionFLP.cs",
+      "OriginalBytes": 3177,
+      "OriginalSha256": "9845C534FA567D95F4FC0E16C83CF4B627273217D0DD31346F9D2D9286BAD2F9",
+      "CurrentBytes": 3177,
+      "CurrentSha256": "9845C534FA567D95F4FC0E16C83CF4B627273217D0DD31346F9D2D9286BAD2F9",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSFVQSumErrorFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSFVQSumErrorFLP.cs",
+      "OriginalBytes": 7332,
+      "OriginalSha256": "D13C13CE3D084D829C297BE914D806D5A2E2023CA5FF68D03A3D74C50EC158AF",
+      "CurrentBytes": 7332,
+      "CurrentSha256": "D13C13CE3D084D829C297BE914D806D5A2E2023CA5FF68D03A3D74C50EC158AF",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NLSFVQWeightsLaroiaFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NLSFVQWeightsLaroiaFLP.cs",
+      "OriginalBytes": 2636,
+      "OriginalSha256": "7E1124B430FD6119C6343FFFD5A493103C210F7D7ACA3133A662942308BDEF4B",
+      "CurrentBytes": 2636,
+      "CurrentSha256": "7E1124B430FD6119C6343FFFD5A493103C210F7D7ACA3133A662942308BDEF4B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NoiseShapeAnalysisFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NoiseShapeAnalysisFLP.cs",
+      "OriginalBytes": 22090,
+      "OriginalSha256": "1EE43C95ACC96754914750BB8F054C02D3628D152ED723662CC1621FDD28C4A2",
+      "CurrentBytes": 22090,
+      "CurrentSha256": "1EE43C95ACC96754914750BB8F054C02D3628D152ED723662CC1621FDD28C4A2",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NSQ.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NSQ.cs",
+      "OriginalBytes": 22808,
+      "OriginalSha256": "4DBB0EC7ADCB707674238EDE776D840005A1984758536B8CC16B238CB73D8B77",
+      "CurrentBytes": 22808,
+      "CurrentSha256": "4DBB0EC7ADCB707674238EDE776D840005A1984758536B8CC16B238CB73D8B77",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/NSQDelDec.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/NSQDelDec.cs",
+      "OriginalBytes": 41431,
+      "OriginalSha256": "A1BBD3C1B244E5A05F46CDD45AD4DF80CFC8AA005A7AD99438D85A86F532B793",
+      "CurrentBytes": 41431,
+      "CurrentSha256": "A1BBD3C1B244E5A05F46CDD45AD4DF80CFC8AA005A7AD99438D85A86F532B793",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/PerceptualParametersFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/PerceptualParametersFLP.cs",
+      "OriginalBytes": 5258,
+      "OriginalSha256": "316D65F2BFB1F3E2D3A9D9A2D5A6FB08D63FBCCC189413E48F9A44268FDB3F3B",
+      "CurrentBytes": 5258,
+      "CurrentSha256": "316D65F2BFB1F3E2D3A9D9A2D5A6FB08D63FBCCC189413E48F9A44268FDB3F3B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/PitchAnalysisCoreFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/PitchAnalysisCoreFLP.cs",
+      "OriginalBytes": 33701,
+      "OriginalSha256": "ABA6190372581DD7D14F86835F57B3D7D139E5A247DE13F2E9F4A3573FD02665",
+      "CurrentBytes": 33701,
+      "CurrentSha256": "ABA6190372581DD7D14F86835F57B3D7D139E5A247DE13F2E9F4A3573FD02665",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/PitchEstDefinesFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/PitchEstDefinesFLP.cs",
+      "OriginalBytes": 1107,
+      "OriginalSha256": "8363D4D74C8F2CA3960358B789D5F479CFEA52BEEB1542DC72E985E8D07F40E9",
+      "CurrentBytes": 1107,
+      "CurrentSha256": "8363D4D74C8F2CA3960358B789D5F479CFEA52BEEB1542DC72E985E8D07F40E9",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/PitchEstTables.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/PitchEstTables.cs",
+      "OriginalBytes": 2904,
+      "OriginalSha256": "E4FC1F6C2551F6A9EAF319A91540F769A8AB07B50E8E906BC6050F68F7B00EE9",
+      "CurrentBytes": 2904,
+      "CurrentSha256": "E4FC1F6C2551F6A9EAF319A91540F769A8AB07B50E8E906BC6050F68F7B00EE9",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/PrefilterFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/PrefilterFLP.cs",
+      "OriginalBytes": 8203,
+      "OriginalSha256": "5754A074E14C136E1CB24F93BA66AC77146259C7218428DC7A1DAC5992122690",
+      "CurrentBytes": 8203,
+      "CurrentSha256": "5754A074E14C136E1CB24F93BA66AC77146259C7218428DC7A1DAC5992122690",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ProcessGainsFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ProcessGainsFLP.cs",
+      "OriginalBytes": 4401,
+      "OriginalSha256": "AFD79F150468F4E36220DC42D1A0A268474DCA3A8B0083E5458B55252A53D825",
+      "CurrentBytes": 4401,
+      "CurrentSha256": "AFD79F150468F4E36220DC42D1A0A268474DCA3A8B0083E5458B55252A53D825",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ProcessNLSFsFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ProcessNLSFsFLP.cs",
+      "OriginalBytes": 5206,
+      "OriginalSha256": "C8B160BABF528C2F550DB5F0556BB05D2FE012E526928CBA749A3D2E50C07F2C",
+      "CurrentBytes": 5206,
+      "CurrentSha256": "C8B160BABF528C2F550DB5F0556BB05D2FE012E526928CBA749A3D2E50C07F2C",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/QuantLTPGainsFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/QuantLTPGainsFLP.cs",
+      "OriginalBytes": 7035,
+      "OriginalSha256": "CBE646BA3D64890912C8B8D0797168EA5793D9AE5775154765FC557D3A1F7BA3",
+      "CurrentBytes": 7035,
+      "CurrentSha256": "CBE646BA3D64890912C8B8D0797168EA5793D9AE5775154765FC557D3A1F7BA3",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/RangeCoder.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/RangeCoder.cs",
+      "OriginalBytes": 18533,
+      "OriginalSha256": "535E20C022E6C348CD2B42A790AA70766A69DBC441D93A4C9F04A1762FE67BE0",
+      "CurrentBytes": 18533,
+      "CurrentSha256": "535E20C022E6C348CD2B42A790AA70766A69DBC441D93A4C9F04A1762FE67BE0",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/RegularizeCorrelationsFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/RegularizeCorrelationsFLP.cs",
+      "OriginalBytes": 1645,
+      "OriginalSha256": "5871857B9062E05542A4116F7AD7A50F0FF6890CF4AED1DE0AC7A9954C9DBA31",
+      "CurrentBytes": 1645,
+      "CurrentSha256": "5871857B9062E05542A4116F7AD7A50F0FF6890CF4AED1DE0AC7A9954C9DBA31",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Resampler.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Resampler.cs",
+      "OriginalBytes": 21192,
+      "OriginalSha256": "1CB5FAF3E88011F2DC92BEDCDEEBDCBAB732659872B0C457396166E22912421D",
+      "CurrentBytes": 21192,
+      "CurrentSha256": "1CB5FAF3E88011F2DC92BEDCDEEBDCBAB732659872B0C457396166E22912421D",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerDown2.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerDown2.cs",
+      "OriginalBytes": 2981,
+      "OriginalSha256": "C60EEE9311840B26C71CCC60561602B19A15F09E9975685C5328054FCD8EBEB8",
+      "CurrentBytes": 2981,
+      "CurrentSha256": "C60EEE9311840B26C71CCC60561602B19A15F09E9975685C5328054FCD8EBEB8",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerDown23.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerDown23.cs",
+      "OriginalBytes": 4710,
+      "OriginalSha256": "A6569FCCEE38A274BC58B431190744B3FCFD1FEE0EA2A7C316BBBFD60BABB091",
+      "CurrentBytes": 4710,
+      "CurrentSha256": "A6569FCCEE38A274BC58B431190744B3FCFD1FEE0EA2A7C316BBBFD60BABB091",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerDown3.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerDown3.cs",
+      "OriginalBytes": 3991,
+      "OriginalSha256": "5EAA3858144ADE410C42E07EFBE6C1B887C224338D9DDC2548C10C0C72C869FF",
+      "CurrentBytes": 3991,
+      "CurrentSha256": "5EAA3858144ADE410C42E07EFBE6C1B887C224338D9DDC2548C10C0C72C869FF",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivate.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivate.cs",
+      "OriginalBytes": 952,
+      "OriginalSha256": "FF6E13D3472C11AF6F5A57F1B7C0D48D12AE379605A1AD0B98C752710332D56B",
+      "CurrentBytes": 952,
+      "CurrentSha256": "FF6E13D3472C11AF6F5A57F1B7C0D48D12AE379605A1AD0B98C752710332D56B",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateAR2.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateAR2.cs",
+      "OriginalBytes": 2369,
+      "OriginalSha256": "51A003FD1B194F04066934CA679D047C5A602D01A9D4FA879C2B5056C4CA6744",
+      "CurrentBytes": 2369,
+      "CurrentSha256": "51A003FD1B194F04066934CA679D047C5A602D01A9D4FA879C2B5056C4CA6744",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateARMA4.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateARMA4.cs",
+      "OriginalBytes": 3267,
+      "OriginalSha256": "56D79FC8B4BDCA4FE49FCDA708F8A9BE42580C316DB03F95D509970710FD3362",
+      "CurrentBytes": 3267,
+      "CurrentSha256": "56D79FC8B4BDCA4FE49FCDA708F8A9BE42580C316DB03F95D509970710FD3362",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateCopy.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateCopy.cs",
+      "OriginalBytes": 1674,
+      "OriginalSha256": "C3CF82E16DF7DCBD117B2D77DB0B206E0DCBFC99FE289AEA4BA403F5F4B76884",
+      "CurrentBytes": 1674,
+      "CurrentSha256": "C3CF82E16DF7DCBD117B2D77DB0B206E0DCBFC99FE289AEA4BA403F5F4B76884",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateDown4.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateDown4.cs",
+      "OriginalBytes": 3240,
+      "OriginalSha256": "A124E722B43BA6491770212065B1281EC3FED4E1A4579368462429A4E89490F3",
+      "CurrentBytes": 3240,
+      "CurrentSha256": "A124E722B43BA6491770212065B1281EC3FED4E1A4579368462429A4E89490F3",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateDownFIR.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateDownFIR.cs",
+      "OriginalBytes": 8907,
+      "OriginalSha256": "34F987B38029E6150029D13E8E357202BAEAC0F6FB74BAAF70427C9F8C852165",
+      "CurrentBytes": 8907,
+      "CurrentSha256": "34F987B38029E6150029D13E8E357202BAEAC0F6FB74BAAF70427C9F8C852165",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateIIRFIR.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateIIRFIR.cs",
+      "OriginalBytes": 6289,
+      "OriginalSha256": "A9CDBEAB4137731B17D19BFBBC13EC5F6D5AC414A7F433E0FAA86EB7E6905A78",
+      "CurrentBytes": 6289,
+      "CurrentSha256": "A9CDBEAB4137731B17D19BFBBC13EC5F6D5AC414A7F433E0FAA86EB7E6905A78",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateUp2HQ.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateUp2HQ.cs",
+      "OriginalBytes": 5952,
+      "OriginalSha256": "7E279A7ACFF47C81C876E453865F862B3578A19555A73025B89AE9EE3C09E0A5",
+      "CurrentBytes": 5952,
+      "CurrentSha256": "7E279A7ACFF47C81C876E453865F862B3578A19555A73025B89AE9EE3C09E0A5",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerPrivateUp4.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerPrivateUp4.cs",
+      "OriginalBytes": 3366,
+      "OriginalSha256": "CE09B012C5E8FD5F035FD813BA43293623338DFDBA049EBC3D14729E17F353B9",
+      "CurrentBytes": 3366,
+      "CurrentSha256": "CE09B012C5E8FD5F035FD813BA43293623338DFDBA049EBC3D14729E17F353B9",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerRom.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerRom.cs",
+      "OriginalBytes": 10956,
+      "OriginalSha256": "18F83CF1B1C1CC7E9CD92A8D2EF20301C840536E09100BD5E63C3E7075B917D0",
+      "CurrentBytes": 10956,
+      "CurrentSha256": "18F83CF1B1C1CC7E9CD92A8D2EF20301C840536E09100BD5E63C3E7075B917D0",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerStructs.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerStructs.cs",
+      "OriginalBytes": 5076,
+      "OriginalSha256": "AF2E720C3FF6F42426FEFE7B114E876197D794418B1807F38A612889C7A06960",
+      "CurrentBytes": 5076,
+      "CurrentSha256": "AF2E720C3FF6F42426FEFE7B114E876197D794418B1807F38A612889C7A06960",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResamplerUp2.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResamplerUp2.cs",
+      "OriginalBytes": 2979,
+      "OriginalSha256": "C382792176B248966D31FE4FEB5816A91EAA8ACC435C16F592A59D9365289747",
+      "CurrentBytes": 2979,
+      "CurrentSha256": "C382792176B248966D31FE4FEB5816A91EAA8ACC435C16F592A59D9365289747",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ResidualEnergyFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ResidualEnergyFLP.cs",
+      "OriginalBytes": 5975,
+      "OriginalSha256": "2AC5E1CBE9314154D85BC0F917DC4A870C98B099069C36BF2FF54C36B127A3B4",
+      "CurrentBytes": 5975,
+      "CurrentSha256": "2AC5E1CBE9314154D85BC0F917DC4A870C98B099069C36BF2FF54C36B127A3B4",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ScaleCopyVectorFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ScaleCopyVectorFLP.cs",
+      "OriginalBytes": 2002,
+      "OriginalSha256": "73C272BA44B30B08168337BA3F6AF5B25601BF1A3BCFCFD0ED3EFEBE661D131C",
+      "CurrentBytes": 2002,
+      "CurrentSha256": "73C272BA44B30B08168337BA3F6AF5B25601BF1A3BCFCFD0ED3EFEBE661D131C",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ScaleVectorFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ScaleVectorFLP.cs",
+      "OriginalBytes": 1579,
+      "OriginalSha256": "0AA0766E57FDD0AC7673AA86D0FE90E794DE6FF887C591BF6C6637CDDA998788",
+      "CurrentBytes": 1579,
+      "CurrentSha256": "0AA0766E57FDD0AC7673AA86D0FE90E794DE6FF887C591BF6C6637CDDA998788",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/SchurFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/SchurFLP.cs",
+      "OriginalBytes": 2414,
+      "OriginalSha256": "C7BEA991F71373C851459A084276A9D55DC001221D1B8F69CE7A0343B1824239",
+      "CurrentBytes": 2414,
+      "CurrentSha256": "C7BEA991F71373C851459A084276A9D55DC001221D1B8F69CE7A0343B1824239",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/ShellCoder.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/ShellCoder.cs",
+      "OriginalBytes": 10363,
+      "OriginalSha256": "205018D2852E252093280A429DCACA3A71DAE4084CFCDD2F453F2504D55AE87E",
+      "CurrentBytes": 10363,
+      "CurrentSha256": "205018D2852E252093280A429DCACA3A71DAE4084CFCDD2F453F2504D55AE87E",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/SigmQ15.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/SigmQ15.cs",
+      "OriginalBytes": 2349,
+      "OriginalSha256": "B62A899B26121332FAD7B29B2D32A61D1694EFB6D0DF376B691F8367B3FB8F54",
+      "CurrentBytes": 2349,
+      "CurrentSha256": "B62A899B26121332FAD7B29B2D32A61D1694EFB6D0DF376B691F8367B3FB8F54",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/SigProcFIX.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/SigProcFIX.cs",
+      "OriginalBytes": 24296,
+      "OriginalSha256": "8F4487139F901A4D6B42C172DE1667F036699D56185C4DC41850FFACC52E509E",
+      "CurrentBytes": 24296,
+      "CurrentSha256": "8F4487139F901A4D6B42C172DE1667F036699D56185C4DC41850FFACC52E509E",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/SigProcFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/SigProcFLP.cs",
+      "OriginalBytes": 3030,
+      "OriginalSha256": "2133D24FFB522E20388F7F8185BD3B5F8C690F907E622A32B286F264FDC13152",
+      "CurrentBytes": 3030,
+      "CurrentSha256": "2133D24FFB522E20388F7F8185BD3B5F8C690F907E622A32B286F264FDC13152",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/SolveLSFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/SolveLSFLP.cs",
+      "OriginalBytes": 9381,
+      "OriginalSha256": "472E939CB31F7EE8325170CDFA1C9F396FD0786AC8651898652994CE14440F1A",
+      "CurrentBytes": 9381,
+      "CurrentSha256": "472E939CB31F7EE8325170CDFA1C9F396FD0786AC8651898652994CE14440F1A",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Sort.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Sort.cs",
+      "OriginalBytes": 12551,
+      "OriginalSha256": "B938B46BE187D102B941B235E6A836500AAF3AD9F91C2CA2DF1DDD045564D757",
+      "CurrentBytes": 12551,
+      "CurrentSha256": "B938B46BE187D102B941B235E6A836500AAF3AD9F91C2CA2DF1DDD045564D757",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/SortFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/SortFLP.cs",
+      "OriginalBytes": 6222,
+      "OriginalSha256": "B3DFF5C232124421DFD9FFFFECF0192FE9A7FE291706A423C11AF2B02A763887",
+      "CurrentBytes": 6222,
+      "CurrentSha256": "B3DFF5C232124421DFD9FFFFECF0192FE9A7FE291706A423C11AF2B02A763887",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Structs.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Structs.cs",
+      "OriginalBytes": 25613,
+      "OriginalSha256": "FA5D34E878882C1AE2E0255688C7CA886F60463ABAF1E77564430DD75B36BE79",
+      "CurrentBytes": 25730,
+      "CurrentSha256": "413DBE7323D5149E67E9B8CB06DC8E9B9472A9718053667F6023CAFF2EFF1B09",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/StructsFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/StructsFLP.cs",
+      "OriginalBytes": 23148,
+      "OriginalSha256": "96DBD04B6DD865155B2742F7DFD505571A4D1F3536A4161305F9ACED9816DB99",
+      "CurrentBytes": 23265,
+      "CurrentSha256": "7A19EA9356865F19E7A39D0270608F1979021E88285D5BA38D7D781C479B3AF4",
+      "Changed": true,
+      "Changes": "Local warning pragmas only; algorithm, namespace and original copyright retained."
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/SumSqrShift.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/SumSqrShift.cs",
+      "OriginalBytes": 3612,
+      "OriginalSha256": "7618BA4FCCC6CD5CF7F1426363ED093E55A04F65B6D6AB758FBFCFAD1BCEB9AA",
+      "CurrentBytes": 3612,
+      "CurrentSha256": "7618BA4FCCC6CD5CF7F1426363ED093E55A04F65B6D6AB758FBFCFAD1BCEB9AA",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Tables.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Tables.cs",
+      "OriginalBytes": 2900,
+      "OriginalSha256": "B7F4DD207C874E7F57A90ADCCC6276640A1DF1B50E2D83EAC65A90B0F60D2A9C",
+      "CurrentBytes": 2900,
+      "CurrentSha256": "B7F4DD207C874E7F57A90ADCCC6276640A1DF1B50E2D83EAC65A90B0F60D2A9C",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesGain.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesGain.cs",
+      "OriginalBytes": 2605,
+      "OriginalSha256": "AE7D69AEFEFCA6152AB1D327995452E1348F91D5B5EED27E536DDD050EF5AC4E",
+      "CurrentBytes": 2605,
+      "CurrentSha256": "AE7D69AEFEFCA6152AB1D327995452E1348F91D5B5EED27E536DDD050EF5AC4E",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesLTP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesLTP.cs",
+      "OriginalBytes": 14287,
+      "OriginalSha256": "751BFEF098C97C7F2CB6EDA4D2C67F94C8D602FA8753979339EEBF80F579BA6A",
+      "CurrentBytes": 14287,
+      "CurrentSha256": "751BFEF098C97C7F2CB6EDA4D2C67F94C8D602FA8753979339EEBF80F579BA6A",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB010.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB010.cs",
+      "OriginalBytes": 33696,
+      "OriginalSha256": "04035E67BB1599A0ACA54F9EBC75465C66D8B8BA9E81DD7F43044FF3B12479C1",
+      "CurrentBytes": 33696,
+      "CurrentSha256": "04035E67BB1599A0ACA54F9EBC75465C66D8B8BA9E81DD7F43044FF3B12479C1",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB010FLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB010FLP.cs",
+      "OriginalBytes": 46991,
+      "OriginalSha256": "87406312D1C30C7CC4B85480627AF7DDC800F95226587FE5680F64651BBD5563",
+      "CurrentBytes": 46991,
+      "CurrentSha256": "87406312D1C30C7CC4B85480627AF7DDC800F95226587FE5680F64651BBD5563",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB016.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB016.cs",
+      "OriginalBytes": 81028,
+      "OriginalSha256": "2818B4BE2FD97B08E6AF4F1A5BF8B3D421DCF8720174C8CBABDE5297BE3A6AE7",
+      "CurrentBytes": 81028,
+      "CurrentSha256": "2818B4BE2FD97B08E6AF4F1A5BF8B3D421DCF8720174C8CBABDE5297BE3A6AE7",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB016FLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB016FLP.cs",
+      "OriginalBytes": 124488,
+      "OriginalSha256": "FA65B5E855CAD71024DF5290F695E7F81A2EE444606BB15C4CB97C9036777EF9",
+      "CurrentBytes": 124488,
+      "CurrentSha256": "FA65B5E855CAD71024DF5290F695E7F81A2EE444606BB15C4CB97C9036777EF9",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB110.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB110.cs",
+      "OriginalBytes": 21967,
+      "OriginalSha256": "B5B8252D0E333C119178D84937194CA33F2188816D03C23B608F50D09ABAD0E1",
+      "CurrentBytes": 21967,
+      "CurrentSha256": "B5B8252D0E333C119178D84937194CA33F2188816D03C23B608F50D09ABAD0E1",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB110FLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB110FLP.cs",
+      "OriginalBytes": 29813,
+      "OriginalSha256": "494E35C931409F7D0D598EC3A6BCA37BF047B026CA8F700DBD6617164DE2FF66",
+      "CurrentBytes": 29813,
+      "CurrentSha256": "494E35C931409F7D0D598EC3A6BCA37BF047B026CA8F700DBD6617164DE2FF66",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB116.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB116.cs",
+      "OriginalBytes": 42085,
+      "OriginalSha256": "8BAFFFF9353AEE3A68DB2F730B349D7C53197FA156D715D04E542B18A6DA276E",
+      "CurrentBytes": 42085,
+      "CurrentSha256": "8BAFFFF9353AEE3A68DB2F730B349D7C53197FA156D715D04E542B18A6DA276E",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesNLSFCB116FLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesNLSFCB116FLP.cs",
+      "OriginalBytes": 62568,
+      "OriginalSha256": "C1C839F63399B885D8F695972C25109C27A47F8B89050C3343182F9F07194E6E",
+      "CurrentBytes": 62568,
+      "CurrentSha256": "C1C839F63399B885D8F695972C25109C27A47F8B89050C3343182F9F07194E6E",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesOther.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesOther.cs",
+      "OriginalBytes": 6218,
+      "OriginalSha256": "339836C688308E6F802290A7C047A59F0523A405873FD5B0ABB855E76779F2B3",
+      "CurrentBytes": 6218,
+      "CurrentSha256": "339836C688308E6F802290A7C047A59F0523A405873FD5B0ABB855E76779F2B3",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesOtherFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesOtherFLP.cs",
+      "OriginalBytes": 1175,
+      "OriginalSha256": "6CA0A6E9527ABAA262E6E356CD4E9635A1EAB4BDC4D45250771E417CE5940F42",
+      "CurrentBytes": 1175,
+      "CurrentSha256": "6CA0A6E9527ABAA262E6E356CD4E9635A1EAB4BDC4D45250771E417CE5940F42",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesPitchLag.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesPitchLag.cs",
+      "OriginalBytes": 11045,
+      "OriginalSha256": "89EE9C9FFB38A8074D5C71ACB58729988DD84EE76B774B9D1EF2CB3A942F949F",
+      "CurrentBytes": 11045,
+      "CurrentSha256": "89EE9C9FFB38A8074D5C71ACB58729988DD84EE76B774B9D1EF2CB3A942F949F",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesPulsesPerBlock.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesPulsesPerBlock.cs",
+      "OriginalBytes": 9840,
+      "OriginalSha256": "2761C56AD556FDF2A8B764AE2DA38F95C54B5E1DB9BF776C0297D7149B8E1FC6",
+      "CurrentBytes": 9840,
+      "CurrentSha256": "2761C56AD556FDF2A8B764AE2DA38F95C54B5E1DB9BF776C0297D7149B8E1FC6",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesSign.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesSign.cs",
+      "OriginalBytes": 1221,
+      "OriginalSha256": "ACA3F8509AFACC76D879301A93A03A2C7E655D4166E56D91DB3AEC7CEAB305A4",
+      "CurrentBytes": 1221,
+      "CurrentSha256": "ACA3F8509AFACC76D879301A93A03A2C7E655D4166E56D91DB3AEC7CEAB305A4",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/TablesTypeOffset.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/TablesTypeOffset.cs",
+      "OriginalBytes": 1314,
+      "OriginalSha256": "F60D53CF7CBB696E952AF3117F9E82778CBECD6A98465A906CC288ECF8D98924",
+      "CurrentBytes": 1314,
+      "CurrentSha256": "F60D53CF7CBB696E952AF3117F9E82778CBECD6A98465A906CC288ECF8D98924",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/Typedef.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/Typedef.cs",
+      "OriginalBytes": 2172,
+      "OriginalSha256": "9548A880D22AB27C461DE535EA59F27A0C7FA7B7017D89E6C7E7FBCC508A72B0",
+      "CurrentBytes": 2172,
+      "CurrentSha256": "9548A880D22AB27C461DE535EA59F27A0C7FA7B7017D89E6C7E7FBCC508A72B0",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/VAD.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/VAD.cs",
+      "OriginalBytes": 14232,
+      "OriginalSha256": "60CE26F6C865155B7B6A257CC4441504F7DB472DFCF4FE7B273CFE1286115352",
+      "CurrentBytes": 14232,
+      "CurrentSha256": "60CE26F6C865155B7B6A257CC4441504F7DB472DFCF4FE7B273CFE1286115352",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/VQNearestNeighborFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/VQNearestNeighborFLP.cs",
+      "OriginalBytes": 4913,
+      "OriginalSha256": "D7BC88EBD75DE51DD05D8B23B0119CB48D1BC6B08FA51F685F1112E56B0F78BF",
+      "CurrentBytes": 4913,
+      "CurrentSha256": "D7BC88EBD75DE51DD05D8B23B0119CB48D1BC6B08FA51F685F1112E56B0F78BF",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/WarpedAutocorrelationFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/WarpedAutocorrelationFLP.cs",
+      "OriginalBytes": 1855,
+      "OriginalSha256": "61682B38BB424A25E892D425A3E55E261EF28A4734320E6C823FF550F170D100",
+      "CurrentBytes": 1855,
+      "CurrentSha256": "61682B38BB424A25E892D425A3E55E261EF28A4734320E6C823FF550F170D100",
+      "Changed": false,
+      "Changes": "None"
+    },
+    {
+      "UpstreamPath": "SilkCodec.NET/Managed/WrappersFLP.cs",
+      "LocalPath": "src/Weixin.Silk/FullEncoder/Managed/WrappersFLP.cs",
+      "OriginalBytes": 21646,
+      "OriginalSha256": "0C914F8E8A3423D53E0705832B7CB3D2EBF96F2FA5FD2B0C4833B9628F5B8AC3",
+      "CurrentBytes": 21646,
+      "CurrentSha256": "0C914F8E8A3423D53E0705832B7CB3D2EBF96F2FA5FD2B0C4833B9628F5B8AC3",
+      "Changed": false,
+      "Changes": "None"
+    }
+  ],
+  "LocalAdapter": {
+    "Path": "src/Weixin.Silk/FullEncoder/ManagedSilkEncoder.cs",
+    "Sha256": "E453AD6A6BC254889B30F948C64C80696F7B3860C1A889ED9332D78B25A76A0E",
+    "Origin": "Locally authored bounded/cancellable adapter over the managed SDK API; control parameters follow upstream JitsiSilkEncoder.cs.",
+    "Api": "Weixin.Silk.ManagedSilkEncoder.Encode(byte[] pcm, int rate, int maxOutputBytes, Action checkpoint)",
+    "PacketMilliseconds": 20,
+    "BitRate": 25000,
+    "TencentContainer": true,
+    "PartialFinalFrame": "Padded with zeros; never silently discarded.",
+    "MinimumTwoPackets": "Caller pads input to at least two packets.",
+    "TemporaryBuffers": "Input short array, packet byte array, packet-length array, length prefix and one bounded output buffer cleared in finally; DSP state is managed and not guaranteed zeroed."
+  },
+  "Licenses": [
+    {
+      "UpstreamPath": "LICENSE",
+      "LocalPath": "docs/Greepar-SilkCodec-LICENSE.txt",
+      "OriginalSha256": "C71D239DF91726FC519C6EB72D318EC65820627232B2F796219E87DCF35D0AB4",
+      "CurrentSha256": "C71D239DF91726FC519C6EB72D318EC65820627232B2F796219E87DCF35D0AB4"
+    },
+    {
+      "UpstreamPath": "THIRD-PARTY-NOTICES",
+      "LocalPath": "docs/Greepar-SilkCodec-THIRD-PARTY-NOTICES.txt",
+      "OriginalSha256": "1EAF38C80D672EC3D5E6F3B6186A76F1166D8463732FA8362DB16DFE97FE7C02",
+      "CurrentSha256": "1EAF38C80D672EC3D5E6F3B6186A76F1166D8463732FA8362DB16DFE97FE7C02"
+    }
+  ],
+  "Verification": {
+    "CoreBuild": "dotnet build src/Weixin.Silk/Weixin.Silk.csproj -c Release --no-restore",
+    "BuildWarnings": 0,
+    "BuildErrors": 0,
+    "IntegrationEvidence": "artifacts/pure-csharp-research/managed-silk/full-encoder-integration-tests.json",
+    "IntegrationCasesPassed": 12,
+    "ProductionOracleEvidence": "artifacts/pure-csharp-research/managed-silk/production-full-encoder-reference.json",
+    "ProductionOracleResult": "96000 decoded PCM bytes match Skype SDK 1.0.9 reference exactly.",
+    "TestOracleNativeTools": "Confined to artifacts/pure-csharp-research/managed-silk; never production dependencies."
+  }
+}

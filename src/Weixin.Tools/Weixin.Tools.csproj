@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><AssemblyName>Weixin.Tools</AssemblyName><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../Weixin.Protocol/Weixin.Protocol.csproj" /></ItemGroup>
+</Project>

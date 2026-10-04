@@ -1,0 +1,130 @@
+{
+  "formatVersion": 1,
+  "scope": "Synthetic 440 Hz tone; old official dependency used only when generating fixed test vectors, never launched by these tests",
+  "generator": "silk-wasm 3.7.1 public encode API",
+  "generatorSourceCommit": "5971995be3ce05d4a1bf820fdf9d7ccdc942e945",
+  "pcmAmplitude": 9000,
+  "pcmFormat": "mono signed PCM16 little endian",
+  "files": [
+    {
+      "path": "wasm-8000.silk",
+      "apiSampleRate": 8000,
+      "durationMilliseconds": 2000,
+      "sha256": "28517dbc4dfb1d49261f478c81b179bf08373cb935978ca1ceded44b4c0c12fa",
+      "bytes": 6376,
+      "referencePcmSha256": "4765D3335E9A3E7FC5F68E3CCA2FD87742A5E8D254E888BEB058D8E02A939505"
+    },
+    {
+      "path": "wasm-12000.silk",
+      "apiSampleRate": 12000,
+      "durationMilliseconds": 2000,
+      "sha256": "377dac741b71b603b34cfb30bfe94644b9869630b1629986068eddbac11e458d",
+      "bytes": 7716,
+      "referencePcmSha256": "C3D3F98EFA1D8C7B32426694FC454DF2584F8BA6205492C93848FDCCA39FE598"
+    },
+    {
+      "path": "wasm-16000.silk",
+      "apiSampleRate": 16000,
+      "durationMilliseconds": 2000,
+      "sha256": "f8ca74e97a9d5936390913e695279bd6154784dbfdf1c36dba40890a4d4b55a9",
+      "bytes": 9195,
+      "referencePcmSha256": "1E1A8285FD83A439E22CBD4663A5E08ED404EF2A8605300973BFD57466401627"
+    },
+    {
+      "path": "wasm-24000.silk",
+      "apiSampleRate": 24000,
+      "durationMilliseconds": 2000,
+      "sha256": "61213ca944f16ed0337299852f16c6e73922be06ec2f5ad0a9b33561c3836f5d",
+      "bytes": 9233,
+      "referencePcmSha256": "234D6CA57B97DBB6DF2E1DA29E95701FA7B27CA8EBC41E767A6E7A45E7532205"
+    },
+    {
+      "path": "wasm-32000.silk",
+      "apiSampleRate": 32000,
+      "durationMilliseconds": 2000,
+      "sha256": "bf648a76826bd009862b1abbb6f6c97452f0fec2ab4eed03b56444014f59e7db",
+      "bytes": 9334
+    },
+    {
+      "path": "wasm-44100.silk",
+      "apiSampleRate": 44100,
+      "durationMilliseconds": 2000,
+      "sha256": "ee8fdb914673fc5262d3f2c9f354590caa0699d5c6601191830133cd6b2890ba",
+      "bytes": 9162
+    },
+    {
+      "path": "wasm-48000.silk",
+      "apiSampleRate": 48000,
+      "durationMilliseconds": 2000,
+      "sha256": "92cd3ad7bcdd41323b4def8001426282007ec28838b7300bf25691c565edc248",
+      "bytes": 9229
+    },
+    {
+      "path": "managed-24000-p20.silk",
+      "apiSampleRate": 24000,
+      "durationMilliseconds": 6000,
+      "packetDurationMilliseconds": 20,
+      "sha256": "816942406faa186365429fc077c160f1ba24d0bc825aad0e6e7826e4995d5737",
+      "bytes": 44341,
+      "referencePcmSha256": "95C7B316A1D7F6DB730DD62013A8B7BCD1BF0A8B9AFBAB14151B243E7C65033F"
+    },
+    {
+      "path": "managed-24000-p40.silk",
+      "apiSampleRate": 24000,
+      "durationMilliseconds": 6000,
+      "packetDurationMilliseconds": 40,
+      "sha256": "998cf85125e0f86cb267fec118f9545d0e69a1af444c2315d55cedabe66394c5",
+      "bytes": 43577,
+      "referencePcmSha256": "95C7B316A1D7F6DB730DD62013A8B7BCD1BF0A8B9AFBAB14151B243E7C65033F"
+    },
+    {
+      "path": "managed-24000-p60.silk",
+      "apiSampleRate": 24000,
+      "durationMilliseconds": 6000,
+      "packetDurationMilliseconds": 60,
+      "sha256": "39d06196655be6ba90089229eabc81481935e482e0c248a8ade80e4e27710c18",
+      "bytes": 43329,
+      "referencePcmSha256": "95C7B316A1D7F6DB730DD62013A8B7BCD1BF0A8B9AFBAB14151B243E7C65033F"
+    },
+    {
+      "path": "managed-24000-p80.silk",
+      "apiSampleRate": 24000,
+      "durationMilliseconds": 6000,
+      "packetDurationMilliseconds": 80,
+      "sha256": "0efa178bcb8c0a9142d9a7f85713fa4a655eb7d1f50c430d96ac0d4e74b68677",
+      "bytes": 43183,
+      "referencePcmSha256": "95C7B316A1D7F6DB730DD62013A8B7BCD1BF0A8B9AFBAB14151B243E7C65033F"
+    },
+    {
+      "path": "managed-24000-p100.silk",
+      "apiSampleRate": 24000,
+      "durationMilliseconds": 6000,
+      "packetDurationMilliseconds": 100,
+      "sha256": "fc35a35c9e40fc6569f15f12d20ee6b0e32b7fe4d1d6102eeb5bc2572b4c39a2",
+      "bytes": 43124,
+      "referencePcmSha256": "95C7B316A1D7F6DB730DD62013A8B7BCD1BF0A8B9AFBAB14151B243E7C65033F"
+    }
+  ],
+  "realVoiceOrAccountDataIncluded": false,
+  "referenceDecoder": "Unchanged Skype SILK SDK 1.0.9 test/Decoder.c, fixed source commit 5971995be3ce05d4a1bf820fdf9d7ccdc942e945; C executable used only for offline vector creation, not distributed or launched by tests",
+  "invalidFiles": [
+    {
+      "path": "invalid-six-frames-per-packet.silk",
+      "bytes": 1545,
+      "sha256": "45aad03243b26aa5dc736d4558dd700d64aa69323a376c7098bbfd2ab8230745",
+      "generator": "Local C# test of declared frame-count and missing continuation; synthetic silence, no real audio"
+    },
+    {
+      "path": "invalid-more-frames-without-payload.silk",
+      "bytes": 274,
+      "sha256": "19e0fab4d8e0a9f87a01a4fba21153c7a44834d413ca6d10fae6d50ff9b69f84",
+      "generator": "Local C# test of declared frame-count and missing continuation; synthetic silence, no real audio"
+    },
+    {
+      "path": "invalid-pitch-memory-boundary.silk",
+      "bytes": 40,
+      "sha256": "5ad2827e38a91ddc5f4d3e1a3c3368b7b4fc1deae20de0cbc511426e8e74bb18",
+      "generator": "Synthetic valid entropy symbols declaring pitch outside the decoder history buffer; no unsafe synthesis was invoked while creating this vector"
+    }
+  ]
+}

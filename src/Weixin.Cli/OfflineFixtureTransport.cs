@@ -294,7 +294,14 @@ internal sealed class OfflineFixtureTransport : HttpMessageHandler
         {
             if (!CryptographicOperations.FixedTimeEquals(capture.Key, decoded))
                 throw new InvalidOperationException("离线媒体发送密钥不等于上传密钥。");
-            return new { aesKeyVerified = true, aesKeyStep = index };
+            bool voice = descriptor.Name == "voice_item";
+            bool ratePresent = voice && descriptor.Value.TryGetProperty("sample_rate", out _);
+            bool bitsPresent = voice && descriptor.Value.TryGetProperty("bits_per_sample", out _);
+            return new { aesKeyVerified = true, aesKeyStep = index,
+                voiceSampleRatePresent = ratePresent, voiceBitsPerSamplePresent = bitsPresent,
+                voiceSampleRate = ratePresent ? descriptor.Value.GetProperty("sample_rate").GetInt32() : (int?)null,
+                voiceBitsPerSample = bitsPresent ? descriptor.Value.GetProperty("bits_per_sample").GetInt32() : (int?)null,
+                voiceEncoding = voice && descriptor.Value.TryGetProperty("encode_type", out var encoding) ? encoding.GetInt32() : (int?)null };
         }
         finally { CryptographicOperations.ZeroMemory(decoded); }
     }

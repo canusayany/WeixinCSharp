@@ -16,8 +16,12 @@ QRCoder 1.7.0 的传递依赖包括 System.Drawing.Common 6.0.0 和 Microsoft.Wi
 
 Windows 成品包含 .NET 10.0.3 运行时；该实际 runtime NuGet 包的原始许可及第三方声明随附于 docs/DOTNET-LICENSE.txt、docs/DOTNET-THIRD-PARTY-NOTICES.txt。
 
-1.2.0 本地语音转换随附 Node.js 24.19.0 Windows x64 运行时及 silk-wasm 3.7.1。Node 原始许可及内置第三方声明位于 runtime/voice/Node-LICENSE.txt；silk-wasm 原始 MIT 许可位于 runtime/voice/silk-wasm/LICENSE。底层 Skype SILK SDK、编解码封装及内嵌 WAV 解码组件的许可分别保留于 runtime/voice/Skype-SILK-SDK-LICENSE.txt、Skype-SILK-LICENSE.txt、wav-file-decoder-LICENSE.md。研究下载记录与完整性校验见 research/runtime-dependencies。
+1.3.0 的完整托管 SILK 编码器取自 greepar/SilkCodec.NET，固定提交 01e40689c61e399e193524ea83a4f89e27604201。只收录 Managed 底层 C#，保留逐文件版权和命名空间，未收录 MP3/FFmpeg/NLayer 入口。原始 Apache-2.0 许可与包含 Jitsi、Skype BSD-3-Clause-Clear 的完整第三方声明分别位于 docs/Greepar-SilkCodec-LICENSE.txt、docs/Greepar-SilkCodec-THIRD-PARTY-NOTICES.txt。原/现文件哈希和本地修改记录见 research/greepar-silk-provenance.json。项目自有 MIT 许可不会覆盖这些文件。
 
-腾讯固定源码使用 silk-wasm 做入站解码；本项目调用同一依赖的公开 encode API 制作 SILK 是独立扩展，不代表腾讯官方已提供原生语音外发路由。转换依赖均随包提供，运行时无需 npm 安装或下载依赖。
+托管 SILK 解码器及容器取自 DrAbcOfficial/SilkCodec.NET，固定提交 51205c364d685c78e64a0702474718358099caa3，原 MIT 许可见 docs/SilkCodec.NET-LICENSE.txt。本地增加严格格式拒绝、协作取消、输出保护、CDF/数组/指针边界检查，并拒绝将超长包静默转成 PLC。逐文件来源见 research/managed-silk-provenance.json。此组件内的简化编码器保留作源码对照，生产 VoiceCodec 编码调用前述完整编码器。
+
+1.2.0/1.2.1 曾随附 Node.js 24.19.0 和 silk-wasm 3.7.1；1.3.0 已移除其运行时与执行脚本。旧许可和 provenance 归档于 research/legacy-codec-licenses，固定合成测试向量曾用其公开 API 生成，日常测试不执行它们。研究下载记录及静态 C/C++ 对照仍见 research/runtime-dependencies。
+
+腾讯固定源码使用 silk-wasm 做入站解码；本项目的托管编解码和出站 VOICE 实验是独立扩展，不代表腾讯官方已提供原生语音外发路由。生产转换不需要 npm、Node、Python、FFmpeg、WASM 或外部 codec DLL。
 
 旧 WorkBuddy 逆向项目及其他无明确 LICENSE 的 demo 仅作公开机制分析，不复制或分发其代码；见研究来源说明。

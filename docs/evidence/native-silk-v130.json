@@ -1,0 +1,53 @@
+{
+  "formatVersion": 1,
+  "version": "1.3.0",
+  "scope": "Owned bound-account native SILK test; synthetic audio only",
+  "pureCSharp": true,
+  "localDurationMilliseconds": 2000,
+  "sampleBytes": 4756,
+  "sampleSha256": "A25B71DA7A6AE1B00EFD556600A9A7543EDA7FE88188A96AF9974184000AFAD2",
+  "encoding": 6,
+  "declaredSampleRateHz": 24000,
+  "declaredBitsPerSample": 16,
+  "apiAcceptedReceiptCount": 2,
+  "voiceApiAccepted": true,
+  "visibilityCueApiAccepted": true,
+  "desktopVisibilityCueObserved": true,
+  "desktopNewNativeBubbleObserved": false,
+  "desktopObservationLimitation": "Client displayed a storage-insufficient modal; newest message area remained visible, repeated snapshot did not show the new voice bubble. Playback could not be tested.",
+  "phoneConfirmation": "not-confirmed-at-publication",
+  "publishedFiles": [
+    {
+      "path": "weixin.deps.json",
+      "sha256": "5206B8964ECC2D087FD417ED6BA881E83F66BE9374E51CD87DB78E319CBCA41F",
+      "bytes": 30324
+    },
+    {
+      "path": "weixin.dll",
+      "sha256": "646D2EA89C76EFBE4D38160F3612A8CB01FDF8A764E0D0487D10591FBDBD0AEB",
+      "bytes": 89600
+    },
+    {
+      "path": "weixin.exe",
+      "sha256": "1ABC717FAE57B8E7187434BC427EB8374EDE1E5182607F4F1DF6B47EF69AA25A",
+      "bytes": 162304
+    },
+    {
+      "path": "Weixin.Protocol.dll",
+      "sha256": "5E244DEDC8DDB98F262FEF91A1ECE21ADF109811C8BBE84B68F3E34021B9152B",
+      "bytes": 141824
+    },
+    {
+      "path": "weixin.runtimeconfig.json",
+      "sha256": "CBBD0366E3124C840C10613610378CC8A022DF77D26DCBD75664E06D0A48C59C",
+      "bytes": 373
+    },
+    {
+      "path": "Weixin.Silk.dll",
+      "sha256": "75B26CAF381506C8936638224F605960604F4044363B03B70B88D8DF1FD110B7",
+      "bytes": 387072
+    }
+  ],
+  "containsCredentialsOrAccountIds": false,
+  "screenshotsOrChatsIncluded": false
+}
