@@ -1,0 +1,915 @@
+{
+  "formatVersion": 1,
+  "experimentDate": "2026-10-04",
+  "timeZone": "Asia/Shanghai",
+  "scope": "Post-release official Node component investigation; C# production unchanged",
+  "officialSourceCommit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+  "acquisition": {
+    "officialPluginVersion": "2.4.9",
+    "officialPluginIntegrityMatches": true,
+    "officialHostVersion": "2026.8.1",
+    "hostIntegrityMatches": true,
+    "nodeVersion": "v24.19.0",
+    "nodeExecutableSha256": "3602F2BB1A10F2CBAB4C36886218A33C1AB3DB87290E73B033C46C77147D0237"
+  },
+  "provenance": {
+    "officialPluginFilesVerified": 125,
+    "allInstalledPluginFilesMatchOfficialTarball": true,
+    "npmLockSha256": "B69D6C07675BE4AF9B249BD7D1FC01CF8FA4445176D903DBCFF482D581E99DC9",
+    "liveHarnessSha256": "6330D80618CDE9395D9A57817D622EB30B0D35365C8A1747C3BB7EE8DB724316",
+    "nodeExecutableSha256": "3602F2BB1A10F2CBAB4C36886218A33C1AB3DB87290E73B033C46C77147D0237",
+    "officialPluginTarSha256": "467E8047F7114E45944961FCD3EDA9421843C9C65DB61EA24176E252AB800EE4",
+    "offlineHarnessSha256": "54ED19DB2A428FE87C524660551CA0C9F206EA6EA7B5A648AA7189CA1F5BC52A",
+    "bridgeCsharpSourceSha256": "69B738B2EFC4FBB3A441307AF5BCE755DE5B3290EED762108C9F479AF04EB483",
+    "requestCompareCsharpSourceSha256": "7B4B9560C5CB53CDC513BCAA18C9E6DB146F94680C58164295ECEDFD65D17AE8"
+  },
+  "fixture": {
+    "synthetic": true,
+    "bytes": 8493,
+    "sampleRateHz": 24000,
+    "channels": 1,
+    "contentDurationMilliseconds": 2000,
+    "sha256": "38a037997838112a8cb70e89d19528d701407893d8187485c9ea7b3553921a1c"
+  },
+  "offlineComponentExecution": {
+    "formatVersion": 1,
+    "scope": "Actual official Node component execution with offline fetch responses",
+    "completedUtc": "2026-10-04T10:18:39.112Z",
+    "nodeVersion": "v24.19.0",
+    "officialPluginVersion": "2.4.9",
+    "officialHostSdkVersion": "2026.8.1",
+    "silkWasmVersion": "3.7.1",
+    "hostFunctionsStubbed": false,
+    "frameworkGatewayStarted": false,
+    "boundAccountAccessed": false,
+    "realNetworkRequests": 0,
+    "mocks": [
+      "fetch responses",
+      "inbound saveMedia storage dependency"
+    ],
+    "total": 7,
+    "passed": 7,
+    "cases": [
+      {
+        "name": "official-route-mp3",
+        "passed": true,
+        "uploadMediaType": 3,
+        "messageItemType": 4,
+        "nativeVoiceItem": false
+      },
+      {
+        "name": "official-route-silk",
+        "passed": true,
+        "uploadMediaType": 3,
+        "messageItemType": 4,
+        "nativeVoiceItem": false
+      },
+      {
+        "name": "official-route-wav",
+        "passed": true,
+        "uploadMediaType": 3,
+        "messageItemType": 4,
+        "nativeVoiceItem": false
+      },
+      {
+        "name": "official-route-video-control",
+        "passed": true,
+        "uploadMediaType": 2,
+        "messageItemType": 5,
+        "nativeVoiceItem": false
+      },
+      {
+        "name": "structured-mp3-voice",
+        "passed": true,
+        "uploadMediaType": 4,
+        "messageItemType": 3,
+        "scope": "Generic structured sender forwards caller-constructed VOICE; not a high-level native voice implementation"
+      },
+      {
+        "name": "official-inbound-voice-decrypt-and-decode",
+        "passed": true,
+        "savedMime": "audio/wav",
+        "decryptedAndDecodedMatchesDirectDecoder": true
+      },
+      {
+        "name": "official-real-silk-wasm-decode",
+        "passed": true,
+        "wavBytes": 96044,
+        "sampleRateHz": 24000,
+        "channels": 1,
+        "bitsPerSample": 16,
+        "pcmBytes": 96000,
+        "durationMilliseconds": 2000,
+        "pcmSha256": "60462a3fecd5e604fe786eba52d7671f4dcbbc9f22cbbc281868feb509ca3a89",
+        "matchesIndependentCReference": false
+      }
+    ],
+    "requests": [
+      {
+        "case": "official-route-mp3",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<bound-user>",
+          "rawsize": 8493,
+          "rawfilemd5": "dd19891fcda152e596c1e73dee312d88",
+          "filesize": 8496,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-route-mp3",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 8496,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "official-route-mp3",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "voice.mp3",
+                  "len": "8493"
+                }
+              }
+            ],
+            "context_token": "<context-token>"
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-route-silk",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<bound-user>",
+          "rawsize": 4756,
+          "rawfilemd5": "ccf86fe36de7fa5dd59fb5e9b3944f5e",
+          "filesize": 4768,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-route-silk",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 4768,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "official-route-silk",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "tone.silk",
+                  "len": "4756"
+                }
+              }
+            ],
+            "context_token": "<context-token>"
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-route-wav",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<bound-user>",
+          "rawsize": 96044,
+          "rawfilemd5": "e45fbf8793d77a034eabf1829d792e35",
+          "filesize": 96048,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-route-wav",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 96048,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "official-route-wav",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "synthetic.wav",
+                  "len": "96044"
+                }
+              }
+            ],
+            "context_token": "<context-token>"
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-route-video-control",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 2,
+          "to_user_id": "<bound-user>",
+          "rawsize": 2902,
+          "rawfilemd5": "45a9b08fd862cb50aea90536053d9261",
+          "filesize": 2912,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-route-video-control",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 2912,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "official-route-video-control",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "item_list": [
+              {
+                "type": 5,
+                "video_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "video_size": 2912
+                }
+              }
+            ],
+            "context_token": "<context-token>"
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 4,
+          "to_user_id": "<bound-user>",
+          "rawsize": 8493,
+          "rawfilemd5": "dd19891fcda152e596c1e73dee312d88",
+          "filesize": 8496,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 8496,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "item_list": [
+              {
+                "type": 3,
+                "voice_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "encode_type": 7,
+                  "sample_rate": 24000,
+                  "playtime": 2000
+                }
+              }
+            ],
+            "context_token": "<context-token>"
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-inbound-voice-decrypt-and-decode",
+        "endpoint": "cdn-download",
+        "encryptedBytes": 4768
+      }
+    ],
+    "containsCredentialsOrAccountIds": false
+  },
+  "liveComponentExecution": {
+    "formatVersion": 1,
+    "completedUtc": "2026-10-04T10:24:12.115Z",
+    "scope": "Official Node functions on own bound account; generic VOICE manually constructed",
+    "nodeVersion": "v24.19.0",
+    "pluginVersion": "2.4.9",
+    "formalRoute": "FILE",
+    "cases": [
+      {
+        "case": "official-mp3-file",
+        "apiAccepted": true
+      },
+      {
+        "case": "structured-mp3-voice",
+        "apiAccepted": true
+      }
+    ],
+    "requests": [
+      {
+        "case": "official-mp3-file",
+        "endpoint": "getuploadurl",
+        "httpStatus": 200,
+        "ret": null,
+        "errcode": null,
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<bound-user>",
+          "rawsize": 8493,
+          "rawfilemd5": "dd19891fcda152e596c1e73dee312d88",
+          "filesize": 8496,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "official-mp3-file",
+        "endpoint": "cdn-upload",
+        "httpStatus": 200,
+        "encryptedBytes": 8496
+      },
+      {
+        "case": "official-mp3-file",
+        "endpoint": "sendmessage",
+        "httpStatus": 200,
+        "ret": null,
+        "errcode": null,
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "node-audio.mp3",
+                  "len": "8493"
+                }
+              }
+            ],
+            "context_token": "<context-token>"
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "getuploadurl",
+        "httpStatus": 200,
+        "ret": null,
+        "errcode": null,
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 4,
+          "to_user_id": "<bound-user>",
+          "rawsize": 8493,
+          "rawfilemd5": "dd19891fcda152e596c1e73dee312d88",
+          "filesize": 8496,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "cdn-upload",
+        "httpStatus": 200,
+        "encryptedBytes": 8496
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "sendmessage",
+        "httpStatus": 200,
+        "ret": null,
+        "errcode": null,
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "item_list": [
+              {
+                "type": 3,
+                "voice_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "encode_type": 7,
+                  "sample_rate": 24000,
+                  "playtime": 2000
+                }
+              }
+            ],
+            "context_token": "<context-token>"
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorization": "Bearer <bot-token>"
+        }
+      }
+    ],
+    "credentialsPassedByStdin": true,
+    "containsCredentialsOrAccountIds": false,
+    "nativePlaybackVerified": false
+  },
+  "durableReceipts": {
+    "cases": {
+      "official-mp3-file": {
+        "status": "Sent",
+        "attemptCount": 1,
+        "resultCount": 1
+      },
+      "structured-mp3-voice": {
+        "status": "Sent",
+        "attemptCount": 1,
+        "resultCount": 1
+      }
+    },
+    "attemptCount": 2,
+    "resultCount": 2,
+    "sentCount": 2,
+    "unknownCount": 0,
+    "exitCode": 0
+  },
+  "desktopObservation": {
+    "ownBoundBotOnly": true,
+    "observations": 2,
+    "attachmentVisible": true,
+    "attachmentFileName": "node-audio.mp3",
+    "newNativeVoiceBubbleObserved": false,
+    "nativePlaybackVerified": false,
+    "phoneConfirmation": "not-confirmed-at-recording",
+    "connectionBannerObserved": true,
+    "lowStorageModalObservedDuringThisRun": false,
+    "previousDesktopLowStorageWarning": true,
+    "screenshotsPublished": false
+  },
+  "csharpRequestComparison": {
+    "formatVersion": 1,
+    "scope": "Offline C# API request comparison against original official Node execution; no CDN or phone delivery assertion.",
+    "protocolVersion": "2.4.9",
+    "realNetworkRequests": 0,
+    "boundAccountAccessed": false,
+    "containsCredentialsOrAccountIds": false,
+    "transport": "Custom HttpMessageHandler only; no inner or real handler.",
+    "fixture": {
+      "fileName": "voice.mp3",
+      "plaintextBytes": 8493,
+      "plaintextMd5": "dd19891fcda152e596c1e73dee312d88",
+      "pkcs7Bytes": 8496
+    },
+    "requests": [
+      {
+        "case": "official-route-mp3",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<bound-user>",
+          "rawsize": 8493,
+          "rawfilemd5": "dd19891fcda152e596c1e73dee312d88",
+          "filesize": 8496,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <bot-token>",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      {
+        "case": "official-route-mp3",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "context_token": "<context-token>",
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "voice.mp3",
+                  "len": "8493"
+                }
+              }
+            ]
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <bot-token>",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 4,
+          "to_user_id": "<bound-user>",
+          "rawsize": 8493,
+          "rawfilemd5": "dd19891fcda152e596c1e73dee312d88",
+          "filesize": 8496,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <bot-token>",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<bound-user>",
+            "client_id": "<official-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "context_token": "<context-token>",
+            "item_list": [
+              {
+                "type": 3,
+                "voice_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "encode_type": 7,
+                  "sample_rate": 24000,
+                  "playtime": 2000
+                }
+              }
+            ]
+          },
+          "base_info": {
+            "channel_version": "2.4.9",
+            "bot_agent": "OpenClaw"
+          }
+        },
+        "headers": {
+          "ilink-app-id": "bot",
+          "ilink-app-clientversion": "132105",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <bot-token>",
+          "content-type": "application/json; charset=utf-8"
+        }
+      }
+    ],
+    "comparisons": [
+      {
+        "case": "official-route-mp3",
+        "endpoint": "getuploadurl",
+        "bodyEqual": true,
+        "headersEqual": false,
+        "differences": [
+          {
+            "path": "$.headers.content-type",
+            "officialExists": true,
+            "csharpExists": true,
+            "official": "application/json",
+            "csharp": "application/json; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "case": "official-route-mp3",
+        "endpoint": "sendmessage",
+        "bodyEqual": true,
+        "headersEqual": false,
+        "differences": [
+          {
+            "path": "$.headers.content-type",
+            "officialExists": true,
+            "csharpExists": true,
+            "official": "application/json",
+            "csharp": "application/json; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "getuploadurl",
+        "bodyEqual": true,
+        "headersEqual": false,
+        "differences": [
+          {
+            "path": "$.headers.content-type",
+            "officialExists": true,
+            "csharpExists": true,
+            "official": "application/json",
+            "csharp": "application/json; charset=utf-8"
+          }
+        ]
+      },
+      {
+        "case": "structured-mp3-voice",
+        "endpoint": "sendmessage",
+        "bodyEqual": true,
+        "headersEqual": false,
+        "differences": [
+          {
+            "path": "$.headers.content-type",
+            "officialExists": true,
+            "csharpExists": true,
+            "official": "application/json",
+            "csharp": "application/json; charset=utf-8"
+          }
+        ]
+      }
+    ],
+    "allEqual": false
+  },
+  "normalization": {
+    "accountIdentifiersRemoved": true,
+    "botTokenRemoved": true,
+    "contextTokenRemoved": true,
+    "clientIdsRemoved": true,
+    "signedCdnParametersRemoved": true,
+    "aesKeysRemoved": true,
+    "contentLengthExcludedFromComparison": true,
+    "liveRequestsRewrittenForRedaction": false
+  },
+  "officialNativeVoiceSenderDemonstrated": false,
+  "productionCsharpChanged": false,
+  "productionNodeRuntimeAdded": false,
+  "containsCredentialsOrAccountIds": false
+}
