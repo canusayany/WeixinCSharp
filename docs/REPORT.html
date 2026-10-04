@@ -50,6 +50,7 @@ footer{max-width:1280px;margin:0 auto;padding:0 28px 32px;color:var(--muted);fon
 <p>用户提供的 moneyNews 仓库已做一次只读核查，以下结论仅覆盖该仓库当时的 QQ 路径：通过 QQBot 富媒体上传返回 file_info，再发送富媒体消息；MP3/WAV/SILK 直接交给该接口，没有 PCM→SILK 编码器，其他格式转换需要外部 FFmpeg。这里只独立借鉴格式检查、上传与发送分步及持久记录。仓库未提供许可，本项目未复制其私有源码，也没有把 QQ 的 file_type/msg_type 套到微信。</p>
 <p>历史完整元数据 SILK、真实手机语音重新上传及原描述符回发都出现过 API 接受而客户端无气泡。更换本地语言不能消除这个未知条件。本版已实际发送由发布 EXE 纯 C# 编码的两秒 SILK：4756 字节、显式 6/24000 Hz/16 bit/2000 ms，API 确认并保存唯一 Sent；随后配套文字在电脑版可见，但两次观察未见新语音气泡。电脑版还有存储不足弹窗，截至发布核查时尚未得到本轮手机确认，不能确认播放成功。详细证据见 <a href="evidence/native-silk-v130.json">新版原生语音记录</a>。原生 VOICE 保持实验状态，音频附件不作为气泡验收。</p>
 <h2 id="section-6">测试、交付与许可</h2>
+<p>1.3.0 发布后另试了一次 MP3 原生外发，结果及字段见 <a href="EXPERIMENT-MP3.md">MP3 补充实验</a>。原发布时的 SILK 证据保留，后续实验不覆盖历史记录。</p>
 <p>运行 <code>dotnet run --project src/Weixin.Tools -- test-all --output &lt;新目录&gt;</code> 完成 locked restore、Release 构建、单元/codec/tool 测试、自包含发布、真实 EXE 离线进程测试和再次 locked restore。Console 测试项目需要 dotnet run，dotnet test 不运行这些检查。离线 fixture 不证明真实微信送达。</p>
 <p>报告、打包和隐私审计也由 Weixin.Tools 完成。源码包只取公开源码、静态研究快照、合成向量与许可；成品包只带 .NET 应用和报告。绑定状态、聊天、用户媒体、下载目录、二维码及日志不进入公开包。审计结论只覆盖实际提供的状态凭据与私有媒体目录。</p>
 <p>自有代码采用 MIT；完整 SILK 编码器保留 Apache-2.0、Jitsi 和 Skype BSD-3-Clause-Clear 声明，解码器保留原 MIT。第三方许可不会被项目 MIT 替代。原/现 SHA 见 research/greepar-silk-provenance.json、research/managed-silk-provenance.json；详细许可见 <a href="../THIRD-PARTY-NOTICES.md">第三方通知</a>。</p>

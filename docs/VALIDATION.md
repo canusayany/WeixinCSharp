@@ -51,5 +51,7 @@
 
 ## 复现和发布审计
 
+发布后的 MP3 单独试发见 [补充实验](EXPERIMENT-MP3.md)和[脱敏摘要](evidence/native-mp3-v130.json)。该次操作使用上列已验 EXE，没有更改生产代码；原 1.3.0 ZIP 不重新打包。
+
 运行 `dotnet run --project src/Weixin.Tools -- test-all --output <新目录>`，输出和版本发布目录都要为空。render-report、package、audit 同样为 C#；源码包包含 C#、固定合成向量、公开报告和静态上游研究/许可快照，成品不含 Node/WASM/Python/FFmpeg。打包后以当前绑定状态的已知凭据和指定私有媒体 SHA 审计，再验证公开源码克隆的字节与锁定构建；结果另附发布证据。
 打包复核还发现本地旧 Node 下载 ZIP 被研究目录递归收录（未上传）。已加入研究二进制/脚本排除及审计拒绝，相关 C# 工具 14/14 重跑通过；公开源码包已降至约 1.2 MB。该修复只影响项目工具，最终生产源码和 EXE 六项哈希保持不变。

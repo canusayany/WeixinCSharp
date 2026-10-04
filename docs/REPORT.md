@@ -66,6 +66,8 @@ SILK 入站预检用包数×五帧计算最坏输出容量，是保守保护，�
 
 ## 测试、交付与许可
 
+1.3.0 发布后另试了一次 MP3 原生外发，结果及字段见 [MP3 补充实验](EXPERIMENT-MP3.md)。原发布时的 SILK 证据保留，后续实验不覆盖历史记录。
+
 运行 `dotnet run --project src/Weixin.Tools -- test-all --output <新目录>` 完成 locked restore、Release 构建、单元/codec/tool 测试、自包含发布、真实 EXE 离线进程测试和再次 locked restore。Console 测试项目需要 dotnet run，dotnet test 不运行这些检查。离线 fixture 不证明真实微信送达。
 
 报告、打包和隐私审计也由 Weixin.Tools 完成。源码包只取公开源码、静态研究快照、合成向量与许可；成品包只带 .NET 应用和报告。绑定状态、聊天、用户媒体、下载目录、二维码及日志不进入公开包。审计结论只覆盖实际提供的状态凭据与私有媒体目录。
