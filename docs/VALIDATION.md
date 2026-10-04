@@ -55,5 +55,7 @@
 
 发布后又执行了[原版官方 Node 对照](EXPERIMENT-OFFICIAL-NODE.md)：七组模拟 HTTP 的本地断言通过，不是微信端到端验收。两笔实际 Node 发送各保存唯一 Sent、六请求 HTTP 200；电脑版显示 MP3 附件，未见手工 VOICE 的新气泡，手机未确认。C# 与 Node 的四组规范化 JSON 请求体一致，Content-Type 参数有差异，比较程序返回 1。原版 WASM 解码与独立 C 参考 PCM 不同，未声称位一致。完整范围见[新增证据](evidence/official-node-v130.json)；本次没有更改 C# 生产字节。
 
+[WorkBuddy 5.6.2 安装包核查](EXPERIMENT-WORKBUDDY-562.md)另完成签名、17,800 个 ASAR 内部文件的 hash 校验、桌面及 CLI 调用链审阅，以及六组原始函数离线执行（6/6、真实网络为零）。三种音频均产生 FILE，视频产生 VIDEO；无文字 VOICE 的桌面下载 helper 返回 null，已有 ASR 文字可以提取。没有启动完整 WorkBuddy 或新增实机送达结果。43 个外置文件的索引差异已记录，未声称全包字节一致。详见[证据](evidence/workbuddy-562.json)。
+
 运行 `dotnet run --project src/Weixin.Tools -- test-all --output <新目录>`，输出和版本发布目录都要为空。render-report、package、audit 同样为 C#；源码包包含 C#、固定合成向量、公开报告和静态上游研究/许可快照，成品不含 Node/WASM/Python/FFmpeg。打包后以当前绑定状态的已知凭据和指定私有媒体 SHA 审计，再验证公开源码克隆的字节与锁定构建；结果另附发布证据。
 打包复核还发现本地旧 Node 下载 ZIP 被研究目录递归收录（未上传）。已加入研究二进制/脚本排除及审计拒绝，相关 C# 工具 14/14 重跑通过；公开源码包已降至约 1.2 MB。该修复只影响项目工具，最终生产源码和 EXE 六项哈希保持不变。

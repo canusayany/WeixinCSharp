@@ -1,0 +1,654 @@
+{
+  "formatVersion": 1,
+  "investigatedOn": "2026-10-04",
+  "timeZone": "Asia/Shanghai",
+  "installer": {
+    "fileName": "WorkBuddy-win32-x64-user-5.6.2.39298511-37a65c0b.exe",
+    "bytes": 530927840,
+    "sha256": "627e5a565436d0876740af69c2747759648662c52958d2a5df1ba330a82c3025",
+    "authenticodeStatus": "Valid",
+    "signerOrganization": "Tencent Technology (Shenzhen) Company Limited",
+    "fileAndProductVersion": "5.6.2",
+    "fileNameBuildNumber": "39298511",
+    "fileNameCommitSuffix": "37a65c0b",
+    "fullSourceCommitIndependentlyVerified": false,
+    "acquiredFrom": "User-supplied local installer",
+    "installerExecuted": false
+  },
+  "extraction": {
+    "format": "NSIS-3 Unicode",
+    "compression": "Deflate",
+    "applicationFileCount": 2903,
+    "applicationTotalBytes": 1417893130,
+    "asarBytes": 317114821,
+    "asarSha256": "c4304eec1f8849ea16b9492f02dcc5d1e93be4a7aed184b7effaabd2f06c9d22",
+    "packedFiles": 17800,
+    "unpackedFiles": 2753,
+    "totalAsarFiles": 20553,
+    "packedEmbeddedHashesVerified": 17800,
+    "packedEmbeddedHashMismatch": 0,
+    "unpackedDeclaredSizeMismatch": 43,
+    "unpackedEmbeddedHashMismatch": 43,
+    "mismatchFilesPreservedAsActuallyBundled": true,
+    "mismatchBuildCausesIndividuallyEstablished": false
+  },
+  "application": {
+    "packageName": "@genie/workbuddy-desktop",
+    "packageVersion": "5.6.2",
+    "entryPoint": "main/index.js",
+    "installManifestGeneratedUtc": "2026-09-21T12:31:06.535Z",
+    "nativeModulesLoaded": false,
+    "fullWorkBuddyStarted": false,
+    "existingUserProfilesRead": false
+  },
+  "extractionTool": {
+    "name": "7-Zip",
+    "version": "26.03",
+    "primaryRelease": "https://github.com/ip7z/7zip/releases/tag/26.03",
+    "downloadedInstallerSha256": "0859c524b8a63551848f0c246abddcb1d0b7b656b0fbfe879f8d85e61a9e6edd",
+    "downloaded7zrSha256": "ad4c82fadcbdf93c03b4fc440f300509c7d60c5c2f4d183e35d9d70d6957037d",
+    "used7zExeSha256": "6ee3c0ed0b27663c1b948ae85a7c0bb073aed1498983182f3f0df1f6a8c30b2f",
+    "officialReleaseDigestsMatched": true
+  },
+  "connection": {
+    "channelId": "weixinClawBot",
+    "factoryRegisteredInDesktopServer": true,
+    "defaultApi": "https://ilinkai.weixin.qq.com",
+    "defaultCdn": "https://novac2c.cdn.weixin.qq.com/c2c",
+    "qrMethod": "GET",
+    "qrBotType": 3,
+    "qrStatusExplicitClientVersion": "1",
+    "businessMethod": "POST",
+    "businessEndpoints": [
+      "getupdates",
+      "sendmessage",
+      "getconfig",
+      "sendtyping"
+    ],
+    "baseInfoChannelVersion": "workbuddy-desktop-1.0.0",
+    "baseInfoBotAgentPresent": false,
+    "xWechatUinEncoding": "base64(utf8(random-uint32-decimal))",
+    "uploadHelperSetsXWechatUin": false,
+    "headerScope": "Explicit function construction; no full-application packet capture",
+    "sourceRegionsAndLines": [
+      {
+        "symbol": "weixin-api",
+        "line": 72833
+      },
+      {
+        "symbol": "weixin-auth",
+        "line": 72918
+      },
+      {
+        "symbol": "registerPlugin(createWeixinClawBotPlugin)",
+        "line": 88445
+      }
+    ]
+  },
+  "staticAnalysis": {
+    "analysisKind": "static-call-chain",
+    "workBuddyVersion": "5.6.2.39298511",
+    "executedWorkBuddy": false,
+    "loadedNativePlugin": false,
+    "readUserProfileOrCredentials": false,
+    "sentLiveMessages": false,
+    "offsetUnit": "zero-based-utf16-code-unit",
+    "desktop": {
+      "relativePath": "main/server.js",
+      "bytes": 7217735,
+      "sha256": "BA99F1DC4CA233D25D5CB1F68273B1C07E3FCE96B151BED0F524BA5ADCF1FEF6",
+      "channel": "weixinClawBot",
+      "outboundCallChain": [
+        {
+          "symbol": "WeixinClawBotOutboundAdapter",
+          "offset": 2681902
+        },
+        {
+          "symbol": "WeixinClawBotClient.sendReply",
+          "offset": 2650432
+        },
+        {
+          "symbol": "WeixinClawBotClient.sendMediaReply",
+          "offset": 2653843
+        },
+        {
+          "symbol": "inferMediaType",
+          "offset": 2645646
+        },
+        {
+          "symbol": "uploadMediaFile",
+          "offset": 2640342
+        },
+        {
+          "symbol": "buildMediaMessageItem",
+          "offset": 2644898
+        },
+        {
+          "symbol": "WeixinApi.sendMessage",
+          "offset": 2628781
+        }
+      ],
+      "uploadMediaSignature": "uploadMediaFile(filePath, toUserId, mediaType, headers, logger)",
+      "uploadHeadersArgumentFields": [
+        "baseUrl",
+        "token",
+        "productVersion"
+      ],
+      "itemBuilderSignature": "buildMediaMessageItem(uploaded, mediaType, fileName)",
+      "sendMediaReplySignature": "sendMediaReply(context, filePath, caption)",
+      "sendMediaReplyContextFields": [
+        "userId",
+        "contextToken"
+      ],
+      "nativeVoiceSenderFound": false,
+      "routes": [
+        {
+          "mimeClass": "image/*",
+          "uploadMediaType": 1,
+          "messageItemType": 2
+        },
+        {
+          "mimeClass": "video/*",
+          "uploadMediaType": 2,
+          "messageItemType": 5
+        },
+        {
+          "mimeClass": "all-other-including-audio-and-silk",
+          "uploadMediaType": 3,
+          "messageItemType": 4
+        }
+      ],
+      "audioMimeMappings": {
+        ".mp3": "audio/mpeg",
+        ".ogg": "audio/ogg",
+        ".wav": "audio/wav"
+      },
+      "silkMimeFallback": "application/octet-stream",
+      "mediaFieldSchema": {
+        "common": [
+          "encrypt_query_param",
+          "aes_key",
+          "encrypt_type"
+        ],
+        "encrypt_type": 1,
+        "aes_keyEncoding": "base64(utf8(hex(random16bytes)))",
+        "image": [
+          "type=2",
+          "image_item.media",
+          "image_item.mid_size=ciphertext-length"
+        ],
+        "video": [
+          "type=5",
+          "video_item.media",
+          "video_item.video_size=ciphertext-length"
+        ],
+        "file": [
+          "type=4",
+          "file_item.media",
+          "file_item.file_name=basename",
+          "file_item.len=decimal-string-plaintext-length"
+        ]
+      },
+      "limits": {
+        "source": "client-implementation-not-server-guarantee",
+        "mediaMaxPlaintextBytes": 104857600,
+        "mediaGuardOffset": 2634407,
+        "mediaEqualMaxAllowed": true,
+        "audioDurationLimitFound": false,
+        "videoDurationLimitFound": false,
+        "audioSampleRateBitDepthValidationFound": false,
+        "textChunkUtf8Bytes": 3800,
+        "textChunkIntervalMs": 300,
+        "getUploadUrlTimeoutMs": 15000,
+        "cdnUploadMaximumAttempts": 3,
+        "cdn4xxRetried": false,
+        "cdnUploadTimeoutOrBackoffFound": false
+      },
+      "incomingVoice": {
+        "asrTextConsumed": true,
+        "upperLayerRecognizesVoiceMedia": true,
+        "downloadHelperHasVoiceBranch": false,
+        "silkCodecFound": false,
+        "voiceWithoutTextOrOtherMediaDispatched": false
+      },
+      "errorObservation": "sendMediaReply catches failures and returns false; sendReply ignores that boolean, so adapter success does not prove media delivery",
+      "zeroCountTokens": [
+        "encode_type",
+        "bits_per_sample",
+        "sample_rate",
+        "playtime",
+        "audioAsVoice",
+        "sendVoice",
+        "sendAudio"
+      ],
+      "voiceItemLiteralCount": 11,
+      "voiceItemLiteralsClassifiedAsInboundOnly": true
+    },
+    "cli": {
+      "relativePath": "cli/dist/codebuddy-headless.js",
+      "bytes": 12479479,
+      "sha256": "83D19D8462E5DFC7E6FFB02528DF5D89A2A502354270CCF5F5F456A4B068CFBB",
+      "outboundCallChain": [
+        {
+          "symbol": "WeChatReply",
+          "offset": 8156658
+        },
+        {
+          "symbol": "WechatChannelBridge.sendFileReply",
+          "offset": 6006848
+        },
+        {
+          "symbol": "WechatClient.sendFileReply",
+          "offset": 6017576
+        },
+        {
+          "symbol": "uploadMedia",
+          "offset": 6026019
+        }
+      ],
+      "nativeVoiceSenderFound": false,
+      "nonImageFilesIncludingAudioAndVideoRoute": {
+        "uploadMediaType": 3,
+        "messageItemType": 4
+      },
+      "incomingVoice": {
+        "asrTextConsumed": true,
+        "rawSilkDownloadSupported": true,
+        "voiceBranchOffset": 6020838,
+        "downloadHelperOffset": 6025400,
+        "extensionFunctionOffset": 6027162,
+        "silkCodecFound": false
+      },
+      "mediaSizeOrDurationGuardInUploadHelperFound": false,
+      "runtimeRelationshipWithDesktopChannel": "not-established-by-static-analysis"
+    },
+    "otherChannelsExcluded": [
+      {
+        "channel": "wecomaibot",
+        "voiceClassifierOffset": 2624713,
+        "reason": "Enterprise WeChat WebSocket channel, separate from personal-WeChat iLink"
+      },
+      {
+        "relativePath": "cli/dist/lazy-headless/885.fc9f0dcd.js",
+        "sha256": "006CFF173D777CE9CF7432C8564C289543E203FA81E5D9CC59716B6CDD81C939",
+        "reason": "sendAudio forwards to OpenAI Realtime input_audio_buffer/SIP, not WeChat"
+      }
+    ],
+    "conclusionScope": "Native VOICE outbound was not implemented in either traced local personal-WeChat implementation in this precise installer; this does not establish permanent server incapability or behavior of other versions"
+  },
+  "offlineOriginalFunctionExecution": {
+    "formatVersion": 1,
+    "completedUtc": "2026-10-04T10:56:08.076Z",
+    "scope": "Original WorkBuddy desktop Weixin regions invoked with synthetic fixtures and mocked HTTP; full WorkBuddy application not started and no account accessed",
+    "installerVersion": "5.6.2",
+    "nodeVersion": "v24.19.0",
+    "sourceSha256": "ba99f1dc4ca233d25d5cb1f68273b1c07e3fce96b151bed0f524ba5adcf1fef6",
+    "regions": [
+      {
+        "name": "weixin-types",
+        "utf16Start": 2625793,
+        "utf16Length": 718,
+        "sha256": "5ca7e20fd82c2c53cc9fc9e22b39fb2f41b42eb5fcffd7c028e973c96c6947db"
+      },
+      {
+        "name": "weixin-api",
+        "utf16Start": 2626524,
+        "utf16Length": 2742,
+        "sha256": "77de2d9e6168d2bf1d421dee349598f8ee890b044a1150c42c0fb8626f0fb596"
+      },
+      {
+        "name": "weixin-media",
+        "utf16Start": 2633526,
+        "utf16Length": 12315,
+        "sha256": "32a887431f9c589649aa78aa8f67bb8679ab104066efd063f479521f3c6f8ec3"
+      },
+      {
+        "name": "weixin-client",
+        "utf16Start": 2645854,
+        "utf16Length": 24926,
+        "sha256": "45a740557f10682f5181456c37e0015a6cf28c839417424c09fcd9f51e959dc0"
+      }
+    ],
+    "implementationRegionsChanged": false,
+    "implementationExportsInstrumentationAdded": true,
+    "originalClientAndApiMethodsExecuted": true,
+    "fullWorkBuddyStarted": false,
+    "loginOrPollingInvoked": false,
+    "fileReadScope": "Original modules can read four synthetic fixture files only; harness also reads installer source; mkdir is virtual and original-module writes throw",
+    "decoderSpyInstalled": false,
+    "decoderConclusionsBasedOnSourceAndCallPath": true,
+    "originalModuleReadCount": 4,
+    "realNetworkRequests": 0,
+    "boundAccountAccessed": false,
+    "httpResponsesMocked": true,
+    "cryptoFunctionsMocked": false,
+    "mediaMaxBytes": 104857600,
+    "total": 6,
+    "passed": 6,
+    "cases": [
+      {
+        "name": "desktop-original-mp3",
+        "passed": true,
+        "uploadMediaType": 3,
+        "messageItemType": 4,
+        "nativeVoiceItem": false,
+        "fixtureBytes": 8493,
+        "fixtureSha256": "38a037997838112a8cb70e89d19528d701407893d8187485c9ea7b3553921a1c"
+      },
+      {
+        "name": "desktop-original-silk",
+        "passed": true,
+        "uploadMediaType": 3,
+        "messageItemType": 4,
+        "nativeVoiceItem": false,
+        "fixtureBytes": 4756,
+        "fixtureSha256": "a25b71da7a6ae1b00efd556600a9a7543eda7fe88188a96af9974184000afad2"
+      },
+      {
+        "name": "desktop-original-wav",
+        "passed": true,
+        "uploadMediaType": 3,
+        "messageItemType": 4,
+        "nativeVoiceItem": false,
+        "fixtureBytes": 96044,
+        "fixtureSha256": "08ac596c3839bb384211d931d2a36c238677491f94d1b185f83dba019cfc2d54"
+      },
+      {
+        "name": "desktop-original-video",
+        "passed": true,
+        "uploadMediaType": 2,
+        "messageItemType": 5,
+        "nativeVoiceItem": false,
+        "fixtureBytes": 2902,
+        "fixtureSha256": "bc2a2080c24c88cb0ed666922875d5be54d3c55354bb5c70b1f2c8d5ba147adc"
+      },
+      {
+        "name": "desktop-original-inbound-voice-without-text",
+        "passed": true,
+        "downloadResult": null,
+        "httpRequests": 0,
+        "voiceDecoderCalled": false
+      },
+      {
+        "name": "desktop-original-inbound-asr-text",
+        "passed": true,
+        "suppliedVoiceTextExtracted": true,
+        "audioDecoded": false
+      }
+    ],
+    "requests": [
+      {
+        "case": "desktop-original-mp3",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<synthetic-user>",
+          "rawsize": 8493,
+          "rawfilemd5": "dd19891fcda152e596c1e73dee312d88",
+          "filesize": 8496,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      },
+      {
+        "case": "desktop-original-mp3",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 8496,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "desktop-original-mp3",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<synthetic-user>",
+            "client_id": "<workbuddy-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "context_token": "<synthetic-context>",
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "voice.mp3",
+                  "len": "8493"
+                }
+              }
+            ]
+          },
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      },
+      {
+        "case": "desktop-original-silk",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<synthetic-user>",
+          "rawsize": 4756,
+          "rawfilemd5": "ccf86fe36de7fa5dd59fb5e9b3944f5e",
+          "filesize": 4768,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      },
+      {
+        "case": "desktop-original-silk",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 4768,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "desktop-original-silk",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<synthetic-user>",
+            "client_id": "<workbuddy-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "context_token": "<synthetic-context>",
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "tone.silk",
+                  "len": "4756"
+                }
+              }
+            ]
+          },
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      },
+      {
+        "case": "desktop-original-wav",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 3,
+          "to_user_id": "<synthetic-user>",
+          "rawsize": 96044,
+          "rawfilemd5": "40f2016e73a9eb591538ca48921311d9",
+          "filesize": 96048,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      },
+      {
+        "case": "desktop-original-wav",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 96048,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "desktop-original-wav",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<synthetic-user>",
+            "client_id": "<workbuddy-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "context_token": "<synthetic-context>",
+            "item_list": [
+              {
+                "type": 4,
+                "file_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "file_name": "synthetic-tone.wav",
+                  "len": "96044"
+                }
+              }
+            ]
+          },
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      },
+      {
+        "case": "desktop-original-video",
+        "endpoint": "getuploadurl",
+        "body": {
+          "filekey": "<random-filekey>",
+          "media_type": 2,
+          "to_user_id": "<synthetic-user>",
+          "rawsize": 2902,
+          "rawfilemd5": "45a9b08fd862cb50aea90536053d9261",
+          "filesize": 2912,
+          "no_need_thumb": true,
+          "aeskey": "<hex16-key>",
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      },
+      {
+        "case": "desktop-original-video",
+        "endpoint": "cdn-upload",
+        "encryptedBytes": 2912,
+        "decryptedMatchesInput": true
+      },
+      {
+        "case": "desktop-original-video",
+        "endpoint": "sendmessage",
+        "body": {
+          "msg": {
+            "from_user_id": "",
+            "to_user_id": "<synthetic-user>",
+            "client_id": "<workbuddy-generated-client-id>",
+            "message_type": 2,
+            "message_state": 2,
+            "context_token": "<synthetic-context>",
+            "item_list": [
+              {
+                "type": 5,
+                "video_item": {
+                  "media": {
+                    "encrypt_query_param": "<download-parameter>",
+                    "aes_key": "<base64-ascii-hex16-key>",
+                    "encrypt_type": 1
+                  },
+                  "video_size": 2912
+                }
+              }
+            ]
+          },
+          "base_info": {
+            "channel_version": "workbuddy-desktop-1.0.0"
+          }
+        },
+        "headers": {
+          "content-type": "application/json",
+          "authorizationtype": "ilink_bot_token",
+          "x-wechat-uin": "<base64-uint32-decimal>",
+          "authorization": "Bearer <synthetic-token>"
+        }
+      }
+    ],
+    "nativeVoiceDeliveryVerified": false,
+    "containsCredentialsOrAccountIds": false
+  },
+  "harness": {
+    "nodeVersion": "v24.19.0",
+    "nodeExecutableSha256": "3602F2BB1A10F2CBAB4C36886218A33C1AB3DB87290E73B033C46C77147D0237",
+    "offlineHarnessSha256": "45BA265CE1C6C8D950E9B689AAD24851CD3D432ABA384B260D818E4923852C4E",
+    "csharpProbeSourceSha256": "8E73C07423BA9B357BD5F1C6A17FD2433D994FD64571547E1F881397A2DB8EEB"
+  },
+  "productionCsharpChanged": false,
+  "runtimeDependencyAddedToDelivery": false,
+  "proprietaryCodeOrInstallerPublished": false,
+  "realWeChatDeliveryOrPlaybackVerifiedByThisExperiment": false,
+  "containsCredentialsOrAccountIds": false
+}

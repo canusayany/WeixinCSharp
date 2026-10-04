@@ -70,6 +70,8 @@ SILK 入站预检用包数×五帧计算最坏输出容量，是保守保护，�
 
 随后直接运行原版腾讯 Node 2.4.9 媒体组件：七组本地检查确认 MP3/SILK/WAV 的正式路线均为 FILE，入站语音可解密转 WAV；两笔真实发送中，官方默认路线显示 MP3 附件，手工 VOICE 路线 HTTP 200 但电脑版未见新气泡。OpenClaw 框架的 TTS 能力不能代替微信适配器的原生外发实现。执行范围、C# 请求头差异及尚未确认的播放结果见 [官方 Node 对照](EXPERIMENT-OFFICIAL-NODE.md)和[脱敏证据](evidence/official-node-v130.json)。Node 仅用于本地研究，生产仍为纯 C#。
 
+用户提供的 WorkBuddy 5.6.2 安装包已完成签名校验、解包及微信发送链核查。该版本的桌面个人微信助理使用 iLink，音频默认发送 FILE；附带 CLI 同样没有原生语音出口。六组原始函数离线断言进一步确认该路由，未连接真实账号。企业微信的 voice 分支属于另一通道。新发现的 3800 UTF-8 字节分段与 100 MiB 媒体 guard 是 WorkBuddy 本地值，不能概括为服务端上限。详见 [安装包逆向记录](EXPERIMENT-WORKBUDDY-562.md)及[结构化证据](evidence/workbuddy-562.json)。本次未复制其专有实现或改动 C# 生产源码。
+
 运行 `dotnet run --project src/Weixin.Tools -- test-all --output <新目录>` 完成 locked restore、Release 构建、单元/codec/tool 测试、自包含发布、真实 EXE 离线进程测试和再次 locked restore。Console 测试项目需要 dotnet run，dotnet test 不运行这些检查。离线 fixture 不证明真实微信送达。
 
 报告、打包和隐私审计也由 Weixin.Tools 完成。源码包只取公开源码、静态研究快照、合成向量与许可；成品包只带 .NET 应用和报告。绑定状态、聊天、用户媒体、下载目录、二维码及日志不进入公开包。审计结论只覆盖实际提供的状态凭据与私有媒体目录。
