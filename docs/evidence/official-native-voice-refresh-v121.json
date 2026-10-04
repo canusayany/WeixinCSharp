@@ -1,0 +1,169 @@
+{
+  "formatVersion": 1,
+  "checkedAtUtc": "2026-10-04T00:42:26.8726136Z",
+  "prEntryPointsCheckedAtUtc": "2026-10-04T00:48:44.1253477+00:00",
+  "savedAtUtc": "2026-10-04T00:48:44.1253477+00:00",
+  "operation": "Bounded read-only public official GitHub API/raw-source and official npm registry refresh; no code executed, no account used, no sends performed.",
+  "repository": "https://github.com/Tencent/openclaw-weixin",
+  "main": {
+    "apiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/commits/main",
+    "sha": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+    "commitDateUtc": "2026-09-21T14:23:14Z",
+    "commitUrl": "https://github.com/Tencent/openclaw-weixin/commit/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c"
+  },
+  "stable": {
+    "tagsApiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/tags?per_page=10",
+    "commit": "43675b66551d12d6853155a7869a50fb12a18a1e",
+    "tagUrl": "https://github.com/Tencent/openclaw-weixin/tree/v2.4.9",
+    "tag": "v2.4.9"
+  },
+  "npm": {
+    "latest": "2.4.9",
+    "beta": "2.4.9-beta.0",
+    "registryUrl": "https://registry.npmjs.org/@tencent-weixin%2Fopenclaw-weixin",
+    "latestPublishedUtc": "2026-09-17T04:20:17.142Z",
+    "package": "@tencent-weixin/openclaw-weixin"
+  },
+  "officialRoutes": [
+    {
+      "routeLineEnd": 75,
+      "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/messaging/send-media.ts",
+      "audioRoute": "FILE attachment via uploadFileAttachmentToWeixin + sendFileMessageWeixin; no native VOICE routing branch.",
+      "path": "src/messaging/send-media.ts",
+      "ref": "main",
+      "routeLineStart": 60,
+      "sha256": "e1c1dbe303c3c2c1ae9557fc124c19dcb893fc6f626089678affc6415af7fd1c",
+      "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/messaging/send-media.ts#L60"
+    },
+    {
+      "routeLineEnd": 166,
+      "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+      "audioUpload": "UploadMediaType.FILE through uploadFileAttachmentToWeixin.",
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/cdn/upload.ts",
+      "path": "src/cdn/upload.ts",
+      "ref": "main",
+      "routeLineStart": 151,
+      "sha256": "81ef18b5f972d29849859cfbbbc0c1be88298750eb4b2e342b2a0c43b7039cba",
+      "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/cdn/upload.ts#L151"
+    },
+    {
+      "routeLineEnd": 75,
+      "commit": "43675b66551d12d6853155a7869a50fb12a18a1e",
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/43675b66551d12d6853155a7869a50fb12a18a1e/src/messaging/send-media.ts",
+      "audioRoute": "FILE attachment via uploadFileAttachmentToWeixin + sendFileMessageWeixin; no native VOICE routing branch.",
+      "path": "src/messaging/send-media.ts",
+      "ref": "stable",
+      "routeLineStart": 60,
+      "sha256": "e1c1dbe303c3c2c1ae9557fc124c19dcb893fc6f626089678affc6415af7fd1c",
+      "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/43675b66551d12d6853155a7869a50fb12a18a1e/src/messaging/send-media.ts#L60"
+    },
+    {
+      "routeLineEnd": 166,
+      "commit": "43675b66551d12d6853155a7869a50fb12a18a1e",
+      "audioUpload": "UploadMediaType.FILE through uploadFileAttachmentToWeixin.",
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/43675b66551d12d6853155a7869a50fb12a18a1e/src/cdn/upload.ts",
+      "path": "src/cdn/upload.ts",
+      "ref": "stable",
+      "routeLineStart": 151,
+      "sha256": "81ef18b5f972d29849859cfbbbc0c1be88298750eb4b2e342b2a0c43b7039cba",
+      "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/43675b66551d12d6853155a7869a50fb12a18a1e/src/cdn/upload.ts#L151"
+    }
+  ],
+  "routeFilesMatchBetweenMainAndStable": true,
+  "officialProtocol": {
+    "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/docs/protocol_zh_CN.md#L299",
+    "statement": "media_type=4 is defined, but current file-send flow selects only image/video/file uploads.",
+    "path": "docs/protocol_zh_CN.md",
+    "sha256": "774ecb258ec9147d833335711cbb0d51fb40de3cb26113394b2427c191a735a0",
+    "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+    "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/docs/protocol_zh_CN.md",
+    "line": 299
+  },
+  "pullRequests": [
+    {
+      "apiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/pulls/9",
+      "baseSha": "6dc028d77a7e2a945e9cf4b88da754e5796de347",
+      "updatedAtUtc": "2026-05-18T23:37:50Z",
+      "commentAuthorAssociationCounts": {
+        "NONE": 4
+      },
+      "maintainerRoleCommentCount": 0,
+      "draft": false,
+      "number": 9,
+      "commentsApiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/issues/9/comments?per_page=100",
+      "maintainerRoleReviewCount": 0,
+      "url": "https://github.com/Tencent/openclaw-weixin/pull/9",
+      "reviewCount": 0,
+      "state": "open",
+      "mergedAt": null,
+      "reviewsApiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/pulls/9/reviews?per_page=100",
+      "commentCount": 4,
+      "merged": false,
+      "headSha": "58011d31a0101ba2f23d918b82da700f8929eedd"
+    },
+    {
+      "apiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/pulls/282",
+      "baseSha": "70ab695f6a1ca87da4102f857a452e2acb6b37cf",
+      "updatedAtUtc": "2026-09-02T12:42:50Z",
+      "commentAuthorAssociationCounts": {
+        "NONE": 11
+      },
+      "maintainerRoleCommentCount": 0,
+      "draft": false,
+      "number": 282,
+      "commentsApiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/issues/282/comments?per_page=100",
+      "maintainerRoleReviewCount": 0,
+      "url": "https://github.com/Tencent/openclaw-weixin/pull/282",
+      "reviewCount": 0,
+      "state": "open",
+      "mergedAt": null,
+      "reviewsApiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/pulls/282/reviews?per_page=100",
+      "commentCount": 11,
+      "merged": false,
+      "headSha": "f6278571827bfa21ef56d2802d1f84842667d6e2"
+    }
+  ],
+  "pr282EntryPoints": [
+    {
+      "commit": "f6278571827bfa21ef56d2802d1f84842667d6e2",
+      "lineEnd": 294,
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/f6278571827bfa21ef56d2802d1f84842667d6e2/src/channel.ts",
+      "behavior": "Channel sendMedia detects audio/asVoice and returns TEXT using provided text or a default text reply; does not upload or call the native VOICE helper.",
+      "lineStart": 277,
+      "path": "src/channel.ts",
+      "byteCount": 23499,
+      "sha256": "5c2fba47eec80f6692fabd812d07b006f43518458806a1d9db092a05f30f8055",
+      "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/f6278571827bfa21ef56d2802d1f84842667d6e2/src/channel.ts#L277"
+    },
+    {
+      "commit": "f6278571827bfa21ef56d2802d1f84842667d6e2",
+      "lineEnd": 94,
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/f6278571827bfa21ef56d2802d1f84842667d6e2/src/messaging/send-media.ts",
+      "behavior": "Direct media-file entry ignores asVoice; video/image branch separately, audio and remaining non-image/non-video content call sendAsFileAttachment (FILE). Native VOICE helper is not called.",
+      "lineStart": 23,
+      "path": "src/messaging/send-media.ts",
+      "byteCount": 3359,
+      "sha256": "f16253c7336c254a726d82f6f007ba1f61ec2df873e9c75263720d4cd1383d6b",
+      "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/f6278571827bfa21ef56d2802d1f84842667d6e2/src/messaging/send-media.ts#L23"
+    },
+    {
+      "commit": "f6278571827bfa21ef56d2802d1f84842667d6e2",
+      "lineEnd": 341,
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/f6278571827bfa21ef56d2802d1f84842667d6e2/src/messaging/send.ts",
+      "behavior": "Residual exported sendVoiceMessageWeixin helper constructs a VOICE item, with optional separate TEXT caption. Its presence does not enable native VOICE routing in either reviewed entry point or prove client rendering.",
+      "lineStart": 301,
+      "path": "src/messaging/send.ts",
+      "byteCount": 10593,
+      "sha256": "60b74bc14809b9a4fcce5d8900186b11a1cc8a2d3b34005d5638884b033afa0c",
+      "codeUrl": "https://github.com/Tencent/openclaw-weixin/blob/f6278571827bfa21ef56d2802d1f84842667d6e2/src/messaging/send.ts#L301"
+    }
+  ],
+  "conclusion": {
+    "mergedOrPublishedNativeBotVoicePathFound": false,
+    "limits": "This is bounded evidence about the reviewed releases, commits, public comments/reviews and entry points. It does not prove that every account/backend configuration lacks VOICE support, nor establish an official prohibition or guarantee.",
+    "verifiableMaintainerReleaseSupportConditionsFound": false,
+    "externalSupportChangeFound": false,
+    "statement": "The reviewed published/main routes and unmerged PRs do not supply an officially verified enabled BOT native tap-to-play voice-bubble path. PR282 has distinct channel audio-to-TEXT and direct media audio-to-FILE behavior; neither should be generalized to every PR entry point. Residual VOICE helpers and API success do not establish rendering."
+  }
+}

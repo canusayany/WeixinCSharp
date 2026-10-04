@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "purpose": "local-voice-codec-not-proof-of-phone-delivery",
+  "verifiedUtc": "2026-10-03T22:39:19.2678266+00:00",
+  "node": {
+    "version": "v24.19.0",
+    "platform": "win-x64",
+    "url": "https://nodejs.org/dist/v24.19.0/node-v24.19.0-win-x64.zip",
+    "checksumsUrl": "https://nodejs.org/dist/v24.19.0/SHASUMS256.txt",
+    "archiveSha256": "57F71AB3652E797D84ACDDC79C81CC9FF1C6DDB2A1974CDB83F00FEE9BFF4C73",
+    "archiveMatchesOfficialChecksumList": true,
+    "extractedFiles": [
+      "node.exe",
+      "LICENSE"
+    ],
+    "license": "Node-LICENSE.txt"
+  },
+  "silkWasm": {
+    "version": "3.7.1",
+    "registryUrl": "https://registry.npmjs.org/silk-wasm/3.7.1",
+    "tarballUrl": "https://registry.npmjs.org/silk-wasm/-/silk-wasm-3.7.1.tgz",
+    "integrity": "sha512-mXPwLRtZxrYV3TZx41jMAeKc80wvmyrcXIcs8HctFxK15Ahz2OJQENYhNgEPeCEOdI6Mbx1NxQsqxzwc3DKerw==",
+    "integrityVerified": true,
+    "gitHead": "5971995be3ce05d4a1bf820fdf9d7ccdc942e945",
+    "license": "silk-wasm/LICENSE",
+    "sdkSourceBase": "https://raw.githubusercontent.com/idranme/silk-wasm/5971995be3ce05d4a1bf820fdf9d7ccdc942e945/",
+    "encodedHeader": "02 23 21 53 49 4C 4B 5F 56 33",
+    "encodingExtension": true,
+    "tencentPluginActuallyUses": "decode"
+  },
+  "licenses": [
+    {
+      "path": "Skype-SILK-LICENSE.txt",
+      "source": "https://raw.githubusercontent.com/idranme/silk-wasm/5971995be3ce05d4a1bf820fdf9d7ccdc942e945/binding/libSilkCodec/silk/LICENSE",
+      "attribution": "Russell 2016 wrapper BSD-2-Clause"
+    },
+    {
+      "path": "Skype-SILK-SDK-LICENSE.txt",
+      "source": "https://raw.githubusercontent.com/idranme/silk-wasm/5971995be3ce05d4a1bf820fdf9d7ccdc942e945/binding/libSilkCodec/silk/src/SILK_SDK_SRC_ARM_v1.0.9/interface/SKP_Silk_SDK_API.h",
+      "attribution": "Skype 2006-2012 BSD-3-Clause plus no patent grant; full original header retained"
+    },
+    {
+      "path": "wav-file-decoder-LICENSE.md",
+      "source": "https://raw.githubusercontent.com/chdh/wav-file-decoder/28be01b8c768bf10a32dbe2a051897c3c5c5204c/LICENSE.md",
+      "attribution": "Christian d'Heureuse 2022 MIT",
+      "declaredRange": "^1.0.3",
+      "exactBundledVersionProven": false
+    }
+  ],
+  "files": [
+    {
+      "path": "codec-bridge.mjs",
+      "sizeBytes": 5020,
+      "sha256": "4017CE69BA577CBCA5305169CE6E19F72065FCB5C604AC6BC46548344D7E6D43"
+    },
+    {
+      "path": "Node-LICENSE.txt",
+      "sizeBytes": 160552,
+      "sha256": "D9C4EEDA951D6D08F4AA1316B61AAFCF67E6DA5F79B18F8EDEB56FA6ABDC038C"
+    },
+    {
+      "path": "node.exe",
+      "sizeBytes": 92825416,
+      "sha256": "3602F2BB1A10F2CBAB4C36886218A33C1AB3DB87290E73B033C46C77147D0237"
+    },
+    {
+      "path": "README.md",
+      "sizeBytes": 3783,
+      "sha256": "CC7E624F5C7F9BCD27D41F6CE67CEA7A48CC2E341F2FEF00D05699186AEB989D"
+    },
+    {
+      "path": "Skype-SILK-LICENSE.txt",
+      "sizeBytes": 1291,
+      "sha256": "2605F550752714DCCC2B9F38C5951582937B1F1E957BC0D0B51BAD5A0AC5F6B6"
+    },
+    {
+      "path": "Skype-SILK-SDK-LICENSE.txt",
+      "sizeBytes": 7819,
+      "sha256": "1A248D7C2FA783EE21AB25F7A7E9A23CEDD38ACE3251F9B39F85A327DAAEE557"
+    },
+    {
+      "path": "wav-file-decoder-LICENSE.md",
+      "sizeBytes": 1095,
+      "sha256": "05DC452F86E8C86AD343BF5712DE93FA10855F7E1D75CAC612DE49E9E0479A26"
+    },
+    {
+      "path": "silk-wasm\\LICENSE",
+      "sizeBytes": 1085,
+      "sha256": "3B1585C0E6D9D501E86383948FC0D1734BCB86517A13111D97749C65AD2BFB74"
+    },
+    {
+      "path": "silk-wasm\\package.json",
+      "sizeBytes": 1101,
+      "sha256": "55F69255696623A29FEE616525EAB2B9F7AAB9F21ADF9B667155B68B653410D5"
+    },
+    {
+      "path": "silk-wasm\\README.md",
+      "sizeBytes": 2015,
+      "sha256": "00F00D767766C03906EFBEEE281E7912F5B94BB04A553D29377D6122F705EEDE"
+    },
+    {
+      "path": "silk-wasm\\lib\\index.cjs",
+      "sizeBytes": 25045,
+      "sha256": "74BB76ABA57B1B52787E1EACE2870EAAAB2DEEC32241E28F47A138C6B98DE065"
+    },
+    {
+      "path": "silk-wasm\\lib\\index.d.ts",
+      "sizeBytes": 2100,
+      "sha256": "BC593F9A24FA56A4BB6F425857E793F3A544214B5346F2547A576A259F6A7139"
+    },
+    {
+      "path": "silk-wasm\\lib\\index.mjs",
+      "sizeBytes": 23840,
+      "sha256": "1A95755169E70DE059B47A7E7D81A2C3E4F0F0D2AC8D26A8D1D90EAEAAC4F937"
+    },
+    {
+      "path": "silk-wasm\\lib\\silk.wasm",
+      "sizeBytes": 234626,
+      "sha256": "88152AF59AF535B8056AC806710824B2259A361027451B494F175F48FB39C807"
+    },
+    {
+      "path": "silk-wasm\\lib\\utils.d.ts",
+      "sizeBytes": 346,
+      "sha256": "ADB07C215F734561E22DCF50BB22BD7D8A5EA6C8D1CEF806CC32F097DA0B3321"
+    }
+  ]
+}

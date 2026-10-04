@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Weixin.Cli/Weixin.Cli.csproj" />
+    <Project Path="src/Weixin.Protocol/Weixin.Protocol.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Weixin.Protocol.Tests/Weixin.Protocol.Tests.csproj" />
+    <Project Path="tests/Weixin.Cli.E2ETests/Weixin.Cli.E2ETests.csproj" />
+    <Project Path="tests/Weixin.LiveE2E/Weixin.LiveE2E.csproj" />
+    <Project Path="tests/Weixin.VoiceCodec.Tests/Weixin.VoiceCodec.Tests.csproj" />
+  </Folder>
+</Solution>

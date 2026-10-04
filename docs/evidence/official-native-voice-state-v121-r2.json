@@ -1,0 +1,48 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "checkedAtUtc": "2026-10-04T01:36:46Z",
+  "scope": "Bounded read-only official main/stable/npm and PR state refresh in prior goal turn; immutable source and unchanged comments were not downloaded again",
+  "priorFullEvidenceFile": "official-native-voice-refresh-v121.json",
+  "main": {
+    "apiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/commits/main",
+    "sha": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+    "commitDateUtc": "2026-09-21T14:23:14Z",
+    "commitUrl": "https://github.com/Tencent/openclaw-weixin/commit/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c"
+  },
+  "stable": {
+    "tagsApiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/tags?per_page=10",
+    "commit": "43675b66551d12d6853155a7869a50fb12a18a1e",
+    "tagUrl": "https://github.com/Tencent/openclaw-weixin/tree/v2.4.9",
+    "tag": "v2.4.9"
+  },
+  "npmLatest": "2.4.9",
+  "npmRegistryUrl": "https://registry.npmjs.org/@tencent-weixin%2Fopenclaw-weixin",
+  "pullRequests": [
+    {
+      "number": 9,
+      "apiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/pulls/9",
+      "url": "https://github.com/Tencent/openclaw-weixin/pull/9",
+      "state": "open",
+      "merged": false,
+      "mergedAt": null,
+      "headSha": "58011d31a0101ba2f23d918b82da700f8929eedd",
+      "updatedAtUtc": "2026-05-18T23:37:50Z"
+    },
+    {
+      "number": 282,
+      "apiUrl": "https://api.github.com/repos/Tencent/openclaw-weixin/pulls/282",
+      "url": "https://github.com/Tencent/openclaw-weixin/pull/282",
+      "state": "open",
+      "merged": false,
+      "mergedAt": null,
+      "headSha": "f6278571827bfa21ef56d2802d1f84842667d6e2",
+      "updatedAtUtc": "2026-09-02T12:42:50Z"
+    }
+  ],
+  "mainStableNpmVersionOrReviewedPrStateChanged": false,
+  "newOfficialEnabledNativeVoicePathEvidenceFound": false,
+  "allAccountsUnsupportedOrOfficialProhibitionInferred": false,
+  "limits": "Unchanged public version/commit/PR metadata does not expose private backend support conditions and does not prove all accounts lack native VOICE support.",
+  "accountAccessOrSendPerformed": false
+}

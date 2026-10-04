@@ -1,0 +1,2574 @@
+{
+  "schemaVersion": 1,
+  "scope": "offline-published-cli-process-e2e",
+  "realWeChatDeliveryVerified": false,
+  "selectedCase": null,
+  "availableSuiteCaseCount": 56,
+  "completedUtc": "2026-10-03T23:22:01.0139637+00:00",
+  "executable": "<workspace>\\artifacts\\win-x64\\weixin.exe",
+  "provenance": {
+    "sourceRoot": "<workspace>",
+    "sourceFiles": [
+      {
+        "path": "Directory.Build.props",
+        "sha256": "07E0B7B56E19C2F63A414DCCC4D978C7848B1BAE516B23C504144150747E1F12"
+      },
+      {
+        "path": "global.json",
+        "sha256": "677C83B0E4EDE7AB9BD96CE3510640E18893556142F265CE12652D84FEC5914C"
+      },
+      {
+        "path": "src/Weixin.Cli/Weixin.Cli.csproj",
+        "sha256": "0324C616A87C28CF4C794AD48672AEC9EF418A8F7C7E35E97E46FED1A753A8FB"
+      },
+      {
+        "path": "src/Weixin.Cli/Program.cs",
+        "sha256": "1128F23B644CED7B8817057245B2ABD91C87363204E12E7014B08A1861DAC134"
+      },
+      {
+        "path": "src/Weixin.Cli/OfflineFixtureTransport.cs",
+        "sha256": "BD3DAB2637908B495ECFD51A9879B58A7A3036B2B36C2516FBB54599D24EE905"
+      },
+      {
+        "path": "src/Weixin.Protocol/Weixin.Protocol.csproj",
+        "sha256": "010BAED0B54DE93153C193EC71F361C2345999261852D174872826FA249C350C"
+      },
+      {
+        "path": "src/Weixin.Protocol/ILinkClient.cs",
+        "sha256": "24F873FA7D94D0C5CBF04EAB7527794C97CEA1715EA7BBADFAD661074241B5D2"
+      },
+      {
+        "path": "src/Weixin.Protocol/Models.cs",
+        "sha256": "18E8B07AD1DE502C36A9A1B5E9C5062CF155995424DFB03D9A0A741DCB4AA748"
+      },
+      {
+        "path": "src/Weixin.Protocol/PersistentBotRunner.cs",
+        "sha256": "18A3228151F2617259FF82A0002CBBFF0EF6E6F9D37BB0B2028A575403362707"
+      },
+      {
+        "path": "src/Weixin.Protocol/StateVault.cs",
+        "sha256": "63477E4E2F5D7D48A32E0E807EF99643970F5E114A5431A0D41BD36D8251058C"
+      },
+      {
+        "path": "src/Weixin.Protocol/MediaClient.cs",
+        "sha256": "655AB30797CBBA08232170EA48CBE546D7979815D2E3C6B9127998CE16DF7418"
+      },
+      {
+        "path": "src/Weixin.Protocol/MarkdownFormatting.cs",
+        "sha256": "CBFE7B01A8A08C6ED5CA51E898BACFC36FB7EF46CE7E9D057CB5DBEBF5107648"
+      },
+      {
+        "path": "src/Weixin.Protocol/TypingClient.cs",
+        "sha256": "218FBBAD7C9FD8F187EBA0A470C4F90373648F2C213422C470F32BEFA294C593"
+      },
+      {
+        "path": "src/Weixin.Protocol/VoiceCodec.cs",
+        "sha256": "99AF074C73B5492149A7405E9A2D33F572FA1B8645D703C8EA11D155927D9175"
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/Weixin.Cli.E2ETests.csproj",
+        "sha256": "1C3D0B8A4A549C09048F1248F3DB2B6DC89EBA9351AE5BC2644AFDE8E75753EB"
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/Program.cs",
+        "sha256": "596A0E89B944934B393C67080CED8A4C75744A71418869F9AEAC2F523B6E54AF"
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/MediaE2E.cs",
+        "sha256": "0ED0B58119E189F657ACA294C3B20348BA5F92EC479DF60471394BA80E008010"
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/TypingVoiceE2E.cs",
+        "sha256": "CE9AEC5C22695E9753A5DC6829327C7991EEB7F514D0316AFEE7E22ED227EA79"
+      },
+      {
+        "path": "runtime/voice/codec-bridge.mjs",
+        "sha256": "4017CE69BA577CBCA5305169CE6E19F72065FCB5C604AC6BC46548344D7E6D43"
+      },
+      {
+        "path": "runtime/voice/provenance.json",
+        "sha256": "0E7495377616B8223C0B337678EBD48327CFA056D5EB2DADDB07F8B5C7E6E489"
+      }
+    ],
+    "publishedFiles": [
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.deps.json",
+        "sha256": "E48EDE3389D9944E3E1F7FF0270CA50820192771A2E5C52718B7C7AFC896DFB2",
+        "sizeBytes": 29941
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.dll",
+        "sha256": "A8BA0DA6D10D5460524E743DCC146EA0FB54348918EE50DBCC7156F9CE7E4E89",
+        "sizeBytes": 86016
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.exe",
+        "sha256": "5602D2145983424ADD1F7E755CAC37FA2AE64B86EC0C129E4061B441AF381344",
+        "sizeBytes": 162304
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\Weixin.Protocol.dll",
+        "sha256": "903A69C9CF5A3E1CCC5168EF0DF5AD45B9DF4865C0702AB9584DCA8600F7454E",
+        "sizeBytes": 137728
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.runtimeconfig.json",
+        "sha256": "CBBD0366E3124C840C10613610378CC8A022DF77D26DCBD75664E06D0A48C59C",
+        "sizeBytes": 373
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\codec-bridge.mjs",
+        "sha256": "4017CE69BA577CBCA5305169CE6E19F72065FCB5C604AC6BC46548344D7E6D43",
+        "sizeBytes": 5020
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\Node-LICENSE.txt",
+        "sha256": "D9C4EEDA951D6D08F4AA1316B61AAFCF67E6DA5F79B18F8EDEB56FA6ABDC038C",
+        "sizeBytes": 160552
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\node.exe",
+        "sha256": "3602F2BB1A10F2CBAB4C36886218A33C1AB3DB87290E73B033C46C77147D0237",
+        "sizeBytes": 92825416
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\provenance.json",
+        "sha256": "0E7495377616B8223C0B337678EBD48327CFA056D5EB2DADDB07F8B5C7E6E489",
+        "sizeBytes": 4764
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\README.md",
+        "sha256": "CC7E624F5C7F9BCD27D41F6CE67CEA7A48CC2E341F2FEF00D05699186AEB989D",
+        "sizeBytes": 3783
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\Skype-SILK-LICENSE.txt",
+        "sha256": "2605F550752714DCCC2B9F38C5951582937B1F1E957BC0D0B51BAD5A0AC5F6B6",
+        "sizeBytes": 1291
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\Skype-SILK-SDK-LICENSE.txt",
+        "sha256": "1A248D7C2FA783EE21AB25F7A7E9A23CEDD38ACE3251F9B39F85A327DAAEE557",
+        "sizeBytes": 7819
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\wav-file-decoder-LICENSE.md",
+        "sha256": "05DC452F86E8C86AD343BF5712DE93FA10855F7E1D75CAC612DE49E9E0479A26",
+        "sizeBytes": 1095
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\LICENSE",
+        "sha256": "3B1585C0E6D9D501E86383948FC0D1734BCB86517A13111D97749C65AD2BFB74",
+        "sizeBytes": 1085
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\package.json",
+        "sha256": "55F69255696623A29FEE616525EAB2B9F7AAB9F21ADF9B667155B68B653410D5",
+        "sizeBytes": 1101
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\README.md",
+        "sha256": "00F00D767766C03906EFBEEE281E7912F5B94BB04A553D29377D6122F705EEDE",
+        "sizeBytes": 2015
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\index.cjs",
+        "sha256": "74BB76ABA57B1B52787E1EACE2870EAAAB2DEEC32241E28F47A138C6B98DE065",
+        "sizeBytes": 25045
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\index.d.ts",
+        "sha256": "BC593F9A24FA56A4BB6F425857E793F3A544214B5346F2547A576A259F6A7139",
+        "sizeBytes": 2100
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\index.mjs",
+        "sha256": "1A95755169E70DE059B47A7E7D81A2C3E4F0F0D2AC8D26A8D1D90EAEAAC4F937",
+        "sizeBytes": 23840
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\silk.wasm",
+        "sha256": "88152AF59AF535B8056AC806710824B2259A361027451B494F175F48FB39C807",
+        "sizeBytes": 234626
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\utils.d.ts",
+        "sha256": "ADB07C215F734561E22DCF50BB22BD7D8A5EA6C8D1CEF806CC32F097DA0B3321",
+        "sizeBytes": 346
+      }
+    ],
+    "executableSha256": "5602D2145983424ADD1F7E755CAC37FA2AE64B86EC0C129E4061B441AF381344",
+    "note": "Hashes identify the exact source snapshot and launched published files; build provenance is recorded separately by the release script."
+  },
+  "total": 56,
+  "passed": 56,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "published_help_and_unknown_parameter_exit",
+      "passed": true,
+      "durationMs": 809,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-001",
+        "process-002"
+      ]
+    },
+    {
+      "name": "login_need_verifycode_wait_scaned_confirmed_cleanup",
+      "passed": true,
+      "durationMs": 3960,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-003"
+      ]
+    },
+    {
+      "name": "login_unknown_status_cleanup_no_binding",
+      "passed": true,
+      "durationMs": 345,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-004"
+      ]
+    },
+    {
+      "name": "status_local_state_and_send_without_context",
+      "passed": true,
+      "durationMs": 689,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-005",
+        "process-006"
+      ]
+    },
+    {
+      "name": "listen_echo_filters_restart_dedup_and_client_id",
+      "passed": true,
+      "durationMs": 4289,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-007",
+        "process-008"
+      ]
+    },
+    {
+      "name": "stdin_send_and_exact_client_id_persistence",
+      "passed": true,
+      "durationMs": 358,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-009"
+      ]
+    },
+    {
+      "name": "utf8_file_send_preserves_newline",
+      "passed": true,
+      "durationMs": 399,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-010"
+      ]
+    },
+    {
+      "name": "disconnect_unknown_echo_never_retried_on_restart",
+      "passed": true,
+      "durationMs": 513,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-011",
+        "process-012"
+      ]
+    },
+    {
+      "name": "malformed_ack_unknown_send_no_resend",
+      "passed": true,
+      "durationMs": 726,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-013",
+        "process-014"
+      ]
+    },
+    {
+      "name": "kill_during_send_durable_sending_recover_unknown",
+      "passed": true,
+      "durationMs": 998,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-015",
+        "process-016",
+        "process-017"
+      ]
+    },
+    {
+      "name": "exclusive_state_lock_across_processes",
+      "passed": true,
+      "durationMs": 522,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-018",
+        "process-019"
+      ]
+    },
+    {
+      "name": "session_minus14_stops_without_notifystop",
+      "passed": true,
+      "durationMs": 381,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-020"
+      ]
+    },
+    {
+      "name": "run_for_cancels_poll_and_confirms_notifystop",
+      "passed": true,
+      "durationMs": 1437,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-021"
+      ]
+    },
+    {
+      "name": "exhausted_fixture_fails_closed_without_network_fallback",
+      "passed": true,
+      "durationMs": 441,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-022"
+      ]
+    },
+    {
+      "name": "offline_transport_refuses_non_fixture_saved_credentials",
+      "passed": true,
+      "durationMs": 342,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-023"
+      ]
+    },
+    {
+      "name": "offline_paths_must_share_marked_uuid_test_directory",
+      "passed": true,
+      "durationMs": 335,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-024",
+        "process-025"
+      ]
+    },
+    {
+      "name": "offline_fixture_refuses_non_fixture_response_credentials",
+      "passed": true,
+      "durationMs": 298,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-026"
+      ]
+    },
+    {
+      "name": "cli_exit_codes_unbound_bad_state_http_rejected",
+      "passed": true,
+      "durationMs": 1422,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-027",
+        "process-028",
+        "process-029"
+      ]
+    },
+    {
+      "name": "invalid_update_batch_never_commits_cursor_or_context",
+      "passed": true,
+      "durationMs": 552,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-030"
+      ]
+    },
+    {
+      "name": "invalid_saved_pending_message_stops_before_transport",
+      "passed": true,
+      "durationMs": 545,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-031"
+      ]
+    },
+    {
+      "name": "run_for_during_send_records_unknown_then_notifystop",
+      "passed": true,
+      "durationMs": 2478,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-032",
+        "process-033"
+      ]
+    },
+    {
+      "name": "send_image_upload_encrypt_metadata_exact_plaintext",
+      "passed": true,
+      "durationMs": 633,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-034"
+      ]
+    },
+    {
+      "name": "send_video_upload_encrypt_metadata_exact_plaintext",
+      "passed": true,
+      "durationMs": 609,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-035"
+      ]
+    },
+    {
+      "name": "send_file_upload_encrypt_metadata_exact_plaintext",
+      "passed": true,
+      "durationMs": 649,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-036"
+      ]
+    },
+    {
+      "name": "send_audio_uses_official_file_attachment_type",
+      "passed": true,
+      "durationMs": 507,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-037"
+      ]
+    },
+    {
+      "name": "send_native_voice_mp3_explicit_type_and_duration",
+      "passed": true,
+      "durationMs": 381,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-038"
+      ]
+    },
+    {
+      "name": "send_native_voice_silk_explicit_type_and_duration",
+      "passed": true,
+      "durationMs": 399,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-039"
+      ]
+    },
+    {
+      "name": "cdn_upload_retry_reuses_ciphertext_key_and_filekey",
+      "passed": true,
+      "durationMs": 551,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-040"
+      ]
+    },
+    {
+      "name": "cdn_upload_4xx_never_starts_chat_send",
+      "passed": true,
+      "durationMs": 382,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-041"
+      ]
+    },
+    {
+      "name": "upload_response_unknown_cdn_host_rejected",
+      "passed": true,
+      "durationMs": 369,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-042"
+      ]
+    },
+    {
+      "name": "media_size_voice_duration_and_signature_guards_before_http",
+      "passed": true,
+      "durationMs": 1899,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-043",
+        "process-044",
+        "process-045",
+        "process-046"
+      ]
+    },
+    {
+      "name": "kill_media_chat_send_preserves_durable_unknown_intent",
+      "passed": true,
+      "durationMs": 1609,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-047",
+        "process-048",
+        "process-049"
+      ]
+    },
+    {
+      "name": "media_business_key_skips_upload_send_and_rejects_changed_file",
+      "passed": true,
+      "durationMs": 1039,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-050",
+        "process-051",
+        "process-052"
+      ]
+    },
+    {
+      "name": "listen_download_image_voice_file_video_exact_plaintext",
+      "passed": true,
+      "durationMs": 2436,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-053"
+      ]
+    },
+    {
+      "name": "corrupt_cdn_download_preserves_inbox_then_recovers",
+      "passed": true,
+      "durationMs": 1815,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-054",
+        "process-055"
+      ]
+    },
+    {
+      "name": "download_existing_target_conflict_never_overwritten",
+      "passed": true,
+      "durationMs": 349,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-056"
+      ]
+    },
+    {
+      "name": "download_unknown_host_keeps_message_without_cdn_request",
+      "passed": true,
+      "durationMs": 391,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-057"
+      ]
+    },
+    {
+      "name": "cdn403_retains_inbox_and_notifies_stop_without_session_expiry",
+      "passed": true,
+      "durationMs": 342,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-058"
+      ]
+    },
+    {
+      "name": "plaintext_image_without_aes_key_downloads_exact_bytes",
+      "passed": true,
+      "durationMs": 1725,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-059"
+      ]
+    },
+    {
+      "name": "plaintext_image_download_still_enforces_byte_limit",
+      "passed": true,
+      "durationMs": 295,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-060"
+      ]
+    },
+    {
+      "name": "markdown_filter_utf16_chunks_replay_no_resend",
+      "passed": true,
+      "durationMs": 4248,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-061",
+        "process-062",
+        "process-063"
+      ]
+    },
+    {
+      "name": "markdown_partial_unknown_chunk_never_resent",
+      "passed": true,
+      "durationMs": 4050,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-064",
+        "process-065"
+      ]
+    },
+    {
+      "name": "typing_timed_start_cancel_accepts_empty_and_non_json_success_bodies",
+      "passed": true,
+      "durationMs": 550,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-066"
+      ]
+    },
+    {
+      "name": "typing_explicit_stop_does_not_send_chat_or_persist_ticket",
+      "passed": true,
+      "durationMs": 325,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-067"
+      ]
+    },
+    {
+      "name": "typing_requires_explicit_ret_zero_and_nonempty_ticket",
+      "passed": true,
+      "durationMs": 858,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-068",
+        "process-069",
+        "process-070"
+      ]
+    },
+    {
+      "name": "typing_start_http403_does_not_send_cancel",
+      "passed": true,
+      "durationMs": 310,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-071"
+      ]
+    },
+    {
+      "name": "typing_timed_start_transient_failure_still_sends_cancel",
+      "passed": true,
+      "durationMs": 357,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-072"
+      ]
+    },
+    {
+      "name": "typing_listen_echo_start_send_cancel_and_memory_config_cache",
+      "passed": true,
+      "durationMs": 5218,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-073"
+      ]
+    },
+    {
+      "name": "typing_listen_start_cancelled_still_cancels_and_keeps_inbox",
+      "passed": true,
+      "durationMs": 1813,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-074"
+      ]
+    },
+    {
+      "name": "typing_listen_start_auth_rejection_keeps_inbox_without_stop",
+      "passed": true,
+      "durationMs": 364,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-075"
+      ]
+    },
+    {
+      "name": "cli_voice_prepare_pcm_wave_decode_without_account_state",
+      "passed": true,
+      "durationMs": 1256,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-076",
+        "process-077",
+        "process-078"
+      ]
+    },
+    {
+      "name": "cli_voice_conversion_input_output_guards_preserve_existing_files",
+      "passed": true,
+      "durationMs": 925,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-079",
+        "process-080",
+        "process-081",
+        "process-082",
+        "process-083"
+      ]
+    },
+    {
+      "name": "cli_voice_received_silk_automatically_decodes_and_preserves_original",
+      "passed": true,
+      "durationMs": 3206,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-084",
+        "process-085",
+        "process-086"
+      ]
+    },
+    {
+      "name": "cli_voice_silk_encode_type_four_decodes_actual_payload",
+      "passed": true,
+      "durationMs": 3210,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-087",
+        "process-088",
+        "process-089"
+      ]
+    },
+    {
+      "name": "cli_voice_silk_missing_encode_type_decodes_actual_payload",
+      "passed": true,
+      "durationMs": 3101,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-090",
+        "process-091",
+        "process-092"
+      ]
+    },
+    {
+      "name": "cli_voice_non_silk_preserves_raw_without_creating_wave",
+      "passed": true,
+      "durationMs": 2280,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-093"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "id": "process-001",
+      "processId": 51912,
+      "arguments": [
+        "help",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d42bb209b0554beea56b51410df45ea6\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 503,
+      "killed": false,
+      "stdout": "\u5FAE\u4FE1\u52A9\u7406 C# \u5BA2\u6237\u7AEF 1.2.0 \u00B7 \u817E\u8BAF iLink 2.4.9 \u534F\u8BAE\u517C\u5BB9\u5B9E\u73B0\nweixin login --open              \u751F\u6210\u672C\u5730\u4E8C\u7EF4\u7801\u5E76\u7ED1\u5B9A\u81EA\u5DF1\u7684\u5FAE\u4FE1\nweixin listen                    \u6536\u6D88\u606F\uFF1B\u4E0D\u6267\u884C\u547D\u4EE4\uFF0C\u4E0D\u81EA\u52A8\u56DE\u590D\nweixin listen --echo              \u6536\u5230\u6587\u5B57\u540E\u56DE\u590D\u201C\u5DF2\u6536\u5230\uFF1A\u2026\u201D\uFF08\u4EC5\u7ED1\u5B9A\u8D26\u53F7\uFF09\nweixin listen --echo --typing     \u56DE\u590D\u524D\u5F00\u59CB\u6253\u5B57\uFF0C\u7ED3\u675F\u65F6\u53D6\u6D88\nweixin typing --typing-status start --run-for 10  \u5F00\u59CB\u6253\u5B57\uFF0C10\u79D2\u540E\u53D6\u6D88\nweixin typing --typing-status stop              \u53D6\u6D88\u6253\u5B57\u72B6\u6001\nweixin listen --run-for 300        \u63A5\u6536 300 \u79D2\u540E\u6B63\u5E38\u505C\u6B62\uFF0C\u53EF\u914D\u5408 --echo\nweixin login --qr-png qr.png       \u540C\u65F6\u751F\u6210\u4E34\u65F6 PNG\uFF0C\u9000\u51FA\u540E\u6E05\u7406\nweixin send                      \u4ECE\u7EC8\u7AEF\u8F93\u5165\u6587\u5B57\u53D1\u9001\u5230\u7ED1\u5B9A\u8D26\u53F7\nweixin send --text-file reply.txt \u4ECE UTF-8 \u6587\u4EF6\u53D1\u9001\u6587\u5B57\nweixin send --markdown --text-file reply.md  \u8F6C\u6210\u666E\u901A\u6587\u672C\u5E76\u5206\u5757\u53D1\u9001\nweixin send-media --file demo.mp4 --kind video  \u52A0\u5BC6\u4E0A\u4F20\u5E76\u53D1\u9001\u89C6\u9891\nweixin send-media --file audio.mp3 --kind audio  \u6309\u5B98\u65B9\u97F3\u9891\u9644\u4EF6\u8DEF\u5F84\u53D1\u9001\nweixin send-media --file audio.mp3 --kind voice --duration-ms 2000 --voice-encoding mp3\nweixin listen --download-dir downloads  \u4E0B\u8F7D\u7ED1\u5B9A\u8D26\u53F7\u7684\u56FE\u7247/\u8BED\u97F3/\u89C6\u9891/\u6587\u4EF6\nweixin prepare-voice --file mono.wav --input-format wav --output voice.silk  \u672C\u5730\u8F6CSILK\nweixin prepare-voice --file mono.pcm --input-format pcm --output voice.silk  PCM16\u5355\u58F0\u905324kHz\nweixin decode-voice --file voice.silk --output voice.wav  \u672C\u5730\u8F6C\u53EF\u64AD\u653EWAV\nweixin status                    \u67E5\u770B\u672C\u5730\u72B6\u6001\u4E0E\u53D1\u9001\u7ED3\u679C\nweixin demo                      \u79BB\u7EBF\u534F\u8BAE\u89E3\u6790\u793A\u4F8B\nweixin probe                     \u6838\u67E5\u5B98\u65B9\u626B\u7801\u63A5\u53E3\uFF08\u751F\u6210\u4E34\u65F6\u4E8C\u7EF4\u7801\uFF0C\u4E0D\u663E\u793A/\u4FDD\u5B58\uFF09\nweixin qr-demo                   \u751F\u6210\u79BB\u7EBF\u6F14\u793A\u4E8C\u7EF4\u7801\u9875\u9762\n\u901A\u7528\u53C2\u6570\uFF1A--state \u003C\u6587\u4EF6\u8DEF\u5F84\u003E\uFF0C--allow-host \u003C\u7CBE\u786E\u57DF\u540D\u003E\uFF08\u53EF\u91CD\u590D\uFF09\n\u5A92\u4F53\u53C2\u6570\uFF1A--allow-cdn-host \u003C\u7CBE\u786E\u57DF\u540D\u003E\uFF0C--max-media-mib \u003C1..512\u003E\uFF0C--max-voice-seconds \u003C1..3600\u003E\n\u53D1\u9001\u5E42\u7B49\uFF1A--source-key \u003C64\u4F4DSHA256\u003E\uFF1BMarkdown\u6062\u590D\u5E94\u63D0\u4F9B\u540C\u4E00\u4E1A\u52A1\u952E\n\u672C\u5730\u5A92\u4F53\u4FDD\u62A4\u9ED8\u8BA4100MiB/\u8BED\u97F360\u79D2\uFF0C\u4E0D\u662F\u5DF2\u516C\u5E03\u7684\u5FAE\u4FE1\u670D\u52A1\u7AEF\u914D\u989D\u3002\n\u81EA\u52A8\u5316\u6D4B\u8BD5\uFF1A--offline-fixture \u003C\u5939\u5177\u6587\u4EF6\u003E\uFF08\u5FC5\u987B\u4F7F\u7528\u4E13\u7528 --state\uFF1B\u5B8C\u5168\u79BB\u7EBF\uFF09\n\u4E00\u4EFD\u72B6\u6001\u6587\u4EF6\u53EA\u80FD\u7531\u4E00\u4E2A\u8FDB\u7A0B\u6301\u6709\u3002\u53D1\u9001\u7ED3\u679C\u672A\u77E5\u65F6\u4E0D\u4F1A\u81EA\u52A8\u91CD\u53D1\u3002\n\u72EC\u7ACB C# \u63A5\u5165\u4E0D\u4EE3\u8868\u817E\u8BAF\u4FDD\u8BC1\uFF1B\u6E90\u7801\u9A8C\u6536\u4E0E\u771F\u5B9E\u8D26\u53F7\u6536\u53D1\u9A8C\u6536\u5206\u522B\u89C1\u62A5\u544A\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-002",
+      "processId": 45376,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d42bb209b0554beea56b51410df45ea6\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d42bb209b0554beea56b51410df45ea6\\binding.dpapi",
+        "--unknown-option"
+      ],
+      "exitCode": 1,
+      "durationMs": 144,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u672A\u77E5\u53C2\u6570\uFF0C\u4F7F\u7528 help \u67E5\u770B\u5E2E\u52A9\u3002\r\n"
+    },
+    {
+      "id": "process-003",
+      "processId": 32164,
+      "arguments": [
+        "login",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-15f7b103fc7f4c9491244e11bc831413\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-15f7b103fc7f4c9491244e11bc831413\\binding.dpapi",
+        "--qr-png",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-15f7b103fc7f4c9491244e11bc831413\\login-qr.png"
+      ],
+      "exitCode": 0,
+      "durationMs": 3907,
+      "killed": false,
+      "stdout": "\u7528\u624B\u673A\u5FAE\u4FE1\u626B\u63CF\u672C\u5730\u9875\u9762\u4E2D\u7684\u4E8C\u7EF4\u7801\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-15f7b103fc7f4c9491244e11bc831413\\binding.dpapi.login-qr.html\r\n\u672C\u6B21\u7ED1\u5B9A\u4E8C\u7EF4\u7801 PNG\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-15f7b103fc7f4c9491244e11bc831413\\login-qr.png\r\n\u8BF7\u8F93\u5165\u624B\u673A\u5FAE\u4FE1\u663E\u793A\u7684\u914D\u5BF9\u9A8C\u8BC1\u7801\uFF08\u4E0D\u4F1A\u4FDD\u5B58\u6216\u8F93\u51FA\u5230\u65E5\u5FD7\uFF09\uFF1A\r\n\u5DF2\u626B\u7801\uFF0C\u8BF7\u5728\u624B\u673A\u5FAE\u4FE1\u786E\u8BA4\u3002\r\n\u7ED1\u5B9A\u5DF2\u4FDD\u5B58\u5E76\u7531\u5F53\u524D Windows \u7528\u6237 DPAPI \u52A0\u5BC6\u3002\u8BF7\u8FD0\u884C listen\uFF0C\u5E76\u5728\u624B\u673A\u5FAE\u4FE1\u5411\u8BE5\u673A\u5668\u4EBA\u53D1\u6D88\u606F\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-004",
+      "processId": 60848,
+      "arguments": [
+        "login",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-71c41d75cee245edbb4b78e2523b2855\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-71c41d75cee245edbb4b78e2523b2855\\binding.dpapi",
+        "--qr-png",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-71c41d75cee245edbb4b78e2523b2855\\login-qr.png"
+      ],
+      "exitCode": 1,
+      "durationMs": 340,
+      "killed": false,
+      "stdout": "\u7528\u624B\u673A\u5FAE\u4FE1\u626B\u63CF\u672C\u5730\u9875\u9762\u4E2D\u7684\u4E8C\u7EF4\u7801\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-71c41d75cee245edbb4b78e2523b2855\\binding.dpapi.login-qr.html\r\n\u672C\u6B21\u7ED1\u5B9A\u4E8C\u7EF4\u7801 PNG\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-71c41d75cee245edbb4b78e2523b2855\\login-qr.png\r\n",
+      "stderr": "\u9047\u5230\u672A\u77E5\u626B\u7801\u72B6\u6001\uFF0C\u5DF2\u505C\u6B62\uFF1B\u8BF7\u6838\u5BF9\u534F\u8BAE\u7248\u672C\u3002\r\n"
+    },
+    {
+      "id": "process-005",
+      "processId": 31280,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b8b74efa774b4f17935d1f8a1d5aea06\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b8b74efa774b4f17935d1f8a1d5aea06\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 262,
+      "killed": false,
+      "stdout": "\u672C\u5730\u5DF2\u4FDD\u5B58\u7ED1\u5B9A\uFF1A2026-10-03T23:20:55.4076309\u002B00:00\r\n\u534F\u8BAE\u53C2\u8003\uFF1A2.4.9\uFF1BAPI\uFF1Ahttps://ilinkai.weixin.qq.com\r\n\u5F85\u5904\u7406\u5165\u7AD9\uFF1A0\uFF1B\u4E0A\u4E0B\u6587\uFF1A\u672A\u53D6\u5F97\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-006",
+      "processId": 59328,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b8b74efa774b4f17935d1f8a1d5aea06\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b8b74efa774b4f17935d1f8a1d5aea06\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 397,
+      "killed": false,
+      "stdout": "\u8BF7\u8F93\u5165\u53D1\u7ED9\u7ED1\u5B9A\u5FAE\u4FE1\u8D26\u53F7\u7684\u6587\u672C\uFF08\u5355\u884C\uFF09\uFF1A\r\n",
+      "stderr": "\u8BF7\u5148 listen\uFF0C\u5E76\u4ECE\u7ED1\u5B9A\u5FAE\u4FE1\u53D1\u6D88\u606F\u4EE5\u53D6\u5F97\u4E0A\u4E0B\u6587\u3002\r\n"
+    },
+    {
+      "id": "process-007",
+      "processId": 54960,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-105d32f0c91c4a3ea340009892abd111\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-105d32f0c91c4a3ea340009892abd111\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2429,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[84A9F9C2928B] fixture-hello\u4E2D\u6587\r\n[2DC6D400C918] \r\n[\u672C\u6B21\u672A\u4E0B\u8F7D\u5A92\u4F53\uFF1B\u5982\u9700\u4FDD\u5B58\u8BF7\u542F\u7528 --download-dir \u540E\u4ECE\u5FAE\u4FE1\u91CD\u65B0\u53D1\u9001]\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-008",
+      "processId": 57036,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-105d32f0c91c4a3ea340009892abd111\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-105d32f0c91c4a3ea340009892abd111\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1.5"
+      ],
+      "exitCode": 0,
+      "durationMs": 1822,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-009",
+      "processId": 14660,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-ce76fb92de51477fa7b702ee495aa54b\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-ce76fb92de51477fa7b702ee495aa54b\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 294,
+      "killed": false,
+      "stdout": "\u8BF7\u8F93\u5165\u53D1\u7ED9\u7ED1\u5B9A\u5FAE\u4FE1\u8D26\u53F7\u7684\u6587\u672C\uFF08\u5355\u884C\uFF09\uFF1A\r\n\u670D\u52A1\u7AEF\u5DF2\u786E\u8BA4\uFF1Aopenclaw-weixin:1791069660666-828eb0c0\u3002\u8BF7\u5728\u5FAE\u4FE1\u4E2D\u6838\u5BF9\u5B9E\u9645\u9001\u8FBE\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-010",
+      "processId": 22012,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2cfe62013d0a4f1cb6f28e5a974323c4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2cfe62013d0a4f1cb6f28e5a974323c4\\binding.dpapi",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2cfe62013d0a4f1cb6f28e5a974323c4\\fixture-message.txt"
+      ],
+      "exitCode": 0,
+      "durationMs": 380,
+      "killed": false,
+      "stdout": "\u670D\u52A1\u7AEF\u5DF2\u786E\u8BA4\uFF1Aopenclaw-weixin:1791069660971-46950444\u3002\u8BF7\u5728\u5FAE\u4FE1\u4E2D\u6838\u5BF9\u5B9E\u9645\u9001\u8FBE\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-011",
+      "processId": 62084,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-eef1b4c313a24449bbce8894c85f4e1e\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-eef1b4c313a24449bbce8894c85f4e1e\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 3,
+      "durationMs": 237,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[245E61A6ABC5] fixture-disconnect\r\n",
+      "stderr": "\u53D1\u9001\u7ED3\u679C\u672A\u77E5\uFF0C\u53EF\u80FD\u5DF2\u9001\u8FBE\u3002\u8BF7\u5148\u5728\u5FAE\u4FE1\u4E2D\u6838\u5BF9\uFF1B\u7A0B\u5E8F\u4E0D\u4F1A\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-012",
+      "processId": 60656,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-eef1b4c313a24449bbce8894c85f4e1e\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-eef1b4c313a24449bbce8894c85f4e1e\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 257,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[245E61A6ABC5] fixture-disconnect\r\n",
+      "stderr": "\u8BE5\u5165\u7AD9\u6D88\u606F\u5DF2\u6709\u53D1\u9001\u5C1D\u8BD5\u3002\u5148\u6838\u5BF9\u5FAE\u4FE1\u9001\u8FBE\u60C5\u51B5\uFF1B\u4E0D\u4F1A\u5728\u91CD\u542F\u540E\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-013",
+      "processId": 41576,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5a886e36bcc6482988c5309e1bb85791\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5a886e36bcc6482988c5309e1bb85791\\binding.dpapi"
+      ],
+      "exitCode": 3,
+      "durationMs": 330,
+      "killed": false,
+      "stdout": "\u8BF7\u8F93\u5165\u53D1\u7ED9\u7ED1\u5B9A\u5FAE\u4FE1\u8D26\u53F7\u7684\u6587\u672C\uFF08\u5355\u884C\uFF09\uFF1A\r\n",
+      "stderr": "\u53D1\u9001\u7ED3\u679C\u672A\u77E5\uFF0C\u53EF\u80FD\u5DF2\u9001\u8FBE\u3002\u8BF7\u5148\u5728\u5FAE\u4FE1\u4E2D\u6838\u5BF9\uFF1B\u7A0B\u5E8F\u4E0D\u4F1A\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-014",
+      "processId": 62272,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5a886e36bcc6482988c5309e1bb85791\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5a886e36bcc6482988c5309e1bb85791\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 382,
+      "killed": false,
+      "stdout": "\u672C\u5730\u5DF2\u4FDD\u5B58\u7ED1\u5B9A\uFF1A2026-10-03T23:21:01.6580991\u002B00:00\r\n\u534F\u8BAE\u53C2\u8003\uFF1A2.4.9\uFF1BAPI\uFF1Ahttps://ilinkai.weixin.qq.com\r\n\u5F85\u5904\u7406\u5165\u7AD9\uFF1A0\uFF1B\u4E0A\u4E0B\u6587\uFF1A\u5DF2\u4FDD\u5B58\r\n\u53D1\u9001 openclaw-weixin:1791069661916-5ab22f91\uFF1AUnknown\uFF0C2026-10-03T23:21:01.9170689\u002B00:00\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-015",
+      "processId": 49072,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-45b94282bc124610960d924c8d65d818\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-45b94282bc124610960d924c8d65d818\\binding.dpapi",
+        "--echo"
+      ],
+      "exitCode": -1,
+      "durationMs": 467,
+      "killed": true,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[41A0FA4CCB6A] fixture-kill\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-016",
+      "processId": 23432,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-45b94282bc124610960d924c8d65d818\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-45b94282bc124610960d924c8d65d818\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 285,
+      "killed": false,
+      "stdout": "\u672C\u5730\u5DF2\u4FDD\u5B58\u7ED1\u5B9A\uFF1A2026-10-03T23:21:02.3856317\u002B00:00\r\n\u534F\u8BAE\u53C2\u8003\uFF1A2.4.9\uFF1BAPI\uFF1Ahttps://ilinkai.weixin.qq.com\r\n\u5F85\u5904\u7406\u5165\u7AD9\uFF1A1\uFF1B\u4E0A\u4E0B\u6587\uFF1A\u5DF2\u4FDD\u5B58\r\n\u53D1\u9001 openclaw-weixin:1791069662685-5de16ef6\uFF1AUnknown\uFF0C2026-10-03T23:21:02.6851272\u002B00:00\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-017",
+      "processId": 22460,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-45b94282bc124610960d924c8d65d818\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-45b94282bc124610960d924c8d65d818\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 197,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[41A0FA4CCB6A] fixture-kill\r\n",
+      "stderr": "\u8BE5\u5165\u7AD9\u6D88\u606F\u5DF2\u6709\u53D1\u9001\u5C1D\u8BD5\u3002\u5148\u6838\u5BF9\u5FAE\u4FE1\u9001\u8FBE\u60C5\u51B5\uFF1B\u4E0D\u4F1A\u5728\u91CD\u542F\u540E\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-018",
+      "processId": 62332,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9bf4f98398c4a439675e1fd5c86e6d1\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9bf4f98398c4a439675e1fd5c86e6d1\\binding.dpapi"
+      ],
+      "exitCode": 4,
+      "durationMs": 171,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-019",
+      "processId": 60708,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9bf4f98398c4a439675e1fd5c86e6d1\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9bf4f98398c4a439675e1fd5c86e6d1\\binding.dpapi"
+      ],
+      "exitCode": -1,
+      "durationMs": 515,
+      "killed": true,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-020",
+      "processId": 18928,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-71c758da356e4753a2671aff41d46925\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-71c758da356e4753a2671aff41d46925\\binding.dpapi",
+        "--run-for",
+        "3"
+      ],
+      "exitCode": 2,
+      "durationMs": 370,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n",
+      "stderr": "\u5FAE\u4FE1 API \u8FD4\u56DE ret=-14, errcode=\u65E0\u3002\r\n\u4F1A\u8BDD\u5931\u6548\u6216\u6743\u9650\u88AB\u62D2\u7EDD\uFF1B\u8BF7\u6838\u5BF9\u5FAE\u4FE1\u72B6\u6001\u5E76\u91CD\u65B0 login\u3002\u8FD9\u672C\u8EAB\u4E0D\u80FD\u8BC1\u660E\u5C01\u53F7\u3002\r\n"
+    },
+    {
+      "id": "process-021",
+      "processId": 52976,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-0c1d40ff964a467abcb48e63d44f392f\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-0c1d40ff964a467abcb48e63d44f392f\\binding.dpapi",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 1429,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-022",
+      "processId": 41208,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-97193e77eebb4c0ba088d14c394da602\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-97193e77eebb4c0ba088d14c394da602\\binding.dpapi",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 433,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n",
+      "stderr": "\u79BB\u7EBF fixture \u6B65\u9AA4\u5DF2\u8017\u5C3D\uFF1B\u7981\u6B62\u7F51\u7EDC\u56DE\u9000\u3002\r\n"
+    },
+    {
+      "id": "process-023",
+      "processId": 56564,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-9dd3c92ba2ca47b88af0d365b6a15549\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-9dd3c92ba2ca47b88af0d365b6a15549\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 319,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u79BB\u7EBF\u6D4B\u8BD5\u6A21\u5F0F\u53EA\u63A5\u53D7\u4E13\u7528\u865A\u6784\u51ED\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-024",
+      "processId": 22624,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-78434a4d0cdc442eb179931e16180837\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-e30b347c81cd4d4383441e5d381bd1d1\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 136,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u79BB\u7EBF fixture \u4E0E\u663E\u5F0F state \u5FC5\u987B\u4F4D\u4E8E\u540C\u4E00\u4E2A\u65B0\u5EFA\u6D4B\u8BD5\u76EE\u5F55\u3002\r\n"
+    },
+    {
+      "id": "process-025",
+      "processId": 2576,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-78434a4d0cdc442eb179931e16180837\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-78434a4d0cdc442eb179931e16180837\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 182,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u79BB\u7EBF\u6D4B\u8BD5\u76EE\u5F55\u7F3A\u5C11\u5339\u914D\u7684\u6D4B\u8BD5\u54E8\u5175\u3002\r\n"
+    },
+    {
+      "id": "process-026",
+      "processId": 53588,
+      "arguments": [
+        "login",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c6a61f43f3fe4b2c92d5b48f9dbb48e9\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c6a61f43f3fe4b2c92d5b48f9dbb48e9\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 291,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u79BB\u7EBF transport \u53EA\u63A5\u53D7 fixture- \u524D\u7F00\u6D4B\u8BD5\u51ED\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-027",
+      "processId": 53300,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2d3dbd03063e464d9cc69b6c59aff131\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2d3dbd03063e464d9cc69b6c59aff131\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 273,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u5C1A\u672A\u7ED1\u5B9A\uFF0C\u8BF7\u5148\u8FD0\u884C login --open\u3002\r\n"
+    },
+    {
+      "id": "process-028",
+      "processId": 11168,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-44e67d60e3064e9dad3dfa99fccdc98a\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-44e67d60e3064e9dad3dfa99fccdc98a\\binding.dpapi"
+      ],
+      "exitCode": 4,
+      "durationMs": 386,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-029",
+      "processId": 60272,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-ab29930a1292464692309bbc6b3aef50\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-ab29930a1292464692309bbc6b3aef50\\binding.dpapi"
+      ],
+      "exitCode": 2,
+      "durationMs": 718,
+      "killed": false,
+      "stdout": "\u8BF7\u8F93\u5165\u53D1\u7ED9\u7ED1\u5B9A\u5FAE\u4FE1\u8D26\u53F7\u7684\u6587\u672C\uFF08\u5355\u884C\uFF09\uFF1A\r\n",
+      "stderr": "\u5FAE\u4FE1 API HTTP 400\u3002\r\n"
+    },
+    {
+      "id": "process-030",
+      "processId": 62516,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-60bc8db8cb344c3bafaf488b1f789076\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-60bc8db8cb344c3bafaf488b1f789076\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "3"
+      ],
+      "exitCode": 4,
+      "durationMs": 526,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-031",
+      "processId": 62100,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-48d0b03ddceb48d69c1efe7acfa9029a\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-48d0b03ddceb48d69c1efe7acfa9029a\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 4,
+      "durationMs": 506,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-032",
+      "processId": 62056,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9c7469d48cc4a2c9346183d00487190\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9c7469d48cc4a2c9346183d00487190\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 3,
+      "durationMs": 2040,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[C8135788E072] fixture-canceled-send\r\n",
+      "stderr": "\u53D1\u9001\u7ED3\u679C\u672A\u77E5\uFF0C\u53EF\u80FD\u5DF2\u9001\u8FBE\u3002\u8BF7\u5148\u5728\u5FAE\u4FE1\u4E2D\u6838\u5BF9\uFF1B\u7A0B\u5E8F\u4E0D\u4F1A\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-033",
+      "processId": 58460,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9c7469d48cc4a2c9346183d00487190\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-d9c7469d48cc4a2c9346183d00487190\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 409,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[C8135788E072] fixture-canceled-send\r\n",
+      "stderr": "\u8BE5\u5165\u7AD9\u6D88\u606F\u5DF2\u6709\u53D1\u9001\u5C1D\u8BD5\u3002\u5148\u6838\u5BF9\u5FAE\u4FE1\u9001\u8FBE\u60C5\u51B5\uFF1B\u4E0D\u4F1A\u5728\u91CD\u542F\u540E\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-034",
+      "processId": 50640,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-39d51f7f0c7540a790f0eae2aa21fe89\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-39d51f7f0c7540a790f0eae2aa21fe89\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-39d51f7f0c7540a790f0eae2aa21fe89\\fixture-image.png",
+        "--kind",
+        "image"
+      ],
+      "exitCode": 0,
+      "durationMs": 609,
+      "killed": false,
+      "stdout": "\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069672714-ee068515\uFF0C67 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-035",
+      "processId": 61024,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5136cea5ed364dfe9504f112f7991fbe\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5136cea5ed364dfe9504f112f7991fbe\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5136cea5ed364dfe9504f112f7991fbe\\fixture-video.mp4",
+        "--kind",
+        "video"
+      ],
+      "exitCode": 0,
+      "durationMs": 595,
+      "killed": false,
+      "stdout": "\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069673323-9e562db1\uFF0C34 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-036",
+      "processId": 53568,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f9a44d1044d846f6a4133b77feb9911a\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f9a44d1044d846f6a4133b77feb9911a\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f9a44d1044d846f6a4133b77feb9911a\\fixture-document.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 0,
+      "durationMs": 635,
+      "killed": false,
+      "stdout": "\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069673970-c865d9fb\uFF0C22 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-037",
+      "processId": 26772,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-46b21989ff834c18a4d2f9a9b7d169c4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-46b21989ff834c18a4d2f9a9b7d169c4\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-46b21989ff834c18a4d2f9a9b7d169c4\\fixture-audio.mp3",
+        "--kind",
+        "audio"
+      ],
+      "exitCode": 0,
+      "durationMs": 493,
+      "killed": false,
+      "stdout": "\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069674478-ddd742bc\uFF0C18 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-038",
+      "processId": 52156,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-053602b5c3f9483bbcd265e20d9a6439\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-053602b5c3f9483bbcd265e20d9a6439\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-053602b5c3f9483bbcd265e20d9a6439\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--duration-ms",
+        "1234",
+        "--voice-encoding",
+        "mp3"
+      ],
+      "exitCode": 0,
+      "durationMs": 353,
+      "killed": false,
+      "stdout": "\u539F\u751F\u8BED\u97F3\u4E3A\u5B9E\u9A8C\u7C7B\u578B\u6269\u5C55\uFF1A\u672C\u673A SILK \u6D4B\u8BD5\u63A5\u53E3\u63A5\u53D7\u4F46\u624B\u673A\u672A\u6536\u5230\u3002\u5B98\u65B9\u97F3\u9891\u8DEF\u7531\u4F7F\u7528\u9644\u4EF6\uFF1B\u672C\u547D\u4EE4\u4E0D\u80FD\u4FDD\u8BC1\u539F\u751F\u8BED\u97F3\u9001\u8FBE\u3002\r\n\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069674876-3671e4e3\uFF0C18 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-039",
+      "processId": 48996,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1fd69d3335e346dc9ec06a6fe3e07b3d\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1fd69d3335e346dc9ec06a6fe3e07b3d\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1fd69d3335e346dc9ec06a6fe3e07b3d\\fixture-voice.silk",
+        "--kind",
+        "voice",
+        "--duration-ms",
+        "1234",
+        "--voice-encoding",
+        "silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 388,
+      "killed": false,
+      "stdout": "\u539F\u751F\u8BED\u97F3\u4E3A\u5B9E\u9A8C\u7C7B\u578B\u6269\u5C55\uFF1A\u672C\u673A SILK \u6D4B\u8BD5\u63A5\u53E3\u63A5\u53D7\u4F46\u624B\u673A\u672A\u6536\u5230\u3002\u5B98\u65B9\u97F3\u9891\u8DEF\u7531\u4F7F\u7528\u9644\u4EF6\uFF1B\u672C\u547D\u4EE4\u4E0D\u80FD\u4FDD\u8BC1\u539F\u751F\u8BED\u97F3\u9001\u8FBE\u3002\r\n\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069675280-3681bf53\uFF0C31 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-040",
+      "processId": 58060,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5dc92eb2e456447cb94504ea63799731\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5dc92eb2e456447cb94504ea63799731\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5dc92eb2e456447cb94504ea63799731\\fixture-retry.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 0,
+      "durationMs": 541,
+      "killed": false,
+      "stdout": "\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069675698-658cf749\uFF0C20 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-041",
+      "processId": 43840,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c99540b4d1444e59abb9e84f21d341dc\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c99540b4d1444e59abb9e84f21d341dc\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c99540b4d1444e59abb9e84f21d341dc\\fixture-rejected.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 7,
+      "durationMs": 370,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u5A92\u4F53 CDN HTTP 400\uFF1B\u8BF7\u6838\u5BF9\u5A92\u4F53\u6743\u9650\u6216 URL \u65F6\u6548\u3002\r\n"
+    },
+    {
+      "id": "process-042",
+      "processId": 25876,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-fcb17d23a1d744ce9c9662dbdfd29cbc\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-fcb17d23a1d744ce9c9662dbdfd29cbc\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-fcb17d23a1d744ce9c9662dbdfd29cbc\\fixture-host.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 1,
+      "durationMs": 358,
+      "killed": false,
+      "stdout": "",
+      "stderr": "CDN \u4E3B\u673A\u672A\u83B7\u5141\u8BB8\uFF0C\u8BF7\u6838\u5B9E\u5B98\u65B9\u8FD4\u56DE\u5730\u5740\u540E\u6DFB\u52A0\u7CBE\u786E CDN \u57DF\u540D\u3002\r\n"
+    },
+    {
+      "id": "process-043",
+      "processId": 31632,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-over-limit.bin",
+        "--kind",
+        "file",
+        "--max-media-mib",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 324,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u5A92\u4F53\u6587\u4EF6\u4E3A\u7A7A\u6216\u8D85\u8FC7\u672C\u5730\u5927\u5C0F\u4FDD\u62A4\u4E0A\u9650\uFF08\u975E\u670D\u52A1\u7AEF\u914D\u989D\uFF09\u3002\r\n"
+    },
+    {
+      "id": "process-044",
+      "processId": 26784,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--voice-encoding",
+        "mp3"
+      ],
+      "exitCode": 1,
+      "durationMs": 434,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u539F\u751F\u8BED\u97F3\u9700\u660E\u786E --duration-ms \u548C --voice-encoding mp3|silk\u3002\r\n"
+    },
+    {
+      "id": "process-045",
+      "processId": 2116,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--voice-encoding",
+        "mp3",
+        "--duration-ms",
+        "60001"
+      ],
+      "exitCode": 1,
+      "durationMs": 466,
+      "killed": false,
+      "stdout": "\u539F\u751F\u8BED\u97F3\u4E3A\u5B9E\u9A8C\u7C7B\u578B\u6269\u5C55\uFF1A\u672C\u673A SILK \u6D4B\u8BD5\u63A5\u53E3\u63A5\u53D7\u4F46\u624B\u673A\u672A\u6536\u5230\u3002\u5B98\u65B9\u97F3\u9891\u8DEF\u7531\u4F7F\u7528\u9644\u4EF6\uFF1B\u672C\u547D\u4EE4\u4E0D\u80FD\u4FDD\u8BC1\u539F\u751F\u8BED\u97F3\u9001\u8FBE\u3002\r\n",
+      "stderr": "\u539F\u751F\u8BED\u97F3\u65F6\u957F\u8D85\u8FC7\u672C\u5730\u4FDD\u62A4\u4E0A\u9650\u6216\u672A\u63D0\u4F9B\uFF1B\u8BE5\u4E0A\u9650\u4E0D\u662F\u5DF2\u516C\u5F00\u7684\u670D\u52A1\u7AEF\u9650\u5236\u3002\r\n"
+    },
+    {
+      "id": "process-046",
+      "processId": 57232,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1b1816a181e043e1a44edaa7135ae0c4\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--voice-encoding",
+        "silk",
+        "--duration-ms",
+        "1234"
+      ],
+      "exitCode": 1,
+      "durationMs": 646,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u539F\u751F\u8BED\u97F3\u58F0\u660E\u7684\u7F16\u7801\u4E0E\u6587\u4EF6\u7B7E\u540D\u4E0D\u540C\u3002\r\n"
+    },
+    {
+      "id": "process-047",
+      "processId": 52784,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\fixture-kill.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "AD92927D62C1F3DECA2FC44E00F4C0EEB1B93C43E26CFE7F27783AA2746EB36E"
+      ],
+      "exitCode": -1,
+      "durationMs": 778,
+      "killed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "id": "process-048",
+      "processId": 12236,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 472,
+      "killed": false,
+      "stdout": "\u672C\u5730\u5DF2\u4FDD\u5B58\u7ED1\u5B9A\uFF1A2026-10-03T23:21:18.5363267\u002B00:00\r\n\u534F\u8BAE\u53C2\u8003\uFF1A2.4.9\uFF1BAPI\uFF1Ahttps://ilinkai.weixin.qq.com\r\n\u5F85\u5904\u7406\u5165\u7AD9\uFF1A0\uFF1B\u4E0A\u4E0B\u6587\uFF1A\u5DF2\u4FDD\u5B58\r\n\u53D1\u9001 openclaw-weixin:1791069679024-48f9fcd1\uFF1AUnknown\uFF0C2026-10-03T23:21:19.0247264\u002B00:00\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-049",
+      "processId": 51220,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f2d90b83e46b43c298ba99c1d29a1d7b\\fixture-kill.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "AD92927D62C1F3DECA2FC44E00F4C0EEB1B93C43E26CFE7F27783AA2746EB36E"
+      ],
+      "exitCode": 1,
+      "durationMs": 341,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u8BE5\u5A92\u4F53\u5DF2\u6709\u672A\u6210\u529F\u786E\u8BA4\u7684\u53D1\u9001\u5C1D\u8BD5\uFF0C\u8BF7\u5148\u6838\u5BF9\u624B\u673A\u9001\u8FBE\uFF1B\u672A\u4E0A\u4F20\u6216\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-050",
+      "processId": 48632,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\fixture-replay.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "3C314A8C778B63FC433E9B2C8D217AA383CD9A8A3294A83B1C97B94DDCA92A20"
+      ],
+      "exitCode": 0,
+      "durationMs": 458,
+      "killed": false,
+      "stdout": "\u5A92\u4F53 API \u5DF2\u63A5\u53D7\uFF1Aopenclaw-weixin:1791069680562-23beb65c\uFF0C20 \u660E\u6587\u5B57\u8282\u3002\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u6536\u5230\u53CA\u64AD\u653E\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-051",
+      "processId": 42192,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\fixture-replay.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "3C314A8C778B63FC433E9B2C8D217AA383CD9A8A3294A83B1C97B94DDCA92A20"
+      ],
+      "exitCode": 0,
+      "durationMs": 238,
+      "killed": false,
+      "stdout": "\u8BE5\u5A92\u4F53\u4E1A\u52A1\u952E\u5DF2\u7ECF\u7531 API \u63A5\u53D7\uFF1Aopenclaw-weixin:1791069680562-23beb65c\uFF1B\u672C\u6B21\u672A\u91CD\u590D\u4E0A\u4F20\u6216\u53D1\u9001\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-052",
+      "processId": 18028,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-08a103856fb04efda57920a962608f50\\fixture-replay.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "3C314A8C778B63FC433E9B2C8D217AA383CD9A8A3294A83B1C97B94DDCA92A20"
+      ],
+      "exitCode": 1,
+      "durationMs": 320,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u8BE5\u4E1A\u52A1\u952E\u5DF2\u6709\u4E0D\u540C\u5A92\u4F53\u6216\u65E7\u7248\u65E0\u6CD5\u6BD4\u5BF9\u7684\u8BB0\u5F55\uFF0C\u672A\u4E0A\u4F20\u6216\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-053",
+      "processId": 59920,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-a08dd746a6974b7fa0e0dade1fee8735\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-a08dd746a6974b7fa0e0dade1fee8735\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-a08dd746a6974b7fa0e0dade1fee8735\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2383,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[D09FA2185934] \r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-a08dd746a6974b7fa0e0dade1fee8735\\fixture-downloads\\8a4c24c9634542d11bef6918bb1821e171ed6a7c1f837986cd25cd26b80cc941.image\r\n[40AAEE9A3C6E] \r\n[\u8BED\u97F3\u8F6C\u5199] fixture-transcript\r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-a08dd746a6974b7fa0e0dade1fee8735\\fixture-downloads\\ab66e727870511bb4382640c3a637ff1b915422f6b64a1626fd2fc78b00bea1f.mp3\r\n[80FFF53B0451] \r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-a08dd746a6974b7fa0e0dade1fee8735\\fixture-downloads\\8b51b708507521d03a0e9709237a694892b8d98ac84831c0b96488bc0ef2bbfc.txt\r\n[83FE1AEA48C4] \r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-a08dd746a6974b7fa0e0dade1fee8735\\fixture-downloads\\31be172670efd33e001646a347ffedc7a98dc431d200a45bc98782929c3a59e9.mp4\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": "\u8BED\u97F3\u89E3\u7801\u672A\u5B8C\u6210\uFF0C\u5DF2\u4FDD\u7559\u539F\u59CB\u5A92\u4F53\uFF1B\u672A\u8F93\u51FA\u97F3\u9891\u6216\u539F\u59CB\u8BCA\u65AD\u3002\r\n"
+    },
+    {
+      "id": "process-054",
+      "processId": 57444,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1bafe03f5a844a22bbcd2f395a2a6e73\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1bafe03f5a844a22bbcd2f395a2a6e73\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1bafe03f5a844a22bbcd2f395a2a6e73\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 4,
+      "durationMs": 310,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[5430FF4D7C53] \r\n",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-055",
+      "processId": 19960,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1bafe03f5a844a22bbcd2f395a2a6e73\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1bafe03f5a844a22bbcd2f395a2a6e73\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1bafe03f5a844a22bbcd2f395a2a6e73\\fixture-downloads",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 1493,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[5430FF4D7C53] \r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1bafe03f5a844a22bbcd2f395a2a6e73\\fixture-downloads\\5779625d41bc8e5ce4b6179ac9cbd551849b840d25e80b5b2ec56cb7611cbcd0.txt\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-056",
+      "processId": 34148,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-521495923c484641945aeff0e3cb7a22\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-521495923c484641945aeff0e3cb7a22\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-521495923c484641945aeff0e3cb7a22\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 4,
+      "durationMs": 335,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[593499CF6E56] \r\n",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-057",
+      "processId": 5240,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-40f74054b57741ee99dfe63aac56188e\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-40f74054b57741ee99dfe63aac56188e\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-40f74054b57741ee99dfe63aac56188e\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 1,
+      "durationMs": 381,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[D9A0BDC7B159] \r\n",
+      "stderr": "CDN \u4E3B\u673A\u672A\u83B7\u5141\u8BB8\uFF0C\u8BF7\u6838\u5B9E\u5B98\u65B9\u8FD4\u56DE\u5730\u5740\u540E\u6DFB\u52A0\u7CBE\u786E CDN \u57DF\u540D\u3002\r\n"
+    },
+    {
+      "id": "process-058",
+      "processId": 42060,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1e6452f2e8c641c6b34126398a061a76\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1e6452f2e8c641c6b34126398a061a76\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-1e6452f2e8c641c6b34126398a061a76\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 7,
+      "durationMs": 333,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[BA9009BA025F] \r\n",
+      "stderr": "\u5A92\u4F53 CDN HTTP 403\uFF1B\u8BF7\u6838\u5BF9\u5A92\u4F53\u6743\u9650\u6216 URL \u65F6\u6548\u3002\r\n"
+    },
+    {
+      "id": "process-059",
+      "processId": 54208,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c791aebe09954797b68468db864bbbac\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c791aebe09954797b68468db864bbbac\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c791aebe09954797b68468db864bbbac\\fixture-downloads",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 1715,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[B00ABE75F144] \r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c791aebe09954797b68468db864bbbac\\fixture-downloads\\2e8a0290b02e3651c6aef681712cf9807e7b91362c05f5adc2e1bdeddedc5561.image\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-060",
+      "processId": 58644,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-895b9a9450c94bad8f056555a114f330\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-895b9a9450c94bad8f056555a114f330\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-895b9a9450c94bad8f056555a114f330\\fixture-downloads",
+        "--max-media-mib",
+        "1",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 4,
+      "durationMs": 274,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[AC76D34412AD] \r\n",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-061",
+      "processId": 57480,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\fixture-document.md",
+        "--source-key",
+        "0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3"
+      ],
+      "exitCode": 0,
+      "durationMs": 3493,
+      "killed": false,
+      "stdout": "Markdown \u4E1A\u52A1\u952E\uFF08\u6062\u590D\u65F6\u4F7F\u7528\u76F8\u540C\u6587\u672C\u4E0E --source-key\uFF09\uFF1A0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3\r\nAPI \u5DF2\u63A5\u53D7 2 \u6BB5\u666E\u901A\u6587\u672C\u3002\u5DF2\u6309\u5B98\u65B9\u8FC7\u6EE4\u5668\u8F6C\u6362\u5E76\u5206\u5757\uFF0C\u663E\u793A\u6548\u679C\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-062",
+      "processId": 62720,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\fixture-document.md",
+        "--source-key",
+        "0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3"
+      ],
+      "exitCode": 0,
+      "durationMs": 271,
+      "killed": false,
+      "stdout": "Markdown \u4E1A\u52A1\u952E\uFF08\u6062\u590D\u65F6\u4F7F\u7528\u76F8\u540C\u6587\u672C\u4E0E --source-key\uFF09\uFF1A0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3\r\nAPI \u5DF2\u63A5\u53D7 2 \u6BB5\u666E\u901A\u6587\u672C\u3002\u5DF2\u6309\u5B98\u65B9\u8FC7\u6EE4\u5668\u8F6C\u6362\u5E76\u5206\u5757\uFF0C\u663E\u793A\u6548\u679C\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-063",
+      "processId": 61276,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6c74373feefe42f38eb9ce125edd4712\\fixture-document.md",
+        "--source-key",
+        "0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3"
+      ],
+      "exitCode": 1,
+      "durationMs": 458,
+      "killed": false,
+      "stdout": "Markdown \u4E1A\u52A1\u952E\uFF08\u6062\u590D\u65F6\u4F7F\u7528\u76F8\u540C\u6587\u672C\u4E0E --source-key\uFF09\uFF1A0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3\r\n",
+      "stderr": "\u8BE5 Markdown \u6765\u6E90\u952E\u5DF2\u7528\u4E8E\u5176\u4ED6\u8F93\u5165\uFF0C\u4E0D\u80FD\u4FEE\u6539\u5185\u5BB9\u6216\u6BB5\u6570\u3002\r\n"
+    },
+    {
+      "id": "process-064",
+      "processId": 43112,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-57e5472d51db46448d7cdbc0e77e1c48\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-57e5472d51db46448d7cdbc0e77e1c48\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-57e5472d51db46448d7cdbc0e77e1c48\\fixture-document.md",
+        "--source-key",
+        "F5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0"
+      ],
+      "exitCode": 3,
+      "durationMs": 3786,
+      "killed": false,
+      "stdout": "Markdown \u4E1A\u52A1\u952E\uFF08\u6062\u590D\u65F6\u4F7F\u7528\u76F8\u540C\u6587\u672C\u4E0E --source-key\uFF09\uFF1AF5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0\r\n",
+      "stderr": "\u53D1\u9001\u7ED3\u679C\u672A\u77E5\uFF0C\u53EF\u80FD\u5DF2\u9001\u8FBE\u3002\u8BF7\u5148\u5728\u5FAE\u4FE1\u4E2D\u6838\u5BF9\uFF1B\u7A0B\u5E8F\u4E0D\u4F1A\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-065",
+      "processId": 61572,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-57e5472d51db46448d7cdbc0e77e1c48\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-57e5472d51db46448d7cdbc0e77e1c48\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-57e5472d51db46448d7cdbc0e77e1c48\\fixture-document.md",
+        "--source-key",
+        "F5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0"
+      ],
+      "exitCode": 1,
+      "durationMs": 242,
+      "killed": false,
+      "stdout": "Markdown \u4E1A\u52A1\u952E\uFF08\u6062\u590D\u65F6\u4F7F\u7528\u76F8\u540C\u6587\u672C\u4E0E --source-key\uFF09\uFF1AF5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0\r\n",
+      "stderr": "\u8BE5\u5165\u7AD9\u6D88\u606F\u5DF2\u6709\u53D1\u9001\u5C1D\u8BD5\u3002\u5148\u6838\u5BF9\u5FAE\u4FE1\u9001\u8FBE\u60C5\u51B5\uFF1B\u4E0D\u4F1A\u5728\u91CD\u542F\u540E\u81EA\u52A8\u91CD\u53D1\u3002\r\n"
+    },
+    {
+      "id": "process-066",
+      "processId": 40588,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f7d502526b854e5baded75e15185d13f\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-f7d502526b854e5baded75e15185d13f\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 534,
+      "killed": false,
+      "stdout": "\u6253\u5B57\u5F00\u59CB\u8BF7\u6C42\u5DF2\u88AB HTTP \u63A5\u53D7\uFF0C\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u663E\u793A\u3002\r\n\u5DF2\u53D1\u9001\u6253\u5B57\u53D6\u6D88\u8BF7\u6C42\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-067",
+      "processId": 48720,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-69cdacac21f641a989c2585b01a1cbab\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-69cdacac21f641a989c2585b01a1cbab\\binding.dpapi",
+        "--typing-status",
+        "stop"
+      ],
+      "exitCode": 0,
+      "durationMs": 317,
+      "killed": false,
+      "stdout": "\u6253\u5B57\u53D6\u6D88\u8BF7\u6C42\u5DF2\u88AB HTTP \u63A5\u53D7\uFF0C\u8BF7\u5728\u624B\u673A\u6838\u5BF9\u663E\u793A\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-068",
+      "processId": 43528,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-3074158425c84cef94de29652697c9bc\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-3074158425c84cef94de29652697c9bc\\binding.dpapi",
+        "--typing-status",
+        "start"
+      ],
+      "exitCode": 1,
+      "durationMs": 297,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u8BE5\u7ED1\u5B9A\u672A\u63D0\u4F9B\u6253\u5B57\u7968\u636E\uFF0C\u5F53\u524D\u65E0\u6CD5\u663E\u793A\u6253\u5B57\u72B6\u6001\u3002\r\n"
+    },
+    {
+      "id": "process-069",
+      "processId": 62536,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-aa641ec2feb24070b27efa2d8b9238d2\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-aa641ec2feb24070b27efa2d8b9238d2\\binding.dpapi",
+        "--typing-status",
+        "start"
+      ],
+      "exitCode": 2,
+      "durationMs": 285,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u5FAE\u4FE1\u6253\u5B57\u914D\u7F6E\u672A\u786E\u8BA4 ret=0\uFF0C\u4E0D\u4F7F\u7528\u8BE5\u7968\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-070",
+      "processId": 47612,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-66048c5575974e85a3552694a7f5859e\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-66048c5575974e85a3552694a7f5859e\\binding.dpapi",
+        "--typing-status",
+        "start"
+      ],
+      "exitCode": 1,
+      "durationMs": 186,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u79BB\u7EBF transport \u53EA\u63A5\u53D7 fixture- \u524D\u7F00\u6D4B\u8BD5\u51ED\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-071",
+      "processId": 29608,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6cb292c3daed4bc09312856961bc2815\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-6cb292c3daed4bc09312856961bc2815\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 2,
+      "durationMs": 295,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u5FAE\u4FE1\u6253\u5B57\u72B6\u6001 HTTP 403\u3002\r\n\u4F1A\u8BDD\u5931\u6548\u6216\u6743\u9650\u88AB\u62D2\u7EDD\uFF1B\u8BF7\u6838\u5BF9\u5FAE\u4FE1\u72B6\u6001\u5E76\u91CD\u65B0 login\u3002\u8FD9\u672C\u8EAB\u4E0D\u80FD\u8BC1\u660E\u5C01\u53F7\u3002\r\n"
+    },
+    {
+      "id": "process-072",
+      "processId": 42732,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-3f2abd6cb3dc490eab8fdd16d77d3a85\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-3f2abd6cb3dc490eab8fdd16d77d3a85\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 2,
+      "durationMs": 345,
+      "killed": false,
+      "stdout": "\u5DF2\u53D1\u9001\u6253\u5B57\u53D6\u6D88\u8BF7\u6C42\u3002\r\n",
+      "stderr": "\u5FAE\u4FE1\u6253\u5B57\u72B6\u6001 HTTP 500\u3002\r\n"
+    },
+    {
+      "id": "process-073",
+      "processId": 55028,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c2658406409847caaa771e3a5a1afca2\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-c2658406409847caaa771e3a5a1afca2\\binding.dpapi",
+        "--echo",
+        "--typing",
+        "--run-for",
+        "5"
+      ],
+      "exitCode": 0,
+      "durationMs": 5208,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[51C7F5A24BC7] fixture-typing-first\r\n[1E3BEF7EB740] fixture-typing-second\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-074",
+      "processId": 61720,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-52a4f1be32f24b8ab74101e61e530ef4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-52a4f1be32f24b8ab74101e61e530ef4\\binding.dpapi",
+        "--echo",
+        "--typing",
+        "--run-for",
+        "1.5"
+      ],
+      "exitCode": 0,
+      "durationMs": 1804,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[0AF6EE0DE5EF] fixture-cancel\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-075",
+      "processId": 47136,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-ce20a22b56fa4227bbe1b1045140d7c2\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-ce20a22b56fa4227bbe1b1045140d7c2\\binding.dpapi",
+        "--echo",
+        "--typing",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 2,
+      "durationMs": 354,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\uFF1B--echo \u4F1A\u56DE\u590D\u7ED1\u5B9A\u8D26\u53F7\u7684\u6587\u5B57\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\u3002\r\n[1B46C8F4CD47] fixture-denied\r\n",
+      "stderr": "\u5FAE\u4FE1\u6253\u5B57\u72B6\u6001 HTTP 403\u3002\r\n\u4F1A\u8BDD\u5931\u6548\u6216\u6743\u9650\u88AB\u62D2\u7EDD\uFF1B\u8BF7\u6838\u5BF9\u5FAE\u4FE1\u72B6\u6001\u5E76\u91CD\u65B0 login\u3002\u8FD9\u672C\u8EAB\u4E0D\u80FD\u8BC1\u660E\u5C01\u53F7\u3002\r\n"
+    },
+    {
+      "id": "process-076",
+      "processId": 50756,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-140498ab35c04c0a902885824f5a78cb\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-140498ab35c04c0a902885824f5a78cb\\from-pcm.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 490,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C6804 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-077",
+      "processId": 53356,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-140498ab35c04c0a902885824f5a78cb\\synthetic.wav",
+        "--input-format",
+        "wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-140498ab35c04c0a902885824f5a78cb\\from-wave.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 328,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C6804 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-078",
+      "processId": 63420,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-140498ab35c04c0a902885824f5a78cb\\from-pcm.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-140498ab35c04c0a902885824f5a78cb\\decoded.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 421,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C96044 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-079",
+      "processId": 61196,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\input.wav",
+        "--input-format",
+        "wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\existing.silk"
+      ],
+      "exitCode": 4,
+      "durationMs": 478,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-080",
+      "processId": 55120,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\input.wav",
+        "--input-format",
+        "wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\fresh.silk"
+      ],
+      "exitCode": 1,
+      "durationMs": 118,
+      "killed": false,
+      "stdout": "",
+      "stderr": "WAV \u5FC5\u987B\u4E3A\u672A\u538B\u7F29 PCM16\u3001\u5355\u58F0\u9053\u300124000Hz\uFF1B\u5176\u4ED6\u683C\u5F0F\u8BF7\u5148\u8F6C\u6362\u6216\u6309\u6587\u4EF6\u9644\u4EF6\u53D1\u9001\u3002\r\n"
+    },
+    {
+      "id": "process-081",
+      "processId": 26784,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\input.wav",
+        "--input-format",
+        "mp3",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\fresh.silk"
+      ],
+      "exitCode": 1,
+      "durationMs": 95,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u8BED\u97F3\u8F6C\u6362\u9700\u8981 --file\u3001--output\uFF1Bprepare-voice \u8FD8\u9700 --input-format wav|pcm\u3002\r\n"
+    },
+    {
+      "id": "process-082",
+      "processId": 59388,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\input.wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\fresh.silk"
+      ],
+      "exitCode": 1,
+      "durationMs": 95,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u8BED\u97F3\u8F6C\u6362\u9700\u8981 --file\u3001--output\uFF1Bprepare-voice \u8FD8\u9700 --input-format wav|pcm\u3002\r\n"
+    },
+    {
+      "id": "process-083",
+      "processId": 10032,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\input.wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-2294320c873e4a958487821dccfa2377\\fresh.silk"
+      ],
+      "exitCode": 4,
+      "durationMs": 119,
+      "killed": false,
+      "stdout": "",
+      "stderr": "\u672C\u5730\u72B6\u6001\u6216\u54CD\u5E94\u8BFB\u53D6\u5931\u8D25\u3002\u8BF7\u4FDD\u7559\u72B6\u6001\u6587\u4EF6\u5E76\u68C0\u67E5\u9501\u3001\u78C1\u76D8\u3001\u8D26\u53F7\u53CA\u534F\u8BAE\u7248\u672C\uFF1B\u672A\u8F93\u51FA\u654F\u611F\u539F\u59CB\u6570\u636E\u3002\r\n"
+    },
+    {
+      "id": "process-084",
+      "processId": 58900,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-407f5a637cbe4cd4835e17fcf5c02a1f\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-407f5a637cbe4cd4835e17fcf5c02a1f\\synthetic.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 528,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C6804 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-085",
+      "processId": 6632,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-407f5a637cbe4cd4835e17fcf5c02a1f\\synthetic.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-407f5a637cbe4cd4835e17fcf5c02a1f\\expected.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 386,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C96044 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-086",
+      "processId": 61304,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-e12629cf467b4037940c978c40da06c9\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-e12629cf467b4037940c978c40da06c9\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-e12629cf467b4037940c978c40da06c9\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2267,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[E2E10008F89A] \r\n[\u8BED\u97F3\u8F6C\u5199] fixture-transcript\r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-e12629cf467b4037940c978c40da06c9\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.silk\r\n\u8BED\u97F3\u5DF2\u89E3\u7801\u4E3A\u53EF\u672C\u5730\u64AD\u653E\u7684 WAV\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-e12629cf467b4037940c978c40da06c9\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.wav\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-087",
+      "processId": 49440,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-74bb2fb24a1640169307a5cc57271522\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-74bb2fb24a1640169307a5cc57271522\\synthetic.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 396,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C6804 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-088",
+      "processId": 38412,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-74bb2fb24a1640169307a5cc57271522\\synthetic.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-74bb2fb24a1640169307a5cc57271522\\expected.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 461,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C96044 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-089",
+      "processId": 25160,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-49648a7e117343908f9fe1e243ead649\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-49648a7e117343908f9fe1e243ead649\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-49648a7e117343908f9fe1e243ead649\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2303,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[E2E10008F89A] \r\n[\u8BED\u97F3\u8F6C\u5199] fixture-transcript\r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-49648a7e117343908f9fe1e243ead649\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.voice\r\n\u8BED\u97F3\u5DF2\u89E3\u7801\u4E3A\u53EF\u672C\u5730\u64AD\u653E\u7684 WAV\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-49648a7e117343908f9fe1e243ead649\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.wav\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-090",
+      "processId": 832,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5d643789a160459fb6a57e2b52ca8b4f\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5d643789a160459fb6a57e2b52ca8b4f\\synthetic.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 461,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C6804 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-091",
+      "processId": 51240,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5d643789a160459fb6a57e2b52ca8b4f\\synthetic.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-5d643789a160459fb6a57e2b52ca8b4f\\expected.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 411,
+      "killed": false,
+      "stdout": "\u672C\u5730\u8BED\u97F3\u8F6C\u6362\u5B8C\u6210\uFF1A2000 \u6BEB\u79D2\uFF0C96044 \u5B57\u8282\uFF1B\u672A\u53D1\u9001\u5230\u5FAE\u4FE1\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-092",
+      "processId": 14528,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-52a33a8c541241c8af04df756ecb2a72\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-52a33a8c541241c8af04df756ecb2a72\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-52a33a8c541241c8af04df756ecb2a72\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2201,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[E2E10008F89A] \r\n[\u8BED\u97F3\u8F6C\u5199] fixture-transcript\r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-52a33a8c541241c8af04df756ecb2a72\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.voice\r\n\u8BED\u97F3\u5DF2\u89E3\u7801\u4E3A\u53EF\u672C\u5730\u64AD\u653E\u7684 WAV\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-52a33a8c541241c8af04df756ecb2a72\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.wav\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-093",
+      "processId": 63412,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b6f0c9fb1fad43e986ac62ac0a4fa08e\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b6f0c9fb1fad43e986ac62ac0a4fa08e\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b6f0c9fb1fad43e986ac62ac0a4fa08e\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2271,
+      "killed": false,
+      "stdout": "\u6B63\u5728\u63A5\u6536\u7ED1\u5B9A\u8D26\u53F7\u6D88\u606F\u3002Ctrl\u002BC \u505C\u6B62\uFF1B\u505C\u6B62\u540E\u53EF\u7528 send \u56DE\u590D\u3002\r\n[584D1C22FEC5] \r\n[\u8BED\u97F3\u8F6C\u5199] fixture-transcript\r\n\u5A92\u4F53\u5DF2\u4FDD\u5B58\uFF1A<workspace>\\artifacts\\tests\\final-v120-voice-inbound\\cli-e2e\\fixture-b6f0c9fb1fad43e986ac62ac0a4fa08e\\fixture-downloads\\34de6731777961247594d438198ad82112f0ae77907510b4a38db6c18a1a28a4.voice\r\n\u5DF2\u505C\u6B62\u3002\r\n",
+      "stderr": "\u8BED\u97F3\u89E3\u7801\u672A\u5B8C\u6210\uFF0C\u5DF2\u4FDD\u7559\u539F\u59CB\u5A92\u4F53\uFF1B\u672A\u8F93\u51FA\u97F3\u9891\u6216\u539F\u59CB\u8BCA\u65AD\u3002\r\n"
+    }
+  ],
+  "isolation": {
+    "testDirectories": [
+      "fixture-053602b5c3f9483bbcd265e20d9a6439",
+      "fixture-08a103856fb04efda57920a962608f50",
+      "fixture-0c1d40ff964a467abcb48e63d44f392f",
+      "fixture-105d32f0c91c4a3ea340009892abd111",
+      "fixture-140498ab35c04c0a902885824f5a78cb",
+      "fixture-15f7b103fc7f4c9491244e11bc831413",
+      "fixture-1b1816a181e043e1a44edaa7135ae0c4",
+      "fixture-1bafe03f5a844a22bbcd2f395a2a6e73",
+      "fixture-1e6452f2e8c641c6b34126398a061a76",
+      "fixture-1fd69d3335e346dc9ec06a6fe3e07b3d",
+      "fixture-2294320c873e4a958487821dccfa2377",
+      "fixture-2cfe62013d0a4f1cb6f28e5a974323c4",
+      "fixture-2d3dbd03063e464d9cc69b6c59aff131",
+      "fixture-3074158425c84cef94de29652697c9bc",
+      "fixture-39d51f7f0c7540a790f0eae2aa21fe89",
+      "fixture-3f2abd6cb3dc490eab8fdd16d77d3a85",
+      "fixture-407f5a637cbe4cd4835e17fcf5c02a1f",
+      "fixture-40f74054b57741ee99dfe63aac56188e",
+      "fixture-44e67d60e3064e9dad3dfa99fccdc98a",
+      "fixture-45b94282bc124610960d924c8d65d818",
+      "fixture-46b21989ff834c18a4d2f9a9b7d169c4",
+      "fixture-48d0b03ddceb48d69c1efe7acfa9029a",
+      "fixture-49648a7e117343908f9fe1e243ead649",
+      "fixture-5136cea5ed364dfe9504f112f7991fbe",
+      "fixture-521495923c484641945aeff0e3cb7a22",
+      "fixture-52a33a8c541241c8af04df756ecb2a72",
+      "fixture-52a4f1be32f24b8ab74101e61e530ef4",
+      "fixture-57e5472d51db46448d7cdbc0e77e1c48",
+      "fixture-5a886e36bcc6482988c5309e1bb85791",
+      "fixture-5d643789a160459fb6a57e2b52ca8b4f",
+      "fixture-5dc92eb2e456447cb94504ea63799731",
+      "fixture-60bc8db8cb344c3bafaf488b1f789076",
+      "fixture-66048c5575974e85a3552694a7f5859e",
+      "fixture-69cdacac21f641a989c2585b01a1cbab",
+      "fixture-6c74373feefe42f38eb9ce125edd4712",
+      "fixture-6cb292c3daed4bc09312856961bc2815",
+      "fixture-71c41d75cee245edbb4b78e2523b2855",
+      "fixture-71c758da356e4753a2671aff41d46925",
+      "fixture-74bb2fb24a1640169307a5cc57271522",
+      "fixture-78434a4d0cdc442eb179931e16180837",
+      "fixture-895b9a9450c94bad8f056555a114f330",
+      "fixture-97193e77eebb4c0ba088d14c394da602",
+      "fixture-9dd3c92ba2ca47b88af0d365b6a15549",
+      "fixture-a08dd746a6974b7fa0e0dade1fee8735",
+      "fixture-aa641ec2feb24070b27efa2d8b9238d2",
+      "fixture-ab29930a1292464692309bbc6b3aef50",
+      "fixture-b6f0c9fb1fad43e986ac62ac0a4fa08e",
+      "fixture-b8b74efa774b4f17935d1f8a1d5aea06",
+      "fixture-c2658406409847caaa771e3a5a1afca2",
+      "fixture-c6a61f43f3fe4b2c92d5b48f9dbb48e9",
+      "fixture-c791aebe09954797b68468db864bbbac",
+      "fixture-c99540b4d1444e59abb9e84f21d341dc",
+      "fixture-ce20a22b56fa4227bbe1b1045140d7c2",
+      "fixture-ce76fb92de51477fa7b702ee495aa54b",
+      "fixture-d42bb209b0554beea56b51410df45ea6",
+      "fixture-d9bf4f98398c4a439675e1fd5c86e6d1",
+      "fixture-d9c7469d48cc4a2c9346183d00487190",
+      "fixture-e12629cf467b4037940c978c40da06c9",
+      "fixture-e30b347c81cd4d4383441e5d381bd1d1",
+      "fixture-eef1b4c313a24449bbce8894c85f4e1e",
+      "fixture-f2d90b83e46b43c298ba99c1d29a1d7b",
+      "fixture-f7d502526b854e5baded75e15185d13f",
+      "fixture-f9a44d1044d846f6a4133b77feb9911a",
+      "fixture-fcb17d23a1d744ce9c9662dbdfd29cbc"
+    ],
+    "defaultAccountStateRead": false,
+    "socketsCreatedByFixtureTransport": false,
+    "credentials": "fixture-prefixed only; one negative guard fixture is not a real account token"
+  }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "expectedRequestedMarker": "WXE2E-20261004-A7F3",
+    "exactRequestedMarkerMatched": false,
+    "observedText": "wxe2e",
+    "phoneReplyConfirmedByUser": true,
+    "test": "initial-ad-hoc"
+  },
+  {
+    "expectedRequestedMarker": "WXE2E-20261004-B9D2",
+    "phoneReplyClaimedBySelection": true,
+    "exactRequestedMarkerMatched": false,
+    "userClarification": "User was on a phone and sent arbitrary short letters instead of the long marker.",
+    "test": "long-marker-restart"
+  },
+  {
+    "persistedReplyReceiptStatus": "Sent",
+    "exactPhoneReply": "已收到：ok7",
+    "test": "short-marker-restart",
+    "phoneReplyConfirmedByUser": true,
+    "expectedRequestedMarker": "ok7",
+    "actualInboundMatched": true
+  },
+  {
+    "test": "outbound-markdown-video",
+    "phoneMarkdownReceived": true,
+    "phoneVideoReceivedAndPlayable": true,
+    "confirmation": "Both normal",
+    "recordedAt": "2026-10-04T06:36:51.61924+08:00"
+  },
+  {
+    "test": "outbound-native-silk",
+    "apiAccepted": true,
+    "sampleMilliseconds": 2000,
+    "sampleBytes": 6440,
+    "phoneReceived": false,
+    "confirmation": "Not received",
+    "recordedAt": "2026-10-04T06:36:51.620288+08:00"
+  },
+  {
+    "test": "typing-retry",
+    "first30SecondsPhoneVisible": false,
+    "second60SecondsPhoneVisible": true,
+    "cancelHttpAccepted": true,
+    "phoneCancelConfirmed": null,
+    "recordedAt": "2026-10-04T06:36:51.6203143+08:00"
+  },
+  {
+    "test": "outbound-native-silk-full-metadata",
+    "apiAccepted": true,
+    "sampleMilliseconds": 2000,
+    "sampleBytes": 6440,
+    "sampleRateHz": 24000,
+    "bitsPerSample": 16,
+    "encodeType": 6,
+    "phoneReceived": false,
+    "confirmation": "Still no native voice bubble",
+    "requestCompletedUtc": "2026-10-03T23:05:37.8875931+00:00",
+    "protocolDllSha256": "07cd9a6f895660b6b68ec525be91e1b8b131b95fb73bad67db0cf772fa3426ab",
+    "evidenceFile": "native-full-metadata-evidence.json"
+  },
+  {
+    "test": "outbound-native-real-inbound-silk-replay",
+    "apiAccepted": true,
+    "sampleBytes": 3585,
+    "sampleMilliseconds": 2800,
+    "sampleRateHz": 24000,
+    "bitsPerSample": 16,
+    "encodeType": 6,
+    "sampleSha256": "c483c114865124fa9a32fdf2aa52e1259f6cbf8f8965ea52343956ec5a6a77d6",
+    "phoneReceived": false,
+    "userConfirmation": "Still no native voice bubble",
+    "requestCompletedUtc": "2026-10-03T23:26:10.3910672+00:00",
+    "protocolDllSha256": "07cd9a6f895660b6b68ec525be91e1b8b131b95fb73bad67db0cf772fa3426ab",
+    "evidenceFile": "native-real-voice-replay-evidence.json"
+  }
+]

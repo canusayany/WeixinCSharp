@@ -1,0 +1,124 @@
+{
+  "formatVersion": 1,
+  "repository": "https://github.com/Tencent/openclaw-weixin",
+  "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+  "license": "MIT",
+  "note": "Curated reference snapshot; upstream TypeScript tests are reference files and are not executed by the C# test runner.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1327,
+      "sha256": "e03f0b07c51d8e8f1c9e25bca15a67d9c3157ae9a14d77dda98d426bfb165adb"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1995,
+      "sha256": "6d564f047df6b8697785864feac7b521193fc58316bb0f422a3f7c7b14de4fd8"
+    },
+    {
+      "path": "docs/protocol_zh_CN.md",
+      "bytes": 17920,
+      "sha256": "43a3c7380d946eff5d06d35e2510513fa69481a5aff956563ae706148cd73168"
+    },
+    {
+      "path": "src/channel.ts",
+      "bytes": 24177,
+      "sha256": "604ccf5b4845b99e6be54e4bf40a8bf3072a14a7c7d0926f82b1c4221f87a945"
+    },
+    {
+      "path": "src/api/api.ts",
+      "bytes": 22762,
+      "sha256": "2241d6c8ecb7f648a706b3de4c92ab7b5be6299bd29d25439140c04ddfcab54f"
+    },
+    {
+      "path": "src/api/config-cache.test.ts",
+      "bytes": 4718,
+      "sha256": "3aa93204b38f433d15fa54ea51cf65be25395832a52e2349e9c6a7369efe0a12"
+    },
+    {
+      "path": "src/api/config-cache.ts",
+      "bytes": 2575,
+      "sha256": "8db1aa7b1bb0bf9b0c1c52443409637946aa0bd1a33811817b3cd87836406273"
+    },
+    {
+      "path": "src/api/types.ts",
+      "bytes": 7839,
+      "sha256": "a13c6f54923f056925f0b4f06bf49456cc0c3fcab9408d395fce7bc0e17b7316"
+    },
+    {
+      "path": "src/auth/login-qr.ts",
+      "bytes": 17526,
+      "sha256": "8cd58a31f55082f0ebb8e69ac59868b6deb1591b4bc60182ae33f1a8439e83b1"
+    },
+    {
+      "path": "src/cdn/aes-ecb.ts",
+      "bytes": 898,
+      "sha256": "b1d203a5173c8d56794486e541b02e71e8ce328ce68b0b9b23911d8c338c2482"
+    },
+    {
+      "path": "src/cdn/cdn-upload.ts",
+      "bytes": 3716,
+      "sha256": "8a043f3a509f44d79e3e0619ef99e76555b554f46ceabc6664301bd0259f348e"
+    },
+    {
+      "path": "src/cdn/cdn-url.ts",
+      "bytes": 850,
+      "sha256": "eb0d54d6e3b8a228bfcb8609cc5851bdf0066bd7cc7d78196f885174c2ff1547"
+    },
+    {
+      "path": "src/cdn/pic-decrypt.ts",
+      "bytes": 3605,
+      "sha256": "d7d0768347da7b5296bd7d1bf1f9dcbafb9dbef9408d6f04e856897b04e7ce0e"
+    },
+    {
+      "path": "src/cdn/upload.ts",
+      "bytes": 5783,
+      "sha256": "3506edda0ca1eed863d71633fc8f2f4be7ebc9b2baa544513840c79fa0238ce6"
+    },
+    {
+      "path": "src/media/media-download.ts",
+      "bytes": 6227,
+      "sha256": "64c76c4e626a8b3846cf0c2e76948dc626739ab4fbb49a7a5c785d33596cbbbd"
+    },
+    {
+      "path": "src/media/silk-transcode.test.ts",
+      "bytes": 2029,
+      "sha256": "b14be2c408c658d7d8770a58e92468fb5aa0d222107dba9a486748e6b105427e"
+    },
+    {
+      "path": "src/media/silk-transcode.ts",
+      "bytes": 2330,
+      "sha256": "18ec2cf79be4750a1d25e183936554509f3fd3499813bfe14a39936b5501a4a2"
+    },
+    {
+      "path": "src/messaging/markdown-filter.test.ts",
+      "bytes": 25851,
+      "sha256": "a900696233546fb4008f16d15b31a090f6e8e8be8c09caf775bc2eb6a25bb24e"
+    },
+    {
+      "path": "src/messaging/markdown-filter.ts",
+      "bytes": 11310,
+      "sha256": "a1af23bc8e23f343be38d6bdf6ad14c544f516b8c69e24e5b8a903a1adac885c"
+    },
+    {
+      "path": "src/messaging/send-media.ts",
+      "bytes": 2929,
+      "sha256": "72f0baf824a379cc78ee53029f734a2a82e4bc8d93142419ce353092b387d977"
+    },
+    {
+      "path": "src/messaging/send.ts",
+      "bytes": 12114,
+      "sha256": "df02923a29d768f28e7195da83699d2aa62a0beeca76a79c00679450c1f7ba29"
+    },
+    {
+      "path": "src/monitor/monitor.ts",
+      "bytes": 8682,
+      "sha256": "c227ab34d890d95bd0c071a85ec05c998ed0dbc02c1a629915d71bd1348cf36d"
+    },
+    {
+      "path": "src/util/random.ts",
+      "bytes": 579,
+      "sha256": "00485f1c61cfc0f3da825d030c01ddd30ca03e31ed7d32dc70d6bbd1d72d4ef2"
+    }
+  ]
+}

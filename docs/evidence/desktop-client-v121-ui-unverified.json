@@ -1,0 +1,21 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "scope": "desktop UI availability; not delivery acceptance",
+  "clientVersion": "4.1.15.13",
+  "typingEvidenceFile": "desktop-typing-v121-evidence.json",
+  "chatUiVisibleInNewTestWindow": false,
+  "typingIndicatorVisible": null,
+  "typingIndicatorDisappearanceConfirmed": null,
+  "newTextMarkerTestExecuted": false,
+  "captureChecksUtc": [
+    "2026-10-04T00:33:18.170Z",
+    "2026-10-04T00:33:30.179Z",
+    "2026-10-04T00:37:28.552Z"
+  ],
+  "observedAvailability": "Screen covered by a slideshow; usable robot chat not captured. No authentication or screen-lock UI was operated.",
+  "desktopWakeRequested": true,
+  "desktopWakeReplyReceived": false,
+  "screenshotsSavedToProjectOrDistributed": false,
+  "containsCredentialsAccountIdsContactsChatsPhotosMediaOrScreenshots": false
+}

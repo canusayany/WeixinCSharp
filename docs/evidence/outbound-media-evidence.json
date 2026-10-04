@@ -1,0 +1,58 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-WeChat-account-CLI",
+  "started": "2026-10-04T06:19:27.4788835+08:00",
+  "completed": "2026-10-04T06:19:27.5257958+08:00",
+  "executableSha256": null,
+  "cliDllSha256": null,
+  "protocolDllSha256": null,
+  "marker": null,
+  "expectedMessageObserved": false,
+  "otherMessageCount": 0,
+  "exitCode": null,
+  "stateHasContext": true,
+  "stateHasCursor": true,
+  "inboxCount": 0,
+  "seenKeyCount": 3,
+  "outboxStatuses": {
+    "Sent": 7
+  },
+  "expectedReplyReceipts": [],
+  "phoneDelivery": "requires separate explicit human confirmation",
+  "selectedBusinessReceipts": [
+    {
+      "ClientId": "openclaw-weixin:1791065914791-1c9ce652",
+      "Status": "Sent",
+      "AttemptedAt": "2026-10-04T06:18:34.7918839+08:00",
+      "SourceKey": "2222222222222222222222222222222222222222222222222222222222222222",
+      "ContentSha256": "F70C63F7B3B7DEFF70D75BEB0CAB2A84A664C43EF9379A642CC56D12E7748FA7",
+      "PayloadSha256": "5805E5DC139DF9938643BF475736BF7A40370BADFE3DD0706E2F85FBA1BBE3A3"
+    },
+    {
+      "ClientId": "openclaw-weixin:1791065917839-c0aaf21c",
+      "Status": "Sent",
+      "AttemptedAt": "2026-10-04T06:18:37.8395481+08:00",
+      "SourceKey": "3333333333333333333333333333333333333333333333333333333333333333",
+      "ContentSha256": "B1200FEB705353E9A24682E872202771382A44ED814FAB7AF4845A681341902D",
+      "PayloadSha256": "283AF5913B1BEF2BCC899657677B4CB422B766A4F7FFC80AA6CE8E569B72507C"
+    },
+    {
+      "ClientId": "openclaw-weixin:1791065920852-0de2c380",
+      "Status": "Sent",
+      "AttemptedAt": "2026-10-04T06:18:40.8530162+08:00",
+      "SourceKey": "4444444444444444444444444444444444444444444444444444444444444444",
+      "ContentSha256": "366DF50A6642DA6642708EA22D0BFEA54FD4F0BFAC884DB44CB465E4BE8CEFE5",
+      "PayloadSha256": "FA96B682F07FAE4586BE27842073EF4BF769ABE84A4899159C4E709B3FAD27FD"
+    }
+  ],
+  "selectedMarkdownJobs": [
+    {
+      "SourceKey": "1111111111111111111111111111111111111111111111111111111111111111",
+      "ContentSha256": "625AE34D7306FDED3CF579089DA6BBCAAF8A25D36131A5F6CCA7B3A6990410B2",
+      "ChunkCount": 1,
+      "completedChunks": 1
+    }
+  ],
+  "downloadedMedia": [],
+  "containsCredentialsOrAccountIds": false
+}

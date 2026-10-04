@@ -1,0 +1,41 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-WeChat-account-CLI",
+  "started": "2026-10-03T23:19:41.1019956+00:00",
+  "completed": "2026-10-03T23:22:42.3540568+00:00",
+  "executableSha256": "5602d2145983424add1f7e755cac37fa2ae64b86ec0c129e4061b441af381344",
+  "cliDllSha256": "a8ba0da6d10d5460524e743dcc146ea0fb54348918ee50dbcc7156f9ce7e4e89",
+  "protocolDllSha256": "903a69c9cf5a3e1ccc5168ef0df5ad45b9df4865c0702ab9584dca8600f7454e",
+  "marker": null,
+  "expectedMessageObserved": false,
+  "expectedMedia": [
+    "voice"
+  ],
+  "expectedMediaObserved": true,
+  "otherMessageCount": 1,
+  "exitCode": 0,
+  "stateHasContext": true,
+  "stateHasCursor": true,
+  "inboxCount": 0,
+  "seenKeyCount": 7,
+  "outboxStatuses": {
+    "Sent": 10
+  },
+  "expectedReplyReceipts": [],
+  "phoneDelivery": "requires separate explicit human confirmation",
+  "selectedBusinessReceipts": [],
+  "selectedMarkdownJobs": [],
+  "downloadedMedia": [
+    {
+      "name": "b1e1ef72bcd0e7f9cec05690e8fbbdc0bedcdfe4710cb3af7c3f2e8b21c09319.voice",
+      "bytes": 3585,
+      "sha256": "c483c114865124fa9a32fdf2aa52e1259f6cbf8f8965ea52343956ec5a6a77d6"
+    },
+    {
+      "name": "b1e1ef72bcd0e7f9cec05690e8fbbdc0bedcdfe4710cb3af7c3f2e8b21c09319.wav",
+      "bytes": 134444,
+      "sha256": "9a205e5eb4ef4f783fd42ff2c4074a2c39766cc6611a9e21df774ed2c77eb947"
+    }
+  ],
+  "containsCredentialsOrAccountIds": false
+}

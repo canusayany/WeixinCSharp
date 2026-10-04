@@ -1,0 +1,21 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-incoming-voice-automatic-decode-inspection",
+  "inspectedAt": "2026-10-03T23:21:11.425062+00:00",
+  "mediaContentsIncluded": false,
+  "receivedRawBytes": 3585,
+  "receivedRawSha256": "c483c114865124fa9a32fdf2aa52e1259f6cbf8f8965ea52343956ec5a6a77d6",
+  "decodedWaveBytes": 134444,
+  "decodedWaveSha256": "9a205e5eb4ef4f783fd42ff2c4074a2c39766cc6611a9e21df774ed2c77eb947",
+  "riffWave": true,
+  "sampleRateHz": 24000,
+  "channels": 1,
+  "bitsPerSample": 16,
+  "dataBytes": 134400,
+  "durationMilliseconds": 2800,
+  "automaticDuringListener": true,
+  "source": "fresh empty download directory; current candidate CLI",
+  "cliDllSha256": "a8ba0da6d10d5460524e743dcc146ea0fb54348918ee50dbcc7156f9ce7e4e89",
+  "protocolDllSha256": "903a69c9cf5a3e1ccc5168ef0df5ad45b9df4865c0702ab9584dca8600f7454e",
+  "phoneVoiceSentConfirmedByUser": true
+}

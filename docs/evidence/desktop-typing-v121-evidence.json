@@ -1,0 +1,19 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "testLevel": "live-published-CLI-typing-keepalive",
+  "started": "2026-10-04T00:33:03.9855847+00:00",
+  "completed": "2026-10-04T00:34:04.6113760+00:00",
+  "durationSeconds": 60,
+  "exitCode": 0,
+  "executableSha256": "cb8f7466dee8e2338703a24585e52852d70baae9fed5bc4b56cdd4d99160ebbf",
+  "cliDllSha256": "116375df8e469ae401916414736c94f44b82fd54def8c966d97fa3f0bee339b7",
+  "protocolDllSha256": "5c40767ceb907e6e0659a2c3e1bdc11a92936c4b80965c5dfefd1546f71b80fd",
+  "startHttpAccepted": true,
+  "finalCancelHttpAccepted": true,
+  "refreshFailureDiagnosticObserved": false,
+  "stateBytesUnchanged": true,
+  "individualLiveRefreshResponsesInstrumented": false,
+  "clientObservation": "recorded separately",
+  "containsCredentialsOrAccountIds": false
+}

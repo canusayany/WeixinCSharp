@@ -1,0 +1,73 @@
+{
+  "bugs": {
+    "url": "https://github.com/idranme/silk-wasm/issues"
+  },
+  "dist": {
+    "shasum": "f5abe4db5e818f182b776106b638fb1ead21fcf7",
+    "tarball": "https://registry.npmjs.org/silk-wasm/-/silk-wasm-3.7.1.tgz",
+    "fileCount": 8,
+    "integrity": "sha512-mXPwLRtZxrYV3TZx41jMAeKc80wvmyrcXIcs8HctFxK15Ahz2OJQENYhNgEPeCEOdI6Mbx1NxQsqxzwc3DKerw==",
+    "signatures": [
+      {
+        "sig": "MEYCIQCuAoIItjeWbeC2Yqv9dUZquOpG2HyKfZ24zEGgSnCwdQIhALfiqRGXFQEIWJXQssoXnuA5chCBE+YQAwpZ/bloiG4n",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "unpackedSize": 290158
+  },
+  "main": "lib/index.cjs",
+  "name": "silk-wasm",
+  "module": "lib/index.mjs",
+  "engines": {
+    "node": ">=16.11.0"
+  },
+  "gitHead": "5971995be3ce05d4a1bf820fdf9d7ccdc942e945",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn compile:cjs && yarn compile:esm && tsc",
+    "compile:cjs": "esbuild src/index.ts --outfile=lib/index.cjs --bundle --minify-whitespace --minify-syntax --platform=node --target=es2022 --inject:scripts/patch.js --define:import.meta.url=import_meta_url",
+    "compile:esm": "esbuild src/index.ts --outfile=lib/index.mjs --bundle --minify-whitespace --minify-syntax --platform=node --target=es2022 --format=esm"
+  },
+  "typings": "lib/index.d.ts",
+  "_npmUser": {
+    "name": "idranme",
+    "email": "idranme@outlook.com"
+  },
+  "homepage": "https://github.com/idranme/silk-wasm#readme",
+  "keywords": [
+    "silk",
+    "tencent",
+    "encoder",
+    "sdk",
+    "wasm",
+    "decoder",
+    "codec"
+  ],
+  "repository": {
+    "url": "git+https://github.com/idranme/silk-wasm.git",
+    "type": "git"
+  },
+  "_npmVersion": "10.9.2",
+  "description": "Tencent silk encoder for Node.js and browser",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "idranme",
+      "email": "idranme@outlook.com"
+    }
+  ],
+  "_nodeVersion": "22.14.0",
+  "_hasShrinkwrap": false,
+  "packageManager": "yarn@4.9.1",
+  "devDependencies": {
+    "esbuild": "^0.25.3",
+    "typescript": "^5.8.3",
+    "wav-file-decoder": "^1.0.3"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/silk-wasm_3.7.1_1746107566644_0.27642953885011323",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "silk-wasm@3.7.1",
+  "version": "3.7.1"
+}

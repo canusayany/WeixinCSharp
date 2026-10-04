@@ -1,0 +1,25 @@
+{
+  "formatVersion": 1,
+  "test": "live-typing",
+  "recordedAt": "2026-10-04T06:32:17.0704907+08:00",
+  "command": "typing --typing-status start --run-for",
+  "first": {
+    "seconds": 30,
+    "phoneIndicatorConfirmed": false,
+    "cancelHttpAccepted": true,
+    "exitCode": 0,
+    "startHttpAccepted": true
+  },
+  "second": {
+    "seconds": 60,
+    "exitCode": 0,
+    "startHttpAccepted": true,
+    "phoneCancelConfirmed": null,
+    "cancelHttpAccepted": true,
+    "phoneIndicatorConfirmed": true
+  },
+  "containsCredentialsOrAccountIds": false,
+  "executableSha256": "5602d2145983424add1f7e755cac37fa2ae64b86ec0c129e4061b441af381344",
+  "cliDllSha256": "8bc589efb79df0a4adf6599674503d435b5d80dac579d788098d4525271bfcd0",
+  "protocolDllSha256": "da5bb74b3baec4e1e3d99712e16d18f8b5e783ea3654630b34bc2d895a0f8b76"
+}

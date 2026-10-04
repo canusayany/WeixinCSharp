@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "level": "offline-unit-real-Windows-DPAPI",
+  "started": "2026-10-04T08:31:08.5132442+08:00",
+  "completed": "2026-10-04T08:31:13.188795+08:00",
+  "realWechatAccountUsed": false,
+  "suites": [
+    {
+      "name": "StateVaultTests",
+      "status": "passed",
+      "elapsedMs": 79
+    },
+    {
+      "name": "ILinkClientTests",
+      "status": "passed",
+      "elapsedMs": 104
+    },
+    {
+      "name": "PersistentBotRunnerTests",
+      "status": "passed",
+      "elapsedMs": 178
+    },
+    {
+      "name": "RunnerRegressionTests",
+      "status": "passed",
+      "elapsedMs": 586
+    },
+    {
+      "name": "MediaModelAndMarkdownTests",
+      "status": "passed",
+      "elapsedMs": 968
+    },
+    {
+      "name": "MediaClientTests",
+      "status": "passed",
+      "elapsedMs": 80
+    },
+    {
+      "name": "TypingClientTests",
+      "status": "passed",
+      "elapsedMs": 165
+    },
+    {
+      "name": "TypingLifecycleTests",
+      "status": "passed",
+      "elapsedMs": 2512
+    }
+  ],
+  "version": "1.2.1",
+  "namedTestGroups": 94.0,
+  "stateVaultSuiteCountedSeparately": true
+}

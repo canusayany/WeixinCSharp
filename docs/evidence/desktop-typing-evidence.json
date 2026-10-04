@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-final-published-CLI-typing",
+  "started": "2026-10-03T23:52:03.6388235+00:00",
+  "completed": "2026-10-03T23:53:04.5659591+00:00",
+  "durationSeconds": 60,
+  "exitCode": 2,
+  "executableSha256": "5602d2145983424add1f7e755cac37fa2ae64b86ec0c129e4061b441af381344",
+  "cliDllSha256": "a8ba0da6d10d5460524e743dcc146ea0fb54348918ee50dbcc7156f9ce7e4e89",
+  "protocolDllSha256": "903a69c9cf5a3e1ccc5168ef0df5ad45b9df4865c0702ab9584dca8600f7454e",
+  "clientObservation": "recorded separately",
+  "containsCredentialsOrAccountIds": false
+}

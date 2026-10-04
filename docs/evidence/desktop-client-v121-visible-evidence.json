@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "scope": "direct observation of own bound bot chat in WeChat desktop",
+  "clientVersion": "4.1.15.13",
+  "chatUiVisible": true,
+  "observationsRecordedBy": "computer-use returned window snapshots; screenshots not saved",
+  "typingEvidenceFile": "desktop-typing-v121-visible-evidence.json",
+  "typingSamples": [
+    {
+      "observedUtc": "2026-10-04T00:43:17.467Z",
+      "elapsedFromCliStartSeconds": 16.641,
+      "elapsedFromCliEndSeconds": -44.021,
+      "typingIndicatorVisible": true,
+      "headerObservation": "对方正在输入…"
+    },
+    {
+      "observedUtc": "2026-10-04T00:43:56.233Z",
+      "elapsedFromCliStartSeconds": 55.407,
+      "elapsedFromCliEndSeconds": -5.255,
+      "typingIndicatorVisible": true,
+      "headerObservation": "对方正在输入…"
+    },
+    {
+      "observedUtc": "2026-10-04T00:44:03.576Z",
+      "elapsedFromCliStartSeconds": 62.75,
+      "elapsedFromCliEndSeconds": 2.088,
+      "typingIndicatorVisible": false,
+      "headerObservation": "normal bot header"
+    }
+  ],
+  "typingContinuousAtEveryInstantProven": false,
+  "typingDisappearanceAfterAcceptedStopObserved": true,
+  "stopCausalityIsolatedFromServerTtl": false,
+  "individualLiveRefreshResponsesInstrumented": false,
+  "textEvidenceFile": "desktop-text-v121-m3b-evidence.json",
+  "text": {
+    "marker": "m3b",
+    "expectedReply": "已收到：m3b",
+    "sendActionSnapshotUtc": "2026-10-04T00:47:13.302Z",
+    "completeIncomingAndReplyVisibleUtc": "2026-10-04T00:47:23.378Z",
+    "ownMessageAndCompleteBotReplyObserved": true,
+    "matchingSentReceiptCount": 1,
+    "inboxCountAtHelperCompletion": 0,
+    "helperExitCode": 0
+  },
+  "firstTextWindowEvidenceFile": "desktop-text-v121-evidence.json",
+  "firstTextWindow": {
+    "marker": "k2a",
+    "uiSendActionExecuted": false,
+    "expectedMessageObserved": false,
+    "matchingSentReceiptCount": 0,
+    "reason": "Listener ended before UI send; failed window retained and a fresh marker used"
+  },
+  "priorUnavailableWindowEvidenceFile": "desktop-client-v121-ui-unverified.json",
+  "priorUnavailableWindowAttribution": "Slideshow/playback pixels observed; source and lock state unconfirmed",
+  "nativeVoiceDeliveryVerified": false,
+  "executableSha256": "cb8f7466dee8e2338703a24585e52852d70baae9fed5bc4b56cdd4d99160ebbf",
+  "cliDllSha256": "116375df8e469ae401916414736c94f44b82fd54def8c966d97fa3f0bee339b7",
+  "protocolDllSha256": "5c40767ceb907e6e0659a2c3e1bdc11a92936c4b80965c5dfefd1546f71b80fd",
+  "screenshotsSavedToProjectOrDistributed": false,
+  "containsCredentialsAccountIdsContactsPrivateChatsPhotosMediaOrScreenshots": false
+}

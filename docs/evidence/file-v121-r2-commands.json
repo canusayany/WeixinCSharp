@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "scope": "actual published CLI one-attempt FILE upload and send",
+  "startedUtc": "2026-10-04T01:45:59.9340094+00:00",
+  "completedUtc": "2026-10-04T01:46:01.0196255+00:00",
+  "exitCode": 0,
+  "publishedFilesSha256": {
+    "weixin.exe": "cb8f7466dee8e2338703a24585e52852d70baae9fed5bc4b56cdd4d99160ebbf",
+    "weixin.dll": "116375df8e469ae401916414736c94f44b82fd54def8c966d97fa3f0bee339b7",
+    "Weixin.Protocol.dll": "5c40767ceb907e6e0659a2c3e1bdc11a92936c4b80965c5dfefd1546f71b80fd"
+  },
+  "fileName": "file7.txt",
+  "sampleContent": "文件验证 f7",
+  "sampleHasFinalNewline": true,
+  "fileBytes": 16,
+  "fileSha256": "6209916e97c20bd3622c1fb2be051ef8586e8056238fe5867fea885ac0bed3ab",
+  "sourceKey": "0CB09AB2005E9F6CCB9C91AE732B92731234321B34519C250CED897F66A33078",
+  "mediaKind": "File",
+  "uploadMediaType": 3,
+  "messageItemType": 4,
+  "privateFileSent": false,
+  "containsCredentialsOrAccountIds": false,
+  "automaticRetryAfterUnknown": false,
+  "clientDownloadAndContentsVerified": false
+}

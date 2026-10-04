@@ -1,0 +1,2805 @@
+{
+  "schemaVersion": 1,
+  "scope": "offline-published-cli-process-e2e",
+  "realWeChatDeliveryVerified": false,
+  "selectedCase": null,
+  "availableSuiteCaseCount": 62,
+  "completedUtc": "2026-10-04T08:29:58.2746641+08:00",
+  "executable": "<workspace>\\artifacts\\win-x64\\weixin.exe",
+  "provenance": {
+    "sourceRoot": "<workspace>",
+    "sourceFiles": [
+      {
+        "path": "Directory.Build.props",
+        "sha256": "F4E31746A448A7058050EF35054E482BCF98B6BFC3BED433CAE76331EAE6DB7A",
+        "sizeBytes": 359
+      },
+      {
+        "path": "global.json",
+        "sha256": "677C83B0E4EDE7AB9BD96CE3510640E18893556142F265CE12652D84FEC5914C",
+        "sizeBytes": 71
+      },
+      {
+        "path": "src/Weixin.Cli/Weixin.Cli.csproj",
+        "sha256": "0324C616A87C28CF4C794AD48672AEC9EF418A8F7C7E35E97E46FED1A753A8FB",
+        "sizeBytes": 307
+      },
+      {
+        "path": "src/Weixin.Cli/Program.cs",
+        "sha256": "15C098CEB8F35BCF7E90426F313F29D8379A1B93FB27581BE36B4EA72DAEB660",
+        "sizeBytes": 40293
+      },
+      {
+        "path": "src/Weixin.Cli/OfflineFixtureTransport.cs",
+        "sha256": "BD3DAB2637908B495ECFD51A9879B58A7A3036B2B36C2516FBB54599D24EE905",
+        "sizeBytes": 23927
+      },
+      {
+        "path": "src/Weixin.Protocol/Weixin.Protocol.csproj",
+        "sha256": "010BAED0B54DE93153C193EC71F361C2345999261852D174872826FA249C350C",
+        "sizeBytes": 271
+      },
+      {
+        "path": "src/Weixin.Protocol/ILinkClient.cs",
+        "sha256": "24F873FA7D94D0C5CBF04EAB7527794C97CEA1715EA7BBADFAD661074241B5D2",
+        "sizeBytes": 13219
+      },
+      {
+        "path": "src/Weixin.Protocol/Models.cs",
+        "sha256": "18E8B07AD1DE502C36A9A1B5E9C5062CF155995424DFB03D9A0A741DCB4AA748",
+        "sizeBytes": 10703
+      },
+      {
+        "path": "src/Weixin.Protocol/PersistentBotRunner.cs",
+        "sha256": "18A3228151F2617259FF82A0002CBBFF0EF6E6F9D37BB0B2028A575403362707",
+        "sizeBytes": 28439
+      },
+      {
+        "path": "src/Weixin.Protocol/StateVault.cs",
+        "sha256": "63477E4E2F5D7D48A32E0E807EF99643970F5E114A5431A0D41BD36D8251058C",
+        "sizeBytes": 9180
+      },
+      {
+        "path": "src/Weixin.Protocol/MediaClient.cs",
+        "sha256": "655AB30797CBBA08232170EA48CBE546D7979815D2E3C6B9127998CE16DF7418",
+        "sizeBytes": 17394
+      },
+      {
+        "path": "src/Weixin.Protocol/MarkdownFormatting.cs",
+        "sha256": "CBFE7B01A8A08C6ED5CA51E898BACFC36FB7EF46CE7E9D057CB5DBEBF5107648",
+        "sizeBytes": 9344
+      },
+      {
+        "path": "src/Weixin.Protocol/TypingClient.cs",
+        "sha256": "218FBBAD7C9FD8F187EBA0A470C4F90373648F2C213422C470F32BEFA294C593",
+        "sizeBytes": 8221
+      },
+      {
+        "path": "src/Weixin.Protocol/TypingLifecycle.cs",
+        "sha256": "8F74B654CE9BC3C9DF3E9AF1B2265DAB94D7F81D4857B81B2D1C9450C0F94C0D",
+        "sizeBytes": 13180
+      },
+      {
+        "path": "src/Weixin.Protocol/VoiceCodec.cs",
+        "sha256": "99AF074C73B5492149A7405E9A2D33F572FA1B8645D703C8EA11D155927D9175",
+        "sizeBytes": 17581
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/Weixin.Cli.E2ETests.csproj",
+        "sha256": "1C3D0B8A4A549C09048F1248F3DB2B6DC89EBA9351AE5BC2644AFDE8E75753EB",
+        "sizeBytes": 212
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/Program.cs",
+        "sha256": "392FF35FAEF35E7AB9BC12E191BD3C79BD11580E84C7018A4092AF4B8E1E9F67",
+        "sizeBytes": 40888
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/MediaE2E.cs",
+        "sha256": "0ED0B58119E189F657ACA294C3B20348BA5F92EC479DF60471394BA80E008010",
+        "sizeBytes": 28939
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/TypingVoiceE2E.cs",
+        "sha256": "FD0B506A05C99723E21C3481FB709508E1FD62426BAB03F843BAD3A37C621258",
+        "sizeBytes": 22013
+      },
+      {
+        "path": "tests/Weixin.Cli.E2ETests/TypingLifecycleE2E.cs",
+        "sha256": "DB83C92733BA889520C2C3A4A5C766E4FB95C9B0B663211735DC5379DC227341",
+        "sizeBytes": 9111
+      },
+      {
+        "path": "runtime/voice/codec-bridge.mjs",
+        "sha256": "4017CE69BA577CBCA5305169CE6E19F72065FCB5C604AC6BC46548344D7E6D43",
+        "sizeBytes": 5020
+      },
+      {
+        "path": "runtime/voice/provenance.json",
+        "sha256": "0E7495377616B8223C0B337678EBD48327CFA056D5EB2DADDB07F8B5C7E6E489",
+        "sizeBytes": 4764
+      }
+    ],
+    "publishedFiles": [
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.deps.json",
+        "sha256": "CD5FB0C66191A3111823EFB3957B43DA21ECA4DBF38EB6FF2F262A0FA707F8A9",
+        "sizeBytes": 29941
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.dll",
+        "sha256": "116375DF8E469AE401916414736C94F44B82FD54DEF8C966D97FA3F0BEE339B7",
+        "sizeBytes": 86016
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.exe",
+        "sha256": "CB8F7466DEE8E2338703A24585E52852D70BAAE9FED5BC4B56CDD4D99160EBBF",
+        "sizeBytes": 162304
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\Weixin.Protocol.dll",
+        "sha256": "5C40767CEB907E6E0659A2C3E1BDC11A92936C4B80965C5DFEFD1546F71B80FD",
+        "sizeBytes": 150016
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\weixin.runtimeconfig.json",
+        "sha256": "CBBD0366E3124C840C10613610378CC8A022DF77D26DCBD75664E06D0A48C59C",
+        "sizeBytes": 373
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\codec-bridge.mjs",
+        "sha256": "4017CE69BA577CBCA5305169CE6E19F72065FCB5C604AC6BC46548344D7E6D43",
+        "sizeBytes": 5020
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\Node-LICENSE.txt",
+        "sha256": "D9C4EEDA951D6D08F4AA1316B61AAFCF67E6DA5F79B18F8EDEB56FA6ABDC038C",
+        "sizeBytes": 160552
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\node.exe",
+        "sha256": "3602F2BB1A10F2CBAB4C36886218A33C1AB3DB87290E73B033C46C77147D0237",
+        "sizeBytes": 92825416
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\provenance.json",
+        "sha256": "0E7495377616B8223C0B337678EBD48327CFA056D5EB2DADDB07F8B5C7E6E489",
+        "sizeBytes": 4764
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\README.md",
+        "sha256": "CC7E624F5C7F9BCD27D41F6CE67CEA7A48CC2E341F2FEF00D05699186AEB989D",
+        "sizeBytes": 3783
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\Skype-SILK-LICENSE.txt",
+        "sha256": "2605F550752714DCCC2B9F38C5951582937B1F1E957BC0D0B51BAD5A0AC5F6B6",
+        "sizeBytes": 1291
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\Skype-SILK-SDK-LICENSE.txt",
+        "sha256": "1A248D7C2FA783EE21AB25F7A7E9A23CEDD38ACE3251F9B39F85A327DAAEE557",
+        "sizeBytes": 7819
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\wav-file-decoder-LICENSE.md",
+        "sha256": "05DC452F86E8C86AD343BF5712DE93FA10855F7E1D75CAC612DE49E9E0479A26",
+        "sizeBytes": 1095
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\LICENSE",
+        "sha256": "3B1585C0E6D9D501E86383948FC0D1734BCB86517A13111D97749C65AD2BFB74",
+        "sizeBytes": 1085
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\package.json",
+        "sha256": "55F69255696623A29FEE616525EAB2B9F7AAB9F21ADF9B667155B68B653410D5",
+        "sizeBytes": 1101
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\README.md",
+        "sha256": "00F00D767766C03906EFBEEE281E7912F5B94BB04A553D29377D6122F705EEDE",
+        "sizeBytes": 2015
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\index.cjs",
+        "sha256": "74BB76ABA57B1B52787E1EACE2870EAAAB2DEEC32241E28F47A138C6B98DE065",
+        "sizeBytes": 25045
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\index.d.ts",
+        "sha256": "BC593F9A24FA56A4BB6F425857E793F3A544214B5346F2547A576A259F6A7139",
+        "sizeBytes": 2100
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\index.mjs",
+        "sha256": "1A95755169E70DE059B47A7E7D81A2C3E4F0F0D2AC8D26A8D1D90EAEAAC4F937",
+        "sizeBytes": 23840
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\silk.wasm",
+        "sha256": "88152AF59AF535B8056AC806710824B2259A361027451B494F175F48FB39C807",
+        "sizeBytes": 234626
+      },
+      {
+        "path": "<workspace>\\artifacts\\win-x64\\runtime\\voice\\silk-wasm\\lib\\utils.d.ts",
+        "sha256": "ADB07C215F734561E22DCF50BB22BD7D8A5EA6C8D1CEF806CC32F097DA0B3321",
+        "sizeBytes": 346
+      }
+    ],
+    "executableSha256": "CB8F7466DEE8E2338703A24585E52852D70BAAE9FED5BC4B56CDD4D99160EBBF",
+    "note": "Hashes identify the exact source snapshot and launched published files; build provenance is recorded separately by the release script."
+  },
+  "total": 62,
+  "passed": 61,
+  "failed": 1,
+  "cases": [
+    {
+      "name": "published_help_and_unknown_parameter_exit",
+      "passed": true,
+      "durationMs": 586,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-001",
+        "process-002"
+      ]
+    },
+    {
+      "name": "login_need_verifycode_wait_scaned_confirmed_cleanup",
+      "passed": true,
+      "durationMs": 3686,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-003"
+      ]
+    },
+    {
+      "name": "login_unknown_status_cleanup_no_binding",
+      "passed": true,
+      "durationMs": 313,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-004"
+      ]
+    },
+    {
+      "name": "status_local_state_and_send_without_context",
+      "passed": true,
+      "durationMs": 471,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-005",
+        "process-006"
+      ]
+    },
+    {
+      "name": "listen_echo_filters_restart_dedup_and_client_id",
+      "passed": true,
+      "durationMs": 3968,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-007",
+        "process-008"
+      ]
+    },
+    {
+      "name": "stdin_send_and_exact_client_id_persistence",
+      "passed": true,
+      "durationMs": 309,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-009"
+      ]
+    },
+    {
+      "name": "utf8_file_send_preserves_newline",
+      "passed": true,
+      "durationMs": 321,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-010"
+      ]
+    },
+    {
+      "name": "disconnect_unknown_echo_never_retried_on_restart",
+      "passed": true,
+      "durationMs": 626,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-011",
+        "process-012"
+      ]
+    },
+    {
+      "name": "malformed_ack_unknown_send_no_resend",
+      "passed": true,
+      "durationMs": 412,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-013",
+        "process-014"
+      ]
+    },
+    {
+      "name": "kill_during_send_durable_sending_recover_unknown",
+      "passed": true,
+      "durationMs": 791,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-015",
+        "process-016",
+        "process-017"
+      ]
+    },
+    {
+      "name": "exclusive_state_lock_across_processes",
+      "passed": true,
+      "durationMs": 425,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-018",
+        "process-019"
+      ]
+    },
+    {
+      "name": "session_minus14_stops_without_notifystop",
+      "passed": true,
+      "durationMs": 194,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-020"
+      ]
+    },
+    {
+      "name": "run_for_cancels_poll_and_confirms_notifystop",
+      "passed": true,
+      "durationMs": 1388,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-021"
+      ]
+    },
+    {
+      "name": "exhausted_fixture_fails_closed_without_network_fallback",
+      "passed": true,
+      "durationMs": 222,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-022"
+      ]
+    },
+    {
+      "name": "offline_transport_refuses_non_fixture_saved_credentials",
+      "passed": true,
+      "durationMs": 195,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-023"
+      ]
+    },
+    {
+      "name": "offline_paths_must_share_marked_uuid_test_directory",
+      "passed": true,
+      "durationMs": 224,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-024",
+        "process-025"
+      ]
+    },
+    {
+      "name": "offline_fixture_refuses_non_fixture_response_credentials",
+      "passed": true,
+      "durationMs": 141,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-026"
+      ]
+    },
+    {
+      "name": "cli_exit_codes_unbound_bad_state_http_rejected",
+      "passed": true,
+      "durationMs": 577,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-027",
+        "process-028",
+        "process-029"
+      ]
+    },
+    {
+      "name": "invalid_update_batch_never_commits_cursor_or_context",
+      "passed": true,
+      "durationMs": 247,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-030"
+      ]
+    },
+    {
+      "name": "invalid_saved_pending_message_stops_before_transport",
+      "passed": true,
+      "durationMs": 183,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-031"
+      ]
+    },
+    {
+      "name": "run_for_during_send_records_unknown_then_notifystop",
+      "passed": true,
+      "durationMs": 1606,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-032",
+        "process-033"
+      ]
+    },
+    {
+      "name": "send_image_upload_encrypt_metadata_exact_plaintext",
+      "passed": true,
+      "durationMs": 309,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-034"
+      ]
+    },
+    {
+      "name": "send_video_upload_encrypt_metadata_exact_plaintext",
+      "passed": true,
+      "durationMs": 258,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-035"
+      ]
+    },
+    {
+      "name": "send_file_upload_encrypt_metadata_exact_plaintext",
+      "passed": true,
+      "durationMs": 306,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-036"
+      ]
+    },
+    {
+      "name": "send_audio_uses_official_file_attachment_type",
+      "passed": true,
+      "durationMs": 300,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-037"
+      ]
+    },
+    {
+      "name": "send_native_voice_mp3_explicit_type_and_duration",
+      "passed": true,
+      "durationMs": 302,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-038"
+      ]
+    },
+    {
+      "name": "send_native_voice_silk_explicit_type_and_duration",
+      "passed": true,
+      "durationMs": 341,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-039"
+      ]
+    },
+    {
+      "name": "cdn_upload_retry_reuses_ciphertext_key_and_filekey",
+      "passed": true,
+      "durationMs": 325,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-040"
+      ]
+    },
+    {
+      "name": "cdn_upload_4xx_never_starts_chat_send",
+      "passed": true,
+      "durationMs": 235,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-041"
+      ]
+    },
+    {
+      "name": "upload_response_unknown_cdn_host_rejected",
+      "passed": true,
+      "durationMs": 217,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-042"
+      ]
+    },
+    {
+      "name": "media_size_voice_duration_and_signature_guards_before_http",
+      "passed": true,
+      "durationMs": 637,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-043",
+        "process-044",
+        "process-045",
+        "process-046"
+      ]
+    },
+    {
+      "name": "kill_media_chat_send_preserves_durable_unknown_intent",
+      "passed": true,
+      "durationMs": 698,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-047",
+        "process-048",
+        "process-049"
+      ]
+    },
+    {
+      "name": "media_business_key_skips_upload_send_and_rejects_changed_file",
+      "passed": true,
+      "durationMs": 714,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-050",
+        "process-051",
+        "process-052"
+      ]
+    },
+    {
+      "name": "listen_download_image_voice_file_video_exact_plaintext",
+      "passed": true,
+      "durationMs": 2221,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-053"
+      ]
+    },
+    {
+      "name": "corrupt_cdn_download_preserves_inbox_then_recovers",
+      "passed": true,
+      "durationMs": 1649,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-054",
+        "process-055"
+      ]
+    },
+    {
+      "name": "download_existing_target_conflict_never_overwritten",
+      "passed": true,
+      "durationMs": 294,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-056"
+      ]
+    },
+    {
+      "name": "download_unknown_host_keeps_message_without_cdn_request",
+      "passed": true,
+      "durationMs": 283,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-057"
+      ]
+    },
+    {
+      "name": "cdn403_retains_inbox_and_notifies_stop_without_session_expiry",
+      "passed": true,
+      "durationMs": 268,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-058"
+      ]
+    },
+    {
+      "name": "plaintext_image_without_aes_key_downloads_exact_bytes",
+      "passed": true,
+      "durationMs": 1416,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-059"
+      ]
+    },
+    {
+      "name": "plaintext_image_download_still_enforces_byte_limit",
+      "passed": true,
+      "durationMs": 256,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-060"
+      ]
+    },
+    {
+      "name": "markdown_filter_utf16_chunks_replay_no_resend",
+      "passed": true,
+      "durationMs": 3656,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-061",
+        "process-062",
+        "process-063"
+      ]
+    },
+    {
+      "name": "markdown_partial_unknown_chunk_never_resent",
+      "passed": true,
+      "durationMs": 3486,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-064",
+        "process-065"
+      ]
+    },
+    {
+      "name": "typing_timed_start_cancel_accepts_empty_and_non_json_success_bodies",
+      "passed": true,
+      "durationMs": 544,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-066"
+      ]
+    },
+    {
+      "name": "typing_timed_cancel_disconnect_then_fresh_explicit_stop_preserves_state",
+      "passed": true,
+      "durationMs": 768,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-067",
+        "process-068"
+      ]
+    },
+    {
+      "name": "typing_explicit_stop_does_not_send_chat_or_persist_ticket",
+      "passed": true,
+      "durationMs": 187,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-069"
+      ]
+    },
+    {
+      "name": "typing_requires_explicit_ret_zero_and_nonempty_ticket",
+      "passed": true,
+      "durationMs": 499,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-070",
+        "process-071",
+        "process-072"
+      ]
+    },
+    {
+      "name": "typing_start_http403_does_not_send_cancel",
+      "passed": true,
+      "durationMs": 193,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-073"
+      ]
+    },
+    {
+      "name": "typing_timed_start_transient_failure_still_sends_cancel",
+      "passed": true,
+      "durationMs": 184,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-074"
+      ]
+    },
+    {
+      "name": "typing_listen_echo_start_send_cancel_and_memory_config_cache",
+      "passed": true,
+      "durationMs": 5152,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-075"
+      ]
+    },
+    {
+      "name": "typing_listen_start_cancelled_still_cancels_and_keeps_inbox",
+      "passed": true,
+      "durationMs": 1693,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-076"
+      ]
+    },
+    {
+      "name": "typing_listen_start_auth_rejection_keeps_inbox_without_stop",
+      "passed": true,
+      "durationMs": 333,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-077"
+      ]
+    },
+    {
+      "name": "cli_voice_prepare_pcm_wave_decode_without_account_state",
+      "passed": true,
+      "durationMs": 849,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-078",
+        "process-079",
+        "process-080"
+      ]
+    },
+    {
+      "name": "cli_voice_conversion_input_output_guards_preserve_existing_files",
+      "passed": true,
+      "durationMs": 745,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-081",
+        "process-082",
+        "process-083",
+        "process-084",
+        "process-085"
+      ]
+    },
+    {
+      "name": "cli_voice_received_silk_automatically_decodes_and_preserves_original",
+      "passed": true,
+      "durationMs": 2734,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-086",
+        "process-087",
+        "process-088"
+      ]
+    },
+    {
+      "name": "cli_voice_silk_encode_type_four_decodes_actual_payload",
+      "passed": true,
+      "durationMs": 2535,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-089",
+        "process-090",
+        "process-091"
+      ]
+    },
+    {
+      "name": "cli_voice_silk_missing_encode_type_decodes_actual_payload",
+      "passed": true,
+      "durationMs": 2538,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-092",
+        "process-093",
+        "process-094"
+      ]
+    },
+    {
+      "name": "cli_voice_non_silk_preserves_raw_without_creating_wave",
+      "passed": true,
+      "durationMs": 2157,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-095"
+      ]
+    },
+    {
+      "name": "typing_timed_keepalive_refreshes_after_five_seconds_then_cancels_once",
+      "passed": true,
+      "durationMs": 6374,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-096"
+      ]
+    },
+    {
+      "name": "typing_stop_cancels_inflight_keepalive_without_late_restart",
+      "passed": true,
+      "durationMs": 6385,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-097"
+      ]
+    },
+    {
+      "name": "typing_two_consecutive_refresh_failures_stop_ticks_and_still_cancel_once",
+      "passed": true,
+      "durationMs": 16385,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-098"
+      ]
+    },
+    {
+      "name": "typing_refresh_auth_failure_exits_two_without_cancel_or_chat",
+      "passed": true,
+      "durationMs": 5165,
+      "failure": null,
+      "processEvidenceIds": [
+        "process-099"
+      ]
+    },
+    {
+      "name": "typing_cancel_deadline_exits_two_without_success_or_retry",
+      "passed": false,
+      "durationMs": 10395,
+      "failure": "Exception: CANCEL fixture did not actually hit cancellation before a successful response.",
+      "processEvidenceIds": [
+        "process-100"
+      ]
+    }
+  ],
+  "processes": [
+    {
+      "id": "process-001",
+      "processId": 63100,
+      "arguments": [
+        "help",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-86bed20f08de405e916a5a1b8ff6d2fe\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 384,
+      "killed": false,
+      "stdout": "微信助理 C# 客户端 1.2.1 · 腾讯 iLink 2.4.9 协议兼容实现\nweixin login --open              生成本地二维码并绑定自己的微信\nweixin listen                    收消息；不执行命令，不自动回复\nweixin listen --echo              收到文字后回复“已收到：…”（仅绑定账号）\nweixin listen --echo --typing     回复前开始打字，结束时取消\nweixin typing --typing-status start --run-for 10  开始打字，10秒后取消\nweixin typing --typing-status stop              取消打字状态\nweixin listen --run-for 300        接收 300 秒后正常停止，可配合 --echo\nweixin login --qr-png qr.png       同时生成临时 PNG，退出后清理\nweixin send                      从终端输入文字发送到绑定账号\nweixin send --text-file reply.txt 从 UTF-8 文件发送文字\nweixin send --markdown --text-file reply.md  转成普通文本并分块发送\nweixin send-media --file demo.mp4 --kind video  加密上传并发送视频\nweixin send-media --file audio.mp3 --kind audio  按官方音频附件路径发送\nweixin send-media --file audio.mp3 --kind voice --duration-ms 2000 --voice-encoding mp3\nweixin listen --download-dir downloads  下载绑定账号的图片/语音/视频/文件\nweixin prepare-voice --file mono.wav --input-format wav --output voice.silk  本地转SILK\nweixin prepare-voice --file mono.pcm --input-format pcm --output voice.silk  PCM16单声道24kHz\nweixin decode-voice --file voice.silk --output voice.wav  本地转可播放WAV\nweixin status                    查看本地状态与发送结果\nweixin demo                      离线协议解析示例\nweixin probe                     核查官方扫码接口（生成临时二维码，不显示/保存）\nweixin qr-demo                   生成离线演示二维码页面\n通用参数：--state <文件路径>，--allow-host <精确域名>（可重复）\n媒体参数：--allow-cdn-host <精确域名>，--max-media-mib <1..512>，--max-voice-seconds <1..3600>\n发送幂等：--source-key <64位SHA256>；Markdown恢复应提供同一业务键\n本地媒体保护默认100MiB/语音60秒，不是已公布的微信服务端配额。\n自动化测试：--offline-fixture <夹具文件>（必须使用专用 --state；完全离线）\n一份状态文件只能由一个进程持有。发送结果未知时不会自动重发。\n独立 C# 接入不代表腾讯保证；源码验收与真实账号收发验收分别见报告。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-002",
+      "processId": 61564,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-86bed20f08de405e916a5a1b8ff6d2fe\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-86bed20f08de405e916a5a1b8ff6d2fe\\binding.dpapi",
+        "--unknown-option"
+      ],
+      "exitCode": 1,
+      "durationMs": 134,
+      "killed": false,
+      "stdout": "",
+      "stderr": "未知参数，使用 help 查看帮助。\r\n"
+    },
+    {
+      "id": "process-003",
+      "processId": 31392,
+      "arguments": [
+        "login",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2a12c0a0c724446190f6539e4da2dd73\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2a12c0a0c724446190f6539e4da2dd73\\binding.dpapi",
+        "--qr-png",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2a12c0a0c724446190f6539e4da2dd73\\login-qr.png"
+      ],
+      "exitCode": 0,
+      "durationMs": 3635,
+      "killed": false,
+      "stdout": "用手机微信扫描本地页面中的二维码：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2a12c0a0c724446190f6539e4da2dd73\\binding.dpapi.login-qr.html\r\n本次绑定二维码 PNG：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2a12c0a0c724446190f6539e4da2dd73\\login-qr.png\r\n请输入手机微信显示的配对验证码（不会保存或输出到日志）：\r\n已扫码，请在手机微信确认。\r\n绑定已保存并由当前 Windows 用户 DPAPI 加密。请运行 listen，并在手机微信向该机器人发消息。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-004",
+      "processId": 40556,
+      "arguments": [
+        "login",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4a11891c47a849568d376c954cfc90ec\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4a11891c47a849568d376c954cfc90ec\\binding.dpapi",
+        "--qr-png",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4a11891c47a849568d376c954cfc90ec\\login-qr.png"
+      ],
+      "exitCode": 1,
+      "durationMs": 308,
+      "killed": false,
+      "stdout": "用手机微信扫描本地页面中的二维码：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4a11891c47a849568d376c954cfc90ec\\binding.dpapi.login-qr.html\r\n本次绑定二维码 PNG：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4a11891c47a849568d376c954cfc90ec\\login-qr.png\r\n",
+      "stderr": "遇到未知扫码状态，已停止；请核对协议版本。\r\n"
+    },
+    {
+      "id": "process-005",
+      "processId": 62612,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-0cedf248e2f7485aa58d41f742b8b1c7\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-0cedf248e2f7485aa58d41f742b8b1c7\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 235,
+      "killed": false,
+      "stdout": "本地已保存绑定：2026-10-04T00:28:21.8801832+00:00\r\n协议参考：2.4.9；API：https://ilinkai.weixin.qq.com\r\n待处理入站：0；上下文：未取得\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-006",
+      "processId": 61056,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-0cedf248e2f7485aa58d41f742b8b1c7\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-0cedf248e2f7485aa58d41f742b8b1c7\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 208,
+      "killed": false,
+      "stdout": "请输入发给绑定微信账号的文本（单行）：\r\n",
+      "stderr": "请先 listen，并从绑定微信发消息以取得上下文。\r\n"
+    },
+    {
+      "id": "process-007",
+      "processId": 52216,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b30693872414e808b60ac4972c15597\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b30693872414e808b60ac4972c15597\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2221,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[84A9F9C2928B] fixture-hello中文\r\n[2DC6D400C918] \r\n[本次未下载媒体；如需保存请启用 --download-dir 后从微信重新发送]\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-008",
+      "processId": 15960,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b30693872414e808b60ac4972c15597\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b30693872414e808b60ac4972c15597\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1.5"
+      ],
+      "exitCode": 0,
+      "durationMs": 1721,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-009",
+      "processId": 50460,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f024cb771c1a4d13899f14e42a81b2a7\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f024cb771c1a4d13899f14e42a81b2a7\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 296,
+      "killed": false,
+      "stdout": "请输入发给绑定微信账号的文本（单行）：\r\n服务端已确认：openclaw-weixin:1791073706516-77513294。请在微信中核对实际送达。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-010",
+      "processId": 59704,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-1c23af57dcff4b8285a43aaac95b120b\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-1c23af57dcff4b8285a43aaac95b120b\\binding.dpapi",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-1c23af57dcff4b8285a43aaac95b120b\\fixture-message.txt"
+      ],
+      "exitCode": 0,
+      "durationMs": 306,
+      "killed": false,
+      "stdout": "服务端已确认：openclaw-weixin:1791073706878-29780b33。请在微信中核对实际送达。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-011",
+      "processId": 2072,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-48bc1d2db1b649d9a1b8cb0a8be05b17\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-48bc1d2db1b649d9a1b8cb0a8be05b17\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 3,
+      "durationMs": 340,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[245E61A6ABC5] fixture-disconnect\r\n",
+      "stderr": "发送结果未知，可能已送达。请先在微信中核对；程序不会自动重发。\r\n"
+    },
+    {
+      "id": "process-012",
+      "processId": 42912,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-48bc1d2db1b649d9a1b8cb0a8be05b17\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-48bc1d2db1b649d9a1b8cb0a8be05b17\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 269,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[245E61A6ABC5] fixture-disconnect\r\n",
+      "stderr": "该入站消息已有发送尝试。先核对微信送达情况；不会在重启后自动重发。\r\n"
+    },
+    {
+      "id": "process-013",
+      "processId": 48920,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-28e68a970ae54edfba9cc4eccda476ea\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-28e68a970ae54edfba9cc4eccda476ea\\binding.dpapi"
+      ],
+      "exitCode": 3,
+      "durationMs": 238,
+      "killed": false,
+      "stdout": "请输入发给绑定微信账号的文本（单行）：\r\n",
+      "stderr": "发送结果未知，可能已送达。请先在微信中核对；程序不会自动重发。\r\n"
+    },
+    {
+      "id": "process-014",
+      "processId": 52236,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-28e68a970ae54edfba9cc4eccda476ea\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-28e68a970ae54edfba9cc4eccda476ea\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 165,
+      "killed": false,
+      "stdout": "本地已保存绑定：2026-10-04T00:28:27.5772289+00:00\r\n协议参考：2.4.9；API：https://ilinkai.weixin.qq.com\r\n待处理入站：0；上下文：已保存\r\n发送 openclaw-weixin:1791073707762-577238c6：Unknown，2026-10-04T00:28:27.7630733+00:00\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-015",
+      "processId": 60796,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-14fce8d500d042d5af73a22b91a2bbf8\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-14fce8d500d042d5af73a22b91a2bbf8\\binding.dpapi",
+        "--echo"
+      ],
+      "exitCode": -1,
+      "durationMs": 377,
+      "killed": true,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[41A0FA4CCB6A] fixture-kill\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-016",
+      "processId": 44188,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-14fce8d500d042d5af73a22b91a2bbf8\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-14fce8d500d042d5af73a22b91a2bbf8\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 192,
+      "killed": false,
+      "stdout": "本地已保存绑定：2026-10-04T00:28:27.9907479+00:00\r\n协议参考：2.4.9；API：https://ilinkai.weixin.qq.com\r\n待处理入站：1；上下文：已保存\r\n发送 openclaw-weixin:1791073708245-595cb8e1：Unknown，2026-10-04T00:28:28.2456093+00:00\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-017",
+      "processId": 44280,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-14fce8d500d042d5af73a22b91a2bbf8\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-14fce8d500d042d5af73a22b91a2bbf8\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 208,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[41A0FA4CCB6A] fixture-kill\r\n",
+      "stderr": "该入站消息已有发送尝试。先核对微信送达情况；不会在重启后自动重发。\r\n"
+    },
+    {
+      "id": "process-018",
+      "processId": 43656,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-003d71bf86d14c0aa3a41c6f4783e33f\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-003d71bf86d14c0aa3a41c6f4783e33f\\binding.dpapi"
+      ],
+      "exitCode": 4,
+      "durationMs": 157,
+      "killed": false,
+      "stdout": "",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-019",
+      "processId": 12956,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-003d71bf86d14c0aa3a41c6f4783e33f\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-003d71bf86d14c0aa3a41c6f4783e33f\\binding.dpapi"
+      ],
+      "exitCode": -1,
+      "durationMs": 418,
+      "killed": true,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-020",
+      "processId": 60620,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-df994c2bde174ee6ba81f948f0ff3558\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-df994c2bde174ee6ba81f948f0ff3558\\binding.dpapi",
+        "--run-for",
+        "3"
+      ],
+      "exitCode": 2,
+      "durationMs": 186,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n",
+      "stderr": "微信 API 返回 ret=-14, errcode=无。\r\n会话失效或权限被拒绝；请核对微信状态并重新 login。这本身不能证明封号。\r\n"
+    },
+    {
+      "id": "process-021",
+      "processId": 43508,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c676489efb5042fa87bc229374610d2c\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c676489efb5042fa87bc229374610d2c\\binding.dpapi",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 1382,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-022",
+      "processId": 3760,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e67daae2e00847399966593648ffd137\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e67daae2e00847399966593648ffd137\\binding.dpapi",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 216,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n",
+      "stderr": "离线 fixture 步骤已耗尽；禁止网络回退。\r\n"
+    },
+    {
+      "id": "process-023",
+      "processId": 45316,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c04f32e89dcd447a9297dcd0c3ca5a52\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c04f32e89dcd447a9297dcd0c3ca5a52\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 177,
+      "killed": false,
+      "stdout": "",
+      "stderr": "离线测试模式只接受专用虚构凭据。\r\n"
+    },
+    {
+      "id": "process-024",
+      "processId": 56508,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-55c7733c16a944a9a3b7aa81fef4d128\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-03b2d8429a1c481bb50e3d514f0ebc56\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 107,
+      "killed": false,
+      "stdout": "",
+      "stderr": "离线 fixture 与显式 state 必须位于同一个新建测试目录。\r\n"
+    },
+    {
+      "id": "process-025",
+      "processId": 39508,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-55c7733c16a944a9a3b7aa81fef4d128\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-55c7733c16a944a9a3b7aa81fef4d128\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 102,
+      "killed": false,
+      "stdout": "",
+      "stderr": "离线测试目录缺少匹配的测试哨兵。\r\n"
+    },
+    {
+      "id": "process-026",
+      "processId": 48684,
+      "arguments": [
+        "login",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-0bd808b7653445c1856ca965b8da5901\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-0bd808b7653445c1856ca965b8da5901\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 138,
+      "killed": false,
+      "stdout": "",
+      "stderr": "离线 transport 只接受 fixture- 前缀测试凭据。\r\n"
+    },
+    {
+      "id": "process-027",
+      "processId": 49000,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e424989cb647407e9c3425f0d51a26eb\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e424989cb647407e9c3425f0d51a26eb\\binding.dpapi"
+      ],
+      "exitCode": 1,
+      "durationMs": 144,
+      "killed": false,
+      "stdout": "",
+      "stderr": "尚未绑定，请先运行 login --open。\r\n"
+    },
+    {
+      "id": "process-028",
+      "processId": 58096,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ee75b434148b4496ae6895dad5c330e1\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ee75b434148b4496ae6895dad5c330e1\\binding.dpapi"
+      ],
+      "exitCode": 4,
+      "durationMs": 167,
+      "killed": false,
+      "stdout": "",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-029",
+      "processId": 50276,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-530e1bb9d3604ac4a87dfb138f5d58d1\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-530e1bb9d3604ac4a87dfb138f5d58d1\\binding.dpapi"
+      ],
+      "exitCode": 2,
+      "durationMs": 250,
+      "killed": false,
+      "stdout": "请输入发给绑定微信账号的文本（单行）：\r\n",
+      "stderr": "微信 API HTTP 400。\r\n"
+    },
+    {
+      "id": "process-030",
+      "processId": 35440,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-9852710a121b4fbcabf749c312212ddd\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-9852710a121b4fbcabf749c312212ddd\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "3"
+      ],
+      "exitCode": 4,
+      "durationMs": 230,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-031",
+      "processId": 46536,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b26da8fa98ce4439b0f921b483021fe8\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b26da8fa98ce4439b0f921b483021fe8\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 4,
+      "durationMs": 173,
+      "killed": false,
+      "stdout": "",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-032",
+      "processId": 27700,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b28f97afa42467c9e3b9a69031b5279\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b28f97afa42467c9e3b9a69031b5279\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 3,
+      "durationMs": 1404,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[C8135788E072] fixture-canceled-send\r\n",
+      "stderr": "发送结果未知，可能已送达。请先在微信中核对；程序不会自动重发。\r\n"
+    },
+    {
+      "id": "process-033",
+      "processId": 53284,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b28f97afa42467c9e3b9a69031b5279\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7b28f97afa42467c9e3b9a69031b5279\\binding.dpapi",
+        "--echo",
+        "--run-for",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 193,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[C8135788E072] fixture-canceled-send\r\n",
+      "stderr": "该入站消息已有发送尝试。先核对微信送达情况；不会在重启后自动重发。\r\n"
+    },
+    {
+      "id": "process-034",
+      "processId": 44124,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-406a51397a824b28b8da8633a16e4f48\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-406a51397a824b28b8da8633a16e4f48\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-406a51397a824b28b8da8633a16e4f48\\fixture-image.png",
+        "--kind",
+        "image"
+      ],
+      "exitCode": 0,
+      "durationMs": 295,
+      "killed": false,
+      "stdout": "媒体 API 已接受：openclaw-weixin:1791073714462-793ef0cb，67 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-035",
+      "processId": 60000,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4cd366ed06e84408969a31c9ed95da62\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4cd366ed06e84408969a31c9ed95da62\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4cd366ed06e84408969a31c9ed95da62\\fixture-video.mp4",
+        "--kind",
+        "video"
+      ],
+      "exitCode": 0,
+      "durationMs": 248,
+      "killed": false,
+      "stdout": "媒体 API 已接受：openclaw-weixin:1791073714712-a0d89b53，34 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-036",
+      "processId": 55684,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e56c263e33ee4a908605febde044f99e\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e56c263e33ee4a908605febde044f99e\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e56c263e33ee4a908605febde044f99e\\fixture-document.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 0,
+      "durationMs": 294,
+      "killed": false,
+      "stdout": "媒体 API 已接受：openclaw-weixin:1791073715021-c30aaa3c，22 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-037",
+      "processId": 51560,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a8d92abf24a24808b3f8619de97de041\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a8d92abf24a24808b3f8619de97de041\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a8d92abf24a24808b3f8619de97de041\\fixture-audio.mp3",
+        "--kind",
+        "audio"
+      ],
+      "exitCode": 0,
+      "durationMs": 293,
+      "killed": false,
+      "stdout": "媒体 API 已接受：openclaw-weixin:1791073715328-2e9cf54d，18 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-038",
+      "processId": 49944,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f49ef0d1ded3437bb3e3716d134184f2\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f49ef0d1ded3437bb3e3716d134184f2\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f49ef0d1ded3437bb3e3716d134184f2\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--duration-ms",
+        "1234",
+        "--voice-encoding",
+        "mp3"
+      ],
+      "exitCode": 0,
+      "durationMs": 294,
+      "killed": false,
+      "stdout": "原生语音为实验类型扩展：本机 SILK 测试接口接受但手机未收到。官方音频路由使用附件；本命令不能保证原生语音送达。\r\n媒体 API 已接受：openclaw-weixin:1791073715621-b801b4b2，18 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-039",
+      "processId": 60440,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-3bf9e77cba5d4714abac4ae6b18a7c6a\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-3bf9e77cba5d4714abac4ae6b18a7c6a\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-3bf9e77cba5d4714abac4ae6b18a7c6a\\fixture-voice.silk",
+        "--kind",
+        "voice",
+        "--duration-ms",
+        "1234",
+        "--voice-encoding",
+        "silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 333,
+      "killed": false,
+      "stdout": "原生语音为实验类型扩展：本机 SILK 测试接口接受但手机未收到。官方音频路由使用附件；本命令不能保证原生语音送达。\r\n媒体 API 已接受：openclaw-weixin:1791073715960-a1ac7957，31 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-040",
+      "processId": 55964,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a08f319c08a14711ad74ffeb2237f0f4\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a08f319c08a14711ad74ffeb2237f0f4\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a08f319c08a14711ad74ffeb2237f0f4\\fixture-retry.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 0,
+      "durationMs": 315,
+      "killed": false,
+      "stdout": "媒体 API 已接受：openclaw-weixin:1791073716283-7469df2a，20 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-041",
+      "processId": 59468,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b2e109a4ec2e41418f65473a091c1a8c\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b2e109a4ec2e41418f65473a091c1a8c\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b2e109a4ec2e41418f65473a091c1a8c\\fixture-rejected.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 7,
+      "durationMs": 228,
+      "killed": false,
+      "stdout": "",
+      "stderr": "媒体 CDN HTTP 400；请核对媒体权限或 URL 时效。\r\n"
+    },
+    {
+      "id": "process-042",
+      "processId": 27468,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-fb77c903ebd5428e828869ca23c3dc2a\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-fb77c903ebd5428e828869ca23c3dc2a\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-fb77c903ebd5428e828869ca23c3dc2a\\fixture-host.txt",
+        "--kind",
+        "file"
+      ],
+      "exitCode": 1,
+      "durationMs": 209,
+      "killed": false,
+      "stdout": "",
+      "stderr": "CDN 主机未获允许，请核实官方返回地址后添加精确 CDN 域名。\r\n"
+    },
+    {
+      "id": "process-043",
+      "processId": 18540,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-over-limit.bin",
+        "--kind",
+        "file",
+        "--max-media-mib",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationMs": 168,
+      "killed": false,
+      "stdout": "",
+      "stderr": "媒体文件为空或超过本地大小保护上限（非服务端配额）。\r\n"
+    },
+    {
+      "id": "process-044",
+      "processId": 4904,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--voice-encoding",
+        "mp3"
+      ],
+      "exitCode": 1,
+      "durationMs": 93,
+      "killed": false,
+      "stdout": "",
+      "stderr": "原生语音需明确 --duration-ms 和 --voice-encoding mp3|silk。\r\n"
+    },
+    {
+      "id": "process-045",
+      "processId": 49520,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--voice-encoding",
+        "mp3",
+        "--duration-ms",
+        "60001"
+      ],
+      "exitCode": 1,
+      "durationMs": 171,
+      "killed": false,
+      "stdout": "原生语音为实验类型扩展：本机 SILK 测试接口接受但手机未收到。官方音频路由使用附件；本命令不能保证原生语音送达。\r\n",
+      "stderr": "原生语音时长超过本地保护上限或未提供；该上限不是已公开的服务端限制。\r\n"
+    },
+    {
+      "id": "process-046",
+      "processId": 62752,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-006c6f0d60bf49228732b75a60dfa5e5\\fixture-voice.mp3",
+        "--kind",
+        "voice",
+        "--voice-encoding",
+        "silk",
+        "--duration-ms",
+        "1234"
+      ],
+      "exitCode": 1,
+      "durationMs": 192,
+      "killed": false,
+      "stdout": "",
+      "stderr": "原生语音声明的编码与文件签名不同。\r\n"
+    },
+    {
+      "id": "process-047",
+      "processId": 31836,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\fixture-kill.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "AD92927D62C1F3DECA2FC44E00F4C0EEB1B93C43E26CFE7F27783AA2746EB36E"
+      ],
+      "exitCode": -1,
+      "durationMs": 341,
+      "killed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "id": "process-048",
+      "processId": 8244,
+      "arguments": [
+        "status",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\binding.dpapi"
+      ],
+      "exitCode": 0,
+      "durationMs": 184,
+      "killed": false,
+      "stdout": "本地已保存绑定：2026-10-04T00:28:37.4276250+00:00\r\n协议参考：2.4.9；API：https://ilinkai.weixin.qq.com\r\n待处理入站：0；上下文：已保存\r\n发送 openclaw-weixin:1791073717690-b77de646：Unknown，2026-10-04T00:28:37.6904502+00:00\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-049",
+      "processId": 9632,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ecc3cab9b6894582b29d90febad117a2\\fixture-kill.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "AD92927D62C1F3DECA2FC44E00F4C0EEB1B93C43E26CFE7F27783AA2746EB36E"
+      ],
+      "exitCode": 1,
+      "durationMs": 160,
+      "killed": false,
+      "stdout": "",
+      "stderr": "该媒体已有未成功确认的发送尝试，请先核对手机送达；未上传或重发。\r\n"
+    },
+    {
+      "id": "process-050",
+      "processId": 48164,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\fixture-replay.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "3C314A8C778B63FC433E9B2C8D217AA383CD9A8A3294A83B1C97B94DDCA92A20"
+      ],
+      "exitCode": 0,
+      "durationMs": 303,
+      "killed": false,
+      "stdout": "媒体 API 已接受：openclaw-weixin:1791073718402-fff38673，20 明文字节。请在手机核对收到及播放。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-051",
+      "processId": 58900,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\fixture-replay.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "3C314A8C778B63FC433E9B2C8D217AA383CD9A8A3294A83B1C97B94DDCA92A20"
+      ],
+      "exitCode": 0,
+      "durationMs": 165,
+      "killed": false,
+      "stdout": "该媒体业务键已经由 API 接受：openclaw-weixin:1791073718402-fff38673；本次未重复上传或发送。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-052",
+      "processId": 49580,
+      "arguments": [
+        "send-media",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\binding.dpapi",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-89549ecb273a4ea9961a3cdfac9c443b\\fixture-replay.txt",
+        "--kind",
+        "file",
+        "--source-key",
+        "3C314A8C778B63FC433E9B2C8D217AA383CD9A8A3294A83B1C97B94DDCA92A20"
+      ],
+      "exitCode": 1,
+      "durationMs": 233,
+      "killed": false,
+      "stdout": "",
+      "stderr": "该业务键已有不同媒体或旧版无法比对的记录，未上传或重发。\r\n"
+    },
+    {
+      "id": "process-053",
+      "processId": 36624,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-18e513920a8e4163a45fcfef643119cf\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-18e513920a8e4163a45fcfef643119cf\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-18e513920a8e4163a45fcfef643119cf\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2204,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[D09FA2185934] \r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-18e513920a8e4163a45fcfef643119cf\\fixture-downloads\\8a4c24c9634542d11bef6918bb1821e171ed6a7c1f837986cd25cd26b80cc941.image\r\n[40AAEE9A3C6E] \r\n[语音转写] fixture-transcript\r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-18e513920a8e4163a45fcfef643119cf\\fixture-downloads\\ab66e727870511bb4382640c3a637ff1b915422f6b64a1626fd2fc78b00bea1f.mp3\r\n[80FFF53B0451] \r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-18e513920a8e4163a45fcfef643119cf\\fixture-downloads\\8b51b708507521d03a0e9709237a694892b8d98ac84831c0b96488bc0ef2bbfc.txt\r\n[83FE1AEA48C4] \r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-18e513920a8e4163a45fcfef643119cf\\fixture-downloads\\31be172670efd33e001646a347ffedc7a98dc431d200a45bc98782929c3a59e9.mp4\r\n已停止。\r\n",
+      "stderr": "语音解码未完成，已保留原始媒体；未输出音频或原始诊断。\r\n"
+    },
+    {
+      "id": "process-054",
+      "processId": 49072,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c6d3fc38ef8c418597e1d5974bea87b2\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c6d3fc38ef8c418597e1d5974bea87b2\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c6d3fc38ef8c418597e1d5974bea87b2\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 4,
+      "durationMs": 236,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[5430FF4D7C53] \r\n",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-055",
+      "processId": 46900,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c6d3fc38ef8c418597e1d5974bea87b2\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c6d3fc38ef8c418597e1d5974bea87b2\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c6d3fc38ef8c418597e1d5974bea87b2\\fixture-downloads",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 1402,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[5430FF4D7C53] \r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c6d3fc38ef8c418597e1d5974bea87b2\\fixture-downloads\\5779625d41bc8e5ce4b6179ac9cbd551849b840d25e80b5b2ec56cb7611cbcd0.txt\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-056",
+      "processId": 37644,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5c0424749bb440d6bd0596fc3ae3f224\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5c0424749bb440d6bd0596fc3ae3f224\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5c0424749bb440d6bd0596fc3ae3f224\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 4,
+      "durationMs": 280,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[593499CF6E56] \r\n",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-057",
+      "processId": 35168,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-34ecc99300a447cd8195f64db9caa098\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-34ecc99300a447cd8195f64db9caa098\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-34ecc99300a447cd8195f64db9caa098\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 1,
+      "durationMs": 271,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[D9A0BDC7B159] \r\n",
+      "stderr": "CDN 主机未获允许，请核实官方返回地址后添加精确 CDN 域名。\r\n"
+    },
+    {
+      "id": "process-058",
+      "processId": 63020,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-415ac4d95f0642429e39eb627d0abd50\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-415ac4d95f0642429e39eb627d0abd50\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-415ac4d95f0642429e39eb627d0abd50\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 7,
+      "durationMs": 258,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[BA9009BA025F] \r\n",
+      "stderr": "媒体 CDN HTTP 403；请核对媒体权限或 URL 时效。\r\n"
+    },
+    {
+      "id": "process-059",
+      "processId": 62732,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-23f17f3f97b14f568d63bae938e613ed\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-23f17f3f97b14f568d63bae938e613ed\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-23f17f3f97b14f568d63bae938e613ed\\fixture-downloads",
+        "--run-for",
+        "1.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 1409,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[B00ABE75F144] \r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-23f17f3f97b14f568d63bae938e613ed\\fixture-downloads\\2e8a0290b02e3651c6aef681712cf9807e7b91362c05f5adc2e1bdeddedc5561.image\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-060",
+      "processId": 3736,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a79f213d0f8c42b087ff82f1a701efd5\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a79f213d0f8c42b087ff82f1a701efd5\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-a79f213d0f8c42b087ff82f1a701efd5\\fixture-downloads",
+        "--max-media-mib",
+        "1",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 4,
+      "durationMs": 242,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[AC76D34412AD] \r\n",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-061",
+      "processId": 19424,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\fixture-document.md",
+        "--source-key",
+        "0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3"
+      ],
+      "exitCode": 0,
+      "durationMs": 3231,
+      "killed": false,
+      "stdout": "Markdown 业务键（恢复时使用相同文本与 --source-key）：0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3\r\nAPI 已接受 2 段普通文本。已按官方过滤器转换并分块，显示效果请在手机核对。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-062",
+      "processId": 43784,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\fixture-document.md",
+        "--source-key",
+        "0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3"
+      ],
+      "exitCode": 0,
+      "durationMs": 217,
+      "killed": false,
+      "stdout": "Markdown 业务键（恢复时使用相同文本与 --source-key）：0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3\r\nAPI 已接受 2 段普通文本。已按官方过滤器转换并分块，显示效果请在手机核对。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-063",
+      "processId": 14708,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-cdcf8069d6da4abe8cf74865f181b1c0\\fixture-document.md",
+        "--source-key",
+        "0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3"
+      ],
+      "exitCode": 1,
+      "durationMs": 194,
+      "killed": false,
+      "stdout": "Markdown 业务键（恢复时使用相同文本与 --source-key）：0BB3889D454134CD020B77AF8DB9988218C6AC17CF26A23876526A4958892BB3\r\n",
+      "stderr": "该 Markdown 来源键已用于其他输入，不能修改内容或段数。\r\n"
+    },
+    {
+      "id": "process-064",
+      "processId": 42476,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b6799fe443b448f3afdda7c5093a46e0\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b6799fe443b448f3afdda7c5093a46e0\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b6799fe443b448f3afdda7c5093a46e0\\fixture-document.md",
+        "--source-key",
+        "F5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0"
+      ],
+      "exitCode": 3,
+      "durationMs": 3284,
+      "killed": false,
+      "stdout": "Markdown 业务键（恢复时使用相同文本与 --source-key）：F5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0\r\n",
+      "stderr": "发送结果未知，可能已送达。请先在微信中核对；程序不会自动重发。\r\n"
+    },
+    {
+      "id": "process-065",
+      "processId": 24120,
+      "arguments": [
+        "send",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b6799fe443b448f3afdda7c5093a46e0\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b6799fe443b448f3afdda7c5093a46e0\\binding.dpapi",
+        "--markdown",
+        "--text-file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b6799fe443b448f3afdda7c5093a46e0\\fixture-document.md",
+        "--source-key",
+        "F5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0"
+      ],
+      "exitCode": 1,
+      "durationMs": 190,
+      "killed": false,
+      "stdout": "Markdown 业务键（恢复时使用相同文本与 --source-key）：F5E346FCFB83A3DF7CD8D57587F119E545CAC6F2D5B8D797B7CAAFA4F3B612D0\r\n",
+      "stderr": "该入站消息已有发送尝试。先核对微信送达情况；不会在重启后自动重发。\r\n"
+    },
+    {
+      "id": "process-066",
+      "processId": 56384,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b1c0942de2354d12a7426f02cbafb5de\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-b1c0942de2354d12a7426f02cbafb5de\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 525,
+      "killed": false,
+      "stdout": "打字开始请求已被 HTTP 接受，请在手机核对显示。\r\n已发送打字取消请求。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-067",
+      "processId": 22624,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-010133f7259d4b6cbe503656c3a96360\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-010133f7259d4b6cbe503656c3a96360\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 2,
+      "durationMs": 415,
+      "killed": false,
+      "stdout": "打字开始请求已被 HTTP 接受，请在手机核对显示。\r\n",
+      "stderr": "微信打字状态连接失败。\r\n"
+    },
+    {
+      "id": "process-068",
+      "processId": 40228,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-010133f7259d4b6cbe503656c3a96360\\fixture-002.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-010133f7259d4b6cbe503656c3a96360\\binding.dpapi",
+        "--typing-status",
+        "stop"
+      ],
+      "exitCode": 0,
+      "durationMs": 210,
+      "killed": false,
+      "stdout": "打字取消请求已被 HTTP 接受，请在手机核对显示。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-069",
+      "processId": 43800,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e92e1ae1f53d47169a29a78a9e13b919\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e92e1ae1f53d47169a29a78a9e13b919\\binding.dpapi",
+        "--typing-status",
+        "stop"
+      ],
+      "exitCode": 0,
+      "durationMs": 180,
+      "killed": false,
+      "stdout": "打字取消请求已被 HTTP 接受，请在手机核对显示。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-070",
+      "processId": 60688,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e5e00c03cd864c5eb5fc1c15b1ddae42\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-e5e00c03cd864c5eb5fc1c15b1ddae42\\binding.dpapi",
+        "--typing-status",
+        "start"
+      ],
+      "exitCode": 1,
+      "durationMs": 187,
+      "killed": false,
+      "stdout": "",
+      "stderr": "该绑定未提供打字票据，当前无法显示打字状态。\r\n"
+    },
+    {
+      "id": "process-071",
+      "processId": 3992,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-28ed550879464828b0ba7d24979cc9fb\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-28ed550879464828b0ba7d24979cc9fb\\binding.dpapi",
+        "--typing-status",
+        "start"
+      ],
+      "exitCode": 2,
+      "durationMs": 182,
+      "killed": false,
+      "stdout": "",
+      "stderr": "微信打字配置未确认 ret=0，不使用该票据。\r\n"
+    },
+    {
+      "id": "process-072",
+      "processId": 44024,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7417404188fd4e9ea7424823de1d18c8\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7417404188fd4e9ea7424823de1d18c8\\binding.dpapi",
+        "--typing-status",
+        "start"
+      ],
+      "exitCode": 1,
+      "durationMs": 113,
+      "killed": false,
+      "stdout": "",
+      "stderr": "离线 transport 只接受 fixture- 前缀测试凭据。\r\n"
+    },
+    {
+      "id": "process-073",
+      "processId": 41532,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4d687f17f4174ed3988e23220188e8a2\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4d687f17f4174ed3988e23220188e8a2\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 2,
+      "durationMs": 187,
+      "killed": false,
+      "stdout": "",
+      "stderr": "微信打字状态 HTTP 403。\r\n会话失效或权限被拒绝；请核对微信状态并重新 login。这本身不能证明封号。\r\n"
+    },
+    {
+      "id": "process-074",
+      "processId": 62344,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-de9d37ca85b8475f9bb16007c1edd975\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-de9d37ca85b8475f9bb16007c1edd975\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 2,
+      "durationMs": 179,
+      "killed": false,
+      "stdout": "已发送打字取消请求。\r\n",
+      "stderr": "微信打字状态 HTTP 500。\r\n"
+    },
+    {
+      "id": "process-075",
+      "processId": 55636,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-43a930dbde2d42f2bca2ce92d3be23c1\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-43a930dbde2d42f2bca2ce92d3be23c1\\binding.dpapi",
+        "--echo",
+        "--typing",
+        "--run-for",
+        "5"
+      ],
+      "exitCode": 0,
+      "durationMs": 5144,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[51C7F5A24BC7] fixture-typing-first\r\n[1E3BEF7EB740] fixture-typing-second\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-076",
+      "processId": 55236,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4cd46d5aaae54cac9f7294bdd6b0cdbd\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-4cd46d5aaae54cac9f7294bdd6b0cdbd\\binding.dpapi",
+        "--echo",
+        "--typing",
+        "--run-for",
+        "1.5"
+      ],
+      "exitCode": 0,
+      "durationMs": 1686,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[0AF6EE0DE5EF] fixture-cancel\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-077",
+      "processId": 48340,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-907fa0e440f94027939df056f290f327\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-907fa0e440f94027939df056f290f327\\binding.dpapi",
+        "--echo",
+        "--typing",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 2,
+      "durationMs": 326,
+      "killed": false,
+      "stdout": "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。\r\n[1B46C8F4CD47] fixture-denied\r\n",
+      "stderr": "微信打字状态 HTTP 403。\r\n会话失效或权限被拒绝；请核对微信状态并重新 login。这本身不能证明封号。\r\n"
+    },
+    {
+      "id": "process-078",
+      "processId": 62084,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f1971d51a8fd47be9b8232f0d3e227c7\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f1971d51a8fd47be9b8232f0d3e227c7\\from-pcm.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 318,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，6804 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-079",
+      "processId": 62992,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f1971d51a8fd47be9b8232f0d3e227c7\\synthetic.wav",
+        "--input-format",
+        "wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f1971d51a8fd47be9b8232f0d3e227c7\\from-wave.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 299,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，6804 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-080",
+      "processId": 45428,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f1971d51a8fd47be9b8232f0d3e227c7\\from-pcm.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f1971d51a8fd47be9b8232f0d3e227c7\\decoded.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 217,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，96044 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-081",
+      "processId": 39960,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\input.wav",
+        "--input-format",
+        "wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\existing.silk"
+      ],
+      "exitCode": 4,
+      "durationMs": 326,
+      "killed": false,
+      "stdout": "",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-082",
+      "processId": 39508,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\input.wav",
+        "--input-format",
+        "wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\fresh.silk"
+      ],
+      "exitCode": 1,
+      "durationMs": 109,
+      "killed": false,
+      "stdout": "",
+      "stderr": "WAV 必须为未压缩 PCM16、单声道、24000Hz；其他格式请先转换或按文件附件发送。\r\n"
+    },
+    {
+      "id": "process-083",
+      "processId": 43160,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\input.wav",
+        "--input-format",
+        "mp3",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\fresh.silk"
+      ],
+      "exitCode": 1,
+      "durationMs": 94,
+      "killed": false,
+      "stdout": "",
+      "stderr": "语音转换需要 --file、--output；prepare-voice 还需 --input-format wav|pcm。\r\n"
+    },
+    {
+      "id": "process-084",
+      "processId": 36360,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\input.wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\fresh.silk"
+      ],
+      "exitCode": 1,
+      "durationMs": 96,
+      "killed": false,
+      "stdout": "",
+      "stderr": "语音转换需要 --file、--output；prepare-voice 还需 --input-format wav|pcm。\r\n"
+    },
+    {
+      "id": "process-085",
+      "processId": 29036,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\input.wav",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-77c1e2a10a364919bc93e60639090887\\fresh.silk"
+      ],
+      "exitCode": 4,
+      "durationMs": 104,
+      "killed": false,
+      "stdout": "",
+      "stderr": "本地状态或响应读取失败。请保留状态文件并检查锁、磁盘、账号及协议版本；未输出敏感原始数据。\r\n"
+    },
+    {
+      "id": "process-086",
+      "processId": 36580,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f0e3962e53d848deaa5eed0d468c94f9\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f0e3962e53d848deaa5eed0d468c94f9\\synthetic.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 277,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，6804 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-087",
+      "processId": 60740,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f0e3962e53d848deaa5eed0d468c94f9\\synthetic.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-f0e3962e53d848deaa5eed0d468c94f9\\expected.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 248,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，96044 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-088",
+      "processId": 42480,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-35dc77673d844363a51b04eaa0821373\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-35dc77673d844363a51b04eaa0821373\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-35dc77673d844363a51b04eaa0821373\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2188,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[E2E10008F89A] \r\n[语音转写] fixture-transcript\r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-35dc77673d844363a51b04eaa0821373\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.silk\r\n语音已解码为可本地播放的 WAV：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-35dc77673d844363a51b04eaa0821373\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.wav\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-089",
+      "processId": 48560,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ae7274294a4c4545b01a7e439767bf74\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ae7274294a4c4545b01a7e439767bf74\\synthetic.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 214,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，6804 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-090",
+      "processId": 46200,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ae7274294a4c4545b01a7e439767bf74\\synthetic.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-ae7274294a4c4545b01a7e439767bf74\\expected.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 162,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，96044 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-091",
+      "processId": 57280,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5adf3aefef0f48e3ad83edb61139354a\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5adf3aefef0f48e3ad83edb61139354a\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5adf3aefef0f48e3ad83edb61139354a\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2144,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[E2E10008F89A] \r\n[语音转写] fixture-transcript\r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5adf3aefef0f48e3ad83edb61139354a\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.voice\r\n语音已解码为可本地播放的 WAV：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-5adf3aefef0f48e3ad83edb61139354a\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.wav\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-092",
+      "processId": 54284,
+      "arguments": [
+        "prepare-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-848fa82734084e209c585fce4085fa71\\synthetic.pcm",
+        "--input-format",
+        "pcm",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-848fa82734084e209c585fce4085fa71\\synthetic.silk"
+      ],
+      "exitCode": 0,
+      "durationMs": 219,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，6804 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-093",
+      "processId": 62836,
+      "arguments": [
+        "decode-voice",
+        "--file",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-848fa82734084e209c585fce4085fa71\\synthetic.silk",
+        "--output",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-848fa82734084e209c585fce4085fa71\\expected.wav"
+      ],
+      "exitCode": 0,
+      "durationMs": 162,
+      "killed": false,
+      "stdout": "本地语音转换完成：2000 毫秒，96044 字节；未发送到微信。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-094",
+      "processId": 52416,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-d5bd0eeba49247388d109e62bf67e123\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-d5bd0eeba49247388d109e62bf67e123\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-d5bd0eeba49247388d109e62bf67e123\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2143,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[E2E10008F89A] \r\n[语音转写] fixture-transcript\r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-d5bd0eeba49247388d109e62bf67e123\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.voice\r\n语音已解码为可本地播放的 WAV：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-d5bd0eeba49247388d109e62bf67e123\\fixture-downloads\\81046f6673633f6eafc8f46f09081a865ec086f8879b9f0ad3b2e3a4b37dfb8d.wav\r\n已停止。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-095",
+      "processId": 48136,
+      "arguments": [
+        "listen",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2132d70261344a17b1fd45aa4fc81819\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2132d70261344a17b1fd45aa4fc81819\\binding.dpapi",
+        "--download-dir",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2132d70261344a17b1fd45aa4fc81819\\fixture-downloads",
+        "--run-for",
+        "2"
+      ],
+      "exitCode": 0,
+      "durationMs": 2150,
+      "killed": false,
+      "stdout": "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。\r\n[584D1C22FEC5] \r\n[语音转写] fixture-transcript\r\n媒体已保存：<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-2132d70261344a17b1fd45aa4fc81819\\fixture-downloads\\34de6731777961247594d438198ad82112f0ae77907510b4a38db6c18a1a28a4.voice\r\n已停止。\r\n",
+      "stderr": "语音解码未完成，已保留原始媒体；未输出音频或原始诊断。\r\n"
+    },
+    {
+      "id": "process-096",
+      "processId": 44140,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-384f934507294919bea107087f222e8b\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-384f934507294919bea107087f222e8b\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "6.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 6365,
+      "killed": false,
+      "stdout": "打字开始请求已被 HTTP 接受，请在手机核对显示。\r\n已发送打字取消请求。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-097",
+      "processId": 47212,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-9376c9e021d14b2484c19772b24e413c\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-9376c9e021d14b2484c19772b24e413c\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "6.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 6375,
+      "killed": false,
+      "stdout": "打字开始请求已被 HTTP 接受，请在手机核对显示。\r\n已发送打字取消请求。\r\n",
+      "stderr": ""
+    },
+    {
+      "id": "process-098",
+      "processId": 43976,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7746ae7afd304eceab1b486b535dead8\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-7746ae7afd304eceab1b486b535dead8\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "16.2"
+      ],
+      "exitCode": 0,
+      "durationMs": 16377,
+      "killed": false,
+      "stdout": "打字开始请求已被 HTTP 接受，请在手机核对显示。\r\n已发送打字取消请求。\r\n",
+      "stderr": "打字状态刷新暂未确认。\r\n打字状态连续两次刷新未确认，停止刷新；本地 TTL 仍会取消。\r\n"
+    },
+    {
+      "id": "process-099",
+      "processId": 49672,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-da60139e23ea423a86f160a7465539d3\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-da60139e23ea423a86f160a7465539d3\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "16.2"
+      ],
+      "exitCode": 2,
+      "durationMs": 5156,
+      "killed": false,
+      "stdout": "打字开始请求已被 HTTP 接受，请在手机核对显示。\r\n",
+      "stderr": "微信打字状态 HTTP 403。\r\n会话失效或权限被拒绝；请核对微信状态并重新 login。这本身不能证明封号。\r\n"
+    },
+    {
+      "id": "process-100",
+      "processId": 43908,
+      "arguments": [
+        "typing",
+        "--offline-fixture",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c9d91bccbf004c1ca86bec5af3e3083b\\fixture-001.json",
+        "--state",
+        "<workspace>\\artifacts\\tests\\final-v121-typing-lifecycle\\cli-e2e\\fixture-c9d91bccbf004c1ca86bec5af3e3083b\\binding.dpapi",
+        "--typing-status",
+        "start",
+        "--run-for",
+        "0.2"
+      ],
+      "exitCode": 2,
+      "durationMs": 10386,
+      "killed": false,
+      "stdout": "打字开始请求已被 HTTP 接受，请在手机核对显示。\r\n",
+      "stderr": "打字取消清理超时，取消尚未确认。\r\n"
+    }
+  ],
+  "isolation": {
+    "testDirectories": [
+      "fixture-003d71bf86d14c0aa3a41c6f4783e33f",
+      "fixture-006c6f0d60bf49228732b75a60dfa5e5",
+      "fixture-010133f7259d4b6cbe503656c3a96360",
+      "fixture-03b2d8429a1c481bb50e3d514f0ebc56",
+      "fixture-0bd808b7653445c1856ca965b8da5901",
+      "fixture-0cedf248e2f7485aa58d41f742b8b1c7",
+      "fixture-14fce8d500d042d5af73a22b91a2bbf8",
+      "fixture-18e513920a8e4163a45fcfef643119cf",
+      "fixture-1c23af57dcff4b8285a43aaac95b120b",
+      "fixture-2132d70261344a17b1fd45aa4fc81819",
+      "fixture-23f17f3f97b14f568d63bae938e613ed",
+      "fixture-28e68a970ae54edfba9cc4eccda476ea",
+      "fixture-28ed550879464828b0ba7d24979cc9fb",
+      "fixture-2a12c0a0c724446190f6539e4da2dd73",
+      "fixture-34ecc99300a447cd8195f64db9caa098",
+      "fixture-35dc77673d844363a51b04eaa0821373",
+      "fixture-384f934507294919bea107087f222e8b",
+      "fixture-3bf9e77cba5d4714abac4ae6b18a7c6a",
+      "fixture-406a51397a824b28b8da8633a16e4f48",
+      "fixture-415ac4d95f0642429e39eb627d0abd50",
+      "fixture-43a930dbde2d42f2bca2ce92d3be23c1",
+      "fixture-48bc1d2db1b649d9a1b8cb0a8be05b17",
+      "fixture-4a11891c47a849568d376c954cfc90ec",
+      "fixture-4cd366ed06e84408969a31c9ed95da62",
+      "fixture-4cd46d5aaae54cac9f7294bdd6b0cdbd",
+      "fixture-4d687f17f4174ed3988e23220188e8a2",
+      "fixture-530e1bb9d3604ac4a87dfb138f5d58d1",
+      "fixture-55c7733c16a944a9a3b7aa81fef4d128",
+      "fixture-5adf3aefef0f48e3ad83edb61139354a",
+      "fixture-5c0424749bb440d6bd0596fc3ae3f224",
+      "fixture-7417404188fd4e9ea7424823de1d18c8",
+      "fixture-7746ae7afd304eceab1b486b535dead8",
+      "fixture-77c1e2a10a364919bc93e60639090887",
+      "fixture-7b28f97afa42467c9e3b9a69031b5279",
+      "fixture-7b30693872414e808b60ac4972c15597",
+      "fixture-848fa82734084e209c585fce4085fa71",
+      "fixture-86bed20f08de405e916a5a1b8ff6d2fe",
+      "fixture-89549ecb273a4ea9961a3cdfac9c443b",
+      "fixture-907fa0e440f94027939df056f290f327",
+      "fixture-9376c9e021d14b2484c19772b24e413c",
+      "fixture-9852710a121b4fbcabf749c312212ddd",
+      "fixture-a08f319c08a14711ad74ffeb2237f0f4",
+      "fixture-a79f213d0f8c42b087ff82f1a701efd5",
+      "fixture-a8d92abf24a24808b3f8619de97de041",
+      "fixture-ae7274294a4c4545b01a7e439767bf74",
+      "fixture-b1c0942de2354d12a7426f02cbafb5de",
+      "fixture-b26da8fa98ce4439b0f921b483021fe8",
+      "fixture-b2e109a4ec2e41418f65473a091c1a8c",
+      "fixture-b6799fe443b448f3afdda7c5093a46e0",
+      "fixture-c04f32e89dcd447a9297dcd0c3ca5a52",
+      "fixture-c676489efb5042fa87bc229374610d2c",
+      "fixture-c6d3fc38ef8c418597e1d5974bea87b2",
+      "fixture-c9d91bccbf004c1ca86bec5af3e3083b",
+      "fixture-cdcf8069d6da4abe8cf74865f181b1c0",
+      "fixture-d5bd0eeba49247388d109e62bf67e123",
+      "fixture-da60139e23ea423a86f160a7465539d3",
+      "fixture-de9d37ca85b8475f9bb16007c1edd975",
+      "fixture-df994c2bde174ee6ba81f948f0ff3558",
+      "fixture-e424989cb647407e9c3425f0d51a26eb",
+      "fixture-e56c263e33ee4a908605febde044f99e",
+      "fixture-e5e00c03cd864c5eb5fc1c15b1ddae42",
+      "fixture-e67daae2e00847399966593648ffd137",
+      "fixture-e92e1ae1f53d47169a29a78a9e13b919",
+      "fixture-ecc3cab9b6894582b29d90febad117a2",
+      "fixture-ee75b434148b4496ae6895dad5c330e1",
+      "fixture-f024cb771c1a4d13899f14e42a81b2a7",
+      "fixture-f0e3962e53d848deaa5eed0d468c94f9",
+      "fixture-f1971d51a8fd47be9b8232f0d3e227c7",
+      "fixture-f49ef0d1ded3437bb3e3716d134184f2",
+      "fixture-fb77c903ebd5428e828869ca23c3dc2a"
+    ],
+    "defaultAccountStateRead": false,
+    "socketsCreatedByFixtureTransport": false,
+    "credentials": "fixture-prefixed only; one negative guard fixture is not a real account token"
+  },
+  "version": "1.2.1-initial-test-iteration",
+  "retainedFailureExplanation": "61/62: timeout exited safely with code 2 before the optional asynchronous fixture cancellation trace reached disk. Process-contract assertion corrected; this result remains immutable history."
+}

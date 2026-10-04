@@ -1,0 +1,43 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "recordedUtc": "2026-10-04T01:49:45.348527+00:00",
+  "scope": "Independent read-only FILE source/declaration/receipt consistency check plus published DLL local descriptor construction",
+  "result": "PASS",
+  "fileName": "file7.txt",
+  "fileBytes": 16,
+  "fileSha256": "6209916e97c20bd3622c1fb2be051ef8586e8056238fe5867fea885ac0bed3ab",
+  "payloadSha256": "235EB6085BCC52335086EC974D88A2E9FEF181729553D69486DF815243F61480",
+  "sourceKey": "0CB09AB2005E9F6CCB9C91AE732B92731234321B34519C250CED897F66A33078",
+  "matchingSentReceiptCount": 1,
+  "inboxCount": 0,
+  "receiptAttemptWithinCommandWindow": true,
+  "metadataSnapshotAfterCommandTermination": true,
+  "clientIdAndSizeMatchedCommandStdout": true,
+  "commandExitCode": 0,
+  "commandStderrEmpty": true,
+  "publishedProgramHashesMatchedFinalTestedBytes": true,
+  "currentPublishedProtocolDllSha256": "5c40767ceb907e6e0659a2c3e1bdc11a92936c4b80965c5dfefd1546f71b80fd",
+  "publishedDllLocalDescriptorConstructedByIndependentReview": true,
+  "fileDescriptorContract": {
+    "uploadMediaType": 3,
+    "messageItemType": 4,
+    "file_name": "file7.txt",
+    "len": "16",
+    "lenJsonType": "string",
+    "constructionSampleOnlyNotCapturedRawLivePacket": true
+  },
+  "officialSourceUrls": [
+    "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/api/types.ts",
+    "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/cdn/upload.ts",
+    "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/messaging/send.ts"
+  ],
+  "sdkUploadAndSendAreSeparateSteps": true,
+  "sdkAutomaticallyPersistsUploadDescriptorOrAvoidsRepeatUpload": false,
+  "cliSkipsUploadAndSendForMatchingDurableSent": true,
+  "uploadCompletedBeforeChatIntentPersistedCanLeaveOrphanUpload": true,
+  "singleCliInvocationProvesSingleUploadHttpRequest": false,
+  "independentReviewAccessedAccountNetworkOrUi": false,
+  "clientDownloadProvenByThisReadOnlyReview": false,
+  "containsCredentialsOrAccountIds": false
+}

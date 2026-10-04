@@ -1,0 +1,173 @@
+{
+  "formatVersion": 1,
+  "createdUtc": "2026-10-04T00:30:21.1262296+00:00",
+  "purpose": "Offline primary-source evidence for Tencent typing lifecycle: 5-second keepalive, 60-second local SDK TTL, and two-consecutive-start-failure guard.",
+  "scope": "Reference-only static source; no upstream code or npm package is executed or installed. The 60-second duration is a local SDK safety TTL, not a WeChat server quota. Behavior is verified for Tencent 2.4.9 with its fixed development dependency OpenClaw 2026.8.1, not every version allowed by its peer range.",
+  "sources": [
+    {
+      "version": "2.4.9",
+      "name": "Tencent openclaw-weixin",
+      "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+      "packageEvidencePath": "../upstream-snapshot/package.json",
+      "packageEvidenceSha256": "6d564f047df6b8697785864feac7b521193fc58316bb0f422a3f7c7b14de4fd8",
+      "licenseType": "MIT",
+      "peerDependencyOpenClaw": ">=2026.5.12",
+      "devDependencyOpenClaw": "2026.8.1",
+      "repository": "https://github.com/Tencent/openclaw-weixin"
+    },
+    {
+      "version": "2026.8.1",
+      "licenseType": "MIT",
+      "name": "OpenClaw SDK",
+      "commit": "ea806575e6450e4d1efdfc72c19f04be982a1b9b",
+      "annotatedTagObject": "4d37fc4b0f86ce372d7cb433d1d939ef04f49322",
+      "tag": "v2026.8.1",
+      "repository": "https://github.com/openclaw/openclaw",
+      "referencedNoticesPath": "openclaw/THIRD_PARTY_NOTICES.md"
+    }
+  ],
+  "evidence": [
+    {
+      "line": 357,
+      "path": "tencent/src/messaging/process-message.ts",
+      "claim": "Caller supplies keepaliveIntervalMs=5000."
+    },
+    {
+      "line": 50,
+      "path": "openclaw/src/channels/typing.ts",
+      "claim": "Default local SDK maximum duration is 60000 ms."
+    },
+    {
+      "line": 68,
+      "path": "openclaw/src/channels/typing.ts",
+      "claim": "Each refresh invokes start through one shared in-flight gate."
+    },
+    {
+      "line": 78,
+      "path": "openclaw/src/channels/typing.ts",
+      "claim": "The keepalive loop invokes fireStart using the configured interval."
+    },
+    {
+      "line": 36,
+      "path": "openclaw/src/channels/typing-lifecycle.ts",
+      "claim": "The loop uses setInterval; ticks during active requests are suppressed."
+    },
+    {
+      "line": 28,
+      "path": "openclaw/src/channels/typing.ts",
+      "claim": "Default maximum consecutive typing-start failures is 2."
+    },
+    {
+      "line": 52,
+      "path": "openclaw/src/channels/typing-start-guard.ts",
+      "claim": "The guard trips after the configured consecutive failures."
+    },
+    {
+      "line": 125,
+      "path": "openclaw/src/channels/typing.ts",
+      "claim": "Stop closes the lifecycle, ends timers, and sends at most one CANCEL; errors are reported through callback."
+    }
+  ],
+  "files": [
+    {
+      "path": "tencent/src/messaging/process-message.ts",
+      "kind": "source",
+      "repository": "https://github.com/Tencent/openclaw-weixin",
+      "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/messaging/process-message.ts",
+      "byteCount": 21980,
+      "sha256": "05f4bb55cb74c014a22b879c75a0a1dc2084d4d1c6120fcaa18d84464a3a6efa",
+      "licenseType": "MIT",
+      "licensePath": "tencent/LICENSE",
+      "originalUpstreamBytes": true
+    },
+    {
+      "path": "tencent/LICENSE",
+      "kind": "license",
+      "repository": "https://github.com/Tencent/openclaw-weixin",
+      "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/LICENSE",
+      "byteCount": 1301,
+      "sha256": "7f1e8cf099cf03de7c775e33e97e3c950c3a56a9616bb4de6b14d3c911bc5573",
+      "licenseType": "MIT",
+      "licensePath": "tencent/LICENSE",
+      "originalUpstreamBytes": true
+    },
+    {
+      "path": "tencent/LICENSE.existing-snapshot",
+      "kind": "verified-existing-license-copy",
+      "repository": "https://github.com/Tencent/openclaw-weixin",
+      "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+      "url": "https://raw.githubusercontent.com/Tencent/openclaw-weixin/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/LICENSE",
+      "byteCount": 1327,
+      "sha256": "e03f0b07c51d8e8f1c9e25bca15a67d9c3157ae9a14d77dda98d426bfb165adb",
+      "licenseType": "MIT",
+      "licensePath": "tencent/LICENSE",
+      "originalUpstreamBytes": false,
+      "copiedFrom": "../upstream-snapshot/LICENSE",
+      "verifiedAgainst": "tencent/LICENSE",
+      "verification": "Exact text equality after converting CRLF to LF; no other transformation.",
+      "storedLineEndings": "CRLF"
+    },
+    {
+      "path": "openclaw/src/channels/typing.ts",
+      "kind": "source",
+      "repository": "https://github.com/openclaw/openclaw",
+      "commit": "ea806575e6450e4d1efdfc72c19f04be982a1b9b",
+      "url": "https://raw.githubusercontent.com/openclaw/openclaw/ea806575e6450e4d1efdfc72c19f04be982a1b9b/src/channels/typing.ts",
+      "byteCount": 4253,
+      "sha256": "2eab123cb8f11cc8ff2ea20b70e042abd9d4f2794979b42c56c3fa441063b924",
+      "licenseType": "MIT",
+      "licensePath": "openclaw/LICENSE",
+      "originalUpstreamBytes": true
+    },
+    {
+      "path": "openclaw/src/channels/typing-lifecycle.ts",
+      "kind": "source",
+      "repository": "https://github.com/openclaw/openclaw",
+      "commit": "ea806575e6450e4d1efdfc72c19f04be982a1b9b",
+      "url": "https://raw.githubusercontent.com/openclaw/openclaw/ea806575e6450e4d1efdfc72c19f04be982a1b9b/src/channels/typing-lifecycle.ts",
+      "byteCount": 1256,
+      "sha256": "efd8738a2ed413f791acd17f614c84ecf527153f4216fe354bb254ef983d5e41",
+      "licenseType": "MIT",
+      "licensePath": "openclaw/LICENSE",
+      "originalUpstreamBytes": true
+    },
+    {
+      "path": "openclaw/src/channels/typing-start-guard.ts",
+      "kind": "source",
+      "repository": "https://github.com/openclaw/openclaw",
+      "commit": "ea806575e6450e4d1efdfc72c19f04be982a1b9b",
+      "url": "https://raw.githubusercontent.com/openclaw/openclaw/ea806575e6450e4d1efdfc72c19f04be982a1b9b/src/channels/typing-start-guard.ts",
+      "byteCount": 1825,
+      "sha256": "edb2780da415dac389440edf09c6b05be2a338dfd2e0ad65dff3c06045a5662d",
+      "licenseType": "MIT",
+      "licensePath": "openclaw/LICENSE",
+      "originalUpstreamBytes": true
+    },
+    {
+      "path": "openclaw/LICENSE",
+      "kind": "license",
+      "repository": "https://github.com/openclaw/openclaw",
+      "commit": "ea806575e6450e4d1efdfc72c19f04be982a1b9b",
+      "url": "https://raw.githubusercontent.com/openclaw/openclaw/ea806575e6450e4d1efdfc72c19f04be982a1b9b/LICENSE",
+      "byteCount": 1170,
+      "sha256": "73571b25326281d369087f469842c02444fe39faaecebda4d82ed21ff3a1c29d",
+      "licenseType": "MIT",
+      "licensePath": "openclaw/LICENSE",
+      "originalUpstreamBytes": true
+    },
+    {
+      "path": "openclaw/THIRD_PARTY_NOTICES.md",
+      "kind": "referenced-license-notices",
+      "repository": "https://github.com/openclaw/openclaw",
+      "commit": "ea806575e6450e4d1efdfc72c19f04be982a1b9b",
+      "url": "https://raw.githubusercontent.com/openclaw/openclaw/ea806575e6450e4d1efdfc72c19f04be982a1b9b/THIRD_PARTY_NOTICES.md",
+      "byteCount": 1575,
+      "sha256": "c84200f7a9bb8b3abc8563520433316716a9eb83915cfe7c3063d5e6fce5e7ca",
+      "licenseType": "Third-party notices; see retained original text",
+      "licensePath": "openclaw/LICENSE",
+      "originalUpstreamBytes": true
+    }
+  ]
+}

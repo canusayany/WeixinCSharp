@@ -1,0 +1,22 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "recordedUtc": "2026-10-04T01:49:45.348527+00:00",
+  "scope": "Direct user confirmation for the one FILE sample after actual CLI send",
+  "commandsEvidenceFile": "file-v121-r2-commands.json",
+  "receiptsEvidenceFile": "file-v121-r2-receipts.json",
+  "fileName": "file7.txt",
+  "sourceFileBytes": 16,
+  "sourceFileSha256": "6209916e97c20bd3622c1fb2be051ef8586e8056238fe5867fea885ac0bed3ab",
+  "expectedVisibleText": "文件验证 f7",
+  "userAnswer": "已收到，能打开且内容正确",
+  "fileReceivedConfirmedByUser": true,
+  "fileCanBeOpenedConfirmedByUser": true,
+  "visibleContentsMatchExpectedTextConfirmedByUser": true,
+  "clientDownloadedBytesHashIndependentlyVerified": false,
+  "allFileFormatsSizesOrAccountsVerified": false,
+  "originalSendTimeUnobservedClientFieldPreserved": true,
+  "computerUsePerformedForThisConfirmation": false,
+  "privateFileSent": false,
+  "containsCredentialsOrAccountIds": false
+}

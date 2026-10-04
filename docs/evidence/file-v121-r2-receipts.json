@@ -1,0 +1,38 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-WeChat-account-CLI",
+  "started": "2026-10-04T01:46:01.0948708+00:00",
+  "completed": "2026-10-04T01:46:01.1309647+00:00",
+  "executableSha256": null,
+  "cliDllSha256": null,
+  "protocolDllSha256": null,
+  "marker": null,
+  "expectedMessageObserved": false,
+  "expectedMedia": [],
+  "expectedMediaObserved": null,
+  "otherMessageCount": 0,
+  "exitCode": null,
+  "stateHasContext": true,
+  "stateHasCursor": true,
+  "inboxCount": 0,
+  "seenKeyCount": 10,
+  "outboxStatuses": {
+    "Sent": 17
+  },
+  "expectedReplyReceipts": [],
+  "clientDelivery": "requires independent client observation",
+  "selectedBusinessReceipts": [
+    {
+      "ClientId": "openclaw-weixin:1791078360685-f4f15763",
+      "Status": "Sent",
+      "AttemptedAt": "2026-10-04T01:46:00.6853778+00:00",
+      "SourceKey": "0CB09AB2005E9F6CCB9C91AE732B92731234321B34519C250CED897F66A33078",
+      "ContentSha256": "18531D869D3AB192688D699F30EE11188EF22F8E16B44370CB17FAF522886AB8",
+      "PayloadSha256": "235EB6085BCC52335086EC974D88A2E9FEF181729553D69486DF815243F61480"
+    }
+  ],
+  "selectedMarkdownJobs": [],
+  "downloadedMedia": [],
+  "containsCredentialsOrAccountIds": false,
+  "operationScope": "metadata-only projection after the actual FILE command exited; does not itself prove sending or client receipt"
+}

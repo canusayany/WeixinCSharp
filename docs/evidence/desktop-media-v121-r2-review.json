@@ -1,0 +1,44 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "recordedUtc": "2026-10-04T01:44:24.272566+00:00",
+  "scope": "Independent read-only consistency audit of synthetic media inputs, current published DLL conversion and recorded send receipts",
+  "result": "PASS",
+  "accountAccessNetworkUiOrProductionChangesPerformedByReview": false,
+  "currentPublishedProtocolDllSha256": "5c40767ceb907e6e0659a2c3e1bdc11a92936c4b80965c5dfefd1546f71b80fd",
+  "publishedDllApiInvoked": [
+    "MarkdownFormatting.ConvertToPlainText",
+    "MarkdownFormatting.ChunkText"
+  ],
+  "markdownUtf8Bytes": 88,
+  "markdownUtf16CodeUnits": 52,
+  "markdownConversionPreservedThisSupportedSample": true,
+  "markdownChunkCount": 1,
+  "markdownInputConvertedChunkJobAndReceiptSha256": "B0D3384A2EE82E583F16AF9A652EBB16AEDB3473C2AADE396E37336C074EB812",
+  "markdownChildSourceKey": "EA60A40A454F3F4AD022AEE9FA027FE2292A8AEF901E6084D519A789DACC093C",
+  "matchingMarkdownCompletedJobCount": 1,
+  "matchingMarkdownSentChildReceiptCount": 1,
+  "matchingVideoSentReceiptCount": 1,
+  "videoBytes": 2902,
+  "videoSha256": "bc2a2080c24c88cb0ed666922875d5be54d3c55354bb5c70b1f2c8d5ba147adc",
+  "videoDeclarationFingerprintFormula": "SHA256(UTF8(uppercase file SHA256 + newline + 2 + newline + empty duration + newline + empty voice encoding + newline + md7.mp4))",
+  "videoDeclarationFingerprintSha256": "36CD0E8CB802B940BA4AF9D86D2E6A456F371133836CD0DDCD42BECBD97A65EA",
+  "videoClientIdMatchedCommandStdout": true,
+  "markdownClientIdPrintedByCommandStdout": false,
+  "receiptAttemptsWithinIndividualCommandWindows": true,
+  "metadataSnapshotAfterBothCommandTerminations": true,
+  "inboxCount": 0,
+  "bothCommandExitCodes": [
+    0,
+    0
+  ],
+  "bothCommandStderrEmpty": true,
+  "snapshotExitCodeAndProgramHashesNull": true,
+  "snapshotAloneProvesSendOrUiDelivery": false,
+  "clientRenderingPlaybackOrNativeVoiceDeliveryProvenByThisReview": false,
+  "reviewedEvidenceFilesSha256": {
+    "desktop-media-v121-r2-commands.json": "32f71fe8a564f4d0d5be54ce5d55ac064d48d3be4118a3b6b96090bfedc679f1",
+    "desktop-media-v121-r2-receipts.json": "68597e190d06131b4c2ac09bed5d23d52f7631cce15311cc2cf1c61395321fdd"
+  },
+  "containsCredentialsOrAccountIds": false
+}

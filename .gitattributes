@@ -1,0 +1,7 @@
+# Preserve the tested source bytes and pinned upstream/license snapshots.
+# Their provenance records contain SHA-256 hashes of the original files.
+* -text
+*.wasm binary
+*.tgz binary
+*.zip binary
+*.exe binary

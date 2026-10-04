@@ -1,0 +1,52 @@
+{
+  "researched_on": "2026-10-04",
+  "timezone": "Asia/Shanghai",
+  "execution": "Initial upstream/WorkBuddy research was static-only; this describes acquisition and does not describe subsequent C# tests or live account acceptance. See docs/VALIDATION.md for current execution evidence.",
+  "npm": {
+    "name": "@tencent-weixin/openclaw-weixin",
+    "version": "2.4.9",
+    "author": {
+      "name": "Tencent"
+    },
+    "publisher": "zengyi1001",
+    "license": "MIT",
+    "registry_url": "https://registry.npmjs.org/@tencent-weixin%2fopenclaw-weixin",
+    "published_utc": "2026-09-17T04:20:17.142Z",
+    "tarball": "https://registry.npmjs.org/@tencent-weixin/openclaw-weixin/-/openclaw-weixin-2.4.9.tgz",
+    "sha256": "467e8047f7114e45944961fcd3eda9421843c9c65db61ea24176e252ab800ee4",
+    "sha1": "d74a3ad07cc43f27eb3ec48f3eb1c0945cae2384",
+    "integrity": "sha512-SfaYehR1Cwq2VV5HxJBp9sVilMms420VfZlMbF4YjRbWomr5+GxfXp9HkeU6y5TbnOc4Ysq0qPw1yBvJwbenBA==",
+    "sha1_verified": true,
+    "integrity_verified": true
+  },
+  "repositories": [
+    {
+      "url": "https://github.com/Tencent/openclaw-weixin",
+      "commit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+      "commit_time": "2026-09-21T22:23:14+08:00",
+      "license": "MIT",
+      "license_file_present": true
+    },
+    {
+      "url": "https://github.com/HenryXiaoYang/wechat-openclaw-channel",
+      "commit": "8b8b13434fb30a589a8ebd7c68e233c1b49e3f41",
+      "commit_time": "2026-03-21T23:17:36+08:00",
+      "license": "MIT declaration in package.json only",
+      "license_file_present": false
+    },
+    {
+      "url": "https://github.com/x1ah/wechat-ilink-demo",
+      "commit": "248efbee46be7efe3c3890279d22ea2c0a59907a",
+      "commit_time": "2026-08-22T18:42:15+08:00",
+      "license": "not found",
+      "license_file_present": false
+    }
+  ],
+  "normalized_equal_source_files": [
+    "src/api/api.ts",
+    "src/api/types.ts",
+    "src/auth/login-qr.ts",
+    "src/messaging/send.ts",
+    "src/monitor/monitor.ts"
+  ]
+}

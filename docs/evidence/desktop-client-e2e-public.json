@@ -1,0 +1,72 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-desktop-client-UI-observation-and-metadata",
+  "clientVersion": "4.1.15.13",
+  "observer": "root-agent-direct-desktop-client-observation",
+  "text": {
+    "evidenceFile": "desktop-text-evidence.json",
+    "marker": "d9k",
+    "exactInboundMatched": true,
+    "uniqueSentReceiptMatched": true,
+    "exactReplyVisible": "已收到：d9k",
+    "cliExitCode": 0,
+    "inboxCount": 0,
+    "productionBytesMatched": true
+  },
+  "nativeVoice": {
+    "evidenceFile": "native-descriptor-replay-public.json",
+    "apiAccepted": true,
+    "originalFieldsAndCdnDescriptorRetained": true,
+    "bubbleObserved": false,
+    "observedAt": "2026-10-04T07:51:42+08:00",
+    "secondsSinceExperimentStartAtLeast": 60,
+    "result": "failed-within-observed-window",
+    "longerUnknownDelayExcluded": false,
+    "productionFeatureSupported": false
+  },
+  "video": {
+    "sample": "previously-sent-blue-three-second-video",
+    "officialDesktopPlayerOpened": true,
+    "observedPosition": "00:03"
+  },
+  "markdown": {
+    "existingTestCardVisible": true,
+    "boldAndInlineCodeTestContentVisibleAsText": true,
+    "allSyntaxRenderingVerified": false
+  },
+  "audioFile": {
+    "visibleAsAttachment": true,
+    "nativeVoiceBubble": false,
+    "playbackVerified": false
+  },
+  "typing": {
+    "finalPublishedExecutableUsed": true,
+    "requestedWindowSeconds": 60,
+    "timedEvidenceFile": "desktop-typing-evidence.json",
+    "timedStartedUtc": "2026-10-03T23:52:03.6388235+00:00",
+    "timedCompletedUtc": "2026-10-03T23:53:04.5659591+00:00",
+    "startHttpAccepted": true,
+    "startVisible": true,
+    "timedCliExitCode": 2,
+    "automaticCancelHttpAccepted": null,
+    "automaticCancelHttpConfirmed": false,
+    "automaticCancelResult": "connection-failure; no HTTP acceptance confirmation",
+    "indicatorAbsentObservedAt": null,
+    "indicatorAbsentBeforeTimedCliExit": true,
+    "indicatorAbsentBeforeAutomaticCancelConfirmation": true,
+    "indicatorAbsentBeforeExplicitStop": true,
+    "continuouslyVisibleForEntireWindowConfirmed": false,
+    "disappearanceCauseKnown": false,
+    "disappearanceAttributedToExplicitStop": false,
+    "explicitStopEvidenceFile": "desktop-typing-stop-evidence.json",
+    "explicitStopStartedUtc": "2026-10-03T23:58:33.1787485+00:00",
+    "explicitStopCompletedUtc": "2026-10-03T23:58:33.7550856+00:00",
+    "explicitStopHttpAccepted": true,
+    "explicitStopCliExitCode": 0,
+    "indicatorAbsentAfterExplicitStop": true,
+    "observationComplete": true
+  },
+  "containsCredentialsAccountIdsOriginalChatsMediaOrScreenshots": false,
+  "productionSourceChanged": false,
+  "previousNativeFailuresRetained": true
+}

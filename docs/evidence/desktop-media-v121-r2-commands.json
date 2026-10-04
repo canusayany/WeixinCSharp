@@ -1,0 +1,48 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "scope": "actual published CLI outbound synthetic Markdown and video",
+  "commandInvocation": "one attempt each; no automatic retry",
+  "publishedFilesSha256": {
+    "weixin.exe": "cb8f7466dee8e2338703a24585e52852d70baae9fed5bc4b56cdd4d99160ebbf",
+    "weixin.dll": "116375df8e469ae401916414736c94f44b82fd54def8c966d97fa3f0bee339b7",
+    "Weixin.Protocol.dll": "5c40767ceb907e6e0659a2c3e1bdc11a92936c4b80965c5dfefd1546f71b80fd"
+  },
+  "markdownRootSourceKey": "4FF310CA5F880FFBCA87524173959DCBBF348B4EA57F430075FB8A8A4E6044E2",
+  "markdownChunkSourceKey": "EA60A40A454F3F4AD022AEE9FA027FE2292A8AEF901E6084D519A789DACC093C",
+  "videoSourceKey": "621FAFFA34BADA250F3E8FA521AEA3B9F2C8FBE7A68D3E86D8684EFC50E01557",
+  "markdownUtf8Bytes": 88,
+  "markdownInputSha256": "b0d3384a2ee82e583f16af9a652ebb16aedb3473c2aade396e37336c074eb812",
+  "videoBytes": 2902,
+  "videoSha256": "bc2a2080c24c88cb0ed666922875d5be54d3c55354bb5c70b1f2c8d5ba147adc",
+  "mediaDescription": "Pre-existing synthetic three-second blue MP4; no private sound or image",
+  "containsCredentialsOrAccountIds": false,
+  "privateMediaSent": false,
+  "commands": [
+    {
+      "kind": "markdown",
+      "startedUtc": "2026-10-04T01:37:54.7204875+00:00",
+      "completedUtc": "2026-10-04T01:37:55.6370384+00:00",
+      "exitCode": 0
+    },
+    {
+      "kind": "video",
+      "startedUtc": "2026-10-04T01:37:55.6776250+00:00",
+      "completedUtc": "2026-10-04T01:37:58.5498122+00:00",
+      "exitCode": 0
+    }
+  ],
+  "validation": {
+    "publishedHashesMatchedFinalTestedBytes": true,
+    "inputBytesAndSha256Matched": true,
+    "bothCommandExitCodesZero": true,
+    "bothReceiptAttemptsWithinCorrespondingCommandWindows": true,
+    "markdownRootAndChildBusinessKeysValidated": true,
+    "markdownInputJobAndSupportedTransportSampleDigestMatched": true,
+    "oneSentReceiptPerBusinessKey": true,
+    "videoDeclarationFingerprintMatched": true,
+    "videoClientIdMatchedCommandStdout": true,
+    "videoMp4MovieHeaderDurationSeconds": 3.0,
+    "metadataOnlySnapshotExitDoesNotProveSendingOrClientDisplay": true
+  }
+}

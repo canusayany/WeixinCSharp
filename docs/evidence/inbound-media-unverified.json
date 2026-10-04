@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-WeChat-account-CLI",
+  "started": "2026-10-04T06:37:20.3829681+08:00",
+  "completed": "2026-10-04T06:42:21.0476687+08:00",
+  "executableSha256": "5602d2145983424add1f7e755cac37fa2ae64b86ec0c129e4061b441af381344",
+  "cliDllSha256": "8bc589efb79df0a4adf6599674503d435b5d80dac579d788098d4525271bfcd0",
+  "protocolDllSha256": "da5bb74b3baec4e1e3d99712e16d18f8b5e783ea3654630b34bc2d895a0f8b76",
+  "marker": "v7x",
+  "expectedMessageObserved": false,
+  "otherMessageCount": 0,
+  "exitCode": 0,
+  "stateHasContext": true,
+  "stateHasCursor": true,
+  "inboxCount": 0,
+  "seenKeyCount": 3,
+  "outboxStatuses": {
+    "Sent": 8
+  },
+  "expectedReplyReceipts": [],
+  "phoneDelivery": "requires separate explicit human confirmation",
+  "selectedBusinessReceipts": [],
+  "selectedMarkdownJobs": [],
+  "downloadedMedia": [],
+  "containsCredentialsOrAccountIds": false
+}

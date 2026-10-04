@@ -1,0 +1,53 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-WeChat-account-CLI",
+  "started": "2026-10-04T01:37:58.6413047+00:00",
+  "completed": "2026-10-04T01:37:58.6901293+00:00",
+  "executableSha256": null,
+  "cliDllSha256": null,
+  "protocolDllSha256": null,
+  "marker": null,
+  "expectedMessageObserved": false,
+  "expectedMedia": [],
+  "expectedMediaObserved": null,
+  "otherMessageCount": 0,
+  "exitCode": null,
+  "stateHasContext": true,
+  "stateHasCursor": true,
+  "inboxCount": 0,
+  "seenKeyCount": 10,
+  "outboxStatuses": {
+    "Sent": 16
+  },
+  "expectedReplyReceipts": [],
+  "clientDelivery": "requires independent client observation",
+  "selectedBusinessReceipts": [
+    {
+      "ClientId": "openclaw-weixin:1791077875173-f641c83c",
+      "Status": "Sent",
+      "AttemptedAt": "2026-10-04T01:37:55.1736469+00:00",
+      "SourceKey": "EA60A40A454F3F4AD022AEE9FA027FE2292A8AEF901E6084D519A789DACC093C",
+      "ContentSha256": "B0D3384A2EE82E583F16AF9A652EBB16AEDB3473C2AADE396E37336C074EB812",
+      "PayloadSha256": null
+    },
+    {
+      "ClientId": "openclaw-weixin:1791077878174-d5164e73",
+      "Status": "Sent",
+      "AttemptedAt": "2026-10-04T01:37:58.1747492+00:00",
+      "SourceKey": "621FAFFA34BADA250F3E8FA521AEA3B9F2C8FBE7A68D3E86D8684EFC50E01557",
+      "ContentSha256": "6881C4446FC36BD47361501BFBC1AFC80573422261DE509D65380F7BD0836042",
+      "PayloadSha256": "36CD0E8CB802B940BA4AF9D86D2E6A456F371133836CD0DDCD42BECBD97A65EA"
+    }
+  ],
+  "selectedMarkdownJobs": [
+    {
+      "SourceKey": "4FF310CA5F880FFBCA87524173959DCBBF348B4EA57F430075FB8A8A4E6044E2",
+      "ContentSha256": "B0D3384A2EE82E583F16AF9A652EBB16AEDB3473C2AADE396E37336C074EB812",
+      "ChunkCount": 1,
+      "completedChunks": 1
+    }
+  ],
+  "downloadedMedia": [],
+  "containsCredentialsOrAccountIds": false,
+  "operationScope": "metadata-only snapshot after both real CLI send processes exited; snapshot alone does not prove delivery"
+}

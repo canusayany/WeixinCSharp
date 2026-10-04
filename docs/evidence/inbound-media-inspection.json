@@ -1,0 +1,42 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-incoming-media-local-inspection",
+  "inspectedAt": "2026-10-03T23:20:12.8866927+00:00",
+  "credentialsOrIdentifiersIncluded": false,
+  "mediaContentsIncluded": false,
+  "receivedVoice": {
+    "tencentSilkSignature": true,
+    "downloadAndDecryptCompleted": true,
+    "sha256": "48e922fcbede982622ff5d699e28462a4f3feadfb907244046aa219dc538ef97",
+    "bytes": 2429
+  },
+  "decodedVoice": {
+    "riffWave": true,
+    "sampleRateHz": 24000,
+    "bitsPerSample": 16,
+    "durationMilliseconds": 2000,
+    "channels": 1,
+    "sha256": "a521edad6f2eee500833fba67d3bc9b07cdf3fdb0f35da436948315f7fe3e163",
+    "automaticDuringThisListener": false,
+    "bytes": 96044,
+    "commandExitCode": 0
+  },
+  "receivedVideo": {
+    "audioChannels": 1,
+    "audioCodec": "aac",
+    "audioSampleRateHz": 44100,
+    "width": 720,
+    "sha256": "c4703728d3c7d123d7dd28ddfeb5a6b2b73c73fd890d1fce8733a7864fceb138",
+    "durationSeconds": 2.801667,
+    "videoCodec": "hevc",
+    "bytes": 290181,
+    "fullFfmpegDecodeExitCode": 0,
+    "height": 1280,
+    "ffprobeExitCode": 0
+  },
+  "exactRequestedTextMarkerMatched": false,
+  "fixesRequired": [
+    "Listen gated voice decoding on encode_type=6; official downloader attempts SILK for every VOICE item."
+  ],
+  "outboundNativeVoiceStillUnverified": true
+}

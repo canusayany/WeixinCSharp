@@ -1,0 +1,30 @@
+{
+  "formatVersion": 1,
+  "scope": "primary-source-contract-research; not runtime acceptance",
+  "tencentCommit": "24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c",
+  "tencentPluginVersion": "2.4.9",
+  "openclawDevelopmentDependencyVersion": "2026.8.1",
+  "openclawCommit": "ea806575e6450e4d1efdfc72c19f04be982a1b9b",
+  "peerRangeDoesNotProveAllPeerVersionsIdentical": true,
+  "sources": {
+    "tencentPackage": "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/package.json",
+    "tencentCallbacks": "https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/src/messaging/process-message.ts#L357",
+    "openclawTyping": "https://github.com/openclaw/openclaw/blob/ea806575e6450e4d1efdfc72c19f04be982a1b9b/src/channels/typing.ts#L50",
+    "openclawInterval": "https://github.com/openclaw/openclaw/blob/ea806575e6450e4d1efdfc72c19f04be982a1b9b/src/channels/typing-lifecycle.ts#L32",
+    "openclawFailureGuard": "https://github.com/openclaw/openclaw/blob/ea806575e6450e4d1efdfc72c19f04be982a1b9b/src/channels/typing-start-guard.ts#L41"
+  },
+  "observedSourcePolicy": {
+    "keepaliveIntervalMilliseconds": 5000,
+    "localTypingTtlMilliseconds": 60000,
+    "refreshCallsStart": true,
+    "overlappingRefreshesSkipped": true,
+    "successResetsFailureCount": true,
+    "consecutiveRefreshFailuresBeforeStoppingTicks": 2,
+    "stopCallsCancelOnce": true,
+    "httpPrimitiveRetries": false,
+    "officialStopCancelsInflightStartRequest": false
+  },
+  "ttlIsWeChatServerLimit": false,
+  "cancelIdempotencyOrRetryGuaranteePublished": false,
+  "containsCredentialsAccountIdsTicketsChatsMediaOrScreenshots": false
+}

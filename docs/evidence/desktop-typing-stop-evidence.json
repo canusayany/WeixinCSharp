@@ -1,0 +1,9 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-final-published-CLI-typing-explicit-stop",
+  "started": "2026-10-03T23:58:33.1787485+00:00",
+  "completed": "2026-10-03T23:58:33.7550856+00:00",
+  "exitCode": 0,
+  "clientObservation": "recorded separately",
+  "containsCredentialsOrAccountIds": false
+}

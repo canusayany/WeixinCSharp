@@ -1,0 +1,20 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-WeChat-account-SDK-native-SILK-full-metadata",
+  "started": "2026-10-03T23:05:36.577268+00:00",
+  "completed": "2026-10-03T23:05:37.8875931+00:00",
+  "sampleBytes": 6440,
+  "sampleSha256": "6f582a7e0f638a4896037eed7207931aaa03cd377fce5a06fc72650a28b00da8",
+  "playtimeMilliseconds": 2000,
+  "sampleRateHz": 24000,
+  "bitsPerSample": 16,
+  "encodeType": 6,
+  "aesKeyFormat": "base64-ASCII-hex-as-current-official-media-senders",
+  "sourceKey": "6666666666666666666666666666666666666666666666666666666666666666",
+  "ClientId": "openclaw-weixin:1791068737457-61c11f5b",
+  "Status": "Sent",
+  "ContentSha256": "E855CF1862C483C590C57E8142CA971C4117F8BFE787FBB655D03E85555DE488",
+  "protocolDllSha256": "07cd9a6f895660b6b68ec525be91e1b8b131b95fb73bad67db0cf772fa3426ab",
+  "phoneDelivery": "requires separate explicit human confirmation",
+  "containsCredentialsOrAccountIds": false
+}

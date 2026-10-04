@@ -1,0 +1,28 @@
+**/bin/
+**/obj/
+artifacts/
+*.dpapi*
+*.login-qr.html
+*.tmp
+login-qr.html
+login-qr.png
+research/references/
+*.user
+*.log
+*.lock
+*.pfx
+*.pem
+*.key
+.env
+.env.*
+.vs/
+.idea/
+__pycache__/
+*.pyc
+downloads/
+received*/
+
+# Restore the pinned Node executable with scripts/Restore-VoiceRuntime.ps1.
+# Release archives include the runtime; keep large downloads out of Git history.
+runtime/voice/node.exe
+research/runtime-dependencies/node-v24.19.0-win-x64.zip

@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType></PropertyGroup>
+  <!-- Compile the exact production source without mutating shared Protocol bin/obj. -->
+  <ItemGroup><Compile Include="../../src/Weixin.Protocol/VoiceCodec.cs" Link="VoiceCodec.cs" /></ItemGroup>
+  <ItemGroup><None Include="official-interop.mjs" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+</Project>

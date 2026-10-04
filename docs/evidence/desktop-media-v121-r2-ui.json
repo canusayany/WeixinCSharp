@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "version": "1.2.1",
+  "scope": "own bound bot chat and WeChat media player; direct observations recorded in prior turn",
+  "clientVersion": "4.1.15.13",
+  "commandsEvidenceFile": "desktop-media-v121-r2-commands.json",
+  "receiptsEvidenceFile": "desktop-media-v121-r2-receipts.json",
+  "publishedFilesSha256": {
+    "weixin.exe": "cb8f7466dee8e2338703a24585e52852d70baae9fed5bc4b56cdd4d99160ebbf",
+    "weixin.dll": "116375df8e469ae401916414736c94f44b82fd54def8c966d97fa3f0bee339b7",
+    "Weixin.Protocol.dll": "5c40767ceb907e6e0659a2c3e1bdc11a92936c4b80965c5dfefd1546f71b80fd"
+  },
+  "markdown": {
+    "marker": "md7",
+    "completeSampleTextObservedUtc": "2026-10-04T01:38:09.966Z",
+    "stylesObserved": [
+      "heading",
+      "bold",
+      "inline code",
+      "bullet list"
+    ],
+    "allMarkdownSyntaxRenderingVerified": false,
+    "oneMatchingCompletedJobAndSentChildReceipt": true
+  },
+  "video": {
+    "sample": "synthetic blue MP4 without private media",
+    "bytes": 2902,
+    "sha256": "bc2a2080c24c88cb0ed666922875d5be54d3c55354bb5c70b1f2c8d5ba147adc",
+    "mp4MovieHeaderDurationSeconds": 3.0,
+    "newCardDownloadActionSnapshotUtc": "2026-10-04T01:38:20.732Z",
+    "openedUtc": "2026-10-04T01:38:47.266Z",
+    "replayPlayingAtZeroUtc": "2026-10-04T01:39:20.495Z",
+    "replayAtThreeSecondEndUtc": "2026-10-04T01:39:30.978Z",
+    "observedPlayingStateAtZero": "00:00 / 00:03; pause control visible",
+    "observedEndState": "00:03 / 00:03; play control visible",
+    "oneMatchingSentReceipt": true,
+    "allVideoFormatsLengthsAndAccountsVerified": false
+  },
+  "onePlayActionRefusedDueToDetectedUserInput": true,
+  "stateReobservedBeforeOneSuccessfulRetry": true,
+  "computerUseStoppedByUserEscapeAfterObservedPlayback": true,
+  "furtherComputerUseToolsCalledAfterStop": false,
+  "privateMediaSent": false,
+  "screenshotsSavedToProjectOrDistributed": false,
+  "containsCredentialsAccountIdsPrivateChatsContactsPhotosMediaOrScreenshots": false
+}

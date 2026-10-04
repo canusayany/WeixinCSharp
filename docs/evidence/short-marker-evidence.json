@@ -1,0 +1,31 @@
+{
+  "formatVersion": 1,
+  "testLevel": "live-WeChat-account-CLI",
+  "started": "2026-10-04T06:11:49.4524103+08:00",
+  "completed": "2026-10-04T06:13:17.2640049+08:00",
+  "executableSha256": "100a9bbd46a145acbf8ab4b164d3ce4f4bec7fad62967b0e96854d5252b96305",
+  "cliDllSha256": "37d0ad2fdf9c090bf92abbcaa6ab800961d80f96e546272ed7211d6585e2a553",
+  "protocolDllSha256": "1c815f8ec86042a988459a7aeb62afb75e08ea8f3bc08df71fffbdd32d48e4c9",
+  "marker": "ok7",
+  "expectedMessageObserved": true,
+  "otherMessageCount": 0,
+  "exitCode": 0,
+  "stateHasContext": true,
+  "stateHasCursor": true,
+  "inboxCount": 0,
+  "seenKeyCount": 3,
+  "outboxStatuses": {
+    "Sent": 3
+  },
+  "expectedReplyReceipts": [
+    {
+      "ClientId": "openclaw-weixin:1791065536878-458000a6",
+      "Status": "Sent",
+      "AttemptedAt": "2026-10-04T06:12:16.8781983+08:00",
+      "SourceKey": "19FFB221908A30E51DCB668A31110AB09494368E0A0825EEF17E5B3E763111EB",
+      "ContentSha256": "76A6AA482F585F962D713A986CB8FFBE0C270EB21B9233524D801CE1A0692FE6"
+    }
+  ],
+  "phoneDelivery": "requires separate explicit human confirmation",
+  "containsCredentialsOrAccountIds": false
+}
