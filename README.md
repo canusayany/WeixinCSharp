@@ -1,4 +1,4 @@
-# WeixinCSharp
+# WeChat iLink C#
 
 用 C# 收发微信助理消息，适合把自己的程序接到扫码绑定的微信机器人上。
 
@@ -13,7 +13,8 @@
 | 文件 | 上传后发送普通文件，已在手机收到并打开 |
 | 图片、视频、音频附件 | 提供接口；短视频已在微信电脑版播放，音频按文件附件发送 |
 | 正在输入 | 支持开始、定时刷新和停止，已在微信电脑版看到提示 |
-| 原生语音气泡 | **尚未通过**。本轮 API 接受，电脑版未观察到新气泡，手机未确认 |
+| 音频发送 | MP3 等音频按 **FILE 文件附件**发送，保留原文件名和字节；不转换格式 |
+| 原生语音气泡 | **CLI 已停用发送入口**。历史实验未通过，具体原因未证实 |
 | 媒体接收、SILK 编解码 | 提供下载、解密和本地转换；详细验证范围见记录 |
 
 表中的文字、Markdown、视频、打字状态和文件实机记录来自 1.2.1。1.3.0 已重新完成离线检查，新增实机观察仅确认配套文字可见；原生语音尚未通过。
@@ -22,7 +23,7 @@
 
 ## 先跑起来
 
-从 [Releases](https://github.com/canusayany/WeixinCSharp/releases) 下载 Windows x64 成品。1.3.0 起协议、SILK 编解码和项目工具均用 C#，成品只带 .NET 运行时；解压后请保留整个目录。
+从 [Releases](https://github.com/canusayany/wechat-ilink-csharp/releases) 下载 Windows x64 成品。1.3.0 起协议、SILK 编解码和项目工具均用 C#，成品只带 .NET 运行时；解压后请保留整个目录。本文的 CLI 语音入口停用改动尚未发布，已有 1.3.0 成品仍按原版本行为运行。
 
 在程序目录打开 PowerShell：
 
@@ -64,7 +65,9 @@
 .\weixin.exe listen --download-dir .\downloads
 ```
 
-音频附件需要下载或打开文件，不能当作微信原生语音气泡。原生语音仍在研究中，暂不建议把它作为业务功能。
+`--kind audio` 将 MP3 作为普通 FILE 文件附件发送，需要在微信中下载或打开。它与 `--kind file` 使用相同的文件路径，保留原文件名和字节；WAV、SILK 等其他输入也保留原格式，不会仅改名为 MP3，也不自动转码。要发送 MP3，请提供实际的 MP3 文件。
+
+CLI 已停用 `--kind voice` 及 `--duration-ms`、`--voice-encoding`、`--voice-sample-rate`、`--voice-bits-per-sample` 参数；旧调用会在读取绑定状态或请求网络前报错，并引导使用音频文件附件。接收语音与本地编解码继续保留。这项调整不代表原生气泡问题已修复，历史实验和未确认项继续保留。
 
 也直接跑过腾讯原版 Node 2.4.9：默认 MP3 发送显示为附件，底层 VOICE 试发仍未见气泡。OpenClaw 支持 TTS，不代表微信适配器已支持原生语音外发。过程和字段对照见[实验记录](docs/EXPERIMENT-OFFICIAL-NODE.md)；交付程序继续使用纯 C#。
 
@@ -138,7 +141,6 @@ dotnet run --project SendFile -- .\document.pdf
 | --- | --- |
 | 文字分段 | 4000 个 UTF-16 码元，来自官方客户端配置，未证实为服务端字节上限 |
 | 媒体上传、下载 | 100 MiB，本地保护；CLI 用 `--max-media-mib` 调整 |
-| 原生语音声明时长 | 60 秒，本地保护，且原生发送未通过 |
 | 本地语音转换 | 输入、输出各 16 MiB，最长 60 秒，单次超时 30 秒 |
 
 已核对的官方源码没有给出统一的媒体上传大小、语音或视频时长硬上限。这些本地值不代表腾讯配额，也不保证服务器接受。下载文件是明文，DPAPI 只保护绑定和会话状态。
@@ -158,7 +160,7 @@ var decoded = await codec.DecodeSilkToWaveAsync(encoded.Data);
 await File.WriteAllBytesAsync("voice-decoded.wav", decoded.Data);
 ```
 
-实验发送使用 `MediaKind.Voice`，将 `encoded.DurationMilliseconds` 传给上传和 `ToMessageItem(duration, 6, 24000, 16)`，再交给 `SendBoundItemAsync`。`6` 是官方定义的 SILK 类型，后两项是该 WAV 源的采样率与位深；输入来源不明时不要猜测这两个字段。**编码正确和 API 接受仍不等于微信显示原生语音气泡**，当前实机结果见验证记录。
+上述转换仅用于本地处理，不会生成 MP3，也不会向微信发送。发送音频请使用 `--kind audio` 的文件附件路径。协议库保留历史 `MediaKind.Voice` 模型以兼容已有集成与接收解析；CLI 不再提供原生语音外发入口，**编码正确和 API 接受仍不等于微信显示气泡**。历史实机结果见验证记录。
 
 1.3.0 删除了旧 `VoiceCodec` 的 Node 路径构造参数及运行时路径选项，原异步编解码方法继续保留。调用方需要重新编译。
 

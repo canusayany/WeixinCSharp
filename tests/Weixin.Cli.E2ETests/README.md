@@ -21,10 +21,24 @@ codes, durations, argument paths and SHA-256 hashes of source and launched files
 Fixture versions are retained for every subprocess; traces include the child PID
 and fixture filename so restart cases remain reproducible after later steps.
 
-The media cases exercise image/video/file/audio and explicitly selected MP3/SILK
-voice metadata, AES-128-ECB/PKCS7 upload bytes, download bytes, retries, and a real
-process kill during media chat-send. Synthetic codec fixtures only prove protocol
-transport behavior; playable media and native voice require real-device checks.
+The media cases exercise image/video/file/audio attachments, AES-128-ECB/PKCS7
+upload bytes, download bytes, retries, and a real process kill during media
+chat-send. MP3 and WAV audio cases require upload `media_type=3` and message item
+`type=4` (FILE), the unchanged filename/extension and original plaintext bytes.
+The encrypted CDN upload must use `application/octet-stream`; FILE descriptors
+must not acquire native voice metadata or an invented audio MIME field. Audio is
+not converted or renamed. Fixtures prove transport behavior; actual attachment
+receipt and playback still require real-device checks.
+
+The CLI rejects `--kind voice` and the removed native-send metadata flags before
+reading input files, opening account state, or accessing HTTP. Rejection cases
+hold an existing account vault locked and also exercise an unbound state path.
+They require guidance to send MP3 using `--kind audio`; help must advertise FILE
+attachments and retain inbound download/local decode commands. Audio replay
+cases preserve the pre-change FILE fingerprint, accept the `file`/`audio` alias,
+reject changed bytes or filenames, and resume seeded legacy Sent/Unknown/Sending
+receipts without uploading or resending. Obsolete native-send success fixtures
+have been removed; the SDK's native descriptor remains outside the CLI scope.
 Markdown cases use hard-coded official-filter results and a 3999-unit first chunk
 followed by an intact emoji, and verify completed/unknown chunk replay behavior.
 Typing cases launch the executable for start/stop, empty or non-JSON HTTP success,
@@ -33,7 +47,7 @@ cancellation while the start request is actually pending. Codec command cases ru
 the managed codec from the published directory for synthetic PCM/WAV/SILK
 conversion without state/fixture arguments; an inbound SILK download also verifies
 automatic WAV conversion while preserving the original. These are simulated/local
-checks, independently of real-phone typing or native-voice delivery.
+checks, independently of real-phone typing or attachment receipt/playback.
 Inbound voice regression cases use locally synthesized SILK under `encode_type=6`,
 `encode_type=4`, and an omitted `encode_type`, comparing automatic WAV bytes against
 the published `decode-voice` command. An invented non-SILK payload must retain its
@@ -46,8 +60,9 @@ Fixtures have `formatVersion: 1`, `testId` equal to the directory name, and orde
 -1` blocks until canceled. `fault: "disconnect"` simulates a lost connection.
 `waitMarker` writes a simple filename when the request is observed, letting tests
 kill the child after its `Sending` intent is durably saved. No request falls back
-to the network. Credential values must start with `fixture-`, and headers are
-never written to the trace. Deliberately invalid credential fixtures are rejected
+to the network. Credential values must start with `fixture-`; arbitrary headers
+are never written to the trace. Only the whitelisted JSON/octet-stream content
+type (or `other`/null) is recorded. Deliberately invalid credential fixtures are rejected
 before any request and contain invented test strings only.
 
 CDN steps set `host: "novac2c.cdn.weixin.qq.com"`, `path: "/c2c/upload"` or

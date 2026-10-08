@@ -157,11 +157,18 @@ internal sealed class OfflineFixtureTransport : HttpMessageHandler
             var binaryEvidence = VerifyUploadBinary(binary, step);
             var mediaEvidence = VerifySentAesKey(body, step);
             nextStep++;
-            // Record declared fixture content only, plus the generated correlation ID. Unmatched fields
-            // and request headers are never copied into logs, even if a fixture intentionally omits a subset.
+            // Record declared fixture content, the generated correlation ID and a whitelisted media
+            // type only. Unmatched fields and arbitrary headers are never copied into logs.
             var traceBody = FixtureTraceBody(body, step.BodySubset);
+            var contentType = request.Content?.Headers.ContentType?.MediaType switch
+            {
+                "application/json" => "application/json",
+                "application/octet-stream" => "application/octet-stream",
+                null => null,
+                _ => "other"
+            };
             await TraceAsync(new { call, step = index, phase = "request", method = step.Method, host = step.Host, path = step.Path,
-                bearerPresent = request.Headers.Authorization is not null,
+                bearerPresent = request.Headers.Authorization is not null, contentType,
                 query = step.Query ?? [], body = traceBody, utc = DateTimeOffset.UtcNow }, ct);
             if (binaryEvidence is not null || mediaEvidence is not null)
                 await TraceAsync(new { call, step = index, phase = "fixture-assertion", binary = binaryEvidence,
@@ -298,6 +305,10 @@ internal sealed class OfflineFixtureTransport : HttpMessageHandler
             bool ratePresent = voice && descriptor.Value.TryGetProperty("sample_rate", out _);
             bool bitsPresent = voice && descriptor.Value.TryGetProperty("bits_per_sample", out _);
             return new { aesKeyVerified = true, aesKeyStep = index,
+                itemType = item.GetProperty("type").GetInt32(), descriptorName = descriptor.Name,
+                voiceItemPresent = item.TryGetProperty("voice_item", out _),
+                fileMimePresent = item.TryGetProperty("file_item", out var file) &&
+                    (file.TryGetProperty("mime", out _) || file.TryGetProperty("mime_type", out _) || file.TryGetProperty("content_type", out _)),
                 voiceSampleRatePresent = ratePresent, voiceBitsPerSamplePresent = bitsPresent,
                 voiceSampleRate = ratePresent ? descriptor.Value.GetProperty("sample_rate").GetInt32() : (int?)null,
                 voiceBitsPerSample = bitsPresent ? descriptor.Value.GetProperty("bits_per_sample").GetInt32() : (int?)null,

@@ -12,6 +12,8 @@ return await App.RunAsync(args);
 
 internal static class App
 {
+    private const string NativeVoiceDisabled = "原生语音发送已停用；请用 send-media --file audio.mp3 --kind audio 发送 MP3 文件附件。其他音频保留原格式，不自动转码。";
+
     public static async Task<int> RunAsync(string[] args)
     {
         using var shutdown = new CancellationTokenSource();
@@ -136,7 +138,7 @@ internal static class App
             if (options.Command == "send-media")
             {
                 var kind = options.Kind switch { "image" => MediaKind.Image, "video" => MediaKind.Video,
-                    "file" or "audio" => MediaKind.File, "voice" => MediaKind.Voice, _ => throw new ArgumentException("媒体类型不受支持。") };
+                    "file" or "audio" => MediaKind.File, _ => throw new ArgumentException("媒体类型不受支持。") };
                 // Hold a read-only file handle across fingerprint and upload, preventing a changed
                 // file from being sent under an earlier business fingerprint on Windows.
                 await using var fingerprintInput = options.SourceKey is null ? null : File.OpenRead(options.MediaFile!);
@@ -146,12 +148,9 @@ internal static class App
                     if (fingerprintInput!.Length <= 0 || fingerprintInput.Length > options.MaximumMediaBytes)
                         throw new ArgumentException("媒体文件为空或超过本地大小保护上限。");
                     var fileHash = Convert.ToHexString(await SHA256.HashDataAsync(fingerprintInput, ct));
-                    var payload = $"{fileHash}\n{(int)kind}\n{options.DurationMilliseconds}\n{options.VoiceEncoding}\n{Path.GetFileName(options.MediaFile)}";
-                    // Keep the prior fingerprint byte-for-byte when neither optional field is
-                    // declared. Existing acknowledged records must remain resumable after upgrade.
-                    if (options.VoiceSampleRate is not null || options.VoiceBitsPerSample is not null)
-                        payload += "\nvoice_sample_rate:" + options.VoiceSampleRate?.ToString(CultureInfo.InvariantCulture)
-                            + "\nvoice_bits_per_sample:" + options.VoiceBitsPerSample?.ToString(CultureInfo.InvariantCulture);
+                    // Preserve the empty duration/encoding slots in historical non-voice
+                    // fingerprints so accepted file/audio records remain resumable.
+                    var payload = $"{fileHash}\n{(int)kind}\n\n\n{Path.GetFileName(options.MediaFile)}";
                     payloadSha256 = Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(payload)));
                     if (runner.State.Outbox.LastOrDefault(r => r.SourceKey == options.SourceKey) is { } previous)
                     {
@@ -162,24 +161,12 @@ internal static class App
                         Console.WriteLine("该媒体业务键已经由 API 接受：" + previous.ClientId + "；本次未重复上传或发送。"); return 0;
                     }
                 }
-                if (kind == MediaKind.Voice)
-                {
-                    // Validate declared format locally before requesting upload credentials.
-                    var signature = new byte[16];
-                    await using var input = File.OpenRead(options.MediaFile!);
-                    var length = await input.ReadAsync(signature, ct);
-                    var mp3 = length >= 3 && (Encoding.ASCII.GetString(signature, 0, 3) == "ID3" ||
-                        signature[0] == 0xff && (signature[1] & 0xe0) == 0xe0);
-                    var silk = length >= 10 && (Encoding.ASCII.GetString(signature, 0, Math.Min(length, 16)).Contains("#!SILK_V3", StringComparison.Ordinal));
-                    if (options.VoiceEncoding == "mp3" && !mp3 || options.VoiceEncoding == "silk" && !silk)
-                        throw new ArgumentException("原生语音声明的编码与文件签名不同。");
-                    Console.WriteLine("原生语音为实验类型扩展：本机 SILK 测试接口接受但手机未收到。官方音频路由使用附件；本命令不能保证原生语音送达。");
-                }
-                var uploaded = await mediaClient.UploadBoundFileAsync(runner.State.Session, options.MediaFile!, kind, options.DurationMilliseconds, ct);
-                var item = uploaded.ToMessageItem(options.DurationMilliseconds, options.VoiceEncoding == "silk" ? 6 : 7,
-                    options.VoiceSampleRate, options.VoiceBitsPerSample);
+                var uploaded = await mediaClient.UploadBoundFileAsync(runner.State.Session, options.MediaFile!, kind, ct: ct);
+                var item = uploaded.ToMessageItem();
                 var receipt = await runner.SendBoundItemAsync(item, options.SourceKey, ct, payloadSha256);
-                Console.WriteLine($"媒体 API 已接受：{receipt.ClientId}，{uploaded.PlaintextBytes} 明文字节。请在手机核对收到及播放。"); return 0;
+                Console.WriteLine(options.Kind == "audio"
+                    ? $"音频文件附件 API 已接受：{receipt.ClientId}，{uploaded.PlaintextBytes} 明文字节。保留原文件名与格式；请在微信中核对收到及打开。"
+                    : $"媒体 API 已接受：{receipt.ClientId}，{uploaded.PlaintextBytes} 明文字节。请在手机核对收到及播放。"); return 0;
             }
             Console.WriteLine(options.Echo ? "正在接收；--echo 会回复绑定账号的文字消息。Ctrl+C 停止。" :
                 "正在接收绑定账号消息。Ctrl+C 停止；停止后可用 send 回复。");
@@ -446,9 +433,8 @@ internal static class App
         weixin send --text-file reply.txt 从 UTF-8 文件发送文字
         weixin send --markdown --text-file reply.md  转成普通文本并分块发送
         weixin send-media --file demo.mp4 --kind video  加密上传并发送视频
-        weixin send-media --file audio.mp3 --kind audio  按官方音频附件路径发送
-        weixin send-media --file audio.mp3 --kind voice --duration-ms 2000 --voice-encoding mp3
-        原生语音可显式声明 --voice-sample-rate <Hz> 和 --voice-bits-per-sample 16；未知时省略
+        weixin send-media --file audio.mp3 --kind audio  发送 MP3 文件附件（FILE）
+        音频保留原文件名与字节，不自动转码；原生语音发送已停用
         weixin listen --download-dir downloads  下载绑定账号的图片/语音/视频/文件
         weixin prepare-voice --file mono.wav --input-format wav --output voice.silk  本地转SILK
         weixin prepare-voice --file mono.pcm --input-format pcm --output voice.silk  PCM16单声道24kHz
@@ -458,9 +444,10 @@ internal static class App
         weixin probe                     核查官方扫码接口（生成临时二维码，不显示/保存）
         weixin qr-demo                   生成离线演示二维码页面
         通用参数：--state <文件路径>，--allow-host <精确域名>（可重复）
-        媒体参数：--allow-cdn-host <精确域名>，--max-media-mib <1..512>，--max-voice-seconds <1..3600>
+        媒体参数：--allow-cdn-host <精确域名>，--max-media-mib <1..512>
+        本地语音转换参数：--max-voice-seconds <1..3600>（也用于接收语音解码）
         发送幂等：--source-key <64位SHA256>；Markdown恢复应提供同一业务键
-        本地媒体保护默认100MiB/语音60秒，不是已公布的微信服务端配额。
+        本地媒体保护默认100MiB；语音转换默认60秒，不是已公布的微信服务端配额。
         自动化测试：--offline-fixture <夹具文件>（必须使用专用 --state；完全离线）
         一份状态文件只能由一个进程持有。发送结果未知时不会自动重发。
         独立 C# 接入不代表腾讯保证；源码验收与真实账号收发验收分别见报告。
@@ -484,12 +471,8 @@ internal static class App
         public string? SourceKey { get; private set; }
         public string? MediaFile { get; private set; }
         public string? Kind { get; private set; }
-        public string? VoiceEncoding { get; private set; }
-        public int? VoiceSampleRate { get; private set; }
-        public int? VoiceBitsPerSample { get; private set; }
         public string? InputFormat { get; private set; }
         public string? OutputFile { get; private set; }
-        public int? DurationMilliseconds { get; private set; }
         public string? DownloadDirectory { get; private set; }
         public long MaximumMediaBytes { get; private set; } = 100L * 1024 * 1024;
         public int MaximumVoiceMilliseconds { get; private set; } = 60_000;
@@ -517,13 +500,16 @@ internal static class App
                     case "--markdown": value.Markdown = true; break;
                     case "--source-key": value.SourceKey = ReadValue(); break;
                     case "--file": value.MediaFile = Path.GetFullPath(ReadValue()); break;
-                    case "--kind": value.Kind = ReadValue(); break;
-                    case "--voice-encoding": value.VoiceEncoding = ReadValue(); break;
-                    case "--voice-sample-rate": value.VoiceSampleRate = ReadNumber(1, 48000); break;
-                    case "--voice-bits-per-sample": value.VoiceBitsPerSample = ReadNumber(16, 16); break;
+                    case "--kind":
+                        value.Kind = ReadValue();
+                        if (value.Kind == "voice") throw new ArgumentException(NativeVoiceDisabled);
+                        break;
+                    case "--voice-encoding":
+                    case "--voice-sample-rate":
+                    case "--voice-bits-per-sample":
+                    case "--duration-ms": throw new ArgumentException(NativeVoiceDisabled);
                     case "--input-format": value.InputFormat = ReadValue(); break;
                     case "--output": value.OutputFile = Path.GetFullPath(ReadValue()); break;
-                    case "--duration-ms": value.DurationMilliseconds = ReadNumber(1, int.MaxValue); break;
                     case "--download-dir": value.DownloadDirectory = Path.GetFullPath(ReadValue()); break;
                     case "--max-media-mib": value.MaximumMediaBytes = ReadNumber(1, 512) * 1024L * 1024; break;
                     case "--max-voice-seconds": value.MaximumVoiceMilliseconds = ReadNumber(1, 3600) * 1000; break;
@@ -547,8 +533,7 @@ internal static class App
                 value.DownloadDirectory is not null && value.Command != "listen" ||
                 value.SourceKey is not null && value.Command is not ("send" or "send-media") ||
                 value.MediaFile is not null && value.Command is not ("send-media" or "prepare-voice" or "decode-voice") ||
-                (value.Kind is not null || value.DurationMilliseconds is not null || value.VoiceEncoding is not null ||
-                    value.VoiceSampleRate is not null || value.VoiceBitsPerSample is not null) && value.Command != "send-media" ||
+                value.Kind is not null && value.Command != "send-media" ||
                 value.InputFormat is not null && value.Command != "prepare-voice" ||
                 value.OutputFile is not null && value.Command is not ("prepare-voice" or "decode-voice"))
                 throw new ArgumentException("参数与命令不匹配。");
@@ -560,14 +545,8 @@ internal static class App
                 throw new ArgumentException("语音转换需要 --file、--output；prepare-voice 还需 --input-format wav|pcm。");
             if (value.SourceKey is { } key && (key.Length != 64 || !key.All(Uri.IsHexDigit)))
                 throw new ArgumentException("--source-key 必须是64位SHA256键。");
-            if (value.Command == "send-media" && (value.MediaFile is null || value.Kind is not ("image" or "video" or "file" or "audio" or "voice")))
+            if (value.Command == "send-media" && (value.MediaFile is null || value.Kind is not ("image" or "video" or "file" or "audio")))
                 throw new ArgumentException("send-media 需要 --file 和有效 --kind。");
-            if (value.Kind == "voice" && (value.DurationMilliseconds is null || value.VoiceEncoding is not ("mp3" or "silk")) ||
-                value.Kind is not (null or "voice") && (value.DurationMilliseconds is not null || value.VoiceEncoding is not null ||
-                    value.VoiceSampleRate is not null || value.VoiceBitsPerSample is not null))
-                throw new ArgumentException("原生语音需明确 --duration-ms 和 --voice-encoding mp3|silk。");
-            if (value.VoiceSampleRate is not (null or 8000 or 12000 or 16000 or 24000 or 32000 or 44100 or 48000))
-                throw new ArgumentException("--voice-sample-rate 使用 Hz，仅支持 8000/12000/16000/24000/32000/44100/48000。该声明须与实际音频一致。");
             if (value.OfflineFixture is not null && (!singleOptions.Contains("--state") || value.Open ||
                 value.Command is not ("login" or "listen" or "send" or "send-media" or "status" or "probe" or "typing")))
                 throw new ArgumentException("离线夹具需要显式 --state，且仅适用于协议命令，不允许 --open。");

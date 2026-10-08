@@ -20,13 +20,14 @@ internal static partial class CliSuite
         await Case("send_image_upload_encrypt_metadata_exact_plaintext", () => MediaUploadAsync("image", "fixture-image.png", PngFixture));
         await Case("send_video_upload_encrypt_metadata_exact_plaintext", () => MediaUploadAsync("video", "fixture-video.mp4", VideoFixture));
         await Case("send_file_upload_encrypt_metadata_exact_plaintext", () => MediaUploadAsync("file", "fixture-document.txt", Encoding.UTF8.GetBytes("fixture-file附件😀")));
-        await Case("send_audio_uses_official_file_attachment_type", () => MediaUploadAsync("audio", "fixture-audio.mp3", Mp3Fixture));
-        await Case("send_native_voice_mp3_explicit_type_and_duration", () => MediaUploadAsync("voice", "fixture-voice.mp3", Mp3Fixture, "mp3"));
-        await Case("send_native_voice_silk_explicit_type_and_duration", () => MediaUploadAsync("voice", "fixture-voice.silk", SilkFixture, "silk"));
+        await Case("send_audio_mp3_file_attachment_preserves_filename_plaintext_and_octet_stream", () => MediaUploadAsync("audio", "fixture-audio.mp3", Mp3Fixture));
+        await Case("send_audio_wave_file_attachment_preserves_original_format_and_extension", () => MediaUploadAsync("audio", "fixture-audio.wav", SyntheticVoiceWave(SyntheticVoicePcm())));
+        await Case("audio_business_key_keeps_legacy_fingerprint_and_never_resends", AudioReplayAsync);
+        await Case("audio_legacy_sent_unknown_and_sending_receipts_recover_without_http", AudioLegacyReceiptAsync);
         await Case("cdn_upload_retry_reuses_ciphertext_key_and_filekey", UploadRetryAsync);
         await Case("cdn_upload_4xx_never_starts_chat_send", UploadRejectedAsync);
         await Case("upload_response_unknown_cdn_host_rejected", UploadHostGuardAsync);
-        await Case("media_size_voice_duration_and_signature_guards_before_http", MediaInputGuardsAsync);
+        await Case("media_size_guard_before_http", MediaInputGuardsAsync);
         await Case("kill_media_chat_send_preserves_durable_unknown_intent", MediaKillAsync);
         await Case("media_business_key_skips_upload_send_and_rejects_changed_file", MediaReplayAsync);
         await Case("listen_download_image_voice_file_video_exact_plaintext", DownloadAllKindsAsync);
@@ -40,15 +41,14 @@ internal static partial class CliSuite
         await Case("markdown_partial_unknown_chunk_never_resent", MarkdownUnknownAsync);
     }
 
-    private static async Task MediaUploadAsync(string kind, string filename, byte[] plaintext, string? encoding = null)
+    private static async Task MediaUploadAsync(string kind, string filename, byte[] plaintext)
     {
         var mediaKind = Kind(kind);
-        var t = await TestDirectory.CreateAsync([UploadUrlStep(plaintext, mediaKind), UploadStep(plaintext), MediaSendStep(mediaKind, plaintext.Length, filename, encoding)]);
+        var t = await TestDirectory.CreateAsync([UploadUrlStep(plaintext, mediaKind), UploadStep(plaintext), MediaSendStep(mediaKind, plaintext.Length, filename)]);
         await t.SaveAsync(State());
         var path = Path.Combine(t.Directory, filename); await File.WriteAllBytesAsync(path, plaintext);
-        var args = new List<string> { "--file", path, "--kind", kind };
-        if (encoding is not null) args.AddRange(["--duration-ms", "1234", "--voice-encoding", encoding]);
-        await RunAsync(t, "send-media", args.ToArray(), 0);
+        await RunAsync(t, "send-media", ["--file", path, "--kind", kind], 0);
+        Assert((await File.ReadAllBytesAsync(path)).AsSpan().SequenceEqual(plaintext), "Media upload changed the original file bytes.");
         var state = await t.LoadAsync();
         Assert(state.Outbox.Count == 1 && state.Outbox[0].Status == "Sent", "Media send did not record exactly one acknowledged intent.");
         var wire = t.Requests().Single(x => Endpoint(x) == "sendmessage").GetProperty("body").GetProperty("msg");
@@ -58,13 +58,35 @@ internal static partial class CliSuite
             "CDN upload was not decrypted and compared against fixture plaintext.");
         Assert(assertions.Any(x => x.TryGetProperty("media", out var m) && m.ValueKind == JsonValueKind.Object && m.GetProperty("aesKeyVerified").GetBoolean()),
             "Sent descriptor AES key was not compared with the captured upload key.");
+        if (kind == "audio")
+        {
+            Assert(t.Requests().Single(x => Endpoint(x) == "getuploadurl").GetProperty("body").GetProperty("media_type").GetInt32() == 3,
+                "Audio upload did not use FILE media_type=3.");
+            var item = wire.GetProperty("item_list")[0];
+            Assert(item.GetProperty("type").GetInt32() == 4 && item.GetProperty("file_item").GetProperty("file_name").GetString() == filename,
+                "Audio attachment did not use FILE item type=4 with the original filename and extension.");
+            var binary = assertions.Single(x => x.TryGetProperty("binary", out var b) && b.ValueKind == JsonValueKind.Object).GetProperty("binary");
+            Assert(binary.GetProperty("plaintextSha256").GetString() == Convert.ToHexString(SHA256.HashData(plaintext)) &&
+                binary.GetProperty("plaintextBytes").GetInt32() == plaintext.Length, "Audio upload converted or replaced original bytes.");
+            var descriptor = assertions.Single(x => x.TryGetProperty("media", out var m) && m.ValueKind == JsonValueKind.Object).GetProperty("media");
+            Assert(descriptor.GetProperty("voiceEncoding").ValueKind == JsonValueKind.Null &&
+                !descriptor.GetProperty("voiceSampleRatePresent").GetBoolean() && !descriptor.GetProperty("voiceBitsPerSamplePresent").GetBoolean(),
+                "Audio attachment acquired native voice metadata.");
+            Assert(descriptor.GetProperty("itemType").GetInt32() == 4 && descriptor.GetProperty("descriptorName").GetString() == "file_item" &&
+                !descriptor.GetProperty("voiceItemPresent").GetBoolean() && !descriptor.GetProperty("fileMimePresent").GetBoolean(),
+                "Actual audio descriptor was not a FILE or acquired native voice/audio MIME fields.");
+            Assert(t.Requests().Single(x => Endpoint(x) == "upload").GetProperty("contentType").GetString() == "application/octet-stream",
+                "Encrypted audio upload did not use application/octet-stream.");
+            Assert(Directory.GetFiles(t.Directory, "fixture-audio.*").Select(Path.GetFileName).SequenceEqual([filename]),
+                "Audio upload created a converted or renamed sibling file.");
+        }
         var traceText = File.ReadAllText(Path.Combine(t.Directory, "fixture-trace.jsonl"));
         Assert(!traceText.Contains("\"aeskey\"", StringComparison.Ordinal) && !traceText.Contains("\"aes_key\"", StringComparison.Ordinal), "Trace contains dynamic upload AES keys.");
         t.AssertRequests("getuploadurl", "upload", "sendmessage");
     }
 
     private static MediaKind Kind(string kind) => kind switch { "image" => MediaKind.Image, "video" => MediaKind.Video,
-        "file" or "audio" => MediaKind.File, "voice" => MediaKind.Voice, _ => throw new ArgumentException("Unknown fixture media kind.") };
+        "file" or "audio" => MediaKind.File, _ => throw new ArgumentException("Unknown fixture media kind.") };
     private static Step UploadUrlStep(byte[] plaintext, MediaKind kind) => new()
     {
         Path = "/ilink/bot/getuploadurl", RequireBearer = true,
@@ -80,7 +102,7 @@ internal static partial class CliSuite
         ExpectedPlaintextBase64 = Convert.ToBase64String(plaintext), AesKeyStep = captureStep,
         ResponseHeaders = new() { ["x-encrypted-param"] = DownloadParameter }, BodyBase64 = ""
     };
-    private static Step MediaSendStep(MediaKind kind, int length, string filename, string? encoding = null)
+    private static Step MediaSendStep(MediaKind kind, int length, string filename)
     {
         var media = new { encrypt_query_param = DownloadParameter, encrypt_type = 1 };
         object item = kind switch
@@ -88,7 +110,6 @@ internal static partial class CliSuite
             MediaKind.Image => new { type = 2, image_item = new { media, mid_size = (length / 16 + 1) * 16 } },
             MediaKind.Video => new { type = 5, video_item = new { media, video_size = (length / 16 + 1) * 16 } },
             MediaKind.File => new { type = 4, file_item = new { media, file_name = filename, len = length.ToString(System.Globalization.CultureInfo.InvariantCulture) } },
-            MediaKind.Voice => new { type = 3, voice_item = new { media, encode_type = encoding == "silk" ? 6 : 7, playtime = 1234 } },
             _ => throw new ArgumentException("Unknown media fixture.")
         };
         return new() { Path = "/ilink/bot/sendmessage", RequireBearer = true, AssertSentAesKeyStep = 0,
@@ -139,10 +160,6 @@ internal static partial class CliSuite
         var t = await TestDirectory.CreateAsync([]); await t.SaveAsync(State());
         var file = Path.Combine(t.Directory, "fixture-over-limit.bin"); await File.WriteAllBytesAsync(file, new byte[1024 * 1024 + 1]);
         await RunAsync(t, "send-media", ["--file", file, "--kind", "file", "--max-media-mib", "1"], 1);
-        var voice = Path.Combine(t.Directory, "fixture-voice.mp3"); await File.WriteAllBytesAsync(voice, Mp3Fixture);
-        await RunAsync(t, "send-media", ["--file", voice, "--kind", "voice", "--voice-encoding", "mp3"], 1);
-        await RunAsync(t, "send-media", ["--file", voice, "--kind", "voice", "--voice-encoding", "mp3", "--duration-ms", "60001"], 1);
-        await RunAsync(t, "send-media", ["--file", voice, "--kind", "voice", "--voice-encoding", "silk", "--duration-ms", "1234"], 1);
         Assert((await t.LoadAsync()).Outbox.Count == 0 && t.Requests().Count == 0, "Invalid local media input reached HTTP or created send intent.");
     }
 
@@ -184,6 +201,64 @@ internal static partial class CliSuite
         await File.WriteAllTextAsync(file, "fixture-changed-media", new UTF8Encoding(false));
         await RunAsync(t, "send-media", args, 1);
         t.AssertRequests("getuploadurl", "upload", "sendmessage");
+    }
+
+    private static string LegacyAudioFingerprint(byte[] bytes, string filename) => Convert.ToHexString(SHA256.HashData(
+        Encoding.UTF8.GetBytes($"{Convert.ToHexString(SHA256.HashData(bytes))}\n3\n\n\n{filename}")));
+
+    private static async Task AudioReplayAsync()
+    {
+        const string filename = "fixture-audio-replay.mp3";
+        var t = await TestDirectory.CreateAsync([UploadUrlStep(Mp3Fixture, MediaKind.File), UploadStep(Mp3Fixture),
+            MediaSendStep(MediaKind.File, Mp3Fixture.Length, filename)]);
+        await t.SaveAsync(State()); var file = Path.Combine(t.Directory, filename); await File.WriteAllBytesAsync(file, Mp3Fixture);
+        var key = Convert.ToHexString(SHA256.HashData("fixture-audio-replay-business"u8));
+        string[] args = ["--file", file, "--kind", "audio", "--source-key", key];
+        var sent = await RunAsync(t, "send-media", args, 0);
+        Assert(sent.Stdout.Contains("音频文件附件 API 已接受", StringComparison.Ordinal), "Audio success output did not identify FILE API acceptance.");
+        var receipt = (await t.LoadAsync()).Outbox.Single(); var before = await HashAsync(t.State);
+        Assert(receipt.PayloadSha256 == LegacyAudioFingerprint(Mp3Fixture, filename), "Audio changed the legacy FILE fingerprint's empty duration/encoding fields.");
+        await t.RewriteAsync([]);
+        await RunAsync(t, "send-media", args, 0);
+        await RunAsync(t, "send-media", ["--file", file, "--kind", "file", "--source-key", key], 0);
+        Assert(await HashAsync(t.State) == before && (await t.LoadAsync()).Outbox.Single().ClientId == receipt.ClientId,
+            "Audio/file alias replay altered the accepted receipt.");
+        var renamed = Path.Combine(t.Directory, "fixture-renamed-audio.mp3"); await File.WriteAllBytesAsync(renamed, Mp3Fixture);
+        await RunAsync(t, "send-media", ["--file", renamed, "--kind", "audio", "--source-key", key], 1);
+        await File.WriteAllBytesAsync(file, [.. Mp3Fixture, 1]);
+        await RunAsync(t, "send-media", args, 1);
+        Assert(await HashAsync(t.State) == before, "Changed audio filename or bytes altered the accepted receipt.");
+        t.AssertRequests("getuploadurl", "upload", "sendmessage");
+    }
+
+    private static async Task AudioLegacyReceiptAsync()
+    {
+        // Seed the pre-change FILE fingerprint directly, proving upgrade compatibility
+        // independently of the new executable's own fingerprint implementation.
+        foreach (var priorStatus in new[] { "Sent", "Unknown", "Sending" })
+        {
+            const string filename = "fixture-legacy-audio.mp3";
+            var t = await TestDirectory.CreateAsync([]); var file = Path.Combine(t.Directory, filename);
+            await File.WriteAllBytesAsync(file, Mp3Fixture);
+            var key = Convert.ToHexString(SHA256.HashData("fixture-legacy-audio-business"u8));
+            var state = State();
+            state.Outbox.Add(new SendReceipt { ClientId = "fixture-legacy-audio-client", SourceKey = key,
+                ContentSha256 = Convert.ToHexString(SHA256.HashData("fixture-legacy-file-descriptor"u8)),
+                PayloadSha256 = LegacyAudioFingerprint(Mp3Fixture, filename), Status = priorStatus,
+                AttemptedAt = DateTimeOffset.UtcNow.AddMinutes(-1) });
+            await t.SaveAsync(state);
+            if (priorStatus == "Sending")
+            {
+                await RunAsync(t, "status", [], 0);
+                Assert((await t.LoadAsync()).Outbox.Single().Status == "Unknown", "Legacy in-flight audio was not recovered to Unknown.");
+            }
+            var before = await HashAsync(t.State);
+            await RunAsync(t, "send-media", ["--file", file, "--kind", "audio", "--source-key", key], priorStatus == "Sent" ? 0 : 1);
+            var receipt = (await t.LoadAsync()).Outbox.Single();
+            Assert(await HashAsync(t.State) == before && receipt.ClientId == "fixture-legacy-audio-client" &&
+                receipt.Status == (priorStatus == "Sent" ? "Sent" : "Unknown"), "Legacy audio replay altered a completed/uncertain receipt.");
+            t.AssertRequests();
+        }
     }
 
     private static InboundMessage IncomingMedia(string id, int type, string parameter, string? filename = null)

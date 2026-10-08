@@ -105,6 +105,14 @@ internal static partial class CliSuite
         using var child = Start(t, "help", [], includeFixture: false);
         var help = await child.CompleteAsync(TimeSpan.FromSeconds(10));
         Assert(help.ExitCode == 0, "Published help exited unsuccessfully.");
+        Assert(help.Stdout.Contains("send-media --file audio.mp3 --kind audio", StringComparison.Ordinal) &&
+            help.Stdout.Contains("MP3 文件附件（FILE）", StringComparison.Ordinal) && help.Stdout.Contains("不自动转码", StringComparison.Ordinal) &&
+            help.Stdout.Contains("原生语音发送已停用", StringComparison.Ordinal), "Help did not explain MP3 FILE attachments and disabled native voice.");
+        Assert(!help.Stdout.Contains("--kind voice", StringComparison.Ordinal) && !help.Stdout.Contains("--voice-encoding", StringComparison.Ordinal) &&
+            !help.Stdout.Contains("--duration-ms", StringComparison.Ordinal) && !help.Stdout.Contains("--voice-sample-rate", StringComparison.Ordinal) &&
+            !help.Stdout.Contains("--voice-bits-per-sample", StringComparison.Ordinal), "Help still advertised removed native-voice sending options.");
+        Assert(help.Stdout.Contains("decode-voice", StringComparison.Ordinal) && help.Stdout.Contains("--download-dir", StringComparison.Ordinal),
+            "Help lost retained receive/download or local voice decoding commands.");
         Assert(help.Stdout.Contains("微信助理", StringComparison.Ordinal), "Published help did not display.");
         await RunAsync(t, "status", ["--unknown-option"], 1);
         Assert(!File.Exists(t.State), "Argument rejection created a state.");

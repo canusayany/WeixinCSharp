@@ -1,0 +1,153 @@
+{
+  "formatVersion": 1,
+  "scope": "offline-audio-file-attachments-and-native-cli-rejection",
+  "baseCommit": "5464efc77c8c89f3489f4806f4ef370d09db76db",
+  "branch": "main",
+  "unpublishedLocalChanges": true,
+  "sdkVersion": "10.0.400-preview.0.26322.102",
+  "startedUtc": "2026-10-08T03:19:42.3676660Z",
+  "completedUtc": "2026-10-08T03:21:54.8414371Z",
+  "realWeChatAccountUsed": false,
+  "realWeChatDeliveryVerified": false,
+  "commitPushOrPrCreated": false,
+  "pipelinePassed": true,
+  "stages": [
+    {
+      "name": "locked-restore",
+      "exitCode": 0,
+      "durationMilliseconds": 1130
+    },
+    {
+      "name": "release-build",
+      "exitCode": 0,
+      "durationMilliseconds": 5307
+    },
+    {
+      "name": "unit",
+      "exitCode": 0,
+      "durationMilliseconds": 7919
+    },
+    {
+      "name": "managed-codec",
+      "exitCode": 0,
+      "durationMilliseconds": 2006
+    },
+    {
+      "name": "project-tools",
+      "exitCode": 0,
+      "durationMilliseconds": 1063
+    },
+    {
+      "name": "publish",
+      "exitCode": 0,
+      "durationMilliseconds": 4926
+    },
+    {
+      "name": "published-cli-offline-e2e",
+      "exitCode": 0,
+      "durationMilliseconds": 109049
+    },
+    {
+      "name": "post-publish-locked-restore",
+      "exitCode": 0,
+      "durationMilliseconds": 1066
+    }
+  ],
+  "unitSuites": [
+    {
+      "name": "StateVaultTests",
+      "status": "passed",
+      "elapsedMs": 136
+    },
+    {
+      "name": "ILinkClientTests",
+      "status": "passed",
+      "elapsedMs": 120
+    },
+    {
+      "name": "PersistentBotRunnerTests",
+      "status": "passed",
+      "elapsedMs": 259
+    },
+    {
+      "name": "RunnerRegressionTests",
+      "status": "passed",
+      "elapsedMs": 1663
+    },
+    {
+      "name": "MediaModelAndMarkdownTests",
+      "status": "passed",
+      "elapsedMs": 1699
+    },
+    {
+      "name": "MediaClientTests",
+      "status": "passed",
+      "elapsedMs": 115
+    },
+    {
+      "name": "TypingClientTests",
+      "status": "passed",
+      "elapsedMs": 183
+    },
+    {
+      "name": "TypingLifecycleTests",
+      "status": "passed",
+      "elapsedMs": 2852
+    }
+  ],
+  "codec": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0
+  },
+  "projectTools": {
+    "total": 14,
+    "passed": 14,
+    "failed": 0
+  },
+  "cli": {
+    "total": 65,
+    "passed": 65,
+    "failed": 0
+  },
+  "sourceFiles": [
+    {
+      "path": "src/Weixin.Cli/Program.cs",
+      "sha256": "3C2D00F5066776345891082F70AC97B808A64A3AFBE52DD2C0C61A34B614DF9A"
+    },
+    {
+      "path": "src/Weixin.Cli/OfflineFixtureTransport.cs",
+      "sha256": "5085BA102485CE21945CC855E8A29622D29F86CAA82AA58D319A77044D74224A"
+    },
+    {
+      "path": "tests/Weixin.Cli.E2ETests/Program.cs",
+      "sha256": "E79D66A9127C819DBE71014B83E58826F6CE632C5E3246AAE141799E13F2C4F4"
+    },
+    {
+      "path": "tests/Weixin.Cli.E2ETests/MediaE2E.cs",
+      "sha256": "737BDB47117059FE0F73C55377A60C6AD5C4A2046278EBBA9C1F3CC515D71000"
+    },
+    {
+      "path": "tests/Weixin.Cli.E2ETests/TypingVoiceE2E.cs",
+      "sha256": "1A279F941C4ED268839295BF8F6D5CA2ABCD950485BC01F1B687175775BFEF36"
+    }
+  ],
+  "localBinaries": [
+    {
+      "name": "weixin.exe",
+      "sha256": "12FA63EF2EEF0F7EE313B1B344995A4CDABEE5ACC7AE6EC30CB67A52130CB12D"
+    },
+    {
+      "name": "weixin.dll",
+      "sha256": "BACF0528402186FC361D51C65F47BEEDADE4E14D0C67CB057D6EE15166D1DA59"
+    },
+    {
+      "name": "Weixin.Protocol.dll",
+      "sha256": "929DE362E2AE6712A1D55A9969A70FADD02AC38A42E5A9E9FD859F24A84AB064"
+    },
+    {
+      "name": "Weixin.Silk.dll",
+      "sha256": "B9AF5FECE0D6CC1AFD2F353A15557FC9B0AFBDE87AD777868F007BDE9E53380D"
+    }
+  ]
+}

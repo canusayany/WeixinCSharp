@@ -26,6 +26,7 @@ footer{max-width:1280px;margin:0 auto;padding:0 28px 32px;color:var(--muted);fon
 <a href="#section-5">原生语音发送核查</a>
 <a href="#section-6">测试、交付与许可</a>
 <a href="#section-7">封号风险与已知范围</a></aside><main><h1>微信助理 C# 实现与语音核查报告</h1>
+<p>当前源码状态（2026-10-08，尚未发布）：CLI 已停用原生语音发送，MP3 等音频使用 <code>--kind audio</code> 作为 FILE 文件附件发送，保留原格式与文件名，不自动转码。接收语音与本地编解码保留。以下为 1.3.0 历史核查，不代表当前 CLI 仍提供原生语音外发入口；气泡失败原因仍未证实。</p>
 <p>版本：1.3.0。核查日期：2026-10-04，Asia/Shanghai。此前 1.2.1 的完整报告保存在 <a href="REPORT-1.2.1.md">历史报告</a>。本版把生产 SILK 编解码及构建、测试、报告、打包工具全部迁到 C#，删除 Node/WASM、Python 与 PowerShell 实现。研究目录中的官方 TypeScript/C/C++ 快照是静态依据，不参与运行。</p>
 <h2 id="section-1">官方依据与通信范围</h2>
 <p>主要依据是腾讯 <a href="https://github.com/Tencent/openclaw-weixin/tree/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c">openclaw-weixin 2.4.9</a> 及其 <a href="https://github.com/Tencent/openclaw-weixin/blob/24de5c9eb0dd5e595d7e2d090ed8a3f82870d42c/docs/protocol_zh_CN.md">后端协议说明</a>。2026-10-04 重新检查，main 仍为该提交、npm latest 仍为 2.4.9。固定源码、MIT 许可与哈希保留在 research/upstream-snapshot；WorkBuddy 的公开逆向与第三方 demo 只用于机制对照，来源见 research/github-evidence.md。</p>
@@ -58,4 +59,4 @@ footer{max-width:1280px;margin:0 auto;padding:0 28px 32px;color:var(--muted);fon
 <p>自有代码采用 MIT；完整 SILK 编码器保留 Apache-2.0、Jitsi 和 Skype BSD-3-Clause-Clear 声明，解码器保留原 MIT。第三方许可不会被项目 MIT 替代。原/现 SHA 见 research/greepar-silk-provenance.json、research/managed-silk-provenance.json；详细许可见 <a href="../THIRD-PARTY-NOTICES.md">第三方通知</a>。</p>
 <h2 id="section-7">封号风险与已知范围</h2>
 <p>请求默认字段遵循固定官方源码，不增加本项目的线协议标识，不加入规避风控或隐匿客户端的机制。公开源码兼容不等于腾讯批准任意第三方客户端，也不能证明零封号或接口长期不变。字段声明及 HTTP 成功都不构成某项能力已开放的证据。</p>
-<p>程序遇到会话或权限异常会停止相应请求；Unknown 不自动重发，范围只限绑定会话。本次没有观察到可以归因于程序的封号，也没有足够样本计算封号概率；不能由短时测试推广到长期稳定。原生语音外发仍需真实客户端验收，相关未知不得写成已支持。</p></main></div><footer>本地离线报告 · 2026-10-04 · 版本 1.3.0</footer></body></html>
+<p>程序遇到会话或权限异常会停止相应请求；Unknown 不自动重发，范围只限绑定会话。本次没有观察到可以归因于程序的封号，也没有足够样本计算封号概率；不能由短时测试推广到长期稳定。原生语音外发仍需真实客户端验收，相关未知不得写成已支持。</p></main></div><footer>本地离线报告 · 2026-10-08 · 版本 1.3.0</footer></body></html>
